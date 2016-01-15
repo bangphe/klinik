@@ -42,167 +42,199 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="<?= $baseUrl; ?>/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME GLOBAL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
-        <link href="<?= $baseUrl; ?>/assets/layouts/layout3/css/layout.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?= $baseUrl; ?>/assets/layouts/layout3/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
-        <link href="<?= $baseUrl; ?>/assets/layouts/layout3/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="<?= $baseUrl; ?>/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?= $baseUrl; ?>/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="<?= $baseUrl; ?>/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
 		<link rel="shortcut icon" href="favicon.ico"/>
-		<?php Yii::app()->clientScript->registerCoreScript('jquery') ?>
 	</head>
 	<!-- END HEAD -->
 	<!-- BEGIN BODY -->
-	<body class="page-container-bg-solid page-boxed">
+	<body class="page-header-fixed page-sidebar-closed-hide-logo">
 		<!-- BEGIN HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- END HEADER -->
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
 		<!-- BEGIN CONTAINER -->
 		<div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <?php require_once('sidebar.php'); ?>
+            <!-- END SIDEBAR -->
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
                 <!-- BEGIN CONTENT BODY -->
-                <!-- BEGIN PAGE HEAD-->
-                <div class="page-head">
-                    <div class="container">
-                        <!-- BEGIN PAGE TITLE -->
-                        <div class="page-title">
-                            <h1>Blank Page </h1>
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                    <!-- BEGIN THEME PANEL -->
+                    <div class="theme-panel hidden-xs hidden-sm">
+                        <div class="toggler"> </div>
+                        <div class="toggler-close"> </div>
+                        <div class="theme-options">
+                            <div class="theme-option theme-colors clearfix">
+                                <span> THEME COLOR </span>
+                                <ul>
+                                    <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
+                                    <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="Dark Blue"> </li>
+                                    <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
+                                    <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
+                                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
+                                    <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true" data-original-title="Light 2"> </li>
+                                </ul>
+                            </div>
+                            <div class="theme-option">
+                                <span> Theme Style </span>
+                                <select class="layout-style-option form-control input-sm">
+                                    <option value="square" selected="selected">Square corners</option>
+                                    <option value="rounded">Rounded corners</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> Layout </span>
+                                <select class="layout-option form-control input-sm">
+                                    <option value="fluid" selected="selected">Fluid</option>
+                                    <option value="boxed">Boxed</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> Header </span>
+                                <select class="page-header-option form-control input-sm">
+                                    <option value="fixed" selected="selected">Fixed</option>
+                                    <option value="default">Default</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> Top Menu Dropdown</span>
+                                <select class="page-header-top-dropdown-style-option form-control input-sm">
+                                    <option value="light" selected="selected">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> Sidebar Mode</span>
+                                <select class="sidebar-option form-control input-sm">
+                                    <option value="fixed">Fixed</option>
+                                    <option value="default" selected="selected">Default</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> Sidebar Menu </span>
+                                <select class="sidebar-menu-option form-control input-sm">
+                                    <option value="accordion" selected="selected">Accordion</option>
+                                    <option value="hover">Hover</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> Sidebar Style </span>
+                                <select class="sidebar-style-option form-control input-sm">
+                                    <option value="default" selected="selected">Default</option>
+                                    <option value="light">Light</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> Sidebar Position </span>
+                                <select class="sidebar-pos-option form-control input-sm">
+                                    <option value="left" selected="selected">Left</option>
+                                    <option value="right">Right</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> Footer </span>
+                                <select class="page-footer-option form-control input-sm">
+                                    <option value="fixed">Fixed</option>
+                                    <option value="default" selected="selected">Default</option>
+                                </select>
+                            </div>
                         </div>
-                        <!-- END PAGE TITLE -->
-                        <!-- BEGIN PAGE TOOLBAR -->
+                    </div>
+                    <!-- END THEME PANEL -->
+                    <!-- BEGIN PAGE TITLE-->
+                    <h3 class="page-title"> Dashboard 3
+                        <small>dashboard & statistics</small>
+                    </h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- BEGIN PAGE BAR -->
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="index.html">Home</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <span>Dashboard</span>
+                            </li>
+                        </ul>
                         <div class="page-toolbar">
-                            <!-- BEGIN THEME PANEL -->
-                            <div class="btn-group btn-theme-panel">
-                                <a href="javascript:;" class="btn dropdown-toggle" data-toggle="dropdown">
-                                    <i class="icon-settings"></i>
-                                </a>
-                                <div class="dropdown-menu theme-panel pull-right dropdown-custom hold-on-click">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <h3>THEME COLORS</h3>
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <ul class="theme-colors">
-                                                        <li class="theme-color theme-color-default" data-theme="default">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Default</span>
-                                                        </li>
-                                                        <li class="theme-color theme-color-blue-hoki" data-theme="blue-hoki">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Blue Hoki</span>
-                                                        </li>
-                                                        <li class="theme-color theme-color-blue-steel" data-theme="blue-steel">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Blue Steel</span>
-                                                        </li>
-                                                        <li class="theme-color theme-color-yellow-orange" data-theme="yellow-orange">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Orange</span>
-                                                        </li>
-                                                        <li class="theme-color theme-color-yellow-crusta" data-theme="yellow-crusta">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Yellow Crusta</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <ul class="theme-colors">
-                                                        <li class="theme-color theme-color-green-haze" data-theme="green-haze">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Green Haze</span>
-                                                        </li>
-                                                        <li class="theme-color theme-color-red-sunglo" data-theme="red-sunglo">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Red Sunglo</span>
-                                                        </li>
-                                                        <li class="theme-color theme-color-red-intense" data-theme="red-intense">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Red Intense</span>
-                                                        </li>
-                                                        <li class="theme-color theme-color-purple-plum" data-theme="purple-plum">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Purple Plum</span>
-                                                        </li>
-                                                        <li class="theme-color theme-color-purple-studio" data-theme="purple-studio">
-                                                            <span class="theme-color-view"></span>
-                                                            <span class="theme-color-name">Purple Studio</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12 seperator">
-                                            <h3>LAYOUT</h3>
-                                            <ul class="theme-settings">
-                                                <li> Theme Style
-                                                    <select class="theme-setting theme-setting-style form-control input-sm input-small input-inline tooltips" data-original-title="Change theme style" data-container="body" data-placement="left">
-                                                        <option value="boxed" selected="selected">Square corners</option>
-                                                        <option value="rounded">Rounded corners</option>
-                                                    </select>
-                                                </li>
-                                                <li> Layout
-                                                    <select class="theme-setting theme-setting-layout form-control input-sm input-small input-inline tooltips" data-original-title="Change layout type" data-container="body" data-placement="left">
-                                                        <option value="boxed" selected="selected">Boxed</option>
-                                                        <option value="fluid">Fluid</option>
-                                                    </select>
-                                                </li>
-                                                <li> Top Menu Style
-                                                    <select class="theme-setting theme-setting-top-menu-style form-control input-sm input-small input-inline tooltips" data-original-title="Change top menu dropdowns style" data-container="body"
-                                                    data-placement="left">
-                                                        <option value="dark" selected="selected">Dark</option>
-                                                        <option value="light">Light</option>
-                                                    </select>
-                                                </li>
-                                                <li> Top Menu Mode
-                                                    <select class="theme-setting theme-setting-top-menu-mode form-control input-sm input-small input-inline tooltips" data-original-title="Enable fixed(sticky) top menu" data-container="body" data-placement="left">
-                                                        <option value="fixed">Fixed</option>
-                                                        <option value="not-fixed" selected="selected">Not Fixed</option>
-                                                    </select>
-                                                </li>
-                                                <li> Mega Menu Style
-                                                    <select class="theme-setting theme-setting-mega-menu-style form-control input-sm input-small input-inline tooltips" data-original-title="Change mega menu dropdowns style" data-container="body"
-                                                    data-placement="left">
-                                                        <option value="dark" selected="selected">Dark</option>
-                                                        <option value="light">Light</option>
-                                                    </select>
-                                                </li>
-                                                <li> Mega Menu Mode
-                                                    <select class="theme-setting theme-setting-mega-menu-mode form-control input-sm input-small input-inline tooltips" data-original-title="Enable fixed(sticky) mega menu" data-container="body"
-                                                    data-placement="left">
-                                                        <option value="fixed" selected="selected">Fixed</option>
-                                                        <option value="not-fixed">Not Fixed</option>
-                                                    </select>
-                                                </li>
-                                            </ul>
-                                        </div>
+                            <div id="dashboard-report-range" class="pull-right tooltips btn btn-fit-height green" data-placement="top" data-original-title="Change dashboard date range">
+                                <i class="icon-calendar"></i>&nbsp;
+                                <span class="thin uppercase hidden-xs"></span>&nbsp;
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BAR -->
+                    <!-- END PAGE HEADER-->
+                    <div class="row widget-row">
+                        <div class="col-md-3">
+                            <!-- BEGIN WIDGET THUMB -->
+                            <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                                <h4 class="widget-thumb-heading">Current Balance</h4>
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-green icon-bulb"></i>
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">USD</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup" data-value="7,644">0</span>
                                     </div>
                                 </div>
                             </div>
-                            <!-- END THEME PANEL -->
+                            <!-- END WIDGET THUMB -->
                         </div>
-                        <!-- END PAGE TOOLBAR -->
+                        <div class="col-md-3">
+                            <!-- BEGIN WIDGET THUMB -->
+                            <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                                <h4 class="widget-thumb-heading">Weekly Sales</h4>
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-red icon-layers"></i>
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">USD</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup" data-value="1,293">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET THUMB -->
+                        </div>
+                        <div class="col-md-3">
+                            <!-- BEGIN WIDGET THUMB -->
+                            <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                                <h4 class="widget-thumb-heading">Biggest Purchase</h4>
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-purple icon-screen-desktop"></i>
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">USD</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup" data-value="815">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET THUMB -->
+                        </div>
+                        <div class="col-md-3">
+                            <!-- BEGIN WIDGET THUMB -->
+                            <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                                <h4 class="widget-thumb-heading">Average Monthly</h4>
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-blue icon-bar-chart"></i>
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">USD</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup" data-value="5,071">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET THUMB -->
+                        </div>
                     </div>
                 </div>
-                <!-- END PAGE HEAD-->
-                <!-- BEGIN PAGE CONTENT BODY -->
-                <div class="page-content">
-                    <div class="container">
-                        <!-- BEGIN PAGE BREADCRUMBS -->
-                        <ul class="page-breadcrumb breadcrumb">
-                            <li>
-                                <a href="index.html">Home</a>
-                                <i class="fa fa-circle"></i>
-                            </li>
-                            <li>
-                                <span>Layouts</span>
-                            </li>
-                        </ul>
-                        <!-- END PAGE BREADCRUMBS -->
-                        <!-- BEGIN PAGE CONTENT INNER -->
-                        <?= $content; ?>
-                        <!-- END PAGE CONTENT INNER -->
-                    </div>
-                </div>
-                <!-- END PAGE CONTENT BODY -->
                 <!-- END CONTENT BODY -->
             </div>
             <!-- END CONTENT -->
@@ -770,74 +802,14 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
 		<!-- END CONTAINER -->
 		<!-- BEGIN FOOTER -->
-        <!-- BEGIN PRE-FOOTER -->
-        <div class="page-prefooter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-                        <h2>About</h2>
-                        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam dolore. </p>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs12 footer-block">
-                        <h2>Subscribe Email</h2>
-                        <div class="subscribe-form">
-                            <form action="javascript:;">
-                                <div class="input-group">
-                                    <input type="text" placeholder="mail@email.com" class="form-control">
-                                    <span class="input-group-btn">
-                                        <button class="btn" type="submit">Submit</button>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-                        <h2>Follow Us On</h2>
-                        <ul class="social-icons">
-                            <li>
-                                <a href="javascript:;" data-original-title="rss" class="rss"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-original-title="facebook" class="facebook"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-original-title="twitter" class="twitter"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-original-title="googleplus" class="googleplus"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-original-title="linkedin" class="linkedin"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-original-title="youtube" class="youtube"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-original-title="vimeo" class="vimeo"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-                        <h2>Contacts</h2>
-                        <address class="margin-bottom-40"> Phone: 800 123 3456
-                            <br> Email:
-                            <a href="mailto:info@metronic.com">info@metronic.com</a>
-                        </address>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END PRE-FOOTER -->
-        <!-- BEGIN INNER FOOTER -->
         <div class="page-footer">
-            <div class="container"> 2014 &copy; Metronic by keenthemes.
+            <div class="page-footer-inner"> 2014 &copy; Metronic by keenthemes.
                 <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
             </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
         </div>
-        <div class="scroll-to-top">
-            <i class="icon-arrow-up"></i>
-        </div>
-        <!-- END INNER FOOTER -->
         <!-- END FOOTER -->
 		<!-- BEGIN CORE PLUGINS -->
         <script src="<?= $baseUrl; ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
@@ -852,10 +824,12 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="<?= $baseUrl; ?>/assets/global/scripts/app.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="<?= $baseUrl; ?>/assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
-        <script src="<?= $baseUrl; ?>/assets/layouts/layout3/scripts/layout.min.js" type="text/javascript"></script>
-        <script src="<?= $baseUrl; ?>/assets/layouts/layout3/scripts/demo.min.js" type="text/javascript"></script>
-        <script src="<?= $baseUrl; ?>/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        <script src="<?= $baseUrl; ?>/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="<?= $baseUrl; ?>/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
 	</body>
 <!-- END BODY -->
