@@ -49,8 +49,7 @@
                                 <i class="icon-lock"></i> Lock Screen </a>
                         </li>
                         <li>
-                            <a href="page_user_login_1.html">
-                                <i class="icon-key"></i> Log Out </a>
+                            <?php echo CHtml::link('<i class="icon-key"></i> Log Out ', array('/site/logout')) ?>
                         </li>
                     </ul>
                 </li>

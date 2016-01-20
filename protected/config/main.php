@@ -29,6 +29,7 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 		
+		'admin',
 	),
 
 	// application components
