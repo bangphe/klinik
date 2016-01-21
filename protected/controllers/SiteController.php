@@ -2,9 +2,32 @@
 
 class SiteController extends Controller
 {
-	/**
-	 * Declares class-based actions.
-	 */
+	public $layout = '//layouts/kasir';
+	
+	public function filters() {
+        return array(
+            'accessControl',
+        );
+    }
+
+    public function accessRules() {
+        return array(
+            array('allow',
+                'actions' => array('login', 'error', 'logout'),
+                'users' => array('*'),
+            ),
+            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions' => array('index'),
+                'users' => array('@'),
+                //'roles' => array(WebUser::ROLE_KASIR)
+                'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 2',
+            ),
+            array('deny', // deny all users
+                'users' => array('*'),
+            ),
+        );
+    }
+
 	public function actions()
 	{
 		return array(
