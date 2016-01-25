@@ -19,7 +19,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Metronic | Full Width Layout</title>
+        <title><?= Yii::app()->name; ?></title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -33,10 +33,18 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="<?= $baseUrl; ?>/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
         <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link href="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
+        <link href="<?= $baseUrl; ?>/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?= $baseUrl; ?>/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN THEME GLOBAL STYLES -->
         <link href="<?= $baseUrl; ?>/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="<?= $baseUrl; ?>/assets/pages/css/search.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
         <link href="<?= $baseUrl; ?>/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
@@ -63,337 +71,41 @@ License: You must have a valid license purchased only from themeforest(the above
                     <ul class="nav navbar-nav">
                         <!-- DOC: Remove data-hover="megamenu-dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
                         <li class="classic-menu-dropdown active">
-                            <a href="index.html"> Active
-                                <span class="selected"> </span>
-                            </a>
+                            <?php echo CHtml::link('Home <span class="selected"></span>', array('/')) ?>
                         </li>
-                        <li class="mega-menu-dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-hover="megamenu-dropdown" data-close-others="true"> Mega
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <ul class="dropdown-menu" style="min-width: 700px;">
+                        <li class="classic-menu-dropdown">
+                            <?php echo CHtml::link('Order <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
+                            <ul class="dropdown-menu pull-left">
                                 <li>
-                                    <!-- Content container to add padding -->
-                                    <div class="mega-menu-content">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <ul class="mega-menu-submenu">
-                                                    <li>
-                                                        <h3>Section 1</h3>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <ul class="mega-menu-submenu">
-                                                    <li>
-                                                        <h3>Section 2</h3>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <ul class="mega-menu-submenu">
-                                                    <li>
-                                                        <h3>Section 3</h3>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Example Link</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="mega-menu-dropdown mega-menu-full" data-hover="megamenu-dropdown" data-close-others="true">
-                            <a href="javascript:;" class="dropdown-toggle" data-hover="megamenu-dropdown" data-close-others="true"> Full Mega
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <!-- Content container to add padding -->
-                                    <div class="mega-menu-content ">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <ul class="mega-menu-submenu">
-                                                            <li>
-                                                                <h3>Section 1</h3>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <ul class="mega-menu-submenu">
-                                                            <li>
-                                                                <h3>Section 1</h3>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <ul class="mega-menu-submenu">
-                                                            <li>
-                                                                <h3>Section 1</h3>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <ul class="mega-menu-submenu">
-                                                            <li>
-                                                                <h3>Section 4</h3>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Example Link</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div id="accordion" class="panel-group">
-                                                    <div class="panel panel-success">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed"> Mega Menu Info #1 </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapseOne" class="panel-collapse in">
-                                                            <div class="panel-body"> Metronic Mega Menu Works for fixed and responsive layout and has the facility to include (almost) any Bootstrap elements. </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="panel panel-danger">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed"> Mega Menu Info #2 </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapseTwo" class="panel-collapse collapse">
-                                                            <div class="panel-body"> Metronic Mega Menu Works for fixed and responsive layout and has the facility to include (almost) any Bootstrap elements. </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="panel panel-info">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> Mega Menu Info #3 </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapseThree" class="panel-collapse collapse">
-                                                            <div class="panel-body"> Metronic Mega Menu Works for fixed and responsive layout and has the facility to include (almost) any Bootstrap elements. </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php echo CHtml::link('<i class="icon-table"></i> Daftar Order', array('/order')) ?>
                                 </li>
                             </ul>
                         </li>
                         <li class="classic-menu-dropdown">
-                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true"> Classic
-                                <i class="fa fa-angle-down"></i>
-                            </a>
+                            <?php echo CHtml::link('Pelanggan <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
                             <ul class="dropdown-menu pull-left">
                                 <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-bookmark-o"></i> Section 1 </a>
+                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Daftar Pelanggan', array('/pelanggan')) ?>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-user"></i> Section 2 </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-puzzle-piece"></i> Section 3 </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-gift"></i> Section 4 </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-table"></i> Section 5 </a>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="javascript:;">
-                                        <i class="fa fa-envelope-o"></i> More options </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="javascript:;"> Second level link </a>
-                                        </li>
-                                        <li class="dropdown-submenu">
-                                            <a href="javascript:;"> More options </a>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a href="index.html"> Third level link </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html"> Third level link </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html"> Third level link </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html"> Third level link </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html"> Third level link </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="index.html"> Second level link </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html"> Second level link </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html"> Second level link </a>
-                                        </li>
-                                    </ul>
+                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Tambah Pelanggan', array('/pelanggan/create')) ?>
                                 </li>
                             </ul>
                         </li>
+                        <!-- <li class="classic-menu-dropdown">
+                            <?php //echo CHtml::link('SMS Broadcast <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <?php //echo CHtml::link('<i class="icon-user-add"></i> Riwayat SMS', array('/sms')) ?>
+                                </li>
+                                <li>
+                                    <?php //echo CHtml::link('<i class="icon-user-add"></i> Kirim SMS Pelanggan', array('/sms/createMultiple')) ?>
+                                </li>
+                                <li>
+                                    <?php //echo CHtml::link('<i class="icon-user-add"></i> Kirim SMS Manual', array('/sms/create')) ?>
+                                </li>
+                            </ul>
+                        </li> -->
                     </ul>
                 </div>
                 <!-- END MEGA MENU -->
@@ -517,198 +229,12 @@ License: You must have a valid license purchased only from themeforest(the above
                             </ul>
                         </li>
                         <!-- END NOTIFICATION DROPDOWN -->
-                        <!-- BEGIN INBOX DROPDOWN -->
-                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <i class="icon-envelope-open"></i>
-                                <span class="badge badge-default"> 4 </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="external">
-                                    <h3>You have
-                                        <span class="bold">7 New</span> Messages</h3>
-                                    <a href="app_inbox.html">view all</a>
-                                </li>
-                                <li>
-                                    <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
-                                        <li>
-                                            <a href="#">
-                                                <span class="photo">
-                                                    <img src="<?= $baseUrl; ?>/assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
-                                                <span class="subject">
-                                                    <span class="from"> Lisa Wong </span>
-                                                    <span class="time">Just Now </span>
-                                                </span>
-                                                <span class="message"> Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="photo">
-                                                    <img src="<?= $baseUrl; ?>/assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
-                                                <span class="subject">
-                                                    <span class="from"> Richard Doe </span>
-                                                    <span class="time">16 mins </span>
-                                                </span>
-                                                <span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="photo">
-                                                    <img src="<?= $baseUrl; ?>/assets/layouts/layout3/img/avatar1.jpg" class="img-circle" alt=""> </span>
-                                                <span class="subject">
-                                                    <span class="from"> Bob Nilson </span>
-                                                    <span class="time">2 hrs </span>
-                                                </span>
-                                                <span class="message"> Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="photo">
-                                                    <img src="<?= $baseUrl; ?>/assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
-                                                <span class="subject">
-                                                    <span class="from"> Lisa Wong </span>
-                                                    <span class="time">40 mins </span>
-                                                </span>
-                                                <span class="message"> Vivamus sed auctor 40% nibh congue nibh... </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="photo">
-                                                    <img src="<?= $baseUrl; ?>/assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
-                                                <span class="subject">
-                                                    <span class="from"> Richard Doe </span>
-                                                    <span class="time">46 mins </span>
-                                                </span>
-                                                <span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- END INBOX DROPDOWN -->
-                        <!-- BEGIN TODO DROPDOWN -->
-                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                        <li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <i class="icon-calendar"></i>
-                                <span class="badge badge-default"> 3 </span>
-                            </a>
-                            <ul class="dropdown-menu extended tasks">
-                                <li class="external">
-                                    <h3>You have
-                                        <span class="bold">12 pending</span> tasks</h3>
-                                    <a href="app_todo.html">view all</a>
-                                </li>
-                                <li>
-                                    <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <span class="task">
-                                                    <span class="desc">New release v1.2 </span>
-                                                    <span class="percent">30%</span>
-                                                </span>
-                                                <span class="progress">
-                                                    <span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">40% Complete</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <span class="task">
-                                                    <span class="desc">Application deployment</span>
-                                                    <span class="percent">65%</span>
-                                                </span>
-                                                <span class="progress">
-                                                    <span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">65% Complete</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <span class="task">
-                                                    <span class="desc">Mobile app release</span>
-                                                    <span class="percent">98%</span>
-                                                </span>
-                                                <span class="progress">
-                                                    <span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">98% Complete</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <span class="task">
-                                                    <span class="desc">Database migration</span>
-                                                    <span class="percent">10%</span>
-                                                </span>
-                                                <span class="progress">
-                                                    <span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">10% Complete</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <span class="task">
-                                                    <span class="desc">Web server upgrade</span>
-                                                    <span class="percent">58%</span>
-                                                </span>
-                                                <span class="progress">
-                                                    <span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">58% Complete</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <span class="task">
-                                                    <span class="desc">Mobile development</span>
-                                                    <span class="percent">85%</span>
-                                                </span>
-                                                <span class="progress">
-                                                    <span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">85% Complete</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <span class="task">
-                                                    <span class="desc">New UI release</span>
-                                                    <span class="percent">38%</span>
-                                                </span>
-                                                <span class="progress progress-striped">
-                                                    <span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">38% Complete</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- END TODO DROPDOWN -->
                         <!-- BEGIN USER LOGIN DROPDOWN -->
                         <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                         <li class="dropdown dropdown-user">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <img alt="" class="img-circle" src="<?= $baseUrl; ?>/assets/layouts/layout/img/avatar3_small.jpg" />
-                                <span class="username username-hide-on-mobile"> Nick </span>
+                                <span class="username username-hide-on-mobile"> <?= Yii::app()->user->nama; ?> </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default">
@@ -717,29 +243,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <i class="icon-user"></i> My Profile </a>
                                 </li>
                                 <li>
-                                    <a href="app_calendar.html">
-                                        <i class="icon-calendar"></i> My Calendar </a>
-                                </li>
-                                <li>
-                                    <a href="app_inbox.html">
-                                        <i class="icon-envelope-open"></i> My Inbox
-                                        <span class="badge badge-danger"> 3 </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="app_todo.html">
-                                        <i class="icon-rocket"></i> My Tasks
-                                        <span class="badge badge-success"> 7 </span>
-                                    </a>
-                                </li>
-                                <li class="divider"> </li>
-                                <li>
                                     <a href="page_user_lock_1.html">
                                         <i class="icon-lock"></i> Lock Screen </a>
                                 </li>
                                 <li>
-                                    <a href="page_user_login_1.html">
-                                        <i class="icon-key"></i> Log Out </a>
+                                    <?php echo CHtml::link('<i class="icon-key"></i> Log Out ', array('/site/logout')) ?>
                                 </li>
                             </ul>
                         </li>
@@ -2127,54 +1635,13 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN CONTENT BODY -->
                 <div class="page-content">
                     <!-- BEGIN PAGE HEADER-->
-                    <!-- BEGIN PAGE BAR -->
-                    <div class="page-bar">
-                        <ul class="page-breadcrumb">
-                            <li>
-                                <a href="index.html">Home</a>
-                                <i class="fa fa-circle"></i>
-                            </li>
-                            <li>
-                                <span>Horizontal Menu</span>
-                            </li>
-                        </ul>
-                        <div class="page-toolbar">
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
-                                    <i class="fa fa-angle-down"></i>
-                                </button>
-                                <ul class="dropdown-menu pull-right" role="menu">
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-bell"></i> Action</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-shield"></i> Another action</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-user"></i> Something else here</a>
-                                    </li>
-                                    <li class="divider"> </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-bag"></i> Separated link</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title"> Full Width Layout
+                    <h3 class="page-title"> <?= Yii::app()->name; ?>
                         <small>full width layout with mega menu</small>
                     </h3>
                     <!-- END PAGE TITLE-->
                     <!-- END PAGE HEADER-->
-                    <div class="note note-info">
-                        <p> Full width & fluid layout with horizontal mega menu. </p>
-                    </div>
+                    <?= $content; ?>
                 </div>
                 <!-- END CONTENT BODY -->
             </div>
@@ -2208,6 +1675,12 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="<?= $baseUrl; ?>/assets/global/scripts/app.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="<?= $baseUrl; ?>/assets/global/scripts/datatable.js" type="text/javascript"></script>
+        <script src="<?= $baseUrl; ?>/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+        <script src="<?= $baseUrl; ?>/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+        <script src="<?= $baseUrl; ?>/assets/pages/scripts/table-datatables-managed.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="<?= $baseUrl; ?>/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
