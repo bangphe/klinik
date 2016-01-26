@@ -1,11 +1,12 @@
 <?php
 /* @var $this PasienController */
 /* @var $model Pasien */
-
-$this->breadcrumbs=array(
-	'Pasiens'=>array('index'),
-	'Create',
+$this->pageTitle = "Tambah Pelanggan";
+$this->breadcrumbs = array(
+    'Manajemen Pasien' => array('index'),
+    '#' . $model->NAMA_PASIEN,
 );
+
 ?>
 
 <!-- <h1>Create Pasien</h1> -->
@@ -16,17 +17,7 @@ $this->breadcrumbs=array(
             <span class="caption-subject font-red-sunglo bold uppercase">Tambah Data Pasien</span>
             <!-- <span class="caption-helper">form actions on top...</span> -->
         </div>
-        <div class="actions">
-            <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                <i class="icon-cloud-upload"></i>
-            </a>
-            <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                <i class="icon-wrench"></i>
-            </a>
-            <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                <i class="icon-trash"></i>
-            </a>
-        </div>
+      
     </div>
     <div class="portlet-body form">
         <!-- BEGIN FORM-->

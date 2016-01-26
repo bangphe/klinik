@@ -82,13 +82,13 @@ License: You must have a valid license purchased only from themeforest(the above
                             </ul>
                         </li>
                         <li class="classic-menu-dropdown">
-                            <?php echo CHtml::link('Pelanggan <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
+                            <?php echo CHtml::link('Pasien <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
                             <ul class="dropdown-menu pull-left">
                                 <li>
-                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Daftar Pelanggan', array('/pelanggan')) ?>
+                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Daftar Pasien', array('/pasien')) ?>
                                 </li>
                                 <li>
-                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Tambah Pelanggan', array('/pelanggan/create')) ?>
+                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Tambah Pasien', array('/pasien/create')) ?>
                                 </li>
                             </ul>
                         </li>
@@ -238,14 +238,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default">
-                                <li>
-                                    <a href="page_user_profile_1.html">
-                                        <i class="icon-user"></i> My Profile </a>
-                                </li>
-                                <li>
-                                    <a href="page_user_lock_1.html">
-                                        <i class="icon-lock"></i> Lock Screen </a>
-                                </li>
                                 <li>
                                     <?php echo CHtml::link('<i class="icon-key"></i> Log Out ', array('/site/logout')) ?>
                                 </li>
@@ -1636,8 +1628,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="page-content">
                     <!-- BEGIN PAGE HEADER-->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title"> <?= Yii::app()->name; ?>
-                        <small>full width layout with mega menu</small>
+                    <h3 class="page-title"> KASIR KLINIK AR RAHMA
+                        <small>Selamat datang di Halaman Kasir</small>
                     </h3>
                     <!-- END PAGE TITLE-->
                     <!-- END PAGE HEADER-->
@@ -1650,8 +1642,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END CONTAINER -->
         <!-- BEGIN FOOTER -->
         <div class="page-footer">
-            <div class="page-footer-inner"> 2014 &copy; Metronic by keenthemes.
-                <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+            <div class="page-footer-inner"> &copy;  2016 - <?php echo date('Y'); ?> Klinik by Safira Solution.
             </div>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>
