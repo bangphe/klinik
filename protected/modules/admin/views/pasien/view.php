@@ -22,7 +22,7 @@ $this->breadcrumbs=array(
         </div>
 	</div>
 	<div class="portlet-body">
-		 <div class="table-scrollable">
+		<div class="table-scrollable">
 		 	<?php $this->widget('zii.widgets.CDetailView', array(
 		 		'data' => $model,
                 'htmlOptions' => array(
@@ -41,7 +41,7 @@ $this->breadcrumbs=array(
 		 			),
 		 		)); 
 		 	?>
-                </div>
+        </div>
 	</div>
 </div>
 

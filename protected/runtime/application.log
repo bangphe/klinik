@@ -4824,3 +4824,879 @@ Stack trace:
 REQUEST_URI=/klinik/css/detailview/styles.css
 HTTP_REFERER=http://localhost/klinik/admin
 ---
+2016/01/26 23:56:10 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.nama" is not defined.' in /var/www/klinik/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/klinik/framework/web/auth/CWebUser.php(146): CComponent->__get('nama')
+#1 /var/www/klinik/themes/metronic/views/layouts/header.php(22): CWebUser->__get('nama')
+#2 /var/www/klinik/themes/metronic/views/layouts/main.php(63): require_once('/var/www/klinik...')
+#3 /var/www/klinik/framework/web/CBaseController.php(126): require('/var/www/klinik...')
+#4 /var/www/klinik/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/klinik...', Array, true)
+#5 /var/www/klinik/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/klinik...', Array, true)
+#6 /var/www/klinik/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#7 /var/www/klinik/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#8 /var/www/klinik/framework/web/CBaseController.php(214): COutputProcessor->run()
+#9 /var/www/klinik/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#10 /var/www/klinik/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#11 /var/www/klinik/framework/web/CBaseController.php(126): require('/var/www/klinik...')
+#12 /var/www/klinik/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/klinik...', Array, true)
+#13 /var/www/klinik/framework/web/CController.php(784): CBaseController->renderFile('/var/www/klinik...', Array, true)
+#14 /var/www/klinik/protected/modules/admin/controllers/DefaultController.php(7): CController->render('index')
+#15 /var/www/klinik/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#16 /var/www/klinik/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/klinik/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#18 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('')
+#20 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin')
+#21 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#22 /var/www/klinik/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/klinik/admin
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/26 23:56:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/01/26 23:56:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/26 23:56:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien/admin
+---
+2016/01/26 23:56:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/26 23:57:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/26 23:57:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/26 23:57:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/01/26 23:57:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/01/26 23:57:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/01/26 23:58:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/26 23:58:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/26 23:58:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/26 23:58:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/26 23:58:27 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/vie...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/26 23:58:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/26 23:58:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:00:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien/view/1
+---
+2016/01/27 00:00:04 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/pasien/vi...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/pasien/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/pasien/view/1
+---
+2016/01/27 00:00:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:00:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/vie...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:00:43 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/vie...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:00:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/27 00:00:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:00:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:00:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/vie...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:02:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:02:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/vie...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:02:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:02:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/27 00:04:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:04:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:05:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:05:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:05:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:05:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/27 00:05:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:06:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:06:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:06:10 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/vie...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:06:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:06:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:07:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:07:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/vie...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/view/00000000001
+---
+2016/01/27 00:07:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/update/00000000001
+---
+2016/01/27 00:07:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/upd...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/update/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/update/00000000001
+---
+2016/01/27 00:07:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:07:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/27 00:07:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:07:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/create
+---
+2016/01/27 00:08:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:09:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:10:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user/view/1
+---
+2016/01/27 00:10:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/user/view...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/user/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/view/1
+---
+2016/01/27 00:10:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:12:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:12:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:12:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:13:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:13:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user/create
+---
+2016/01/27 00:13:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:13:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user/view/1
+---
+2016/01/27 00:13:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/user/view...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/user/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/view/1
+---
+2016/01/27 00:14:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/27 00:15:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:15:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/create
+---
+2016/01/27 00:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order/view/2
+---
+2016/01/27 00:15:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/klinik/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/klinik/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/klinik/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/klinik/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/klinik/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/klinik/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/klinik/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/klinik/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/order/vie...')
+#10 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/klinik/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/order/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/view/2
+---
+2016/01/27 00:15:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/27 00:15:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/27 00:16:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/01/27 00:17:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/27 00:20:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/27 00:21:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/27 00:22:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in /var/www/klinik/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(270): CController->missingAction('favicon.ico')
+#1 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('favicon.ico')
+#2 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('pasien/favicon....')
+#3 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/klinik/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/pasien/favicon.ico
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/01/27 00:22:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/27 00:24:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "order".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('order')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/order
+HTTP_REFERER=http://localhost/klinik/pasien/4
+---
+2016/01/27 00:24:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /var/www/klinik/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('site/view')
+#3 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/klinik/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/site/2
+HTTP_REFERER=http://localhost/klinik/
+---

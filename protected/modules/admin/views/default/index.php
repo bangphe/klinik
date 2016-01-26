@@ -1,8 +1,8 @@
 <div class="note note-success">
     <h3>Informasi Penting !!</h3>
-    <p>Obat <b> Oskadon </b> masa expired segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
-    <p>Obat <b> Ultraflu </b> masa expired segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
-    <p>Obat <b> Konidin </b> masa expired segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
+    <p>Obat <b> Oskadon </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
+    <p>Obat <b> Ultraflu </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
+    <p>Obat <b> Konidin </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
 </div>
 <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -28,7 +28,7 @@
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="12,5">Rp. 12.000.000</span></div>
+                    <span data-counter="counterup" data-value="12,5">Rp.12.000.000</span></div>
                 <div class="desc"> Total Kredit Bulan ini </div>
             </div>
             <a class="more" href="javascript:;"> Total Kredit Bulan ini
