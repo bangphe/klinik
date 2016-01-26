@@ -54,7 +54,6 @@
         </div>
     </div>
 </div>
-<?php ?>
 <!-- <div class="view">
 
 

@@ -3,21 +3,49 @@
 /* @var $model Pasien */
 /* @var $form CActiveForm */
 ?>
+<div class="portlet box red col-md-6">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-user"></i> Tambah Pasien </div>
+    </div>
+    <div class="portlet-body form">
+        <?php
+            $form = $this->beginWidget('CActiveForm', array(
+                'id' => 'pasien-form',
+                // Please note: When you enable ajax validation, make sure the corresponding
+                // controller action is handling ajax validation correctly.
+                // There is a call to performAjaxValidation() commented in generated controller code.
+                // See class documentation of CActiveForm for details on this.
+                'enableAjaxValidation' => false,
+                'enableClientValidation' => true,
+                'clientOptions' => array(
+                    'validateOnChange' => false,
+                    'validateOnSubmit' => true
+                )
+            ));
+            ?>
 
+            <div class="form-body">
+            	<div class="form-group">
+                    <label class="col-md-3 control-label">Default Input</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Default Input"> </div>
+                </div>
+                <div class="form-group">
+                	<?php echo $form->labelEx($model, 'ID_LAYANAN', array('class' => 'control-labe col-md-3')); ?>
+                    <?php echo $form->textField($model, 'ID_LAYANAN', array('class' => 'form-control ')); ?>
+                    <?php echo $form->error($model,'ID_LAYANAN'); ?>
+                </div>
+            </div>
+            <div class="form-actions right1">
+                <button type="button" class="btn default">Cancel</button>
+                <button type="submit" class="btn green">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'pasien-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ID_LAYANAN'); ?>
