@@ -52,8 +52,13 @@ class SiteController extends Controller
 	{
 		if(!WebUser::isGuest() && WebUser::isAdmin())
 			$this->render('index');
-		elseif(!WebUser::isGuest() && WebUser::isKasir())
-			$this->render('index');
+		elseif(!WebUser::isGuest() && WebUser::isKasir()) {
+			$dataProvider=new CActiveDataProvider('Pasien',array(
+				'pagination'=>false,
+			));
+			$this->render('index',array('dataProvider'=>$dataProvider));
+		}
+			
 		else
 			$this->redirect(array('login'));
 	}
