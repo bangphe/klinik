@@ -26,7 +26,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<meta content="" name="author"/>
 		<!-- FORM YII -->
 		<link rel="stylesheet" href="<?= Yii::app()->request->baseUrl; ?>/css/form.css" />
-		<link rel="stylesheet" href="<?= Yii::app()->request->baseUrl; ?>/css/detailview/styles.css" />
+		<!-- <link rel="stylesheet" href="<?= Yii::app()->request->baseUrl; ?>/css/detailview/styles.css" /> -->
 		<!-- BEGIN GLOBAL MANDATORY STYLES -->
 		<?php $baseUrl = Yii::app()->theme->baseUrl; ?>
 		<!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/> -->
