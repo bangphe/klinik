@@ -55,6 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="<?= $baseUrl; ?>/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
 		<link rel="shortcut icon" href="favicon.ico"/>
+        <?php Yii::app()->clientScript->registerCoreScript('jquery') ?>
 	</head>
 	<!-- END HEAD -->
 	<!-- BEGIN BODY -->
@@ -128,7 +129,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END FOOTER -->
 		<!-- BEGIN CORE PLUGINS -->
-        <script src="<?= $baseUrl; ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <!--<script src="<?= $baseUrl; ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>-->
         <script src="<?= $baseUrl; ?>/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>

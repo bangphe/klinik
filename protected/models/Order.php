@@ -33,7 +33,7 @@ class Order extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_PASIEN', 'required'),
+			array('ID_PASIEN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
 			array('ID_PASIEN, USER_PEMBUAT, PEMBAYARAN, KEMBALIAN', 'numerical', 'integerOnly'=>true),
 			array('TANGGAL_ORDER', 'safe'),
 			// The following rule is used by search().
@@ -50,8 +50,8 @@ class Order extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'iDPASIEN' => array(self::BELONGS_TO, 'Pasien', 'ID_PASIEN'),
-			'orderDetails' => array(self::HAS_MANY, 'OrderDetail', 'KODE_ORDER'),
+			'pasien' => array(self::BELONGS_TO, 'Pasien', 'ID_PASIEN'),
+			'orderdetail' => array(self::HAS_MANY, 'OrderDetail', 'KODE_ORDER'),
 		);
 	}
 
@@ -110,4 +110,29 @@ class Order extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function getTotal($subtotal = '') {
+        if(empty($subtotal))
+            $subtotal = $this->getSubtotal();
+
+        //return $subtotal - ($subtotal * ($this->DISKON / 100));
+    	return $subtotal;
+    }
+
+    public function getSubtotal() {
+        $subtotal = 0;
+        $harga_total = 0;
+        $harga_diskon = 0;
+        foreach ($this->orderdetail as $detail) {
+        	if($detail->DISKON==0)
+            	$subtotal += ($detail->HARGA * $detail->JUMLAH);
+            else {
+            	$harga_diskon = $detail->HARGA * $detail->DISKON/100;
+            	$harga_total = $detail->HARGA - $harga_diskon;
+            	$subtotal += ($harga_total * $detail->JUMLAH);
+            }
+        }
+
+        return $subtotal;
+    }
 }

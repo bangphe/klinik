@@ -34,7 +34,7 @@ class OrderDetail extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('KODE_ORDER', 'required'),
+			//array('KODE_ORDER', 'required'),
 			array('ID_ITEM, HARGA, JUMLAH, DISKON, RESEP_DOKTER', 'numerical', 'integerOnly'=>true),
 			array('KODE_ORDER', 'length', 'max'=>11),
 			// The following rule is used by search().
@@ -51,8 +51,8 @@ class OrderDetail extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'iDITEM' => array(self::BELONGS_TO, 'Item', 'ID_ITEM'),
-			'kODEORDER' => array(self::BELONGS_TO, 'Order', 'KODE_ORDER'),
+			'item' => array(self::BELONGS_TO, 'Item', 'ID_ITEM'),
+			'order' => array(self::BELONGS_TO, 'Order', 'KODE_ORDER'),
 		);
 	}
 

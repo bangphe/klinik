@@ -138,4 +138,8 @@ class Item extends CActiveRecord
         //return CHtml::listData(self::model()->findAll($criteria), 'KODE_BARANG', 'NAMA_BARANG');
         return self::model()->findAll($criteria);
     }
+
+    public static function getHargaById($id) {
+        return self::model()->findByPk($id)->HARGA_JUAL;
+    }
 }
