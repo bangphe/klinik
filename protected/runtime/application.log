@@ -7122,3 +7122,21 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
 ---
+2016/01/27 21:07:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/favicon.ico".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/favicon.i...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/admin/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/27 21:07:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin
+---
