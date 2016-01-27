@@ -10,31 +10,29 @@ Target Server Type    : MYSQL
 Target Server Version : 50539
 File Encoding         : 65001
 
-Date: 2016-01-26 01:04:54
+Date: 2016-01-21 16:33:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `detil_item`
+-- Table structure for `gagang`
 -- ----------------------------
-DROP TABLE IF EXISTS `detil_item`;
-CREATE TABLE `detil_item` (
-  `ID_DETIL_ITEM` int(11) NOT NULL AUTO_INCREMENT,
-  `ID_ITEM` int(11) DEFAULT NULL,
-  `ID_SUPPLIER` int(11) DEFAULT NULL,
-  `STOK` int(11) DEFAULT NULL,
+DROP TABLE IF EXISTS `gagang`;
+CREATE TABLE `gagang` (
+  `ID_GAGANG` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_SUPPLIER` int(11) NOT NULL,
+  `NAMA_GAGANG` varchar(100) NOT NULL,
+  `STOK` int(11) NOT NULL,
+  `HARGA_JUAL` int(11) DEFAULT NULL,
   `HARGA_BELI` int(11) DEFAULT NULL,
-  `TANGGAL_INPUT` datetime DEFAULT NULL,
-  PRIMARY KEY (`ID_DETIL_ITEM`),
-  KEY `ID_ITEM` (`ID_ITEM`),
+  PRIMARY KEY (`ID_GAGANG`),
   KEY `ID_SUPPLIER` (`ID_SUPPLIER`),
-  CONSTRAINT `detil_item_ibfk_1` FOREIGN KEY (`ID_ITEM`) REFERENCES `item` (`ID_ITEM`) ON UPDATE CASCADE,
-  CONSTRAINT `detil_item_ibfk_2` FOREIGN KEY (`ID_SUPPLIER`) REFERENCES `supplier` (`ID_SUPPLIER`) ON UPDATE CASCADE
+  CONSTRAINT `gagang_ibfk_1` FOREIGN KEY (`ID_SUPPLIER`) REFERENCES `supplier` (`ID_SUPPLIER`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
--- Records of detil_item
+-- Records of gagang
 -- ----------------------------
 
 -- ----------------------------
@@ -44,26 +42,22 @@ DROP TABLE IF EXISTS `item`;
 CREATE TABLE `item` (
   `ID_ITEM` int(11) NOT NULL AUTO_INCREMENT,
   `ID_KATEGORI` int(11) NOT NULL,
+  `ID_SUPPLIER` int(11) NOT NULL,
   `NAMA_ITEM` varchar(255) NOT NULL,
+  `STOK` int(11) NOT NULL,
   `UKURAN` int(11) DEFAULT NULL,
   `SATUAN` int(11) DEFAULT NULL,
   `HARGA_JUAL` int(11) DEFAULT NULL,
+  `HARGA_BELI` int(11) DEFAULT NULL,
   `TANGGAL_EXPIRED` date DEFAULT NULL,
-  `STATUS` int(1) DEFAULT '1',
   PRIMARY KEY (`ID_ITEM`),
   KEY `ID_KATEGORI` (`ID_KATEGORI`),
   CONSTRAINT `item_ibfk_1` FOREIGN KEY (`ID_KATEGORI`) REFERENCES `kategori` (`ID_KATEGORI`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of item
 -- ----------------------------
-INSERT INTO `item` VALUES ('1', '1', 'Decolgen', null, null, '2500', '2016-01-06', '1');
-INSERT INTO `item` VALUES ('2', '2', 'Caterpillar', null, null, '150000', null, '1');
-INSERT INTO `item` VALUES ('3', '3', 'Lensa Plastik', null, null, '2000000', null, '1');
-INSERT INTO `item` VALUES ('4', '1', 'Biogesic', null, null, '2000', null, '1');
-INSERT INTO `item` VALUES ('5', '1', 'Panadol', null, null, '1500', null, '1');
-INSERT INTO `item` VALUES ('6', '1', 'Bodrex', null, null, '1000', null, '1');
 
 -- ----------------------------
 -- Table structure for `kategori`
@@ -104,12 +98,58 @@ CREATE TABLE `layanan` (
   `ID_LAYANAN` int(11) NOT NULL AUTO_INCREMENT,
   `LAYANAN` varchar(100) NOT NULL,
   PRIMARY KEY (`ID_LAYANAN`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of layanan
 -- ----------------------------
-INSERT INTO `layanan` VALUES ('1', 'Optik');
+
+-- ----------------------------
+-- Table structure for `lensa`
+-- ----------------------------
+DROP TABLE IF EXISTS `lensa`;
+CREATE TABLE `lensa` (
+  `ID_LENSA` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_SUPPLIER` int(11) NOT NULL,
+  `NAMA_LENSA` varchar(100) NOT NULL,
+  `UKURAN` varchar(100) NOT NULL,
+  `STOK` int(11) NOT NULL,
+  `HARGA_BELI` int(11) DEFAULT NULL,
+  `HARGA_JUAL` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID_LENSA`),
+  KEY `ID_SUPPLIER` (`ID_SUPPLIER`),
+  CONSTRAINT `lensa_ibfk_1` FOREIGN KEY (`ID_SUPPLIER`) REFERENCES `supplier` (`ID_SUPPLIER`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of lensa
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `obat`
+-- ----------------------------
+DROP TABLE IF EXISTS `obat`;
+CREATE TABLE `obat` (
+  `ID_OBAT` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_KATEGORI_OBAT` int(11) NOT NULL,
+  `ID_SUPPLIER` int(11) NOT NULL,
+  `NAMA_OBAT` varchar(200) NOT NULL,
+  `STOK` int(11) NOT NULL,
+  `ID_SATUAN` int(11) NOT NULL,
+  `HARGA_BELI` int(11) NOT NULL,
+  `HARGA_JUAL` int(11) NOT NULL,
+  `TANGGAL_EXPIRED` date DEFAULT NULL,
+  `STATUS` int(1) DEFAULT '1',
+  PRIMARY KEY (`ID_OBAT`),
+  KEY `ID_SUPPLIER` (`ID_SUPPLIER`),
+  KEY `ID_KATEGORI_OBAT` (`ID_KATEGORI_OBAT`),
+  CONSTRAINT `obat_ibfk_1` FOREIGN KEY (`ID_SUPPLIER`) REFERENCES `supplier` (`ID_SUPPLIER`) ON UPDATE CASCADE,
+  CONSTRAINT `obat_ibfk_2` FOREIGN KEY (`ID_KATEGORI_OBAT`) REFERENCES `kategori_obat` (`ID_KATEGORI_OBAT`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of obat
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `order`
@@ -142,7 +182,6 @@ CREATE TABLE `order_detail` (
   `HARGA` int(11) DEFAULT NULL,
   `JUMLAH` int(11) DEFAULT NULL,
   `DISKON` int(11) DEFAULT NULL,
-  `RESEP_DOKTER` int(11) DEFAULT NULL,
   PRIMARY KEY (`KODE_ORDER_DETAIL`),
   KEY `ID_ITEM` (`ID_ITEM`),
   KEY `KODE_ORDER` (`KODE_ORDER`),
@@ -171,13 +210,11 @@ CREATE TABLE `pasien` (
   PRIMARY KEY (`ID_PASIEN`),
   KEY `ID_LAYANAN` (`ID_LAYANAN`),
   CONSTRAINT `pasien_ibfk_1` FOREIGN KEY (`ID_LAYANAN`) REFERENCES `layanan` (`ID_LAYANAN`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of pasien
 -- ----------------------------
-INSERT INTO `pasien` VALUES ('1', '1', 'Joko Susanto', 'Pondok Jati', '', '0', null, null, '2016-01-24 22:30:08');
-INSERT INTO `pasien` VALUES ('2', '1', 'Handina', 'Jalan Simo', '085731205312', '2', 'Nyeri di leher', null, null);
 
 -- ----------------------------
 -- Table structure for `role_user`

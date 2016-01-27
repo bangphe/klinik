@@ -83,56 +83,59 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <span class="title">Static Tables</span>
-                            <span class="arrow"></span>
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Keuangan
+                            </span>
                         </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="table_static_basic.html" class="nav-link "> Basic Tables </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_static_responsive.html" class="nav-link "> Responsive Tables </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_bootstrap_master.html" class="nav-link "> Bootstrap Table </a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <span class="title">Datatables</span>
-                            <span class="arrow"></span>
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Penjualan Kacamata
+                            </span>
                         </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="table_datatables_managed.html" class="nav-link "> Managed Datatables </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_buttons.html" class="nav-link "> Buttons Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_colreorder.html" class="nav-link "> Colreorder Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_rowreorder.html" class="nav-link "> Rowreorder Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_scroller.html" class="nav-link "> Scroller Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_fixedheader.html" class="nav-link "> FixedHeader Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_responsive.html" class="nav-link "> Responsive Extension </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_editable.html" class="nav-link "> Editable Datatables </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="table_datatables_ajax.html" class="nav-link "> Ajax Datatables </a>
-                            </li>
-                        </ul>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Penjualan Obat
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Penjualan Obat Resep
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Pembelian Obat
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Pembelian Lensa
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Penjualan Kacamata
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Pembelian Gagang
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item  ">
+                        <a href="form_controls.html" class="nav-link ">
+                            <span class="title">Laporan Pembelian Obat
+                            </span>
+                        </a>
                     </li>
                 </ul>
             </li>
