@@ -113,6 +113,24 @@ class Pasien extends CActiveRecord
 		));
 	}
 
+	public function searchDesc()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+        $criteria->order = 'ID_PASIEN desc';
+
+		$criteria->compare('ID_PASIEN',$this->ID_PASIEN);
+		$criteria->compare('NAMA_PASIEN',$this->NAMA_PASIEN,true);
+		$criteria->compare('ALAMAT',$this->ALAMAT,true);
+		$criteria->compare('NO_TELP',$this->NO_TELP,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

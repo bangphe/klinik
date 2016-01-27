@@ -4,11 +4,13 @@ class SiteController extends Controller
 {
 	public $layout = '//layouts/kasir';
 	
-	public function filters() {
-        return array(
-            'accessControl',
-        );
-    }
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
 
     public function accessRules() {
         return array(
@@ -53,10 +55,80 @@ class SiteController extends Controller
 		if(!WebUser::isGuest() && WebUser::isAdmin())
 			$this->render('index');
 		elseif(!WebUser::isGuest() && WebUser::isKasir()) {
-			$dataProvider=new CActiveDataProvider('Pasien',array(
-				'pagination'=>false,
+			//inisialisasi model Order
+			$order = new Order('search');
+	        $order->unsetAttributes();  // clear any default values
+	        if (isset($_GET['Order']))
+	            $order->attributes = $_GET['Order'];
+
+	        $orderbaru = new Order('baru');
+	        $orderbaru->orderdetail = new OrderDetail('baru');
+			//inisialisasi model OrderDetail
+			$order_detail=new OrderDetail;
+
+			//inisialisasi model Pelanggan
+			$pelanggan = new Pasien('search');
+	        $pelanggan->unsetAttributes();  // clear any default values
+	        if (isset($_GET['Pasien']))
+	            $pelanggan->attributes = $_GET['Pasien'];
+
+			$newpl = new Pasien('baru');
+	        if (isset($_POST['Pasien'])) {
+	            $newpl->attributes = $_POST['Pasien'];
+	            if ($newpl->save()) {
+	            	Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
+	                $this->redirect(array('/site'));
+	            }
+	        }
+
+	        if (isset($_POST['Order'])) {
+	            $orderbaru->attributes = $_POST['Order'];
+	            $orderbaru->TANGGAL_ORDER = date('Y-m-d H:i:s');
+	            if ($orderbaru->validate()) {
+	                $transaction = Yii::app()->db->beginTransaction();
+	                try {
+	                    if (!$orderbaru->save())
+	                        throw new Exception;
+
+	                    $subtotal = 0;
+	                    foreach ($_POST['OrderDetail'] as $kd => $detail) {
+	                        if (!empty($detail['JUMLAH'])) {
+	                            $od = new OrderDetail('baru');
+		                        $od->ID_ITEM = $kd;
+		                        $od->KODE_ORDER = $orderbaru->KODE_ORDER;
+		                        $od->HARGA = Item::getHargaById($kd);
+		                        $od->JUMLAH = $detail['JUMLAH'];
+		                        $od->DISKON = $detail['DISKON'];
+		                        //$od->DISKON = Barang::getDiskonById($kd);
+		                        //update stok barang
+		                        //Barang::updateStokBarang($kd, $detail['JUMLAH']);
+		                        $subtotal += $od->JUMLAH * $od->HARGA;
+	                            if (!$od->save())
+	                                throw new Exception;
+	                        }
+	                    }
+	                    
+	                    $transaction->commit();
+	                    Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
+	                    $this->redirect(array('/order/view', 'id' => $orderbaru->KODE_ORDER));
+	                } catch (Exception $ex) {
+	                    $transaction->rollback();
+	                    echo $ex->getMessage(); exit();
+	                }
+	            }
+	        }
+
+			// $dataProvider=new CActiveDataProvider('Pasien',array(
+			// 	'pagination'=>false,
+			// ));
+			$this->render('index',array(
+				//'dataProvider'=>$dataProvider,
+				'order'=>$order,
+				'order_detail'=>$order_detail,
+				'pelanggan'=>$pelanggan,
+				'pelanggan_baru'=>$newpl,
+				'orderbaru' => $orderbaru,
 			));
-			$this->render('index',array('dataProvider'=>$dataProvider));
 		}
 			
 		else

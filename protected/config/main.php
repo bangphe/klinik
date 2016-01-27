@@ -20,8 +20,6 @@ return array(
 	),
 
 	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'bismillah',
@@ -34,7 +32,9 @@ return array(
 
 	// application components
 	'components'=>array(
-
+		'format'=>array(
+			'class'=>'MyFormatter'
+		),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
@@ -52,6 +52,22 @@ return array(
                 '<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
 			),
 		),
+
+		'clientScript' => array(
+            'scriptMap' => array(
+                // map scripts from assets to your favourite versions (maybe CDN)
+                'jquery.js' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
+            ),
+            'packages' => array(
+                // here's a package named 'jquery'
+                // it registers 3 JS and 2 css files, also note using scriptMap alias
+                'jquery' => array(
+                    'js' => array(
+                        'jquery.js',
+                    ),
+                ),
+            ),
+        ),
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
