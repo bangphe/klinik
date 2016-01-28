@@ -28,16 +28,17 @@ class ItemController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array(
+					'index',
+					'create',
+					'view',
+					'update',
+					'hapus',
+					'delete',
+				),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				//'roles'=>array(WebUser::ROLE_ADMIN),
+				'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 1',
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -122,8 +123,14 @@ class ItemController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$criteria = new CDbCriteria;
+		$criteria->condition = 'STATUS=:status';
+		$criteria->params = array(':status'=>Item::STATUS_AKTIF);
+		$model = Item::model()->findAll($criteria);
+
 		$dataProvider=new CActiveDataProvider('Item');
 		$this->render('index',array(
+			'model'=>$model,
 			'dataProvider'=>$dataProvider,
 		));
 	}

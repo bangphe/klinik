@@ -80,14 +80,9 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="page-bar">
                         <ul class="page-breadcrumb">
                             <li>
-                                <a href="/index">Home</a>
+                                <a href="/index">Dashboard</a>
                                 <i class="fa fa-circle"></i>
                             </li>
-                            <li>
-                                <span>Dashboard</span>
-                                <i class="fa fa-circle"></i>
-                            </li>
-
                             <?php
                                 $this->widget('zii.widgets.CBreadcrumbs', array(
                                     'links' => $this->breadcrumbs,

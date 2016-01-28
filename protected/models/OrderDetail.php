@@ -10,7 +10,6 @@
  * @property integer $HARGA
  * @property integer $JUMLAH
  * @property integer $DISKON
- * @property integer $RESEP_DOKTER
  *
  * The followings are the available model relations:
  * @property Item $iDITEM
@@ -35,11 +34,11 @@ class OrderDetail extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('KODE_ORDER', 'required'),
-			array('ID_ITEM, HARGA, JUMLAH, DISKON, RESEP_DOKTER', 'numerical', 'integerOnly'=>true),
+			array('ID_ITEM, HARGA, JUMLAH, DISKON', 'numerical', 'integerOnly'=>true),
 			array('KODE_ORDER', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('KODE_ORDER_DETAIL, KODE_ORDER, ID_ITEM, HARGA, JUMLAH, DISKON, RESEP_DOKTER', 'safe', 'on'=>'search'),
+			array('KODE_ORDER_DETAIL, KODE_ORDER, ID_ITEM, HARGA, JUMLAH, DISKON', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,7 +67,6 @@ class OrderDetail extends CActiveRecord
 			'HARGA' => 'Harga',
 			'JUMLAH' => 'Jumlah',
 			'DISKON' => 'Diskon',
-			'RESEP_DOKTER' => 'Resep Dokter',
 		);
 	}
 
@@ -96,7 +94,6 @@ class OrderDetail extends CActiveRecord
 		$criteria->compare('HARGA',$this->HARGA);
 		$criteria->compare('JUMLAH',$this->JUMLAH);
 		$criteria->compare('DISKON',$this->DISKON);
-		$criteria->compare('RESEP_DOKTER',$this->RESEP_DOKTER);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -112,5 +109,15 @@ class OrderDetail extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	//ngitung jumlah order per pelanggan
+	public static function getJumlahItem($kdorder)
+	{
+		$criteria = new CDbCriteria;
+		$criteria->condition = 'KODE_ORDER=:kdorder';
+		$criteria->params = array(':kdorder'=>$kdorder);
+		$jumlah = OrderDetail::model()->count($criteria);
+		return $jumlah;
 	}
 }

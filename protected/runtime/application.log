@@ -7170,3 +7170,856 @@ REQUEST_URI=/klinik/
 HTTP_REFERER=http://localhost/klinik/order/7
 >>>>>>> 09846bf2ab3fec9f6c2423e8594d1ff6c573185e
 ---
+2016/01/27 13:04:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\klinik\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\klinik\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\klinik\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(459): CModule->getComponent('db')
+#4 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(2386): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Order))
+#7 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 C:\xampp\htdocs\klinik\protected\controllers\SiteController.php(59): CActiveRecord->__construct('search')
+#9 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/klinik/
+---
+2016/01/27 13:04:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\klinik\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\klinik\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\klinik\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(459): CModule->getComponent('db')
+#4 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(1433): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(1489): CActiveRecord->getTableAlias(true)
+#7 C:\xampp\htdocs\klinik\protected\controllers\OrderController.php(173): CActiveRecord->findByPk('7')
+#8 C:\xampp\htdocs\klinik\protected\controllers\OrderController.php(73): OrderController->loadModel('7')
+#9 [internal function]: OrderController->actionView('7')
+#10 C:\xampp\htdocs\klinik\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/klinik/order/7
+---
+2016/01/27 13:05:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/custom/jquery.printPage.js".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/custom/jquery.printPage.js
+HTTP_REFERER=http://localhost/klinik/order/7
+---
+2016/01/27 13:05:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/favicon.i...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/admin/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/27 13:06:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/custom/jquery.printPage.js".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/custom/jquery.printPage.js
+HTTP_REFERER=http://localhost/klinik/order/8
+---
+2016/01/27 17:06:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site/favicon.ic...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/site/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site/login
+---
+2016/01/27 17:07:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/01/28 02:24:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site/favicon.ic...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/site/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site/login
+---
+2016/01/28 02:32:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/01/28 11:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:13:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/custom/jquery.printPage.js".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/custom/jquery.printPage.js
+HTTP_REFERER=http://localhost/klinik/order/9
+---
+2016/01/28 11:13:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('order/favicon.i...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/order/favicon.ico
+HTTP_REFERER=http://localhost/klinik/order/9
+---
+2016/01/28 11:15:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/custom/jquery.printPage.js".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/custom/jquery.printPage.js
+HTTP_REFERER=http://localhost/klinik/order/9
+---
+2016/01/28 11:26:19 [error] [exception.CException] exception 'CException' with message 'Property "Order.NAMA_PASIEN" is not defined.' in C:\xampp\htdocs\klinik\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(145): CComponent->__get('NAMA_PASIEN')
+#1 C:\xampp\htdocs\klinik\protected\views\order\_view.php(3): CActiveRecord->__get('NAMA_PASIEN')
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(130): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, false)
+#4 C:\xampp\htdocs\klinik\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 C:\xampp\htdocs\klinik\protected\views\order\index.php(69): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 C:\xampp\htdocs\klinik\protected\controllers\OrderController.php(155): CController->render('index', Array)
+#16 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): OrderController->actionIndex()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#26 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('order')
+#27 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/klinik/order
+---
+2016/01/28 11:30:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/custom/jquery.printPage.js".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/custom/jquery.printPage.js
+HTTP_REFERER=http://localhost/klinik/order/00000000006
+---
+2016/01/28 11:30:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('pasien/favicon....')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/pasien/favicon.ico
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/01/28 11:36:49 [error] [exception.CException] exception 'CException' with message 'Item and its behaviors do not have a method or closure named "getStokBarang".' in C:\xampp\htdocs\klinik\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getStokBarang', Array)
+#1 C:\xampp\htdocs\klinik\themes\metronic\views\site\index.php(221): CActiveRecord->__call('getStokBarang', Array)
+#2 C:\xampp\htdocs\klinik\themes\metronic\views\site\index.php(221): Item->getStokBarang('1')
+#3 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\klinik\protected\controllers\SiteController.php(132): CController->render('index', Array)
+#8 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/klinik/
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/01/28 11:37:43 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'JUMLAH' in 'field list'. The SQL statement executed was: SELECT SUM(JUMLAH) FROM detil_item WHERE ID_ITEM=1.
+in C:\xampp\htdocs\klinik\protected\models\Item.php (162)
+in C:\xampp\htdocs\klinik\themes\metronic\views\site\index.php (221)
+in C:\xampp\htdocs\klinik\protected\controllers\SiteController.php (132)
+2016/01/28 11:37:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'JUMLAH' in 'field list'. The SQL statement executed was: SELECT SUM(JUMLAH) FROM detil_item WHERE ID_ITEM=1' in C:\xampp\htdocs\klinik\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\klinik\protected\models\Item.php(162): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\klinik\themes\metronic\views\site\index.php(221): Item->getStokItem('1')
+#3 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\klinik\protected\controllers\SiteController.php(132): CController->render('index', Array)
+#8 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/klinik/
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/01/28 11:42:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:43:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:43:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:44:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:44:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:44:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:45:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:48:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:49:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:49:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/01/28 11:50:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/custom/jquery.printPage.js".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/custom/jquery.printPage.js
+HTTP_REFERER=http://localhost/klinik/order/10
+---
+2016/01/28 11:51:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/custom/jquery.printPage.js".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/custom/jquery.printPage.js
+HTTP_REFERER=http://localhost/klinik/order/11
+---
+2016/01/28 11:57:31 [error] [exception.CException] exception 'CException' with message 'Property "Pasien.KODE_ORDER" is not defined.' in C:\xampp\htdocs\klinik\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(145): CComponent->__get('KODE_ORDER')
+#1 C:\xampp\htdocs\klinik\protected\views\pasien\_view.php(9): CActiveRecord->__get('KODE_ORDER')
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(130): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, false)
+#4 C:\xampp\htdocs\klinik\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 C:\xampp\htdocs\klinik\protected\views\pasien\index.php(69): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 C:\xampp\htdocs\klinik\protected\controllers\PasienController.php(132): CController->render('index', Array)
+#16 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): PasienController->actionIndex()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#26 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('pasien')
+#27 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/klinik/pasien
+---
+2016/01/28 11:59:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/custom/jquery.printPage.js".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/custom/jquery.printPage.js
+HTTP_REFERER=http://localhost/klinik/order/12
+---
+2016/01/28 12:22:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/favicon.i...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/admin/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/pasien
+---
+2016/01/28 12:30:06 [error] [php] include(Barang.php): failed to open stream: No such file or directory (C:\xampp\htdocs\klinik\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\klinik\protected\components\MyFormatter.php(111): spl_autoload_call()
+#1 C:\xampp\htdocs\klinik\protected\modules\admin\views\user\_view.php(7): statusAktif()
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(130): require()
+#3 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): UserController->renderInternal()
+#4 C:\xampp\htdocs\klinik\framework\zii\widgets\CListView.php(291): UserController->renderFile()
+#5 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 unknown(0): CListView->renderSection()
+#7 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#8 C:\xampp\htdocs\klinik\framework\zii\widgets\CBaseListView.php(149): CListView->renderContent()
+#9 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(181): CListView->run()
+#10 C:\xampp\htdocs\klinik\protected\modules\admin\views\user\index.php(70): UserController->widget()
+#11 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require()
+#12 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): UserController->renderInternal()
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(869): UserController->renderFile()
+#14 C:\xampp\htdocs\klinik\framework\web\CController.php(782): UserController->renderPartial()
+#15 C:\xampp\htdocs\klinik\protected\modules\admin\controllers\UserController.php(128): UserController->render()
+#16 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams()
+#18 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#19 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#21 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#22 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#23 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\klinik\framework\web\CController.php(265): UserController->runActionWithFilters()
+#25 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): UserController->run()
+#26 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#27 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\klinik\index.php(13): CWebApplication->run()
+REQUEST_URI=/klinik/admin/user
+in C:\xampp\htdocs\klinik\protected\components\MyFormatter.php (111)
+in C:\xampp\htdocs\klinik\protected\modules\admin\views\user\_view.php (7)
+in C:\xampp\htdocs\klinik\protected\modules\admin\views\user\index.php (70)
+2016/01/28 12:31:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/create".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/user/create
+HTTP_REFERER=http://localhost/klinik/admin/user
+---
+2016/01/28 12:31:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user/favi...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/admin/user/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/create
+---
+2016/01/28 12:35:02 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user/view...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/user/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/view/3
+---
+2016/01/28 12:35:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user/view...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/user/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/view/3
+---
+2016/01/28 12:37:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user/view...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/user/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/view/3
+---
+2016/01/28 12:37:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user/view...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/user/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/view/3
+---
+2016/01/28 12:38:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\klinik\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#9 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/klinik/site
+HTTP_REFERER=http://localhost/klinik/admin/order
+---
+2016/01/28 12:38:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/order/fav...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/admin/order/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/order/create
+---
+2016/01/28 12:51:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/supplier".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/supplier')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/admin/supplier
+HTTP_REFERER=http://localhost/klinik/admin/kategori
+---
+2016/01/28 12:54:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/supplier/...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/admin/supplier/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/supplier/create
+---
+2016/01/28 13:02:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/kategori/...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/admin/kategori/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/kategori/create
+---
+2016/01/28 13:06:52 [error] [php] Undefined variable: model (C:\xampp\htdocs\klinik\protected\modules\admin\views\item\index.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(869): ItemController->renderFile()
+#1 C:\xampp\htdocs\klinik\framework\web\CController.php(782): ItemController->renderPartial()
+#2 C:\xampp\htdocs\klinik\protected\modules\admin\controllers\ItemController.php(128): ItemController->render()
+#3 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): ItemController->actionIndex()
+#4 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#6 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#9 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\klinik\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#12 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): ItemController->run()
+#13 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\klinik\index.php(13): CWebApplication->run()
+REQUEST_URI=/klinik/admin/item
+in C:\xampp\htdocs\klinik\protected\modules\admin\views\item\index.php (26)
+in C:\xampp\htdocs\klinik\protected\modules\admin\controllers\ItemController.php (128)
+in C:\xampp\htdocs\klinik\index.php (13)
+2016/01/28 13:08:04 [error] [exception.CException] exception 'CException' with message 'Property "Item.HARGA" is not defined.' in C:\xampp\htdocs\klinik\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(145): CComponent->__get('HARGA')
+#1 C:\xampp\htdocs\klinik\protected\modules\admin\views\item\index.php(59): CActiveRecord->__get('HARGA')
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\klinik\protected\modules\admin\controllers\ItemController.php(135): CController->render('index', Array)
+#7 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): ItemController->actionIndex()
+#8 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#17 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/item')
+#18 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/klinik/admin/item
+---
+2016/01/28 13:09:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/supplier/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/supplier/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/supplier/view/2
+---
+2016/01/28 13:09:38 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user/view...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/user/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/view/1
+---
+2016/01/28 13:11:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user/view...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/user/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/user/view/1
+---
+2016/01/28 13:11:27 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/supplier/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/supplier/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/supplier/view/2
+---
+2016/01/28 13:11:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/supplier/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/supplier/update/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/supplier/update/2
+---
+2016/01/28 13:11:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/supplier/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/supplier/update/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/supplier/update/2
+---
+2016/01/28 13:12:14 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/supplier/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/supplier/update/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/supplier/update/2
+---
+2016/01/28 13:13:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/supplier/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/supplier/update/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/supplier/update/2
+---
+2016/01/28 13:13:50 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/kategori/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/kategori/view/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/kategori/view/1
+---
+2016/01/28 13:13:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/kategori/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/kategori/update/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/kategori/update/1
+---
+2016/01/28 13:14:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\klinik\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/kategori/...')
+#10 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/klinik/admin/kategori/update/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/kategori/update/1
+---

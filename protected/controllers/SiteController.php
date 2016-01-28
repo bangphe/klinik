@@ -96,12 +96,13 @@ class SiteController extends Controller
 	                            $od = new OrderDetail('baru');
 		                        $od->ID_ITEM = $kd;
 		                        $od->KODE_ORDER = $orderbaru->KODE_ORDER;
-		                        $od->HARGA = Item::getHargaById($kd);
+		                        //proses harga by resep
+		                        $od->HARGA = Item::getHargaByResep($kd, $orderbaru->RESEP);
 		                        $od->JUMLAH = $detail['JUMLAH'];
 		                        $od->DISKON = $detail['DISKON'];
 		                        //$od->DISKON = Barang::getDiskonById($kd);
 		                        //update stok barang
-		                        //Barang::updateStokBarang($kd, $detail['JUMLAH']);
+		                        Item::updateStokItem($kd, $detail['JUMLAH']);
 		                        $subtotal += $od->JUMLAH * $od->HARGA;
 	                            if (!$od->save())
 	                                throw new Exception;
