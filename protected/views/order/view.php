@@ -66,6 +66,11 @@ foreach ($model->orderdetail as $i => $detail) {
                                 'name' => 'TANGGAL_ORDER',
                                 'type' => 'tanggal',
                                 'value' => $model->TANGGAL_ORDER
+                            ),
+                            array(
+                                'name' => 'RESEP',
+                                'type' => 'resep',
+                                'value' => $model->RESEP
                             )
 							//'USER_PEMBUAT',
 							//'PEMBAYARAN',

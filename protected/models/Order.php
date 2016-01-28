@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'order':
  * @property string $KODE_ORDER
  * @property integer $ID_PASIEN
+ * @property integer $RESEP
  * @property string $TANGGAL_ORDER
  * @property integer $USER_PEMBUAT
  * @property integer $PEMBAYARAN
@@ -17,6 +18,9 @@
  */
 class Order extends CActiveRecord
 {
+	//STATUS RESEP
+	const RESEP_UMUM = 1, RESEP_DOKTER = 2;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -33,12 +37,12 @@ class Order extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_PASIEN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
-			array('ID_PASIEN, USER_PEMBUAT, PEMBAYARAN, KEMBALIAN', 'numerical', 'integerOnly'=>true),
+			array('ID_PASIEN, RESEP', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
+			array('ID_PASIEN, RESEP, USER_PEMBUAT, PEMBAYARAN, KEMBALIAN', 'numerical', 'integerOnly'=>true),
 			array('TANGGAL_ORDER', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('KODE_ORDER, ID_PASIEN, TANGGAL_ORDER, USER_PEMBUAT, PEMBAYARAN, KEMBALIAN', 'safe', 'on'=>'search'),
+			array('KODE_ORDER, ID_PASIEN, RESEP, TANGGAL_ORDER, USER_PEMBUAT, PEMBAYARAN, KEMBALIAN', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +67,7 @@ class Order extends CActiveRecord
 		return array(
 			'KODE_ORDER' => 'Kode Order',
 			'ID_PASIEN' => 'Id Pasien',
+			'RESEP' => 'Resep',
 			'TANGGAL_ORDER' => 'Tanggal Order',
 			'USER_PEMBUAT' => 'User Pembuat',
 			'PEMBAYARAN' => 'Pembayaran',
@@ -90,6 +95,7 @@ class Order extends CActiveRecord
 
 		$criteria->compare('KODE_ORDER',$this->KODE_ORDER,true);
 		$criteria->compare('ID_PASIEN',$this->ID_PASIEN);
+		$criteria->compare('RESEP',$this->RESEP);
 		$criteria->compare('TANGGAL_ORDER',$this->TANGGAL_ORDER,true);
 		$criteria->compare('USER_PEMBUAT',$this->USER_PEMBUAT);
 		$criteria->compare('PEMBAYARAN',$this->PEMBAYARAN);
@@ -134,5 +140,12 @@ class Order extends CActiveRecord
         }
 
         return $subtotal;
+    }
+
+    public static function listResep() {
+        return array(
+            self::RESEP_UMUM => 'Resep umum',
+            self::RESEP_DOKTER => 'Resep dokter',
+        );
     }
 }

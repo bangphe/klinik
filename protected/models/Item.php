@@ -123,6 +123,37 @@ class Item extends CActiveRecord
 		return parent::model($className);
 	}
 
+	public static function updateStokItem($iditem, $permintaan)
+    {
+        $stok = self::getTotalStok($iditem);
+        if ($stok >= $permintaan) {
+            $criteria = new CDbCriteria;
+            $criteria->condition = 'ID_ITEM=:iditem';
+            $criteria->params = array(':iditem'=>$iditem);
+            $criteria->order = 'STOK DESC';
+            $detilbarang = DetilItem::model()->findAll($criteria);
+            
+            $temp = $permintaan;
+            foreach ($detilbarang as $databarang) {
+                $databarang->scenario = 'updatestok';
+                if($databarang->STOK >= $temp){
+                    $databarang->STOK = $databarang->STOK - $temp;
+                    $databarang->save();
+                    break;
+                }else{
+                    $temp = $databarang->STOK - $temp;//ini hasil pasti minus
+                    if($temp<=0)
+                        $databarang->STOK = 0;
+                    $temp = abs($temp);
+                    $databarang->save();
+                }
+            }
+        }
+        else {//jelas ndak boleh
+            return false;
+        }
+    }
+
 	public static function ListBarangByKategori($kategori) {
         $criteria = new CDbCriteria(array(
             'with' => array(
@@ -135,11 +166,36 @@ class Item extends CActiveRecord
             'together' => true
         ));
         
-        //return CHtml::listData(self::model()->findAll($criteria), 'KODE_BARANG', 'NAMA_BARANG');
+        //return CHtml::listData(self::model()->findAll($criteria), 'ID_ITEM', 'NAMA_BARANG');
         return self::model()->findAll($criteria);
     }
 
     public static function getHargaById($id) {
         return self::model()->findByPk($id)->HARGA_JUAL;
+    }
+
+    public static function getHargaByResep($id, $resep) {
+    	$total=0;
+    	$harga = self::model()->findByPk($id)->HARGA_JUAL;
+        if($resep==1)
+        	//kalo RESEP UMUM = harga ditambahkan 33%
+            $total = $harga + (33/100 * $harga);
+        else
+        	//kalo RESEP DOKTER = harga + 1200
+        	$total = $harga + 1200;
+
+        //return $subtotal - ($subtotal * ($this->DISKON / 100));
+    	return $total;
+    }
+
+    public function getStokItem($iditem){
+        $connection = Yii::app()->db;
+        return $connection->createCommand('SELECT SUM(STOK) FROM detil_item WHERE ID_ITEM='.$iditem)->queryScalar();
+    }
+
+    public static function getTotalStok($iditem)
+    {
+        $connection = Yii::app()->db;
+        return $connection->createCommand('SELECT SUM(STOK) FROM detil_item WHERE ID_ITEM='.$iditem)->queryScalar();
     }
 }

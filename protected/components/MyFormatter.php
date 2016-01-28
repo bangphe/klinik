@@ -44,13 +44,11 @@ class MyFormatter extends CFormatter
             return '<span class="label">Unknown</span>';
     }
 
-    public static function formatPengambilan($value){
-        if($value==Order::AMBIL)
-            return '<span class="label label-info">Diambil sendiri</span>';
-        else if($value==Order::ANTAR)
-            return '<span class="label label-danger">Diantar</span>';
-        else if($value==Order::LAIN)
-            return '<span class="label label-danger">Lain-lain</span>';
+    public static function formatResep($value){
+        if($value==Order::RESEP_UMUM)
+            return '<span class="label label-info">Resep umum</span>';
+        else if($value==Order::RESEP_DOKTER)
+            return '<span class="label label-danger">Resep dokter</span>';
         else
             return '<span class="label">Unknown</span>';
     }
