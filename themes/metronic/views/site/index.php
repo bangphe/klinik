@@ -218,7 +218,7 @@ Yii::app()->clientScript->registerScript('search', "
                                                                         <div class="col-md-6">
                                                                             <div class="form-group">
                                                                                 <?php echo $form->labelEx($orderbaru->orderdetail,'JUMLAH',array('class'=>'control-label')); ?>
-                                                                                <?php if($item->getStokItem($item->ID_ITEM ) == 0) { ?>
+                                                                                <?php if($item->getStokItem($item->ID_ITEM) == 0) { ?>
                                                                                 <?php echo $form->numberField($orderbaru->orderdetail,"[$item->ID_ITEM]JUMLAH",array(
                                                                                     'class' => 'form-control input-xsmall',
                                                                                     'placeholder' => '0',
@@ -237,13 +237,20 @@ Yii::app()->clientScript->registerScript('search', "
                                                                         <div class="col-md-6">
                                                                             <div class="form-group">
                                                                                 <?php echo $form->labelEx($orderbaru->orderdetail,'DISKON',array('class'=>'control-label')); ?>
+                                                                                <?php if($item->getStokItem($item->ID_ITEM) == 0) { ?>
+                                                                                <?php echo $form->numberField($orderbaru->orderdetail,"[$item->ID_ITEM]DISKON",array(
+                                                                                    'class' => 'form-control input-xsmall',
+                                                                                    'placeholder' => '0',
+                                                                                    'disabled' => 'disabled',
+                                                                                ));?>
+                                                                                <?php } else { ?>
                                                                                 <?php echo $form->numberField($orderbaru->orderdetail,"[$item->ID_ITEM]DISKON",array(
                                                                                     'class' => 'form-control input-xsmall',
                                                                                     'min' => 0,
-                                                                                    //'max' => Barang::getTotalStok($item->ID_ITEM),
-                                                                                    'mas' => 100,
+                                                                                    'max' => 100,
                                                                                     'placeholder' => '0',
                                                                                 ));?>
+                                                                                <?php } ?>
                                                                             </div>
                                                                         </div>
                                                                     </div>
