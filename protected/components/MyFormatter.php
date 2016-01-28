@@ -108,7 +108,7 @@ class MyFormatter extends CFormatter
 
     public static function statusAktif($value)
     {
-        if($value==Barang::STATUS_AKTIF)
+        if($value==Item::STATUS_AKTIF)
             return '<span class="label label-sm label-success">AKTIF</span>';
         else
             return '<span class="label label-sm label-warning">NON AKTIF</span>';
@@ -116,7 +116,7 @@ class MyFormatter extends CFormatter
     
     public function formatStatusAktif($value)
     {
-        if($value==Barang::STATUS_AKTIF)
+        if($value==Item::STATUS_AKTIF)
             return '<span class="label label-success">AKTIF</span>';
         else
             return '<span class="label label-warning">NON AKTIF</span>';

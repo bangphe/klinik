@@ -1,6 +1,6 @@
 <?php
-/* @var $this KategoriController */
-/* @var $model Kategori */
+/* @var $this SupplierController */
+/* @var $model Supplier */
 /* @var $form CActiveForm */
 ?>
 
@@ -13,22 +13,28 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'htmlOptions'=>array('class'=>'form-horizontal'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note note-warning">Isian dengan tanda <span class="required">*</span> harus diisi.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'KATEGORI'); ?>
-		<?php echo $form->textField($model,'KATEGORI',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'KATEGORI'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
+	<div class="form-body">
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'KATEGORI',array('class'=>'col-md-3 control-label')); ?>
+            <div class="col-md-4">
+                <?php echo $form->textField($model,'KATEGORI',array('maxlength'=>100,'class'=>'form-control','placeholder'=>'Nama Kategori')); ?>
+				<?php echo $form->error($model,'KATEGORI'); ?>
+            </div>
+        </div>
+    </div>
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-4">
+                <button type="submit" class="btn green"><?php echo $model->isNewRecord ? 'Simpan' : 'Simpan Perubahan'; ?></button>
+                <button type="button" class="btn default">Batal</button>
+            </div>
+        </div>
+    </div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
