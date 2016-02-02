@@ -1,46 +1,92 @@
 <?php
 $form = $this->beginWidget('CActiveForm', array(
-    'id' => 'pelanggan-form',
-    // Please note: When you enable ajax validation, make sure the corresponding
-    // controller action is handling ajax validation correctly.
-    // There is a call to performAjaxValidation() commented in generated controller code.
-    // See class documentation of CActiveForm for details on this.
-    'enableAjaxValidation' => false,
-    'enableClientValidation' => true,
-    'clientOptions' => array(
-        'validateOnChange' => false,
-        'validateOnSubmit' => true
-    )
-        ));
+        'id' => 'pasien-form',
+        'enableAjaxValidation'=>false,
+        'htmlOptions'=>array(
+            'class'=>'form-horizontal',
+        ),
+    ));
 ?>
 
 <div class="form-body">
+    <h3 class="form-section">Tambah Pasien</h3>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="form-group">
-                <?php echo $form->labelEx($pelanggan_baru, 'NAMA_PASIEN', array('class' => 'control-label')); ?>
-                <?php echo $form->textField($pelanggan_baru, 'NAMA_PASIEN', array('class' => 'form-control')); ?>
-                <?php echo $form->error($pelanggan_baru, 'NAMA_PASIEN'); ?>
+                <?php echo $form->labelEx($pelanggan_baru, 'NAMA_PASIEN', array('class' => 'control-label col-md-3')); ?>
+                <div class="col-md-9">
+                    <?php echo $form->textField($pelanggan_baru, 'NAMA_PASIEN', array('class' => 'form-control')); ?>
+                </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <!--/span-->
+        <div class="col-md-6">
             <div class="form-group">
-                <?php echo $form->labelEx($pelanggan_baru, 'NO_TELP', array('class' => 'control-label')); ?>
-                <?php echo $form->textField($pelanggan_baru, 'NO_TELP', array('class' => 'form-control')); ?>
-                <?php echo $form->error($pelanggan_baru, 'NO_TELP'); ?>
+                <label class="control-label col-md-3">Pelayanan</label>
+                <div class="col-md-9">
+                    <?php echo $form->dropDownList($pelanggan_baru,'ID_LAYANAN', Layanan::listLayanan(),
+                        array(
+                        'class'=>'form-control',
+                        'prompt'=>'- Pilih Layanan -'
+                    )); ?>
+                </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <!--/span-->
+    </div>
+    <!--/row-->
+    <div class="row">
+        <div class="col-md-6">
             <div class="form-group">
-                <?php echo $form->labelEx($pelanggan_baru, 'ALAMAT', array('class' => 'control-label')); ?>
-                <?php echo $form->textArea($pelanggan_baru, 'ALAMAT', array('class' => 'form-control')); ?>
-                <?php echo $form->error($pelanggan_baru, 'ALAMAT'); ?>
+                <?php echo $form->labelEx($pelanggan_baru, 'NO_TELP', array('class' => 'control-label col-md-3')); ?>
+                <div class="col-md-9">
+                    <?php echo $form->textField($pelanggan_baru, 'NO_TELP', array('class' => 'form-control')); ?>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <div class="col-md-6">
+            <div class="form-group">
+                <?php echo $form->labelEx($pelanggan_baru, 'ALAMAT', array('class' => 'control-label col-md-3')); ?>
+                <div class="col-md-9">
+                    <?php echo $form->textArea($pelanggan_baru, 'ALAMAT', array('class' => 'form-control')); ?>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+    </div>
+    <!--/row-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <?php echo $form->labelEx($pelanggan_baru, 'JENIS_KELAMIN', array('class' => 'control-label col-md-3')); ?>
+                <div class="col-md-9">
+                    <div class="radio-list">
+                        <?php
+                        echo $form->radioButtonList($pelanggan_baru, 'JENIS_KELAMIN', array('L'=>'Laki-laki', 'P'=>'Perempuan'), array(
+                            'class'=>'form-control input-large',
+                            'labelOptions'=>array('style'=>'display:inline'),
+                            'template'=>'{input} {label}',
+                        ));
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <div class="col-md-6">
+            <div class="form-group">
+                <?php echo $form->labelEx($pelanggan_baru, 'BIAYA_REGISTRASI', array('class' => 'control-label col-md-3')); ?>
+                <div class="col-md-9">
+                    <?php echo $form->textField($pelanggan_baru, 'BIAYA_REGISTRASI', array('class' => 'form-control', 'value'=>5000, 'readonly'=>TRUE)); ?>
+                </div>
             </div>
         </div>
     </div>
     <!--/row-->
     <small><span class="required">*</span>) wajib diisi</small>
 </div>
+
 <div class="form-actions center">
     <?php echo CHtml::submitButton('Simpan', array('class' => 'btn blue')); ?>
 </div>

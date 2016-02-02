@@ -62,6 +62,7 @@ class SiteController extends Controller
 	            $order->attributes = $_GET['Order'];
 
 	        $orderbaru = new Order('baru');
+	        $orderbaru->RESEP = 1;
 	        $orderbaru->orderdetail = new OrderDetail('baru');
 			//inisialisasi model OrderDetail
 			$order_detail=new OrderDetail;
@@ -73,8 +74,11 @@ class SiteController extends Controller
 	            $pelanggan->attributes = $_GET['Pasien'];
 
 			$newpl = new Pasien('baru');
+			$newpl->ID_LAYANAN = 1;
 	        if (isset($_POST['Pasien'])) {
 	            $newpl->attributes = $_POST['Pasien'];
+	            $newpl->BIAYA_REGISTRASI = 5000;
+	            $newpl->TANGGAL_REGISTRASI = date('Y-m-d H:i:s');
 	            if ($newpl->save()) {
 	            	Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
 	                $this->redirect(array('/site'));
@@ -84,6 +88,7 @@ class SiteController extends Controller
 	        if (isset($_POST['Order'])) {
 	            $orderbaru->attributes = $_POST['Order'];
 	            $orderbaru->TANGGAL_ORDER = date('Y-m-d H:i:s');
+            	$orderbaru->USER_PEMBUAT = Yii::app()->user->nama;
 	            if ($orderbaru->validate()) {
 	                $transaction = Yii::app()->db->beginTransaction();
 	                try {

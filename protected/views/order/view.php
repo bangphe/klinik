@@ -274,9 +274,16 @@ foreach ($model->orderdetail as $i => $detail) {
                 }
                 else {
                     if (response.result == 'true') {
-                        // $.gritter.add({
-                        //     text: 'Data telah berhasil disimpan!'
-                        // });
+                        $.bootstrapGrowl("Data telah berhasil disimpan!",{
+                            ele: 'body', // which element to append to
+                            type: 'success', // (null, 'info', 'danger', 'success')
+                            offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+                            align: 'right', // ('left', 'right', or 'center')
+                            width: 300, // (integer, or 'auto')
+                            delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+                            allow_dismiss: true, // If true then will display a cross to close the popup.
+                            stackup_spacing: 10 // spacing between consecutively stacked growls.
+                        });
                         $('#Order_PEMBAYARAN').html(pembayaran.toLocaleString());
                         updateKembalian(response.kembalian);
                     }

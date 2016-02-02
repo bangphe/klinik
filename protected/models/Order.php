@@ -8,7 +8,7 @@
  * @property integer $ID_PASIEN
  * @property integer $RESEP
  * @property string $TANGGAL_ORDER
- * @property integer $USER_PEMBUAT
+ * @property string $USER_PEMBUAT
  * @property integer $PEMBAYARAN
  * @property integer $KEMBALIAN
  *
@@ -37,8 +37,8 @@ class Order extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_PASIEN, RESEP', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
-			array('ID_PASIEN, RESEP, USER_PEMBUAT, PEMBAYARAN, KEMBALIAN', 'numerical', 'integerOnly'=>true),
+			array('ID_PASIEN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
+			array('ID_PASIEN, RESEP, PEMBAYARAN, KEMBALIAN', 'numerical', 'integerOnly'=>true),
 			array('TANGGAL_ORDER', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -147,5 +147,12 @@ class Order extends CActiveRecord
             self::RESEP_UMUM => 'Resep umum',
             self::RESEP_DOKTER => 'Resep dokter',
         );
+    }
+
+    public static function ListOrder() {
+        $criteria = new CDbCriteria;
+		$criteria->order = 'TANGGAL_ORDER DESC';
+		$criteria->limit = '5';
+        return self::model()->findAll($criteria);
     }
 }

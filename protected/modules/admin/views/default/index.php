@@ -12,7 +12,7 @@
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="1349">1349</span>
+                    <span data-counter="counterup"><?php echo MyFormatter::formatAngka($pelanggan) ?></span>
                 </div>
                 <div class="desc"> Total Pasien </div>
             </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="12,5">Rp.12.000.000</span></div>
+                    <span data-counter="counterup"><?php echo MyFormatter::formatUang($total) ?></span></div>
                 <div class="desc"> Total Kredit Bulan ini </div>
             </div>
             <a class="more" href="javascript:;"> Total Kredit Bulan ini
@@ -43,7 +43,7 @@
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="549">549</span>
+                    <span data-counter="counterup"><?php echo MyFormatter::formatAngka($order) ?></span>
                 </div>
                 <div class="desc"> Total Pemesanan </div>
             </div>
@@ -68,7 +68,9 @@
         </div>
     </div>
 </div>
-<div class="col-md-6">
+
+<div class="row">
+    <div class="col-md-6">
     <!-- BEGIN CONDENSED TABLE PORTLET-->
     <div class="portlet box red">
         <div class="portlet-title">
@@ -93,46 +95,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach (Item::getObatExpired() as $key => $value) { ?>
                             <tr>
-                                <td> 1 </td>
-                                <td> Mark </td>
-                                <td> makr124 </td>
+                                <td> <?= $key+1; ?> </td>
+                                <td> <?= $value->NAMA_ITEM; ?> </td>
+                                <td> <?= MyFormatter::formatTanggal($value->TANGGAL_EXPIRED); ?> </td>
                                 <td>
-                                    <span class="label label-sm label-success"> Approved </span>
+                                    <span class="label label-sm label-success"> <?= Item::getTotalStok($value->ID_ITEM); ?> </span>
                                 </td>
                             </tr>
-                            <tr>
-                                <td> 2 </td>
-                                <td> Jacob </td>
-                                <td> jac123 </td>
-                                <td>
-                                    <span class="label label-sm label-info"> Pending </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 3 </td>
-                                <td> Cooper </td>
-                                <td> lar </td>
-                                <td>
-                                    <span class="label label-sm label-warning"> Suspended </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 4 </td>
-                                <td> Sandy </td>
-                                <td> sanlim </td>
-                                <td>
-                                    <span class="label label-sm label-danger"> Blocked </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 5 </td>
-                                <td> Lim </td>
-                                <td> sanlim </td>
-                                <td>
-                                    <span class="label label-sm label-danger"> Blocked </span>
-                                </td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -141,75 +113,50 @@
         <!-- END CONDENSED TABLE PORTLET-->
     </div>
     <div class="col-md-6">
-    <!-- BEGIN CONDENSED TABLE PORTLET-->
-    <div class="portlet box green">
-        <div class="portlet-title">
-            <div class="caption">
-                <i class="fa fa-picture"></i>Obat Habis </div>
-                <div class="tools">
-                    <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
-                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                    <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
-                    <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
+        <!-- BEGIN CONDENSED TABLE PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-picture"></i>Invoice Terbaru </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+                        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                        <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
+                        <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                                <tr>
+                                    <th> No </th>
+                                    <th> Nama Pasien </th>
+                                    <th> Tanggal Order </th>
+                                    <th> Total Item </th>
+                                    <th> Total Harga </th>
+                                    <th> # </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach (Order::ListOrder() as $dex => $item) { ?>
+                                <tr>
+                                    <td><?php echo $dex+1;?></td>
+                                    <td><?php echo $item->pasien->NAMA_PASIEN;?></td>
+                                    <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
+                                    <td><?php echo OrderDetail::getJumlahItem($item->KODE_ORDER);?></td>
+                                    <td><?php echo MyFormatter::formatUang($item->getSubtotal());?></td>
+                                    <td>
+                                        <?php echo CHtml::link('<i class="fa fa-search"></i>',array('/admin/order/view/','id'=>$item->KODE_ORDER),array('class'=>'btn default btn-xs green-stripe')); ?>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
-                    <table class="table table-condensed table-hover">
-                        <thead>
-                            <tr>
-                                <th> No </th>
-                                <th> Nama Obat </th>
-                                <th> Nama Supplier </th>
-                                <th> Status </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> 1 </td>
-                                <td> Mark </td>
-                                <td> makr124 </td>
-                                <td>
-                                    <span class="label label-sm label-success"> Approved </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 2 </td>
-                                <td> Jacob </td>
-                                <td> Nilson </td>
-                                <td>
-                                    <span class="label label-sm label-info"> Pending </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 3 </td>
-                                <td> Larry </td>
-                                <td> Cooper </td>
-                                <td>
-                                    <span class="label label-sm label-warning"> Suspended </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 4 </td>
-                                <td> Sandy </td>
-                                <td> sanlim </td>
-                                <td>
-                                    <span class="label label-sm label-danger"> Blocked </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 5 </td>
-                                <td> Sandy </td>
-                                <td> sanlim </td>
-                                <td>
-                                    <span class="label label-sm label-danger"> Blocked </span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <!-- END CONDENSED TABLE PORTLET-->
         </div>
-        <!-- END CONDENSED TABLE PORTLET-->
     </div>
-    <div class="clearfix"></div>
+</div>

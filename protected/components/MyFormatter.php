@@ -1,6 +1,9 @@
 <?php
 class MyFormatter extends CFormatter
 {   
+    public static function formatAngka($value) {
+        return number_format($value, 0, ',', '.');
+    }
     public static function alertInfo($message)
     {
         return '<div class="alert alert-info alert-dismissable"><button type="button" class="close" data-dismiss="alert">×</button>'.$message.'</div>';
