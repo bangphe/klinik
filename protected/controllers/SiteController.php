@@ -178,10 +178,16 @@ class SiteController extends Controller
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login()) {
 				//$this->redirect(Yii::app()->user->returnUrl);
-				if (WebUser::isAdmin())
-                    $this->redirect(array('/admin'));
-                else
-                    $this->redirect(array('/site'));
+				if (Yii::app()->user->isLogin) {
+					$userid = Yii::app()->user->idUser;
+                    $timestamp = date('Y-m-d H:i:s');
+                    User::model()->updateByPk($userid, array('TERAKHIR_LOGIN'=>$timestamp));
+
+                    if (WebUser::isAdmin())
+	                    $this->redirect(array('/admin'));
+	                else
+	                    $this->redirect(array('/site'));
+				}
 			}
 		}
 		// display the login form
