@@ -3,13 +3,8 @@
 /* @var $model Pasien */
 
 $this->breadcrumbs=array(
-	'Pasiens'=>array('index'),
-	'Create',
-);
-
-$this->menu=array(
-	array('label'=>'List Pasien', 'url'=>array('index')),
-	array('label'=>'Manage Pasien', 'url'=>array('admin')),
+	'Data Pasien'=>array('index'),
+	'Tambah Data',
 );
 ?>
 

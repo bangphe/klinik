@@ -6,7 +6,7 @@ class ItemController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	//public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -128,7 +128,9 @@ class ItemController extends Controller
 		$criteria->params = array(':status'=>Item::STATUS_AKTIF);
 		$model = Item::model()->findAll($criteria);
 
-		$dataProvider=new CActiveDataProvider('Item');
+		$dataProvider=new CActiveDataProvider('Item',array(
+			'pagination'=>false
+		));
 		$this->render('index',array(
 			'model'=>$model,
 			'dataProvider'=>$dataProvider,

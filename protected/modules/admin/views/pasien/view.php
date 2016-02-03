@@ -3,12 +3,12 @@
 /* @var $model Pasien */
 
 $this->breadcrumbs=array(
-	'Pasiens'=>array('index'),
-	$model->ID_PASIEN,
+	'Data Pasien'=>array('index'),
+	$model->NAMA_PASIEN,
 );
-
-
 ?>
+
+<?php echo Yii::app()->user->getFlash('info') ?>
 
 <div class="portlet box red">
 	<div class="portlet-title">
@@ -16,9 +16,7 @@ $this->breadcrumbs=array(
 			<i class="fa fa-desktop"></i>Data Pasien #<?php echo $model->NAMA_PASIEN; ?>
 		</div>
 		<div class="actions">
-            <a href="update" class="btn btn-default btn-sm">
-                <i class="fa fa-pencil"></i> Ubah </a>
-                <?php echo CHtml::link('<i class="fa fa-edit"></i>', array('update', 'id' => $model->ID_PASIEN)) ?>
+            <?php echo CHtml::link('<i class="fa fa-pencil"></i> Ubah', array('/admin/pasien/update', 'id' => $model->ID_PASIEN), array('class'=>'btn btn-default btn-sm')) ?>
         </div>
 	</div>
 	<div class="portlet-body">

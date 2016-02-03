@@ -8,6 +8,8 @@ $this->breadcrumbs=array(
 );
 ?>
 
+<?php echo Yii::app()->user->getFlash('info') ?>
+
 <div class="portlet box blue-steel">
 	<div class="portlet-title">
 		<div class="caption">

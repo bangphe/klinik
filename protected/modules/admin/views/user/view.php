@@ -3,11 +3,13 @@
 /* @var $model User */
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	$model->ID_USER,
+	'Data User'=>array('index'),
+	$model->NAMA,
 );
 
 ?>
+
+<?php echo Yii::app()->user->getFlash('info') ?>
 
 <div class="portlet box red">
 	<div class="portlet-title">

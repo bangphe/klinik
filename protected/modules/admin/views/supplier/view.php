@@ -3,10 +3,12 @@
 /* @var $model Supplier */
 
 $this->breadcrumbs=array(
-	'Suppliers'=>array('index'),
-	$model->ID_SUPPLIER,
+	'Data Supplier'=>array('index'),
+	$model->NAMA_SUPPLIER,
 );
 ?>
+
+<?php echo Yii::app()->user->getFlash('info') ?>
 
 <div class="portlet box blue-steel">
 	<div class="portlet-title">
