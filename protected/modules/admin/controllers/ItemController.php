@@ -33,6 +33,7 @@ class ItemController extends Controller
 					'create',
 					'view',
 					'update',
+					'updatestok',
 					'hapus',
 					'delete',
 				),
@@ -52,8 +53,10 @@ class ItemController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$detil_item = DetilItem::getDetilItem($id);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'detil_item'=>$detil_item,
 		));
 	}
 
@@ -63,20 +66,38 @@ class ItemController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Item;
-
+		$item=new Item;
+		$detil_item=new DetilItem;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Item']))
+		if(isset($_POST['Item'], $_POST['DetilItem']))
 		{
-			$model->attributes=$_POST['Item'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->ID_ITEM));
+			$item->attributes=$_POST['Item'];	
+			$detil_item->attributes=$_POST['DetilItem'];
+			if ($item->validate() & $detil_item->validate()) {
+				$connection = Yii::app()->db;
+                $transaction = $connection->beginTransaction();
+                try {
+	                if($item->save()) {
+						$detil_item->setAttribute('ID_ITEM',$item->ID_ITEM);
+						$detil_item->setAttribute('TANGGAL_INPUT',date('Y-m-d H:i:s'));
+						if($detil_item->save()){
+							$transaction->commit();
+							Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
+							$this->redirect(array('view','id'=>$item->ID_ITEM));
+						}
+					}
+                } catch (Exception $e) {
+                	$transaction->rollback();
+                	Yii::app()->user->setFlash('info', MyFormatter::alertDanger('<strong>Error!</strong> Data gagal untuk disimpan.'.$e->getMessage()));
+                }
+			}
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
+			'item'=>$item,
+			'detil_item'=>$detil_item,
 		));
 	}
 
@@ -87,20 +108,47 @@ class ItemController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$item=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Item']))
 		{
-			$model->attributes=$_POST['Item'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->ID_ITEM));
+			$item->attributes=$_POST['Item'];
+			if($item->save()) {
+				Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Perubahan data telah berhasil disimpan.'));
+				$this->redirect(array('view','id'=>$item->ID_ITEM));
+			}
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
+			'item'=>$item,
+		));
+	}
+
+	public function actionUpdateStok($id)
+	{
+		$item=$this->loadModel($id);
+
+		$detil_item=new DetilItem;
+
+		if(isset($_POST['DetilItem']))
+		{
+			$detil_item->attributes=$_POST['DetilItem'];
+			$detil_item->setAttribute('ID_ITEM',$item->ID_ITEM);
+			$detil_item->setAttribute('TANGGAL_INPUT',date('Y-m-d H:i:s'));
+			if ($detil_item->validate()) {
+				if($detil_item->save()) {
+					Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Stok barang telah berhasil ditambahkan.'));
+					$this->redirect(array('view','id'=>$item->ID_ITEM));
+				}
+			}
+		}
+
+		$this->render('stok/create',array(
+			'item'=>$item,
+			'detil_item'=>$detil_item,
 		));
 	}
 

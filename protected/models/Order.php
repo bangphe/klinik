@@ -21,6 +21,8 @@ class Order extends CActiveRecord
 	//STATUS RESEP
 	const RESEP_UMUM = 1, RESEP_DOKTER = 2;
 
+	public $NAMA, $SUBTOTAL, $TOTAL, $TGL_ORDER_X;
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -116,6 +118,12 @@ class Order extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	protected function afterFind() {
+        parent::afterFind();
+        $this->SUBTOTAL = $this->getSubtotal();
+        $this->TOTAL = $this->getTotal();
+    }
 
 	public function getTotal($subtotal = '') {
         if(empty($subtotal))

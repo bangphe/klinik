@@ -55,37 +55,26 @@
             <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
                 <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
             </li>
-            <li class="nav-item  ">
+            <li class="<?= ($this->ID=="rekap") ? "nav-item active open" : "nav-item"; ?>">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-book-open"></i>
                     <span class="title">Rekap</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    <li class="<?php echo ($this->ID==="rekap") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Laporan Keuangan', array('/admin/rekap'), array('class'=>'nav-link')); ?></li>
                     <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Laporan Keuangan
-                            </span>
-                        </a>
+                        <?php echo CHtml::link('Laporan Penjualan Kacamata', array('/admin/rekap/penjualanlensa'),array('class' => 'nav-link')) ?>
                     </li>
                     <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Laporan Penjualan Kacamata
-                            </span>
-                        </a>
+                        <?php echo CHtml::link('Laporan Penjualan Obat', array('/admin/rekap/penjualanobat'),array('class' => 'nav-link')) ?>
                     </li>
-                    <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Laporan Penjualan Obat
-                            </span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
+                    <!-- <li class="nav-item  ">
                         <a href="form_controls.html" class="nav-link ">
                             <span class="title">Laporan Penjualan Obat Resep
                             </span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item  ">
                         <a href="form_controls.html" class="nav-link ">
                             <span class="title">Laporan Pembelian Obat

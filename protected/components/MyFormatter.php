@@ -56,6 +56,17 @@ class MyFormatter extends CFormatter
             return '<span class="label">Unknown</span>';
     }
 
+    public static function formatKategori($value){
+        if($value==Kategori::OBAT)
+            return '<span class="label label-info">OBAT</span>';
+        else if($value==Kategori::GAGANG)
+            return '<span class="label label-danger">GAGANG</span>';
+        else if($value==Kategori::LENSA)
+            return '<span class="label label-warning">LENSA</span>';
+        else
+            return '<span class="label">Unknown</span>';
+    }
+
     public static function formatPembayaran($value){
         if($value==Order::BELOM_DIBAYAR)
             return '<span class="label label-warning">Belum dibayar</span>';

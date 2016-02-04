@@ -226,6 +226,28 @@ class Item extends CActiveRecord
     public static function getExpired()
     {
         $connection = Yii::app()->db;
-        return $connection->createCommand('SELECT * FROM item WHERE date(TANGGAL_EXPIRED) >= date(NOW()) AND date(TANGGAL_EXPIRED) <= DATE_ADD(date(now()), INTERVAL 1 MONTH)')->queryAll();
+        return $connection->createCommand('SELECT * FROM item WHERE date(TANGGAL_EXPIRED) >= date(NOW()) AND date(TANGGAL_EXPIRED) <= DATE_ADD(date(now()), INTERVAL 10 DAY)')->queryAll();
+    }
+
+    public static function getPenjualanItem($kategori) {
+        $criteria = new CDbCriteria(array(
+            'condition' => 'ID_KATEGORI = :kategori',
+            'params' => array(':kategori' => $kategori),
+            'group' => 'ID_ITEM',
+        ));
+        
+        return self::model()->findAll($criteria);
+    }
+
+    public static function getTotalItemDijual($kd)
+    {
+        $connection = Yii::app()->db;
+        $query = $connection->createCommand('SELECT SUM(JUMLAH) FROM order_detail WHERE ID_ITEM='.$kd)->queryScalar();
+        if ($query==null) {
+            return '0';
+        }
+        else {
+            return $query;
+        }
     }
 }

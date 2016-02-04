@@ -3,16 +3,11 @@
 /* @var $model Item */
 
 $this->breadcrumbs=array(
-	'Items'=>array('index'),
-	'Create',
-);
-
-$this->menu=array(
-	array('label'=>'List Item', 'url'=>array('index')),
-	array('label'=>'Manage Item', 'url'=>array('admin')),
+	'Data Item'=>array('index'),
+	'Tambah',
 );
 ?>
 
-<h1>Create Item</h1>
+<?php echo Yii::app()->user->getFlash('info');?>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('item'=>$item, 'detil_item'=>$detil_item)); ?>

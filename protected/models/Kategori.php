@@ -12,6 +12,8 @@
  */
 class Kategori extends CActiveRecord
 {
+	const OBAT = 1, GAGANG = 2, LENSA = 3;
+
 	/**
 	 * @return string the associated database table name
 	 */
