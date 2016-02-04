@@ -18,11 +18,13 @@ class DefaultController extends Controller
         $criteria2->condition = 'date(TANGGAL_ORDER) = date(NOW())';
         $hariini = Order::model()->count($criteria2);
 
+        $expired = Item::getExpired();
 		$this->render('index', array(
 			'total' => $total,
             'order' => $order_c,
             'pelanggan' => $pelanggan_c,
             'hariini' => $hariini,
+            'expired' => $expired,
 		));
 	}
 }

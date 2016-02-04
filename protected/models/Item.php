@@ -222,4 +222,10 @@ class Item extends CActiveRecord
         //return CHtml::listData(self::model()->findAll($criteria), 'KODE_BARANG', 'NAMA_BARANG');
         return self::model()->findAll($criteria);
     }
+
+    public static function getExpired()
+    {
+        $connection = Yii::app()->db;
+        return $connection->createCommand('SELECT * FROM item WHERE date(TANGGAL_EXPIRED) >= date(NOW()) AND date(TANGGAL_EXPIRED) <= DATE_ADD(date(now()), INTERVAL 1 MONTH)')->queryAll();
+    }
 }

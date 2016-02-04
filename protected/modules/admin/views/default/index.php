@@ -1,8 +1,12 @@
 <div class="note note-success">
     <h3>Informasi Penting !!</h3>
-    <p>Obat <b> Oskadon </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
+    <?//= var_dump($expired); ?>
+    <?php foreach ($expired as $value) { ?>
+    <p>Obat <b> <?= $value['NAMA_ITEM']; ?> </b> masa expired akan segera berakhir pada tanggal <b> <?= MyFormatter::formatTanggal($value['TANGGAL_EXPIRED']); ?> </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
+    <?php } ?>
+    <!-- <p>Obat <b> Oskadon </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
     <p>Obat <b> Ultraflu </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
-    <p>Obat <b> Konidin </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
+    <p>Obat <b> Konidin </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p> -->
 </div>
 <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -59,7 +63,7 @@
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="89">89</span></div>
+                    <span data-counter="counterup"><?php echo MyFormatter::formatAngka($hariini) ?></span></div>
                 <div class="desc"> Pemesanan Hari ini </div>
             </div>
             <a class="more" href="javascript:;"> Pemesanan Hari ini
