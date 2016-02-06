@@ -1,13 +1,18 @@
+<?php if (count($expired) > 0) {?>
 <div class="note note-success">
     <h3>Informasi Penting !!</h3>
-    <?//= var_dump($expired); ?>
     <?php foreach ($expired as $value) { ?>
-    <p>Obat <b> <?= $value['NAMA_ITEM']; ?> </b> masa expired akan segera berakhir pada tanggal <b> <?= MyFormatter::formatTanggal($value['TANGGAL_EXPIRED']); ?> </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
+        <p>Obat <b> <?= $value['NAMA_ITEM']; ?> </b> masa expired akan segera berakhir pada tanggal <b> <?= MyFormatter::formatTanggal($value['TANGGAL_EXPIRED']); ?> </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
     <?php } ?>
     <!-- <p>Obat <b> Oskadon </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
     <p>Obat <b> Ultraflu </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
     <p>Obat <b> Konidin </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p> -->
 </div>
+<?php } else { ?>
+<div class="alert alert-info">
+    <strong>Haloo!</strong> Selamat datang di Halaman Administrator.
+</div>
+<?php } ?>
 <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="dashboard-stat blue">
@@ -138,7 +143,7 @@
                                     <th> Nama Pasien </th>
                                     <th> Tanggal Order </th>
                                     <th> Total Item </th>
-                                    <th> Total Harga </th>
+                                    <!-- <th> Total Harga </th> -->
                                     <th> # </th>
                                 </tr>
                             </thead>
@@ -149,7 +154,7 @@
                                     <td><?php echo $item->pasien->NAMA_PASIEN;?></td>
                                     <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
                                     <td><?php echo OrderDetail::getJumlahItem($item->KODE_ORDER);?></td>
-                                    <td><?php echo MyFormatter::formatUang($item->getSubtotal());?></td>
+                                    <!-- <td><?php //echo MyFormatter::formatUang($item->getSubtotal());?></td> -->
                                     <td>
                                         <?php echo CHtml::link('<i class="fa fa-search"></i>',array('/admin/order/view/','id'=>$item->KODE_ORDER),array('class'=>'btn default btn-xs green-stripe')); ?>
                                     </td>
