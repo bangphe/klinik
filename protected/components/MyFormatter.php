@@ -81,7 +81,7 @@ class MyFormatter extends CFormatter
     }
 
     public static function formatUangNota($value) {
-        return number_format($value, 0, ',', '.');
+        return "Rp. " . number_format($value, 0, ',', '.');
     }
 
     public static function hitungDiskon($diskon, $harga) {
@@ -103,12 +103,12 @@ class MyFormatter extends CFormatter
         $harga_total=0;
         
         if($diskon==0) {
-            return number_format($harga * $jumlah, 0, ',', '.');
+            return "Rp. " . number_format($harga * $jumlah, 0, ',', '.');
         }
         else {
             $harga_diskon = ($diskon*$harga)/100;
             $harga_total = $harga-$harga_diskon;
-            return number_format($harga_total * $jumlah, 0, ',', '.');
+            return "Rp. " . number_format($harga_total * $jumlah, 0, ',', '.');
         }       
     }
 

@@ -61,7 +61,10 @@ foreach ($model->orderdetail as $i => $detail) {
                         ),
 						'attributes'=>array(
 							'KODE_ORDER',
-							'ID_PASIEN',
+                            array(
+                                'name' => 'PASIEN',
+                                'value' => $model->pasien->NAMA_PASIEN
+                            ),
 							array(
                                 'name' => 'TANGGAL_ORDER',
                                 'type' => 'tanggal',
@@ -72,9 +75,6 @@ foreach ($model->orderdetail as $i => $detail) {
                                 'type' => 'resep',
                                 'value' => $model->RESEP
                             )
-							//'USER_PEMBUAT',
-							//'PEMBAYARAN',
-							//'KEMBALIAN',
 						),
                     ));
                     ?>
@@ -126,11 +126,27 @@ foreach ($model->orderdetail as $i => $detail) {
                         </tbody>
                     </table>
                 </div>
-                <div class="table-scrollable">
-                    <table class="table table-condensed table-bordered">
-                        <tr><th>Sub Total</th><td><strong><?php echo MyFormatter::formatUang($model->getSubtotal()) ?></strong></td></tr>
-                        <tr><th>Total Item</th><td><?php echo $totalItem;?></td></tr>                        
-                        <tr><th>Total</th><td><strong><?php echo MyFormatter::formatUang($model->getTotal()) ?></strong></td></tr>
+                <div class="well">
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>Total Item</th>
+                            <th colspan="10"></th>
+                            <td></td>
+                            <td></td>
+                            <td><span class="label label-danger"><?php echo $totalItem;?></span></td>
+                        </tr>
+                        <!-- <tr>
+                            <th>Sub Total</th>
+                            <th colspan="10">:</th>
+                            <td><strong><?php //echo MyFormatter::formatUang($model->getSubtotal()) ?></strong></td>
+                        </tr> -->
+                        <tr>
+                            <th>Total Biaya</th>
+                            <th colspan="10"></th>
+                            <td></td>
+                            <td></td>
+                            <td><strong><?php echo MyFormatter::formatUang($model->getTotal()) ?></strong></td>
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -214,10 +230,10 @@ foreach ($model->orderdetail as $i => $detail) {
                     </div>
                 </div>
                 <div class="form-actions">
-                    <?php //echo CHtml::link($model->STATUS_BAYAR==1 ? '<i class="fa fa-print"></i> Cetak Nota' : '<i class="fa fa-print"></i> Hitung & Cetak Nota', array('/order/cetak', 'id' => $model->KODE_ORDER), array(
-                        //'class' => 'btn btn-danger pull-right print',
-                        //'id' => 'cetaknota'
-                    //)) ?>
+                    <?= CHtml::link('<i class="fa fa-print"></i> Cetak Nota', array('/order/cetak', 'id' => $model->KODE_ORDER), array(
+                        'class' => 'btn btn-danger pull-right print',
+                        'id' => 'cetaknota'
+                    )) ?>
                 </div>
 
                 <?php $this->endWidget(); ?>
@@ -229,7 +245,7 @@ foreach ($model->orderdetail as $i => $detail) {
 
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/custom/jquery.printPage.js" type="text/javascript"></script>
 <script>
-    //$(".print").printPage();
+    $(".print").printPage();
     //$(".printsuratjalan").printPage();
 
     function setJatuhTempo(v) {
@@ -303,6 +319,16 @@ foreach ($model->orderdetail as $i => $detail) {
             $('#Order_KEMBALIAN').html('0');
     }
 
+    function cetakNota() {
+        var bayar = $('#Order_PEMBAYARAN').val();
+        bayar = bayar.replace('.', '');
+        
+        var kembali = bayar - <?php echo $model->getTotal() ?>;
+        $('#Order_KEMBALIAN').attr('value', kembali);
+        
+        $(this).attr('href', $(this).attr('href') + '?bayar=' + bayar + '&kembali=' + kembali);
+    }
+
 
     $('#cetaknota').click(function() {
         var bayar = $('#Order_PEMBAYARAN').val();
@@ -310,9 +336,7 @@ foreach ($model->orderdetail as $i => $detail) {
         
         var kembali = bayar - <?php echo $model->getTotal() ?>;
         $('#Order_KEMBALIAN').attr('value', kembali);
-
-        //var jatuh_tempos = $('#Order_JATUH_TEMPO').val();
         
-        $(this).attr('href', $(this).attr('href') + '?bayar=' + bayar + '&kembali=' + kembali + '&jatuh_tempo=' + jatuh_tempo);
+        $(this).attr('href', $(this).attr('href') + '?bayar=' + bayar + '&kembali=' + kembali);
     });
 </script>

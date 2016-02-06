@@ -163,4 +163,11 @@ class Order extends CActiveRecord
 		$criteria->limit = '5';
         return self::model()->findAll($criteria);
     }
+
+    public function getTotalNota($subtotal = '') {
+        if(empty($subtotal))
+            $subtotal = $this->getSubtotal();
+
+        return $subtotal;
+    }
 }

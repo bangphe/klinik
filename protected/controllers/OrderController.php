@@ -31,7 +31,7 @@ class OrderController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','savepembayaran'),
+				'actions'=>array('create','update','savepembayaran','cetak'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -43,6 +43,22 @@ class OrderController extends Controller
 			),
 		);
 	}
+
+	public function actionCetak($id) {
+        $this->layout = '//layouts/nolayout';
+        $model = $this->loadModel($id);
+        // $model->TANGGAL_BAYAR = date('Y-m-d H:i:s');
+        // //$model->STATUS_BAYAR = Order::SUDAH_DIBAYAR;
+        // //$model->PEMBAYARAN = $_GET['Order']['Order_PEMBAYARAN'];
+        // $model->update();
+
+        $kategori = Kategori::listAll();
+        
+        $this->render('invoice/_cetak_nota', array(
+            'model' => $model,
+            'kategori' => $kategori
+        ));
+    }
 
 	public function actionSavePembayaran($id) {
         $order = $this->loadModel($id);

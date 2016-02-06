@@ -76,8 +76,11 @@
         <div class="form-group">
             <?php echo $form->labelEx($model,'BIAYA_REGISTRASI',array('class'=>'col-md-3 control-label')); ?>
             <div class="col-md-4">
-                <?php echo $form->textField($model,'BIAYA_REGISTRASI',array('maxlength'=>100,'class'=>'form-control','placeholder'=>'5000')); ?>
-				<?php echo $form->error($model,'BIAYA_REGISTRASI'); ?>
+                <div class="input-group">
+                    <span class="input-group-addon">Rp</span>
+                    <?php echo $form->textField($model,'BIAYA_REGISTRASI',array('size'=>60,'maxlength'=>100,'class'=>'form-control','placeholder'=>'Biaya Registrasi','value'=>'5000','disabled'=>TRUE)); ?>
+                    <?php echo $form->error($model,'BIAYA_REGISTRASI'); ?>
+                </div>
             </div>
         </div>
     </div>

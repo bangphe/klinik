@@ -85,4 +85,21 @@ class RekapController extends Controller
 
         exit();
 	}
+
+    public function actionPenjualanGagang()
+    {
+        $item = Item::getPenjualanItem(Item::KATEGORI_GAGANG);
+        // var_dump($item);
+        // die();
+        $filename = 'REKAP PENJUALAN GAGANG';
+        header("Cache-Control: no-cache, no-store, must-revalidate");
+        header("Content-Type: application/vnd.ms-excel");
+        header("Content-Disposition: attachment; filename=" . $filename . ".xls");
+
+        $this->renderPartial('_rekap_gagang',array(
+            'item' => $item,
+        ));
+
+        exit();
+    }
 }

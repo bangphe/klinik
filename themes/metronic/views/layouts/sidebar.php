@@ -64,10 +64,13 @@
                 <ul class="sub-menu">
                     <li class="<?php echo ($this->ID==="rekap") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Laporan Keuangan', array('/admin/rekap'), array('class'=>'nav-link')); ?></li>
                     <li class="nav-item  ">
-                        <?php echo CHtml::link('Laporan Penjualan Kacamata', array('/admin/rekap/penjualanlensa'),array('class' => 'nav-link')) ?>
+                        <?php echo CHtml::link('Laporan Penjualan Lensa', array('/admin/rekap/penjualanlensa'),array('class' => 'nav-link')) ?>
                     </li>
                     <li class="nav-item  ">
                         <?php echo CHtml::link('Laporan Penjualan Obat', array('/admin/rekap/penjualanobat'),array('class' => 'nav-link')) ?>
+                    </li>
+                    <li class="nav-item  ">
+                        <?php echo CHtml::link('Laporan Penjualan Gagang', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
                     </li>
                     <!-- <li class="nav-item  ">
                         <a href="form_controls.html" class="nav-link ">
@@ -76,35 +79,13 @@
                         </a>
                     </li> -->
                     <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Laporan Pembelian Obat
-                            </span>
-                        </a>
+                        <?php echo CHtml::link('Laporan Pembelian Obat', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
                     </li>
                     <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Laporan Pembelian Lensa
-                            </span>
-                        </a>
+                        <?php echo CHtml::link('Laporan Pembelian Lensa', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
                     </li>
                     <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Laporan Penjualan Kacamata
-                            </span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Laporan Pembelian Gagang
-                            </span>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Laporan Pembelian Obat
-                            </span>
-                        </a>
+                        <?php echo CHtml::link('Laporan Pembelian Gagang', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
                     </li>
                 </ul>
             </li>

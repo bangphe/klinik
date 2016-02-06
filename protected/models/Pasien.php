@@ -69,7 +69,7 @@ class Pasien extends CActiveRecord
 	{
 		return array(
 			'ID_PASIEN' => 'Id Pasien',
-			'ID_LAYANAN' => 'Id Layanan',
+			'ID_LAYANAN' => 'Layanan',
 			'NAMA_PASIEN' => 'Nama Pasien',
 			'ALAMAT' => 'Alamat',
 			'NO_TELP' => 'No Telp',
