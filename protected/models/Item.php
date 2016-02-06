@@ -20,8 +20,8 @@
  */
 class Item extends CActiveRecord
 {
-	const STATUS_AKTIF=1;
-    const STATUS_NON_AKTIF=2;
+	const STATUS_AKTIF=1, STATUS_NON_AKTIF=2;
+	const KATEGORI_OBAT=1, KATEGORI_GAGANG=2, KATEGORI_LENSA=3;
 
 	/**
 	 * @return string the associated database table name
@@ -57,7 +57,7 @@ class Item extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'detilItems' => array(self::HAS_MANY, 'DetilItem', 'ID_ITEM'),
+			'detilitem' => array(self::HAS_MANY, 'DetilItem', 'ID_ITEM'),
 			'kategori' => array(self::BELONGS_TO, 'Kategori', 'ID_KATEGORI'),
 			'orderDetails' => array(self::HAS_MANY, 'OrderDetail', 'ID_ITEM'),
 		);
@@ -176,13 +176,18 @@ class Item extends CActiveRecord
 
     public static function getHargaByResep($id, $resep) {
     	$total=0;
+    	$kategori_obat = self::model()->findByPk($id)->ID_KATEGORI;
     	$harga = self::model()->findByPk($id)->HARGA_JUAL;
-        if($resep==1)
-        	//kalo RESEP UMUM = harga ditambahkan 33%
-            $total = $harga + (33/100 * $harga);
-        else
-        	//kalo RESEP DOKTER = harga + 1200
-        	$total = $harga + 1200;
+        if ($kategori_obat==self::KATEGORI_OBAT) {
+        	if($resep==1)
+	        	//kalo RESEP UMUM = harga ditambahkan 33%
+	            $total = $harga + (33/100 * $harga);
+	        else
+	        	//kalo RESEP DOKTER = harga + 1200
+	        	$total = $harga + 1200;
+        } else {
+        	$total = $harga;
+        }
 
         //return $subtotal - ($subtotal * ($this->DISKON / 100));
     	return $total;
@@ -197,5 +202,52 @@ class Item extends CActiveRecord
     {
         $connection = Yii::app()->db;
         return $connection->createCommand('SELECT SUM(STOK) FROM detil_item WHERE ID_ITEM='.$iditem)->queryScalar();
+    }
+
+    public static function getObatExpired() {
+        // dari laundry, dry cleaning, dst
+        $criteria = new CDbCriteria(array(
+            'with' => array(
+                'detilitem' => array(
+                    'joinType' => 'inner join',
+                )
+            ),
+            'condition' => 'STATUS = :status',
+            'params' => array(':status' => self::STATUS_AKTIF),
+            'order' => 'TANGGAL_EXPIRED DESC',
+            'limit' => '5',
+            'together' => true
+        ));
+        
+        //return CHtml::listData(self::model()->findAll($criteria), 'KODE_BARANG', 'NAMA_BARANG');
+        return self::model()->findAll($criteria);
+    }
+
+    public static function getExpired()
+    {
+        $connection = Yii::app()->db;
+        return $connection->createCommand('SELECT * FROM item WHERE date(TANGGAL_EXPIRED) >= date(NOW()) AND date(TANGGAL_EXPIRED) <= DATE_ADD(date(now()), INTERVAL 10 DAY)')->queryAll();
+    }
+
+    public static function getPenjualanItem($kategori) {
+        $criteria = new CDbCriteria(array(
+            'condition' => 'ID_KATEGORI = :kategori',
+            'params' => array(':kategori' => $kategori),
+            'group' => 'ID_ITEM',
+        ));
+        
+        return self::model()->findAll($criteria);
+    }
+
+    public static function getTotalItemDijual($kd)
+    {
+        $connection = Yii::app()->db;
+        $query = $connection->createCommand('SELECT SUM(JUMLAH) FROM order_detail WHERE ID_ITEM='.$kd)->queryScalar();
+        if ($query==null) {
+            return '0';
+        }
+        else {
+            return $query;
+        }
     }
 }

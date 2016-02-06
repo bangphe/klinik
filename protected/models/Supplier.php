@@ -102,4 +102,17 @@ class Supplier extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public static function optionSupplier()
+    {
+        $criteria=new CDbCriteria;
+        $criteria->order = 'ID_SUPPLIER ASC';
+        $model = self::model()->findAll($criteria);
+        $data = CHtml::listData($model,'ID_SUPPLIER','NAMA_SUPPLIER');
+        return $data;
+    }
+
+    public static function getSupplierById($id) {
+        return self::model()->findByPk($id)->NAMA_SUPPLIER;
+    }
 }

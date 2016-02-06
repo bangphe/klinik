@@ -1,6 +1,9 @@
 <?php
 class MyFormatter extends CFormatter
 {   
+    public static function formatAngka($value) {
+        return number_format($value, 0, ',', '.');
+    }
     public static function alertInfo($message)
     {
         return '<div class="alert alert-info alert-dismissable"><button type="button" class="close" data-dismiss="alert">×</button>'.$message.'</div>';
@@ -53,6 +56,17 @@ class MyFormatter extends CFormatter
             return '<span class="label">Unknown</span>';
     }
 
+    public static function formatKategori($value){
+        if($value==Kategori::OBAT)
+            return '<span class="label label-info">OBAT</span>';
+        else if($value==Kategori::GAGANG)
+            return '<span class="label label-danger">GAGANG</span>';
+        else if($value==Kategori::LENSA)
+            return '<span class="label label-warning">LENSA</span>';
+        else
+            return '<span class="label">Unknown</span>';
+    }
+
     public static function formatPembayaran($value){
         if($value==Order::BELOM_DIBAYAR)
             return '<span class="label label-warning">Belum dibayar</span>';
@@ -67,7 +81,7 @@ class MyFormatter extends CFormatter
     }
 
     public static function formatUangNota($value) {
-        return number_format($value, 0, ',', '.');
+        return "Rp. " . number_format($value, 0, ',', '.');
     }
 
     public static function hitungDiskon($diskon, $harga) {
@@ -89,12 +103,12 @@ class MyFormatter extends CFormatter
         $harga_total=0;
         
         if($diskon==0) {
-            return number_format($harga * $jumlah, 0, ',', '.');
+            return "Rp. " . number_format($harga * $jumlah, 0, ',', '.');
         }
         else {
             $harga_diskon = ($diskon*$harga)/100;
             $harga_total = $harga-$harga_diskon;
-            return number_format($harga_total * $jumlah, 0, ',', '.');
+            return "Rp. " . number_format($harga_total * $jumlah, 0, ',', '.');
         }       
     }
 

@@ -3,11 +3,13 @@
 /* @var $model Order */
 
 $this->breadcrumbs=array(
-	'Orders'=>array('index'),
+	'Data Order'=>array('index'),
 	$model->KODE_ORDER,
 );
 
 ?>
+
+<?php echo Yii::app()->user->getFlash('info') ?>
 
 <div class="col-md-6">
 	<div class="portlet box green-jungle">

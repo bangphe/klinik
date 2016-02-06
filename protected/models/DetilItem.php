@@ -109,4 +109,12 @@ class DetilItem extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public static function getDetilItem($kd) {
+        $criteria = new CDbCriteria;
+        $criteria->condition = 'ID_ITEM=:kd';
+		$criteria->params = array(':kd'=>$kd);
+		$criteria->order = 'ID_SUPPLIER ASC';
+        return self::model()->findAll($criteria);
+    }
 }

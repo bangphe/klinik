@@ -24,6 +24,7 @@ class UserIdentity extends CUserIdentity
             $this->errorCode = self::ERROR_PASSWORD_INVALID;
         else {
             $this->setState('isLogin', true);
+            $this->setState('idUser',$record->ID_USER);
             $this->setState('role', $record->ID_ROLE);
             $this->setState('nama', $record->NAMA);
             $this->errorCode = self::ERROR_NONE;

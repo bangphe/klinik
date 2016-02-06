@@ -176,6 +176,7 @@ Yii::app()->clientScript->registerScript('search', "
                                 ));
                                 ?>
                             </div>
+                            <span class="label label-danger">PERHATIAN!</span> <span> hanya untuk pembelian obat.</span>
                             <?php echo $form->error($orderbaru, 'RESEP'); ?>
                         </div>
                     </div>

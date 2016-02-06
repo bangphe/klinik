@@ -3,31 +3,111 @@
 /* @var $model Item */
 
 $this->breadcrumbs=array(
-	'Items'=>array('index'),
-	$model->ID_ITEM,
-);
-
-$this->menu=array(
-	array('label'=>'List Item', 'url'=>array('index')),
-	array('label'=>'Create Item', 'url'=>array('create')),
-	array('label'=>'Update Item', 'url'=>array('update', 'id'=>$model->ID_ITEM)),
-	array('label'=>'Delete Item', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_ITEM),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Item', 'url'=>array('admin')),
+	'Data Item'=>array('index'),
+	$model->NAMA_ITEM,
 );
 ?>
 
-<h1>View Item #<?php echo $model->ID_ITEM; ?></h1>
+<?php echo Yii::app()->user->getFlash('info') ?>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'ID_ITEM',
-		'ID_KATEGORI',
-		'NAMA_ITEM',
-		'UKURAN',
-		'SATUAN',
-		'HARGA_JUAL',
-		'TANGGAL_EXPIRED',
-		'STATUS',
-	),
-)); ?>
+<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-speech"></i>
+            <span class="caption-subject bold uppercase"> <?= $model->NAMA_ITEM; ?></span>
+        </div>
+        <div class="actions">
+            <?php echo CHtml::link('<i class="fa fa-plus"></i> Tambah Barang', array('/admin/item/create'),array('class' => 'btn default')) ?>
+            <?php echo CHtml::link('<i class="fa fa-user"></i> Update Stok', array('/admin/item/updatestok', 'id' => $model->ID_ITEM),array('class' => 'btn blue')) ?>
+            <?php echo CHtml::link('<i class="fa fa-edit"></i> Edit', array('/admin/item/update', 'id' => $model->ID_ITEM), array('class' => 'btn btn-danger')) ?>
+        </div>
+    </div>
+    <div class="portlet-body">
+    	<div class="note note-info">
+    		<strong>Info!</strong> Stok tersedia <span class="label label-primary"><?= Item::getStokItem($model->ID_ITEM); ?></span>
+        </div>
+    	<div class="tabbable-line tabbable-full-width">
+		    <ul class="nav nav-tabs">
+		        <li class="active">
+		            <a href="#tab_1_1" data-toggle="tab" aria-expanded="true"> Detil </a>
+		        </li>
+		        <li class="">
+		            <a href="#tab_1_3" data-toggle="tab" aria-expanded="false"> Stok Item </a>
+		        </li>
+		    </ul>
+		    <div class="tab-content">
+		        <div class="tab-pane active" id="tab_1_1">
+		            <div class="row">
+		            	<div class="col-md-12">
+		            		<div class="table-scrollable">
+		                    		<?php $this->widget('zii.widgets.CDetailView', array(
+								 		'data' => $model,
+								        'htmlOptions' => array(
+								            'class' => 'table table-bordered',
+								        ),
+								 		'attributes'=>array(
+											'ID_ITEM',
+											array(
+                                                'name'=>'KATEGORI',
+                                                'type'=>'kategori',
+                                                'value'=>$model->ID_KATEGORI
+                                            ),
+											'NAMA_ITEM',
+											'UKURAN',
+											'SATUAN',
+											array(
+												'name'=>'HARGA_JUAL',
+												'type'=>'uang',
+												'value'=>$model->HARGA_JUAL,
+											),
+											array(
+												'name'=>'TANGGAL_EXPIRED',
+												'type'=>'tanggal',
+												'value'=>$model->TANGGAL_EXPIRED,
+											),
+											array(
+                                                'name'=>'STATUS',
+                                                'type'=>'statusAktif',
+                                                'value'=>$model->STATUS
+                                            ),
+										),
+								 		)); 
+								 	?>
+		                    	</div>
+		            	</div>
+		            </div>
+		        </div>
+		        <!--tab_1_2-->
+		        <div class="tab-pane" id="tab_1_3">
+		            <div class="portlet-body">
+		                <div class="table-responsive">
+		                    <table class="table table-striped table-hover table-bordered">
+		                    <thead>
+		                        <tr>
+		                            <th>#</th>
+		                            <th>Supplier</th>
+		                            <th>Harga Beli</th>
+		                            <th>Stok</th>
+		                            <th>Tanggal Input</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                        <?php foreach ($detil_item as $dex => $item) { ?>
+		                        <tr>
+		                            <td><?php echo $dex+1;?></td>
+		                            <td><?php echo Supplier::getSupplierById($item->ID_SUPPLIER);?></td>
+		                            <td><?php echo MyFormatter::formatUang($item->HARGA_BELI);?></td>
+		                            <td><?php echo $item->STOK;?></td>
+		                            <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_INPUT);?></td>
+		                        </tr>
+		                        <?php } ?>
+		                    </tbody>
+		                    </table>
+		                </div>
+		            </div>
+		        </div>
+		        <!--end tab-pane-->
+		    </div>
+		</div>
+    </div>
+</div>

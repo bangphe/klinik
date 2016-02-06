@@ -9,7 +9,7 @@
  * @property string $NAMA_PASIEN
  * @property string $ALAMAT
  * @property string $NO_TELP
- * @property integer $JENIS_KELAMIN
+ * @property string $JENIS_KELAMIN
  * @property string $KETERANGAN
  * @property integer $BIAYA_REGISTRASI
  * @property string $TANGGAL_REGISTRASI
@@ -36,8 +36,8 @@ class Pasien extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_LAYANAN, NAMA_PASIEN, ALAMAT, NO_TELP, JENIS_KELAMIN', 'required'),
-			array('ID_LAYANAN, JENIS_KELAMIN, BIAYA_REGISTRASI', 'numerical', 'integerOnly'=>true),
+			array('ID_LAYANAN, NAMA_PASIEN, ALAMAT, NO_TELP, JENIS_KELAMIN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
+			array('ID_LAYANAN, BIAYA_REGISTRASI', 'numerical', 'integerOnly'=>true),
 			array('NAMA_PASIEN', 'length', 'max'=>100),
 			array('ALAMAT', 'length', 'max'=>200),
 			array('NO_TELP', 'length', 'max'=>15),
@@ -69,7 +69,7 @@ class Pasien extends CActiveRecord
 	{
 		return array(
 			'ID_PASIEN' => 'Id Pasien',
-			'ID_LAYANAN' => 'Id Layanan',
+			'ID_LAYANAN' => 'Layanan',
 			'NAMA_PASIEN' => 'Nama Pasien',
 			'ALAMAT' => 'Alamat',
 			'NO_TELP' => 'No Telp',

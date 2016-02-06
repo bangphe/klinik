@@ -28,16 +28,16 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array(
+					'index',
+					'create',
+					'view',
+					'update',
+					'delete',
+				),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				//'roles'=>array(WebUser::ROLE_ADMIN),
+				'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 1',
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -70,6 +70,7 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+			$model->STATUS = 1;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->ID_USER));
 		}
@@ -122,7 +123,9 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('User');
+		$dataProvider=new CActiveDataProvider('User',array(
+			'pagination'=>false
+		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

@@ -28,16 +28,16 @@ class PasienController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array(
+					'index',
+					'create',
+					'view',
+					'update',
+					'delete',
+				),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				//'roles'=>array(WebUser::ROLE_ADMIN),
+				'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 1',
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -70,6 +70,8 @@ class PasienController extends Controller
 		if(isset($_POST['Pasien']))
 		{
 			$model->attributes=$_POST['Pasien'];
+			$model->setAttribute('BIAYA_REGISTRASI','5000');
+			$model->setAttribute('TANGGAL_REGISTRASI',date('Y-m-d H:i:s'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->ID_PASIEN));
 		}
@@ -122,7 +124,9 @@ class PasienController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Pasien');
+		$dataProvider=new CActiveDataProvider('Pasien',array(
+			'pagination'=>false
+		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
