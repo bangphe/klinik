@@ -141,4 +141,19 @@ class Pasien extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function ListPasienSMS()
+    {
+        $criteria = new CDbCriteria();
+        $criteria->condition = "NO_TELP != ''";
+        $pelanggan = self::model()->findAll($criteria);
+        $list = array();
+        foreach ($pelanggan as $key => $value) {
+            if(strlen($value['NO_TELP']) > 10){
+                $list[$value['ID_PASIEN']] = $value['NAMA_PASIEN']." (".$value['NO_TELP'].")";
+            }
+        }
+        return $list;
+
+    }
 }
