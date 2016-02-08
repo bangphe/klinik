@@ -112,7 +112,19 @@ class Pasien extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-
+	public function siapaAku($id)
+    {
+       if($id != 0){
+           $pelanggan = Pasien::model()->findByPk($id);
+           if(count($pelanggan) > 0){
+               return $pelanggan->NAMA_PASIEN;
+           }else{
+               return "-";
+           }
+       }else{
+           return "-";
+       }
+    }
 	public function searchDesc()
 	{
 		// Warning: Please modify the following code to remove attributes that

@@ -56,9 +56,9 @@ $('.search-form form').submit(function(){
                         	'value' => 'MyFormatter::formatTanggalWaktu($data->TANGGAL_KIRIM)',
                         ),
                         array(
-                        	'header' => 'Pelanggan',
+                        	'header' => 'Pasien',
                         	'type' => 'raw',
-                        	'value' => 'Pelanggan::model()->siapaAku($data->ID_PELANGGAN)',
+                        	'value' => 'Pasien::model()->siapaAku($data->ID_PASIEN)',
                         ),
                         'TUJUAN',
                         'PESAN',

@@ -112,6 +112,13 @@ class MyFormatter extends CFormatter
         }       
     }
 
+    public static function formatStatusBerhasil($value) {
+       if ($value == 1)
+           return '<span class="label label-success">Berhasil</span>';
+       else
+           return '<span class="label label-danger">Gagal</span>';
+   }
+
     public static function formatStatusUser($value)
     {
         if($value==User::STATUS_AKTIF)
