@@ -137,7 +137,7 @@ class SmsController extends Controller
 								// simpan sms ke db
 								$smsLog=new SmsLog;
 								$smsLog->ID_USER = Yii::app()->user->getState('nama');
-								$smsLog->ID_PELANGGAN = 0;
+								$smsLog->ID_PASIEN = 0;
 								$smsLog->PESAN = $pesan;
 								$smsLog->TUJUAN = $value;
 								$smsLog->TANGGAL_KIRIM = date("Y-m-d H:i:s");
