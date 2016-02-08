@@ -4,7 +4,7 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50539
 Source Host           : localhost:3306
-Source Database       : klinik_db
+Source Database       : klinik_db_new
 
 Target Server Type    : MYSQL
 Target Server Version : 50539

@@ -30,7 +30,7 @@ $this->breadcrumbs=array(
                                     <button class="btn green  btn-outline dropdown-toggle" data-toggle="dropdown">Tools
                                         <i class="fa fa-angle-down"></i>
                                     </button>
-                                    <ul class="dropdown-menu pull-right">
+                                    <!-- <ul class="dropdown-menu pull-right">
                                         <li>
                                             <a href="javascript:;">
                                                 <i class="fa fa-print"></i> Print </a>
@@ -43,7 +43,7 @@ $this->breadcrumbs=array(
                                             <a href="javascript:;">
                                                 <i class="fa fa-file-excel-o"></i> Export to Excel </a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </div>
