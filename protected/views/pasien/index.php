@@ -57,7 +57,7 @@ $this->breadcrumbs=array(
                                 <th> Nomor Telepon </th>
                                 <th> Jenis Kelamin </th>
                                 <th> Tanggal Registrasi </th>
-                                <th> Action </th>
+                                <!-- <th> Action </th> -->
                             </tr>
                         </thead>
                         <tbody>

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50539
 File Encoding         : 65001
 
-Date: 2016-02-08 21:41:45
+Date: 2016-02-08 22:27:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -124,7 +124,7 @@ INSERT INTO `layanan` VALUES ('1', 'Optik');
 -- ----------------------------
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
-  `KODE_ORDER` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `KODE_ORDER` int(6) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `ID_PASIEN` int(11) NOT NULL,
   `RESEP` int(1) DEFAULT NULL,
   `TANGGAL_ORDER` datetime DEFAULT NULL,
@@ -139,20 +139,20 @@ CREATE TABLE `order` (
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order` VALUES ('00000000001', '1', null, '2016-01-27 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000006', '1', null, '2016-01-27 00:00:00', null, '24000', '10500');
-INSERT INTO `order` VALUES ('00000000007', '2', null, '2016-01-27 00:00:00', null, '4500000', '189000');
-INSERT INTO `order` VALUES ('00000000008', '2', null, '2016-01-27 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000009', '1', '1', '2016-01-28 00:00:00', null, '550000', '134375');
-INSERT INTO `order` VALUES ('00000000010', '1', null, '2016-01-28 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000011', '1', '2', '2016-01-28 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000012', '2', '1', '2016-01-28 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000013', '1', '2', '2016-01-28 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000014', '2', null, '2016-02-02 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000015', '1', '2', '2016-02-02 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000016', '2', '1', '2016-02-02 00:00:00', null, null, null);
-INSERT INTO `order` VALUES ('00000000017', '2', '1', '2016-02-02 00:00:00', 'Kasir', '22552141', '20398151');
-INSERT INTO `order` VALUES ('00000000018', '2', '2', '2016-02-02 00:00:00', 'Kasir', '4500000', '490400');
+INSERT INTO `order` VALUES ('000001', '1', null, '2016-01-27 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000006', '1', null, '2016-01-27 00:00:00', null, '24000', '10500');
+INSERT INTO `order` VALUES ('000007', '2', null, '2016-01-27 00:00:00', null, '4500000', '189000');
+INSERT INTO `order` VALUES ('000008', '2', null, '2016-01-27 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000009', '1', '1', '2016-01-28 00:00:00', null, '550000', '134375');
+INSERT INTO `order` VALUES ('000010', '1', null, '2016-01-28 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000011', '1', '2', '2016-01-28 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000012', '2', '1', '2016-01-28 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000013', '1', '2', '2016-01-28 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000014', '2', null, '2016-02-02 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000015', '1', '2', '2016-02-02 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000016', '2', '1', '2016-02-02 00:00:00', null, null, null);
+INSERT INTO `order` VALUES ('000017', '2', '1', '2016-02-02 00:00:00', 'Kasir', '22552141', '20398151');
+INSERT INTO `order` VALUES ('000018', '2', '2', '2016-02-02 00:00:00', 'Kasir', '4500000', '490400');
 
 -- ----------------------------
 -- Table structure for `order_detail`
@@ -235,17 +235,17 @@ CREATE TABLE `pasien` (
   PRIMARY KEY (`ID_PASIEN`),
   KEY `ID_LAYANAN` (`ID_LAYANAN`),
   CONSTRAINT `pasien_ibfk_1` FOREIGN KEY (`ID_LAYANAN`) REFERENCES `layanan` (`ID_LAYANAN`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of pasien
 -- ----------------------------
 INSERT INTO `pasien` VALUES ('1', '1', 'Joko Susanto', 'Pondok Jati', '', '0', null, '5000', '2016-01-24 22:30:08');
-INSERT INTO `pasien` VALUES ('2', '1', 'Handina', 'Jalan Simo', '085731205312', '2', 'Nyeri di leher', '5000', null);
-INSERT INTO `pasien` VALUES ('3', '1', 'Harvian', 'prikitiww', '0857312053121', 'L', null, '5000', null);
-INSERT INTO `pasien` VALUES ('4', '1', 'Johan Suswanto', 'ssdfsdfsdf', '085731205312', 'P', null, '5000', null);
+INSERT INTO `pasien` VALUES ('2', '1', 'Handina', 'Jalan Simo', '085731205312', '2', 'Nyeri di leher', '5000', '2016-02-02 22:18:35');
+INSERT INTO `pasien` VALUES ('3', '1', 'Harvian', 'prikitiww', '0857312053121', 'L', null, '5000', '2016-02-01 22:18:39');
+INSERT INTO `pasien` VALUES ('4', '1', 'Johan Suswanto', 'ssdfsdfsdf', '085731205312', 'P', null, '5000', '2016-01-31 22:18:42');
 INSERT INTO `pasien` VALUES ('5', '1', 'Handoko Siswoyo', 'dsfsdfsf', '343434', 'P', null, '5000', '2016-02-02 12:25:45');
-INSERT INTO `pasien` VALUES ('6', '1', 'Hindoko', 'sdfsdf', '239232', '', 'ddfdsf', null, null);
+INSERT INTO `pasien` VALUES ('6', '1', 'Hindoko', 'sdfsdf', '239232', '', 'ddfdsf', null, '2016-02-01 22:18:46');
 
 -- ----------------------------
 -- Table structure for `role_user`
@@ -340,7 +340,7 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '1', 'Administrator', 'admin', 'asdasd', '2016-02-08 13:29:08', '1');
+INSERT INTO `user` VALUES ('1', '1', 'Administrator', 'admin', 'asdasd', '2016-02-08 16:27:19', '1');
 INSERT INTO `user` VALUES ('2', '2', 'Kasir', 'kasir', 'asdasd', '2016-02-08 14:12:05', '1');
 INSERT INTO `user` VALUES ('3', '1', 'Bamban', 'susu', 'ususu', null, null);
 INSERT INTO `user` VALUES ('4', '1', 'Admins', 'mimin', 'asdasd', '2016-02-03 17:31:07', '1');

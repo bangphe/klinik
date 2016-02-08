@@ -56,7 +56,6 @@ $this->breadcrumbs=array(
                                 <th> Tanggal Order </th>
                                 <th> Jumlah Item </th>
                                 <th> Total Harga </th>
-                                <th> Pilihan </th>
                             </tr>
                         </thead>
                         <tbody>

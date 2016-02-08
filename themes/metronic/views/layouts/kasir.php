@@ -24,6 +24,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
         <meta content="" name="author" />
+        <!-- FORM YII -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+        <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/detailview/styles.css" />
         <?php $baseUrl = Yii::app()->theme->baseUrl; ?>
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
@@ -71,10 +74,10 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="hor-menu   hidden-sm hidden-xs">
                     <ul class="nav navbar-nav">
                         <!-- DOC: Remove data-hover="megamenu-dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
-                        <li class="classic-menu-dropdown active">
+                        <li class="<?= ($this->ID=="site") ? "classic-menu-dropdown active" : "classic-menu-dropdown"; ?>">
                             <?php echo CHtml::link('Home <span class="selected"></span>', array('/')) ?>
                         </li>
-                        <li class="classic-menu-dropdown">
+                        <li class="<?= ($this->ID=="order") ? "classic-menu-dropdown active" : "classic-menu-dropdown"; ?>">
                             <?php echo CHtml::link('Order <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
                             <ul class="dropdown-menu pull-left">
                                 <li>
@@ -82,7 +85,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </li>
                             </ul>
                         </li>
-                        <li class="classic-menu-dropdown">
+                        <li class="<?= ($this->ID=="pasien") ? "classic-menu-dropdown active" : "classic-menu-dropdown"; ?>">
                             <?php echo CHtml::link('Pasien <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
                             <ul class="dropdown-menu pull-left">
                                 <li>
@@ -93,7 +96,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </li>
                             </ul>
                         </li>
-                        <li class="classic-menu-dropdown">
+                        <li class="<?= ($this->ID=="sms") ? "classic-menu-dropdown active" : "classic-menu-dropdown"; ?>">
                             <?php echo CHtml::link('SMS Broadcast <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
                             <ul class="dropdown-menu pull-left">
                                 <li>

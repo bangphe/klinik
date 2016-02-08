@@ -63,7 +63,7 @@ class PasienController extends Controller
 	public function actionCreate()
 	{
 		$model=new Pasien;
-
+		$model->scenario = 'baru';
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

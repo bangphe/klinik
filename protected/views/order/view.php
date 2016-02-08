@@ -67,7 +67,7 @@ foreach ($model->orderdetail as $i => $detail) {
                             ),
 							array(
                                 'name' => 'TANGGAL_ORDER',
-                                'type' => 'tanggal',
+                                'type' => 'tanggalWaktu',
                                 'value' => $model->TANGGAL_ORDER
                             ),
                             array(

@@ -16,6 +16,7 @@ $form = $this->beginWidget('CActiveForm', array(
                 <?php echo $form->labelEx($pelanggan_baru, 'NAMA_PASIEN', array('class' => 'control-label col-md-3')); ?>
                 <div class="col-md-9">
                     <?php echo $form->textField($pelanggan_baru, 'NAMA_PASIEN', array('class' => 'form-control')); ?>
+                    <?php echo $form->error($pelanggan_baru,'NAMA_PASIEN'); ?>
                 </div>
             </div>
         </div>
@@ -29,6 +30,7 @@ $form = $this->beginWidget('CActiveForm', array(
                         'class'=>'form-control',
                         'prompt'=>'- Pilih Layanan -'
                     )); ?>
+                    <?php echo $form->error($pelanggan_baru,'ID_LAYANAN'); ?>
                 </div>
             </div>
         </div>
@@ -41,6 +43,7 @@ $form = $this->beginWidget('CActiveForm', array(
                 <?php echo $form->labelEx($pelanggan_baru, 'NO_TELP', array('class' => 'control-label col-md-3')); ?>
                 <div class="col-md-9">
                     <?php echo $form->textField($pelanggan_baru, 'NO_TELP', array('class' => 'form-control')); ?>
+                    <?php echo $form->error($pelanggan_baru,'NO_TELP'); ?>
                 </div>
             </div>
         </div>
@@ -50,6 +53,7 @@ $form = $this->beginWidget('CActiveForm', array(
                 <?php echo $form->labelEx($pelanggan_baru, 'ALAMAT', array('class' => 'control-label col-md-3')); ?>
                 <div class="col-md-9">
                     <?php echo $form->textArea($pelanggan_baru, 'ALAMAT', array('class' => 'form-control')); ?>
+                    <?php echo $form->error($pelanggan_baru,'ALAMAT'); ?>
                 </div>
             </div>
         </div>
@@ -69,6 +73,7 @@ $form = $this->beginWidget('CActiveForm', array(
                             'template'=>'{input} {label}',
                         ));
                         ?>
+                        <?php echo $form->error($pelanggan_baru,'JENIS_KELAMIN'); ?>
                     </div>
                 </div>
             </div>

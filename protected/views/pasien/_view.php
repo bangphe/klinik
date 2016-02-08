@@ -4,8 +4,8 @@
     <td><?php echo CHtml::encode($data->ALAMAT); ?></td>
     <td><?php echo CHtml::encode($data->NO_TELP); ?></td>
     <td><?php echo CHtml::encode($data->JENIS_KELAMIN); ?></td>
-    <td><?php echo CHtml::encode($data->TANGGAL_REGISTRASI); ?></td>
-    <td width="12%">
-        <?php echo CHtml::link('<i class="fa fa-trash-o"></i> Hapus',array('delete','id'=>$data->ID_PASIEN),array('class'=>'btn btn-sm red filter-cancel','submit'=>array('delete','id'=>$data->ID_PASIEN),'confirm'=>'Apakah Anda yakin akan menghapus '.$data->NAMA_PASIEN.'?')); ?>
-    </td>
+    <td><?php echo CHtml::encode(MyFormatter::formatTanggalWaktu($data->TANGGAL_REGISTRASI)); ?></td>
+    <!-- <td width="12%">
+        <?php //echo CHtml::link('<i class="fa fa-trash-o"></i> Hapus',array('delete','id'=>$data->ID_PASIEN),array('class'=>'btn btn-sm red filter-cancel','submit'=>array('delete','id'=>$data->ID_PASIEN),'confirm'=>'Apakah Anda yakin akan menghapus '.$data->NAMA_PASIEN.'?')); ?>
+    </td> -->
 </tr>
