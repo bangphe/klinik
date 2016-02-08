@@ -93,20 +93,20 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </li>
                             </ul>
                         </li>
-                        <!-- <li class="classic-menu-dropdown">
-                            <?php //echo CHtml::link('SMS Broadcast <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
+                        <li class="classic-menu-dropdown">
+                            <?php echo CHtml::link('SMS Broadcast <i class="fa fa-angle-down"></i>', "javascript:;", array('data-hover' => 'dropdown', 'data-close-others' => 'true', 'data-toggle' => 'dropdown')) ?>
                             <ul class="dropdown-menu pull-left">
                                 <li>
-                                    <?php //echo CHtml::link('<i class="icon-user-add"></i> Riwayat SMS', array('/sms')) ?>
+                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Riwayat SMS', array('/sms')) ?>
                                 </li>
                                 <li>
-                                    <?php //echo CHtml::link('<i class="icon-user-add"></i> Kirim SMS Pelanggan', array('/sms/createMultiple')) ?>
+                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Kirim SMS Pelanggan', array('/sms/createMultiple')) ?>
                                 </li>
                                 <li>
-                                    <?php //echo CHtml::link('<i class="icon-user-add"></i> Kirim SMS Manual', array('/sms/create')) ?>
+                                    <?php echo CHtml::link('<i class="icon-user-add"></i> Kirim SMS Manual', array('/sms/create')) ?>
                                 </li>
                             </ul>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
                 <!-- END MEGA MENU -->
