@@ -12,6 +12,8 @@
  */
 class Layanan extends CActiveRecord
 {
+	const OPTIK = 1;
+
 	/**
 	 * @return string the associated database table name
 	 */

@@ -58,7 +58,7 @@
             <div class="col-md-9">
                 <div class="radio-list">
                     <?php
-                    echo $form->radioButtonList($model, 'JENIS_KELAMIN', array('1'=>'Pria', '2'=>'Wanita'), array(
+                    echo $form->radioButtonList($model, 'JENIS_KELAMIN', array('L'=>'Pria', 'P'=>'Wanita'), array(
                         'class'=>'form-control input-large',
                         'labelOptions'=>array('style'=>'display:inline'),
                         'template'=>'{input} {label}',

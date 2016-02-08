@@ -47,11 +47,27 @@ class MyFormatter extends CFormatter
             return '<span class="label">Unknown</span>';
     }
 
+    public static function formatJk($value){
+        if($value==Pasien::PRIA)
+            return '<span class="label label-success">Pria</span>';
+        else if($value==Pasien::WANITA)
+            return '<span class="label label-danger">Wanita</span>';
+        else
+            return '<span class="label">Unknown</span>';
+    }
+
     public static function formatResep($value){
         if($value==Order::RESEP_UMUM)
             return '<span class="label label-info">Resep umum</span>';
         else if($value==Order::RESEP_DOKTER)
             return '<span class="label label-danger">Resep dokter</span>';
+        else
+            return '<span class="label">Unknown</span>';
+    }
+
+    public static function formatLayanan($value){
+        if($value==Layanan::OPTIK)
+            return '<span class="label label-info">Optik</span>';
         else
             return '<span class="label">Unknown</span>';
     }

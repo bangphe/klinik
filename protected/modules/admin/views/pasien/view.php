@@ -27,16 +27,28 @@ $this->breadcrumbs=array(
                     'class' => 'table table-bordered table-striped',
                 ),
 		 		'attributes'=>array(
-		 			'ID_PASIEN',
-		 			'ID_LAYANAN',
-		 			'NAMA_PASIEN',
-		 			'ALAMAT',
-		 			'NO_TELP',
-		 			'JENIS_KELAMIN',
-		 			'KETERANGAN',
-		 			'BIAYA_REGISTRASI',
-		 			'TANGGAL_REGISTRASI',
-		 			),
+						'ID_PASIEN',
+						array(
+                            'name'=>'Layanan',
+                            'type'=>'layanan',
+                            'value'=>$model->ID_LAYANAN,
+                        ),
+						'NAMA_PASIEN',
+						'ALAMAT',
+						'NO_TELP',
+						array(
+                            'name'=>'Jenis Kelamin',
+                            'type'=>'jk',
+                            'value'=>$model->JENIS_KELAMIN,
+                        ),
+						'KETERANGAN',
+						'BIAYA_REGISTRASI',
+                        array(
+                            'name'=>'TANGGAL_REGISTRASI',
+                            'type'=>'tanggalWaktu',
+                            'value'=>$model->TANGGAL_REGISTRASI,
+                        ),
+					),
 		 		)); 
 		 	?>
         </div>

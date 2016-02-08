@@ -20,6 +20,8 @@
  */
 class Pasien extends CActiveRecord
 {
+	const PRIA = 'L', WANITA = 'P';
+
 	/**
 	 * @return string the associated database table name
 	 */

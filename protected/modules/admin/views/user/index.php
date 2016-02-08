@@ -3,10 +3,12 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Users',
+	'Data User',
 );
 
 ?>
+
+<?php echo Yii::app()->user->getFlash('info') ?>
 
 <div class="app-ticket app-ticket-list">
     <div class="row">
