@@ -141,10 +141,9 @@
                                 <tr>
                                     <th> No </th>
                                     <th> Nama Pasien </th>
-                                    <th> Tanggal Order </th>
+                                    <th> Tanggal Masuk </th>
                                     <th> Total Item </th>
                                     <!-- <th> Total Harga </th> -->
-                                    <th> # </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -155,9 +154,57 @@
                                     <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
                                     <td><?php echo OrderDetail::getJumlahItem($item->KODE_ORDER);?></td>
                                     <!-- <td><?php //echo MyFormatter::formatUang($item->getSubtotal());?></td> -->
-                                    <td>
+                                    <!-- <td>
                                         <?php echo CHtml::link('<i class="fa fa-search"></i>',array('/admin/order/view/','id'=>$item->KODE_ORDER),array('class'=>'btn default btn-xs green-stripe')); ?>
-                                    </td>
+                                    </td> -->
+                                </tr>
+                                <?php } ?>
+                                <tr>
+                                    <td>1</td>
+                                    <td><a href=""> Ini Contoh Link </a></td>
+                                    <td>08 Februari 2016 20:19 WIB</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONDENSED TABLE PORTLET-->
+        </div>
+        <div class="col-md-6">
+        <!-- BEGIN CONDENSED TABLE PORTLET-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-picture"></i>Obat Habis </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+                        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                        <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
+                        <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                                <tr>
+                                    <th> No </th>
+                                    <th> Nama Obat </th>
+                                    <th> Generik </th>
+                                    <th> Golongan </th>
+                                    <!-- <th> Total Harga </th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach (Order::ListOrder() as $dex => $item) { ?>
+                                <tr>
+                                    <td><?php echo $dex+1;?></td>
+                                    <td><?php echo $item->pasien->NAMA_PASIEN;?></td>
+                                    <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
+                                    <td><?php echo OrderDetail::getJumlahItem($item->KODE_ORDER);?></td>
+                                    <!-- <td><?php //echo MyFormatter::formatUang($item->getSubtotal());?></td> -->
                                 </tr>
                                 <?php } ?>
                             </tbody>
