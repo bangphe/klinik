@@ -57,11 +57,13 @@ $this->breadcrumbs=array(
                                                 <td><?php echo $item->kategori->KATEGORI; ?></td>
                                         		<td style="text-align:center;"><?php echo MyFormatter::stokBarang(Item::getTotalStok($item->ID_ITEM)); ?></td>
                                         		<td><?php echo MyFormatter::formatUang($item->HARGA_JUAL); ?></td>
-                                        		<td style="text-align:center;"><?php echo MyFormatter::statusAktif($item->STATUS); ?></td>
-                                                <td width="15%">
-                                                    <?php echo CHtml::link('<i class="fa fa-pencil-square-o"></i> Ubah',array('/admin/item/update/','id'=>$item->ID_ITEM),array('class'=>'btn default btn-sm blue-stripe')); ?>
-                                                    <?php echo CHtml::link('<i class="fa fa-trash-o"></i> Hapus',array('/admin/item/hapus/','id'=>$item->ID_ITEM),array('class'=>'btn default btn-sm red-stripe','submit'=>array('hapus','id'=>$item->ID_ITEM),'confirm'=>'Apakah Anda yakin akan menghapus '.$item->NAMA_ITEM.'?')); ?>
+                                        		<td><?php echo MyFormatter::statusAktif($item->STATUS); ?></td>
+                                                <td width="20%">
+                                                    <?php echo CHtml::link('<i class="fa fa-pencil-square-o"></i> Ubah',array('/admin/item/update/','id'=>$item->ID_ITEM),array('class'=>'btn dark btn-sm btn-outline sbold uppercase')); ?>
+                                                    <?php echo CHtml::link('<i class="fa fa-trash-o"></i> Hapus',array('/admin/item/hapus/','id'=>$item->ID_ITEM),array('class'=>'btn blue btn-sm btn-outline sbold uppercase','submit'=>array('hapus','id'=>$item->ID_ITEM),'confirm'=>'Apakah Anda yakin akan menghapus '.$item->NAMA_ITEM.'?')); ?>
                                                 </td>
+                                                <!-- <a href="javascript:;" class="btn dark btn-sm btn-outline sbold uppercase">
+                                                            <i class="fa fa-share"></i> View </a> -->
                                         	</tr>
                                         	<?php endforeach;?>
                                         </tbody>
