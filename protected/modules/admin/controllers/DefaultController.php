@@ -13,8 +13,9 @@ class DefaultController extends Controller
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
                 'actions' => array('index'),
-                'users' => array('@'),
-                'roles' => array(WebUser::ROLE_ADMIN)
+                'users'=>array('@'),
+                //'roles'=>array(WebUser::ROLE_ADMIN),
+                'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 1',
                 ),
             array('deny', // deny all users
                 'users' => array('*'),
