@@ -14,7 +14,7 @@
  */
 class SmsLog extends CActiveRecord
 {
-	const NAMAPERUSAHAAN = "[KLINIK UCE]";
+	const NAMAPERUSAHAAN = "[KLINIK AR RAHMA]";
 
 	/**
 	 * @return string the associated database table name
