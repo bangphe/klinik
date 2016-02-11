@@ -89,6 +89,9 @@
                     </li>
                 </ul>
             </li>
+            <li class="<?= ($this->ID=="pasien") ? "nav-item active" : "nav-item"; ?>">
+                <?= CHtml::link('<i class="icon-heart"></i><span class="title"> Profil Klinik</span><span class="selected"></span>',array('/admin/pasien'), array('class'=>'nav-link nav-toggle'));?>
+            </li>
         </ul>
         <!-- END SIDEBAR MENU -->
         <!-- END SIDEBAR MENU -->
