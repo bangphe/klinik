@@ -19,7 +19,7 @@ class SiteController extends Controller
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index'),
+                'actions' => array('index','getitem','getpasien'),
                 'users' => array('@'),
                 //'roles' => array(WebUser::ROLE_KASIR)
                 'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 2',
@@ -44,6 +44,28 @@ class SiteController extends Controller
 				'class'=>'CViewAction',
 			),
 		);
+	}
+
+	public function actionGetItem()
+	{
+		$ret = Item::listAll();
+		//$ret = $this->model->getData('wilayah');
+		$i=0;
+		foreach ($ret as $row) {
+			$datajson[$i]['ID_ITEM'] = $row['ID_ITEM'];
+			$datajson[$i]['NAMA_ITEM'] = $row['NAMA_ITEM'];
+			$datajson[$i]['HARGA_JUAL'] = $row['HARGA_JUAL'];
+			$i++;
+		}
+		echo json_encode($datajson);
+	}
+
+	public function actionGetPasien()
+	{
+		$kdpasien = $_GET['id'];
+		$model=Pasien::model()->findByPk($kdpasien);
+
+		echo $model->NAMA_PASIEN;
 	}
 
 	/**
@@ -124,16 +146,19 @@ class SiteController extends Controller
 	            }
 	        }
 
-			// $dataProvider=new CActiveDataProvider('Pasien',array(
-			// 	'pagination'=>false,
-			// ));
-			$this->render('index',array(
-				//'dataProvider'=>$dataProvider,
+			$dataProvider=new CActiveDataProvider('Pasien',array(
+				'pagination'=>false,
+			));
+
+			$pasien_today = Pasien::listRegisterToday();
+			$this->render('index2',array(
+				'dataProvider'=>$dataProvider,
 				'order'=>$order,
 				'order_detail'=>$order_detail,
 				'pelanggan'=>$pelanggan,
 				'pelanggan_baru'=>$newpl,
 				'orderbaru' => $orderbaru,
+				'pasien_today' => $pasien_today,
 			));
 		}
 			

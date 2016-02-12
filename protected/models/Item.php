@@ -250,4 +250,13 @@ class Item extends CActiveRecord
             return $query;
         }
     }
+
+    public static function listAll() {
+        $criteria = new CDbCriteria(array(
+            'condition' => 't.STATUS = :status',
+            'params' => array(':status' => self::STATUS_AKTIF),
+        ));
+        
+        return self::model()->findAll($criteria);
+    }
 }

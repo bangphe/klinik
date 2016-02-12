@@ -36,6 +36,7 @@ class ItemController extends Controller
 					'updatestok',
 					'hapus',
 					'delete',
+					'getitem',
 				),
 				'users'=>array('@'),
 				//'roles'=>array(WebUser::ROLE_ADMIN),
@@ -45,6 +46,19 @@ class ItemController extends Controller
 				'users'=>array('*'),
 			),
 		);
+	}
+
+	public function actionGetItem()
+	{
+		$ret = Item::listAll();
+		//$ret = $this->model->getData('wilayah');
+		//$i=0;
+		// foreach ($ret as $row) {
+		// 	$datajson[$i]['ID_ITEM'] = $row['ID_ITEM'];
+		// 	$datajson[$i]['NAMA_ITEM'] = $row['NAMA_ITEM'];
+		// 	$i++;
+		// }
+		echo json_encode($ret);
 	}
 
 	/**
