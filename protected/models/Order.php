@@ -170,4 +170,10 @@ class Order extends CActiveRecord
 
         return $subtotal;
     }
+
+    public static function listOrderToday() {
+    	$criteria2 = new CDbCriteria;
+        $criteria2->condition = 'date(TANGGAL_ORDER) = date(NOW())';
+        $hariini = Order::model()->count($criteria2);
+    }
 }

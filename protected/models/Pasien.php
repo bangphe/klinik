@@ -168,6 +168,12 @@ class Pasien extends CActiveRecord
             }
         }
         return $list;
+    }
 
+    public static function listRegisterToday() {
+    	$criteria = new CDbCriteria;
+        $criteria->condition = 'date(TANGGAL_REGISTRASI) = date(NOW())';
+
+        return self::model()->findAll($criteria);
     }
 }
