@@ -1924,3 +1924,1905 @@ Stack trace:
 REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
 HTTP_REFERER=http://localhost/klinik/site
 ---
+2016/02/12 23:23:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in /var/www/klinik/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(270): CController->missingAction('favicon.ico')
+#1 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('favicon.ico')
+#2 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('site/favicon.ic...')
+#3 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/klinik/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/site/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site/login
+---
+2016/02/13 00:02:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:02:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:02:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:02:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:04:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/favicon.ico".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/favicon.i...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/admin/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/item
+---
+2016/02/13 00:08:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:08:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:08:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/02/13 00:08:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:08:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:08:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:08:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:08:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:08:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:12:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:12:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:12:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:12:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:12:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:14:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:14:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:14:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:14:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:14:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:14:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:14:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:14:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:14:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in /var/www/klinik/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(270): CController->missingAction('favicon.ico')
+#1 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('favicon.ico')
+#2 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('order/favicon.i...')
+#3 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/klinik/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/order/favicon.ico
+HTTP_REFERER=http://localhost/klinik/order/000001
+---
+2016/02/13 00:14:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:14:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:14:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:14:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:14:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:14:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:15:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in /var/www/klinik/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(270): CController->missingAction('favicon.ico')
+#1 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('favicon.ico')
+#2 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('pasien/favicon....')
+#3 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/klinik/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/pasien/favicon.ico
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:15:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:15:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/sms
+---
+2016/02/13 00:15:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/sms
+---
+2016/02/13 00:15:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/sms
+---
+2016/02/13 00:15:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in /var/www/klinik/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/klinik/framework/web/CController.php(270): CController->missingAction('favicon.ico')
+#1 /var/www/klinik/framework/web/CWebApplication.php(282): CController->run('favicon.ico')
+#2 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('sms/favicon.ico')
+#3 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/klinik/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/sms/favicon.ico
+HTTP_REFERER=http://localhost/klinik/sms/createMultiple
+---
+2016/02/13 00:15:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/sms/create
+---
+2016/02/13 00:15:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:15:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:15:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:15:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/10
+---
+2016/02/13 00:15:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:15:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:15:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:16:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:16:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:16:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:16:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:16:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:16:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:16:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:16:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:16:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/order/000006
+---
+2016/02/13 00:22:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:22:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:22:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:23:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:23:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:23:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:23:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:23:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:23:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:23:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:23:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:23:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/02/13 00:24:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+---
+2016/02/13 00:24:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/favicon.ico".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/favicon.ico
+HTTP_REFERER=http://localhost/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+---
+2016/02/13 00:25:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:25:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:25:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:25:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:25:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:25:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
+2016/02/13 00:26:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:26:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:26:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/site
+---
+2016/02/13 00:26:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:26:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:26:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/order
+---
+2016/02/13 00:27:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/order/000023
+---
+2016/02/13 00:27:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:27:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:27:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:37:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:37:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index
+---
+2016/02/13 00:37:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:37:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/index?Pasien_page=2
+---
+2016/02/13 00:39:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_countries.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_countries.json
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nba.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nba.json
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "demo/typeahead_nhl.json".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('demo/typeahead_...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/demo/typeahead_nhl.json
+HTTP_REFERER=http://localhost/klinik/pasien/create
+---
+2016/02/13 00:39:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:39:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:39:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/
+---
+2016/02/13 00:49:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:49:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:49:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/icheck.min.js".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:49:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/detailview/styles.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('css/detailview/...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/css/detailview/styles.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:49:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/icheck/skins/all.css".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/icheck/skins/all.css
+HTTP_REFERER=http://localhost/klinik/pasien
+---
+2016/02/13 00:49:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map".' in /var/www/klinik/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/klinik/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/metronic...')
+#1 /var/www/klinik/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/klinik/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/themes/metronic/assets/global/plugins/datatables/pdfmake.min.js.map
+---
