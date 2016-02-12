@@ -54,10 +54,10 @@ return array(
 		),
 
 		'clientScript' => array(
-            'scriptMap' => array(
-                // map scripts from assets to your favourite versions (maybe CDN)
-                'jquery.js' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
-            ),
+            // 'scriptMap' => array(
+            //     // map scripts from assets to your favourite versions (maybe CDN)
+            //     'jquery.js' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
+            // ),
             'packages' => array(
                 // here's a package named 'jquery'
                 // it registers 3 JS and 2 css files, also note using scriptMap alias
