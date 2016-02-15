@@ -20,9 +20,9 @@
         </div>
         <div class="col-md-5 col-xs-6">
             <div class="company-address">
-                <span class="bold uppercase">Metronic Inc.</span>
-                <br/> 25, Lorem Lis Street, Orange C
-                <br/> California, US
+                <span class="bold uppercase">Klinik Uce & Phe</span>
+                <br/> Jalan Celalu Beldua
+                <br/> Sepanjang-Sidoarjo
                 <br/>
                 <span class="bold">T</span> 1800 123 456
             </div>
