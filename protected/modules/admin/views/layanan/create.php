@@ -1,18 +1,11 @@
 <?php
-/* @var $this LayananController */
-/* @var $model Layanan */
+/* @var $this UserController */
+/* @var $model User */
 
 $this->breadcrumbs=array(
-	'Layanans'=>array('index'),
-	'Create',
-);
-
-$this->menu=array(
-	array('label'=>'List Layanan', 'url'=>array('index')),
-	array('label'=>'Manage Layanan', 'url'=>array('admin')),
+	'Data Layanan'=>array('index'),
+	'Tambah',
 );
 ?>
-
-<h1>Create Layanan</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

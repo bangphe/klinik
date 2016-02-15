@@ -3,26 +3,40 @@
 /* @var $model Layanan */
 
 $this->breadcrumbs=array(
-	'Layanans'=>array('index'),
-	$model->ID_LAYANAN,
-);
-
-$this->menu=array(
-	array('label'=>'List Layanan', 'url'=>array('index')),
-	array('label'=>'Create Layanan', 'url'=>array('create')),
-	array('label'=>'Update Layanan', 'url'=>array('update', 'id'=>$model->ID_LAYANAN)),
-	array('label'=>'Delete Layanan', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_LAYANAN),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Layanan', 'url'=>array('admin')),
+	'Data Layanan'=>array('index'),
+	$model->LAYANAN,
 );
 ?>
 
-<h1>View Layanan #<?php echo $model->ID_LAYANAN; ?></h1>
+<?php echo Yii::app()->user->getFlash('info') ?>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'ID_LAYANAN',
-		'LAYANAN',
-		'BIAYA',
-	),
-)); ?>
+<div class="portlet box blue-steel">
+	<div class="portlet-title">
+		<div class="caption">
+			<i class="fa fa-desktop"></i>Data Layanan #<?php echo $model->LAYANAN; ?>
+		</div>
+		<div class="actions">
+			<?php echo CHtml::link('<i class="fa fa-edit"></i> Ubah', array('/admin/layanan/update', 'id' => $model->ID_LAYANAN), array('class' => 'btn btn-default btn-sm')) ?>
+        </div>
+	</div>
+	<div class="portlet-body">
+		<div class="table-scrollable">
+		 	<?php $this->widget('zii.widgets.CDetailView', array(
+		 		'data' => $model,
+                'htmlOptions' => array(
+                    'class' => 'table table-bordered table-striped',
+                ),
+		 		'attributes'=>array(
+						'ID_LAYANAN',
+						'LAYANAN',
+						array(
+                            'name' => 'BIAYA',
+                            'type' => 'uang',
+                            'value' => $model->BIAYA,
+                        ),
+					),
+		 		)); 
+		 	?>
+        </div>
+	</div>
+</div>

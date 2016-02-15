@@ -48,6 +48,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="<?= $baseUrl; ?>/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME GLOBAL STYLES -->
         <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="<?= $baseUrl; ?>/assets/pages/css/profile.min.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/pages/css/search.min.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/pages/css/contact.min.css" rel="stylesheet" type="text/css" />
         <!-- END PAGE LEVEL STYLES -->

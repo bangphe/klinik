@@ -3,11 +3,9 @@
 /* @var $model User */
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Create',
+	'Data User'=>array('index'),
+	'Tambah',
 );
-
-
 ?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

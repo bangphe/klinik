@@ -1,6 +1,6 @@
 <?php
-/* @var $this LayananController */
-/* @var $model Layanan */
+/* @var $this SupplierController */
+/* @var $model Supplier */
 /* @var $form CActiveForm */
 ?>
 
@@ -13,28 +13,35 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'htmlOptions'=>array('class'=>'form-horizontal'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note note-warning">Isian dengan tanda <span class="required">*</span> harus diisi.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'LAYANAN'); ?>
-		<?php echo $form->textField($model,'LAYANAN',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'LAYANAN'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'BIAYA'); ?>
-		<?php echo $form->textField($model,'BIAYA'); ?>
-		<?php echo $form->error($model,'BIAYA'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
+	<div class="form-body">
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'LAYANAN',array('class'=>'col-md-3 control-label')); ?>
+            <div class="col-md-4">
+                <?php echo $form->textField($model,'LAYANAN',array('maxlength'=>100,'class'=>'form-control','placeholder'=>'Nama Pelayanan')); ?>
+				<?php echo $form->error($model,'LAYANAN'); ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'BIAYA',array('class'=>'col-md-3 control-label')); ?>
+            <div class="col-md-4">
+                <?php echo $form->textField($model,'BIAYA',array('size'=>60,'maxlength'=>200,'class'=>'form-control','placeholder'=>'Biaya')); ?>
+				<?php echo $form->error($model,'BIAYA'); ?>
+            </div>
+        </div>
+    </div>
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-4">
+                <button type="submit" class="btn green"><?php echo $model->isNewRecord ? 'Simpan' : 'Simpan Perubahan'; ?></button>
+                <button type="button" class="btn default">Batal</button>
+            </div>
+        </div>
+    </div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

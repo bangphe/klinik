@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'layanan':
  * @property integer $ID_LAYANAN
  * @property string $LAYANAN
+ * @property integer $BIAYA
  *
  * The followings are the available model relations:
  * @property Pasien[] $pasiens
@@ -30,11 +31,12 @@ class Layanan extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('LAYANAN', 'required'),
+			array('LAYANAN', 'required', 'message' => '{attribute} wajib diisi'),
+			array('BIAYA', 'numerical', 'integerOnly'=>true),
 			array('LAYANAN', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID_LAYANAN, LAYANAN', 'safe', 'on'=>'search'),
+			array('ID_LAYANAN, LAYANAN, BIAYA', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +60,7 @@ class Layanan extends CActiveRecord
 		return array(
 			'ID_LAYANAN' => 'Id Layanan',
 			'LAYANAN' => 'Layanan',
+			'BIAYA' => 'Biaya',
 		);
 	}
 
@@ -81,6 +84,7 @@ class Layanan extends CActiveRecord
 
 		$criteria->compare('ID_LAYANAN',$this->ID_LAYANAN);
 		$criteria->compare('LAYANAN',$this->LAYANAN,true);
+		$criteria->compare('BIAYA',$this->BIAYA);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -43,7 +43,7 @@
             <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
                 <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
             </li>
-            <li class="<?= ($this->ID=="item" || $this->ID=="kategori" || $this->ID=="supplier") ? "nav-item active open" : "nav-item"; ?>">
+            <li class="<?= ($this->ID=="item" || $this->ID=="kategori" || $this->ID=="supplier" || $this->ID=="layanan") ? "nav-item active open" : "nav-item"; ?>">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>
                     <span class="title">Data Master</span>
