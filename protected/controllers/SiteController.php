@@ -19,7 +19,7 @@ class SiteController extends Controller
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index','getitem','getpasien'),
+                'actions' => array('index','getitem','getpasien','indexs','getobat'),
                 'users' => array('@'),
                 //'roles' => array(WebUser::ROLE_KASIR)
                 'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 2',
@@ -44,6 +44,20 @@ class SiteController extends Controller
 				'class'=>'CViewAction',
 			),
 		);
+	}
+
+	public function actionGetObat()
+	{
+		$ret = Item::ListBarangByKategori(Item::KATEGORI_OBAT);
+		//$ret = $this->model->getData('wilayah');
+		$i=0;
+		foreach ($ret as $row) {
+			$datajson[$i]['ID_ITEM'] = $row['ID_ITEM'];
+			$datajson[$i]['NAMA_ITEM'] = $row['NAMA_ITEM'];
+			$datajson[$i]['HARGA_JUAL'] = $row['HARGA_JUAL'];
+			$i++;
+		}
+		echo json_encode($datajson);
 	}
 
 	public function actionGetItem()
@@ -72,7 +86,7 @@ class SiteController extends Controller
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
-	public function actionIndex()
+	public function actionIndexs()
 	{
 		if(!WebUser::isGuest() && WebUser::isAdmin())
 			$this->render('index');
@@ -144,6 +158,126 @@ class SiteController extends Controller
 	                    echo $ex->getMessage(); exit();
 	                }
 	            }
+	        }
+
+			$dataProvider=new CActiveDataProvider('Pasien',array(
+				'pagination'=>false,
+			));
+
+			$pasien_today = Pasien::listRegisterToday();
+			$this->render('index',array(
+				'dataProvider'=>$dataProvider,
+				'order'=>$order,
+				'order_detail'=>$order_detail,
+				'pelanggan'=>$pelanggan,
+				'pelanggan_baru'=>$newpl,
+				'orderbaru' => $orderbaru,
+				'pasien_today' => $pasien_today,
+			));
+		}
+			
+		else
+			$this->redirect(array('login'));
+	}
+
+	public function actionIndex()
+	{
+		if(!WebUser::isGuest() && WebUser::isAdmin())
+			$this->render('index');
+		elseif(!WebUser::isGuest() && WebUser::isKasir()) {
+			//inisialisasi model Order
+			$order = new Order('search');
+	        $order->unsetAttributes();  // clear any default values
+	        if (isset($_GET['Order']))
+	            $order->attributes = $_GET['Order'];
+
+	        $orderbaru = new Order('baru');
+	        $orderbaru->RESEP = 1;
+	        $orderbaru->orderdetail = new OrderDetail('baru');
+			//inisialisasi model OrderDetail
+			$order_detail=new OrderDetail;
+
+			//inisialisasi model Pelanggan
+			$pelanggan = new Pasien('search');
+	        $pelanggan->unsetAttributes();  // clear any default values
+	        if (isset($_GET['Pasien']))
+	            $pelanggan->attributes = $_GET['Pasien'];
+
+			$newpl = new Pasien('baru');
+			$newpl->ID_LAYANAN = 1;
+	        if (isset($_POST['Pasien'])) {
+	            $newpl->attributes = $_POST['Pasien'];
+	            $newpl->BIAYA_REGISTRASI = 5000;
+	            $newpl->TANGGAL_REGISTRASI = date('Y-m-d H:i:s');
+	            if ($newpl->save()) {
+	            	Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
+	                $this->redirect(array('/site'));
+	            }
+	        }
+
+	        if (isset($_POST['Order'])) {
+	        	// var_dump($_POST['Order']);
+	        	// die();
+	            $orderbaru->attributes = $_POST['Order'];
+	            $orderbaru->TANGGAL_ORDER = date('Y-m-d H:i:s');
+            	$orderbaru->USER_PEMBUAT = Yii::app()->user->nama;
+            	if ($orderbaru->save()) {
+            		$subtotal = 0;
+            		foreach ($_POST['OrderDetail'] as $detail) {
+            			var_dump($_POST['OrderDetail']);
+	        			die();
+            			$od = new OrderDetail('baru');
+                        $od->ID_ITEM = $detail['ID_ITEM'];
+                        $od->KODE_ORDER = $orderbaru->KODE_ORDER;
+                        //proses harga by resep
+                        $od->HARGA = Item::getHargaByResep($detail['ID_ITEM'], $orderbaru->RESEP);
+                        $od->JUMLAH = $detail['JUMLAH'];
+                        //$od->DISKON = $detail['DISKON'];
+
+                        Item::updateStokItem($detail['ID_ITEM'], $detail['JUMLAH']);
+		           		$subtotal += $od->JUMLAH * $od->HARGA;
+
+		           		$od->save();
+            		}
+            		Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
+	            	$this->redirect(array('/order/view', 'id' => $orderbaru->KODE_ORDER));
+            	}
+	            // if ($orderbaru->validate()) {
+	            //     $transaction = Yii::app()->db->beginTransaction();
+	            //     try {
+	            //         if (!$orderbaru->save())
+	            //             throw new Exception;
+
+	            //         $subtotal = 0;
+	            //         foreach ($_POST['OrderDetail'] as $kd => $detail) {
+	            //             if (!empty($detail['JUMLAH'])) {
+	                        	
+	            //                 $od = new OrderDetail('baru');
+		           //              $od->ID_ITEM = $kd;
+		           //              $od->KODE_ORDER = $orderbaru->KODE_ORDER;
+		           //              //proses harga by resep
+		           //              $od->HARGA = Item::getHargaByResep($kd, $orderbaru->RESEP);
+		           //              $od->JUMLAH = $detail['JUMLAH'];
+		           //              //$od->DISKON = $detail['DISKON'];
+		           //              //$od->DISKON = Barang::getDiskonById($kd);
+		           //              //var_dump($_POST['OrderDetail']);
+	        				// 	//die();
+		           //              //update stok barang
+		           //              Item::updateStokItem($kd, $detail['JUMLAH']);
+		           //              $subtotal += $od->JUMLAH * $od->HARGA;
+	            //                 if (!$od->save())
+	            //                     throw new Exception;
+	            //             }
+	            //         }
+	                    
+	            //         $transaction->commit();
+	            //         Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
+	            //         $this->redirect(array('/order/view', 'id' => $orderbaru->KODE_ORDER));
+	            //     } catch (Exception $ex) {
+	            //         $transaction->rollback();
+	            //         echo $ex->getMessage(); exit();
+	            //     }
+	            // }
 	        }
 
 			$dataProvider=new CActiveDataProvider('Pasien',array(

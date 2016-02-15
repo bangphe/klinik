@@ -40,6 +40,9 @@
             <li class="<?= ($this->ID=="order") ? "nav-item active" : "nav-item"; ?>">
                 <?= CHtml::link('<i class="fa fa-tags"></i><span class="title"> Manajemen Order</span><span class="selected"></span>',array('/admin/order'), array('class'=>'nav-link nav-toggle'));?>
             </li>
+            <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
+                <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
+            </li>
             <li class="<?= ($this->ID=="item" || $this->ID=="kategori" || $this->ID=="supplier") ? "nav-item active open" : "nav-item"; ?>">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>
@@ -50,10 +53,8 @@
                     <li class="<?php echo ($this->ID==="item") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Item', array('/admin/item'), array('class'=>'nav-link')); ?></li>
                     <li class="<?php echo ($this->ID==="kategori") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Kategori', array('/admin/kategori'), array('class'=>'nav-link')); ?></li>
                     <li class="<?php echo ($this->ID==="supplier") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Supplier', array('/admin/supplier'), array('class'=>'nav-link')); ?></li>
+                    <li class="<?php echo ($this->ID==="layanan") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Layanan', array('/admin/layanan'), array('class'=>'nav-link')); ?></li>
                 </ul>
-            </li>
-            <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
-                <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
             </li>
             <li class="<?= ($this->ID=="rekap") ? "nav-item active open" : "nav-item"; ?>">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -89,8 +90,8 @@
                     </li>
                 </ul>
             </li>
-            <li class="<?= ($this->ID=="pasien") ? "nav-item active" : "nav-item"; ?>">
-                <?= CHtml::link('<i class="icon-heart"></i><span class="title"> Profil Klinik</span><span class="selected"></span>',array('/admin/pasien'), array('class'=>'nav-link nav-toggle'));?>
+            <li class="<?= ($this->ID=="profil") ? "nav-item start active" : "nav-item start"; ?>">
+                <?= CHtml::link('<i class="icon-heart"></i><span class="title"> Profil Klinik</span><span class="selected"></span>',array('/admin/profil'), array('class'=>'nav-link nav-toggle'));?>
             </li>
         </ul>
         <!-- END SIDEBAR MENU -->

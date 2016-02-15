@@ -78,6 +78,53 @@ var ComponentsSelect2 = function() {
             templateSelection: formatRepoSelection
         });
 
+        var item = '<?= Yii::app()->baseUrl; ?>/site/getitem';
+        $(".asd").select2({
+            ajax: {
+            url: item,
+            dataType: 'json',
+            quietMillis: 100,
+            data: function (params) {
+              return {
+                q: params.term, // search term
+                page: params.page
+              };
+            },
+            processResults: function (data, params) {
+              // parse the results into the format expected by Select2
+              // since we are using custom formatting functions we do not need to
+              // alter the remote JSON data, except to indicate that infinite
+              // scrolling can be used
+              params.page = params.page || 1;
+
+              return {
+                // results: data.items,
+                // pagination: {
+                //   more: (params.page * 30) < data.total_count
+                // }
+                results: $.map(data, function (item) {
+                    return {
+                        text: item.NAMA_ITEM,
+                        id: item.ID_ITEM,
+                        harga: item.HARGA_JUAL,
+                    }
+                })
+              };
+            },
+            cache: true
+            },
+            escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+            minimumInputLength: 1,
+            templateResult: function(result) {
+            return '<div class="row">' +
+                   '<div class="col-md-6">' + result.text + '</div>' +
+                   '<div class="col-md-6">Rp. ' + result.harga + '</div>' +
+                   '</div>';
+            },
+            //templateResult: formatRepo, // omitted for brevity, see the source of this page
+            //templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+        });
+
         $("button[data-select2-open]").click(function() {
             $("#" + $(this).data("select2-open")).select2("open");
         });

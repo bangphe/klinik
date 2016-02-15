@@ -1,30 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "order_detail".
+ * This is the model class for table "golongan_obat".
  *
- * The followings are the available columns in table 'order_detail':
- * @property integer $KODE_ORDER_DETAIL
- * @property string $KODE_ORDER
- * @property integer $ID_ITEM
- * @property integer $HARGA
- * @property integer $JUMLAH
- * @property integer $DISKON
+ * The followings are the available columns in table 'golongan_obat':
+ * @property integer $ID_GOLONGAN_OBAT
+ * @property string $NAMA_GOLONGAN
  *
  * The followings are the available model relations:
- * @property Item $iDITEM
- * @property Order $kODEORDER
+ * @property Item[] $items
  */
-class OrderDetail extends CActiveRecord
+class GolonganObat extends CActiveRecord
 {
-	public $ITEM;
-
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'order_detail';
+		return 'golongan_obat';
 	}
 
 	/**
@@ -35,12 +28,11 @@ class OrderDetail extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			//array('KODE_ORDER', 'required'),
-			array('ID_ITEM, HARGA, JUMLAH, DISKON', 'numerical', 'integerOnly'=>true),
-			array('KODE_ORDER', 'length', 'max'=>11),
+			array('NAMA_GOLONGAN', 'required'),
+			array('NAMA_GOLONGAN', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('KODE_ORDER_DETAIL, KODE_ORDER, ID_ITEM, HARGA, JUMLAH, DISKON', 'safe', 'on'=>'search'),
+			array('ID_GOLONGAN_OBAT, NAMA_GOLONGAN', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,8 +44,7 @@ class OrderDetail extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'item' => array(self::BELONGS_TO, 'Item', 'ID_ITEM'),
-			'order' => array(self::BELONGS_TO, 'Order', 'KODE_ORDER'),
+			'items' => array(self::HAS_MANY, 'Item', 'ID_GOLONGAN_OBAT'),
 		);
 	}
 
@@ -63,12 +54,8 @@ class OrderDetail extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'KODE_ORDER_DETAIL' => 'Kode Order Detail',
-			'KODE_ORDER' => 'Kode Order',
-			'ID_ITEM' => 'Id Item',
-			'HARGA' => 'Harga',
-			'JUMLAH' => 'Jumlah',
-			'DISKON' => 'Diskon',
+			'ID_GOLONGAN_OBAT' => 'Id Golongan Obat',
+			'NAMA_GOLONGAN' => 'Nama Golongan',
 		);
 	}
 
@@ -90,12 +77,8 @@ class OrderDetail extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('KODE_ORDER_DETAIL',$this->KODE_ORDER_DETAIL);
-		$criteria->compare('KODE_ORDER',$this->KODE_ORDER,true);
-		$criteria->compare('ID_ITEM',$this->ID_ITEM);
-		$criteria->compare('HARGA',$this->HARGA);
-		$criteria->compare('JUMLAH',$this->JUMLAH);
-		$criteria->compare('DISKON',$this->DISKON);
+		$criteria->compare('ID_GOLONGAN_OBAT',$this->ID_GOLONGAN_OBAT);
+		$criteria->compare('NAMA_GOLONGAN',$this->NAMA_GOLONGAN,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -106,20 +89,10 @@ class OrderDetail extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return OrderDetail the static model class
+	 * @return GolonganObat the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-	//ngitung jumlah order per pelanggan
-	public static function getJumlahItem($kdorder)
-	{
-		$criteria = new CDbCriteria;
-		$criteria->condition = 'KODE_ORDER=:kdorder';
-		$criteria->params = array(':kdorder'=>$kdorder);
-		$jumlah = OrderDetail::model()->count($criteria);
-		return $jumlah;
 	}
 }

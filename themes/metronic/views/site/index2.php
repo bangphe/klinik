@@ -8,6 +8,8 @@
     ),
 )); ?>
 
+<?php echo $form->errorSummary($orderbaru); ?>
+
 <div class="invoice-content-2 bordered">
     <div class="row invoice-head">
         <div class="col-md-7 col-xs-6">
@@ -66,7 +68,9 @@
 
         <div class="col-xs-4">
             <h2 class="invoice-title uppercase">Pasien</h2>
-            <?php echo $form->textField($orderbaru,'ID_PASIEN',array('maxlength'=>100,'class'=>'form-control','placeholder'=>'Pilih pasien terlebih dahulu','disabled'=>true)); ?>
+            <?php echo $form->textField($orderbaru,'NAMA',array('maxlength'=>100,'class'=>'form-control','placeholder'=>'Pilih pasien terlebih dahulu','disabled'=>true)); ?>
+            <?php echo $form->hiddenField($orderbaru,'ID_PASIEN',array('type'=>'hidden')); ?>
+            <?php echo $form->error($orderbaru,'ID_PASIEN'); ?>
         </div>
         <div class="col-xs-4">
             <h2 class="invoice-title uppercase">Tanggal</h2>
@@ -75,7 +79,7 @@
         <div class="col-xs-4">
             <h2 class="invoice-title uppercase">Biaya Registrasi</h2>
             <p class="invoice-desc inv-address">5000</p>
-        </div>
+        </div>        
     </div>
     <div class="row invoice-body">
         <div class="col-xs-8 table-responsive">
@@ -94,118 +98,73 @@
                     <div class="tabbable-custom ">
                         <ul class="nav nav-tabs ">
                             <li class="active">
-                                <a href="#tab_5_1" data-toggle="tab"> Section 1 </a>
-                            </li>
-                            <li>
-                                <a href="#tab_5_2" data-toggle="tab"> Section 2 </a>
-                            </li>
-                            <li>
-                                <a href="#tab_5_3" data-toggle="tab"> Section 3 </a>
+                                <a href="#tab_5_1" data-toggle="tab">
+                                    DAFTAR ITEM </a>
                             </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_5_1">
                                 <div class="clearfix"></div></br>
-                                <form action="#" class="form-horizontal">
-                                    <div class="form-body">
-                                        <!-- <div class="form-group">
-                                            <label class="col-md-4 control-label">Status</label>
-                                            <div class="col-md-8">
-                                                <div class="input-group">
-                                                    <div class="icheck-inline">
-                                                        <label><input data-radio="iradio_square-blue" type="radio" name="Banner[STATUS]" checked class="icheck" value="1"> Aktif </label>
-                                                        <label><input data-radio="iradio_square-blue" type="radio" name="Banner[STATUS]" class="icheck" value="0"> Non Aktif </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Nama</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" id="nama" name="[0]nama" class="form-control nama" placeholder="Cari disini" />
-                                                        <span class="help-block"> Ketikkan nama barang </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Jumlah</label>
-                                                    <div class="col-md-9">
-                                                        <select name="foo" class="form-control">
-                                                            <option value="1">Option 1</option>
-                                                            <option value="1">Option 2</option>
-                                                            <option value="1">Option 3</option>
-                                                        </select>
-                                                    </div>
+                                <div class="form-body">
+                                    <!-- <div class="form-group">
+                                        <label class="col-md-4 control-label">Status</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group">
+                                                <div class="icheck-inline">
+                                                    <label><input data-radio="iradio_square-blue" type="radio" name="Banner[STATUS]" checked class="icheck" value="1"> Aktif </label>
+                                                    <label><input data-radio="iradio_square-blue" type="radio" name="Banner[STATUS]" class="icheck" value="0"> Non Aktif </label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Nama</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" id="nama" name="[0]nama" class="form-control nama" placeholder="Cari disini" />
-                                                        <span class="help-block"> Ketikkan nama barang </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Jumlah</label>
-                                                    <div class="col-md-9">
-                                                        <select name="foo" class="form-control">
-                                                            <option value="1">Option 1</option>
-                                                            <option value="1">Option 2</option>
-                                                            <option value="1">Option 3</option>
-                                                        </select>
-                                                    </div>
+                                    </div> -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Nama</label>
+                                                <div class="col-md-9">
+                                                    <?php //echo $form->textField($orderbaru->orderdetail,'[0]ITEM',array('maxlength'=>100,'class'=>'form-control nama','placeholder'=>'Cari disini..')); ?>
+                                                    <?php echo $form->dropDownList($orderbaru->orderdetail, '[0]ID_ITEM', array(''), array('class' => 'form-control asd', 'prompt' => '-- Pilih Item --')); ?>
+                                                    <?php //echo $form->hiddenField($orderbaru->orderdetail,'[0]ID_ITEM',array('type'=>'hidden','value'=>'')); ?>
+                                                    <!-- </br>
+                                                    <dl>
+                                                        <dt>Description lists</dt>
+                                                        <dd>A description list is perfect for defining terms.</dd>
+                                                    </dl> -->
+                                                    <span class="help-block"> Ketikkan nama item </span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Nama</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" id="nama" name="[0]nama" class="form-control nama" placeholder="Cari disini" />
-                                                        <span class="help-block"> Ketikkan nama barang </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Jumlah</label>
-                                                    <div class="col-md-9">
-                                                        <select name="foo" class="form-control">
-                                                            <option value="1">Option 1</option>
-                                                            <option value="1">Option 2</option>
-                                                            <option value="1">Option 3</option>
-                                                        </select>
-                                                    </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <?php echo $form->labelEx($orderbaru->orderdetail,'[0]JUMLAH',array('class'=>'control-label col-md-3')); ?>
+                                                <div class="col-md-9">
+                                                    <?php echo $form->numberField($orderbaru->orderdetail,'[0]JUMLAH',array(
+                                                        'class' => 'form-control input-xsmall',
+                                                        'min' => 0,
+                                                        //'max' => Item::getTotalStok($item->ID_ITEM),
+                                                        'placeholder' => '0',
+                                                    ));?>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div id="newfield"></div>
+                                <div id="newfield"></div>
 
-                                    <div class="form-actions">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-offset-3 col-md-9">
-                                                        <button type="button" class="btn btn-md red uppercase" onclick="newField()"><i class="fa fa-plus"></i> Tambah</button>
-                                                    </div>
+                                <div class="form-actions center">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-offset-9 col-md-12">
+                                                    <button type="button" class="btn btn-sm red uppercase" onclick="newField()"><i class="fa fa-plus"></i> Tambah</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="tab_5_2">
+                            <!-- <div class="tab-pane" id="tab_5_2">
                                 <p> Howdy, I'm in Section 2. </p>
                                 <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
                                     consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation. </p>
@@ -220,11 +179,17 @@
                                 <p>
                                     <a class="btn yellow" href="ui_tabs_accordions_navs.html#tab_5_3" target="_blank"> Activate this tab via URL </a>
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <?php echo CHtml::submitButton('Hitung & Cetak Nota', array('class' => 'btn btn-lg green-haze uppercase print-btn')); ?>
+                </div>
+            </div>
+            <?php $this->endWidget();?>
         </div>
         <div class="col-xs-4 table-responsive">
             <div class="mt-element-ribbon bg-grey-steel">
@@ -235,7 +200,7 @@
                     <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
                         <ul class="feeds">
                         <?php 
-                        if (count($pasien_today > 0)) {
+                        if (count($pasien_today) > 0) {
                         foreach ($pasien_today as $value) { ?>
                             <li>
                                 <div class="col1">
@@ -255,25 +220,7 @@
                                 </div>
                             </li>
                             <?php } } else { ?>
-                            <li>
-                                <a href="javascript:;">
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-success">
-                                                    <i class="fa fa-bar-chart-o"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc">Tidak ada data.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 20 mins </div>
-                                    </div>
-                                </a>
-                            </li>
+                                <div class="alert alert-warning"><i>Belum ada data yang masuk.</i> </div>
                             <?php } ?>
                         </ul>
                     </div>
@@ -281,27 +228,7 @@
             </div>
         </div>
     </div>
-    <div class="row invoice-subtotal">
-        <div class="col-xs-3">
-            <h2 class="invoice-title uppercase">Subtotal</h2>
-            <p class="invoice-desc">23,800$</p>
-        </div>
-        <div class="col-xs-3">
-            <h2 class="invoice-title uppercase">Tax (0%)</h2>
-            <p class="invoice-desc">0$</p>
-        </div>
-        <div class="col-xs-6">
-            <h2 class="invoice-title uppercase">Total</h2>
-            <p class="invoice-desc grand-total">23,800$</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <a class="btn btn-lg green-haze uppercase print-btn"><i class="fa fa-save"></i> Simpan</a>
-        </div>
-    </div>
 </div>
-<?php $this->endWidget();?>
 
 <div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
     <div class="modal-dialog">
@@ -323,66 +250,71 @@
 <script type="text/javascript">
 $(document).ready(function(){
     var item = '<?= Yii::app()->baseUrl; ?>/site/getitem';
-    $.ajax({
-        url: item,
-        data: '',
-        type: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            var result;
-            var source  = [ ];
-            var mapping = { };
+    //var item = '<?= Yii::app()->baseUrl; ?>/site/getobat';
+    // $.ajax({
+    //     url: item,
+    //     data: '',
+    //     type: 'GET',
+    //     dataType: 'json',
+    //     success: function(data) {
+    //         var result;
+    //         var source  = [ ];
+    //         var mapping = { };
 
-            if (!data || data.length === 0) {
-                result = [{
-                    label: 'No match found.'
-                }];
-            } else {
-                for(var i = 0; i < data.length; ++i) {
-                    source.push($.trim(data[i]['NAMA_ITEM']));
-                    mapping[data[i]['NAMA_ITEM']] = data[i]['ID_ITEM'];
-                }
-                $(".nama").autocomplete({
-                    delay: 0,
-                    source: source,
-                    minLength:0,
-                    search  : function(){$(this).addClass('working');},
-                    // open: function (e, ui) {
-                    //     $(this).removeClass('working');
+    //         for(var i = 0; i < data.length; ++i) {
+    //             source.push($.trim(data[i]['NAMA_ITEM']));
+    //             mapping[data[i]['NAMA_ITEM']] = data[i]['ID_ITEM'];
+    //         }
+    //         $(".nama").autocomplete({
+    //             delay: 0,
+    //             source: source,
+    //             response: function(event, ui) {
+    //                 if (!ui.content.length) {
+    //                     $("#no-results").text("No results found!");
+    //                 } else {
+    //                     $("#no-results").empty();
+    //                 }
+    //             },
+    //             minLength:0,
+    //             open: function (e, ui) {
+    //                 var acData = $(this).data('ui-autocomplete');
+    //                 acData
+    //                 .menu
+    //                 .element
+    //                 .find('li')
+    //                 .each(function () {
+    //                     var me = $(this);
+    //                     var keywords = acData.term.split(' ').join('|');
+    //                     me.html(me.text().replace(new RegExp("(" + keywords + ")", "gi"), '<b>$1</b>'));
+    //                 });
+    //             },
+    //             select: function(e, ui) {
+    //                 $("#OrderDetail_0_ID_ITEM").val(mapping[ui.item.value]);
+    //                 //$("input[name='OrderDetail[0][ID_ITEM]']").val(mapping[ui.item.value]);
+    //             }
+    //             // create: function () {
+    //             //     $(this).data('ui-autocomplete')._renderItem = function (ul, item) {
+    //             //       return $('<li>')
+    //             //         .append( "<a>" + item.value + ' </br> Harga: ' + item.label + "</a>" )
+    //             //         .appendTo(ul);
+    //             //     };
+    //             // }
+    //         });
+    //     }
+    // });
 
-                    //     var acData = $(this).data('ui-autocomplete');
-                    //     acData
-                    //     .menu
-                    //     .element
-                    //     .find('li')
-                    //     .each(function () {
-                    //         var me = $(this);
-                    //         var keywords = acData.term.split(' ').join('|');
-                    //         me.html(me.text().replace(new RegExp("(" + keywords + ")", "gi"), '<b>$1</b>'));
-                    //     });
-                    // },
-                    // select: function(e, ui) {
-                    //     $("#ID_ITEM").val(mapping[ui.item.value]);
-                    // }
-                    create: function () {
-                        $(this).data('ui-autocomplete')._renderItem = function (ul, item) {
-                          return $('<li>')
-                            .append( "<a>" + item.value + ' </br> Harga: ' + item.label + "</a>" )
-                            .appendTo(ul);
-                        };
-                    }
-                });
-            }
-        }
-    });
+    
 });
 
 var idform=1;
 function newField(){
+    //alert("#form_kolom_"+idform+" input[name='OrderDetail["+idform+"][ID_ITEM]']");
     var form_template = $('#form-order-template').html();
-    form_template = form_template.replace('[0][nama]','['+idform+'][nama]');
-    form_template = form_template.replace('[0][ID_KATEGORI_JURNAL]','['+idform+'][ID_KATEGORI_JURNAL]');
-    form_template = form_template.replace('[0][KUANTITAS_OUTPUT]','['+idform+'][KUANTITAS_OUTPUT]');
+    var items = '<?= Yii::app()->baseUrl; ?>/site/getobat';
+
+    form_template = form_template.replace('[0][ITEM]','['+idform+'][ITEM]');
+    form_template = form_template.replace('[0][ID_ITEM]','['+idform+'][ID_ITEM]');
+    form_template = form_template.replace('[0][JUMLAH]','['+idform+'][JUMLAH]');
 
     form_template = form_template.replace('removeForm(template)','removeForm('+idform+')');
     form_template = form_template.replace('newoptionscontainer_0','newoptionscontainer_'+idform);
@@ -391,6 +323,46 @@ function newField(){
 
     form_template = form_template.replace('remove-btn-value','remove-btn-'+idform);
     $('#newfield').append('<div id="form_kolom_'+idform+'">'+form_template+'</div>');
+
+    // $.ajax({
+    //     url: items,
+    //     data: '',
+    //     type: 'GET',
+    //     dataType: 'json',
+    //     success: function(data) {
+    //         var result;
+    //         var source  = [ ];
+    //         var mapping = { };
+
+    //         for(var i = 0; i < data.length; ++i) {
+    //             source.push($.trim(data[i]['NAMA_ITEM']));
+    //             mapping[data[i]['NAMA_ITEM']] = data[i]['ID_ITEM'];
+    //         }
+    //         $(".nama").autocomplete({
+    //             delay: 0,
+    //             source: source,
+    //             minLength:0,
+    //             open: function (e, ui) {
+    //                 var acData = $(this).data('ui-autocomplete');
+    //                 acData
+    //                 .menu
+    //                 .element
+    //                 .find('li')
+    //                 .each(function () {
+    //                     var me = $(this);
+    //                     var keywords = acData.term.split(' ').join('|');
+    //                     me.html(me.text().replace(new RegExp("(" + keywords + ")", "gi"), '<b>$1</b>'));
+    //                 });
+    //             },
+    //             select: function(e, ui) {
+    //                 $("#OrderDetail_0_ID_ITEM").val(mapping[ui.item.value]);
+    //                 //$("input[name='OrderDetail["+idform+"][ID_ITEM]']").val(mapping[ui.item.value]);
+    //                 //$("#form_kolom_"+idform+" input[name='OrderDetail["+idform+"][ID_ITEM]']").val(mapping[ui.item.value]);
+    //             }
+    //         });
+    //     }
+    // });
+    
     idform++;
 }
 
@@ -403,12 +375,13 @@ function pilihpasien(kdpasien) {
         beforeSend: function(){},
         success: function(data){
             //$("#dialog-body").html(data);
-            $('#Order_ID_PASIEN').attr('value', data);
+            $('#Order_NAMA').attr('value', data);
+            $('#Order_ID_PASIEN').attr('value', +kdpasien);
         }
     });
 }
 </script>
 
 <div style="display:none;">
-    <?php $this->renderPartial('_form_order_template', array('order'=>$order));?>
+    <?php $this->renderPartial('_form_order_template', array('order'=>$order,'orderbaru'=>$orderbaru));?>
 </div>

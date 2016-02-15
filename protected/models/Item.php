@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'item':
  * @property integer $ID_ITEM
  * @property integer $ID_KATEGORI
+ * @property integer $ID_GOLONGAN_OBAT
  * @property string $NAMA_ITEM
  * @property integer $UKURAN
  * @property integer $SATUAN
@@ -15,6 +16,7 @@
  *
  * The followings are the available model relations:
  * @property DetilItem[] $detilItems
+ * @property GolonganObat $iDGOLONGANOBAT
  * @property Kategori $iDKATEGORI
  * @property OrderDetail[] $orderDetails
  */
@@ -40,12 +42,12 @@ class Item extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('ID_KATEGORI, NAMA_ITEM', 'required'),
-			array('ID_KATEGORI, UKURAN, SATUAN, HARGA_JUAL, STATUS', 'numerical', 'integerOnly'=>true),
+			array('ID_KATEGORI, ID_GOLONGAN_OBAT, UKURAN, SATUAN, HARGA_JUAL, STATUS', 'numerical', 'integerOnly'=>true),
 			array('NAMA_ITEM', 'length', 'max'=>255),
 			array('TANGGAL_EXPIRED', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID_ITEM, ID_KATEGORI, NAMA_ITEM, UKURAN, SATUAN, HARGA_JUAL, TANGGAL_EXPIRED, STATUS', 'safe', 'on'=>'search'),
+			array('ID_ITEM, ID_KATEGORI, ID_GOLONGAN_OBAT, NAMA_ITEM, UKURAN, SATUAN, HARGA_JUAL, TANGGAL_EXPIRED, STATUS', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +60,7 @@ class Item extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'detilitem' => array(self::HAS_MANY, 'DetilItem', 'ID_ITEM'),
+            'golongan' => array(self::BELONGS_TO, 'GolonganObat', 'ID_GOLONGAN_OBAT'),
 			'kategori' => array(self::BELONGS_TO, 'Kategori', 'ID_KATEGORI'),
 			'orderDetails' => array(self::HAS_MANY, 'OrderDetail', 'ID_ITEM'),
 		);
@@ -71,6 +74,7 @@ class Item extends CActiveRecord
 		return array(
 			'ID_ITEM' => 'Id Item',
 			'ID_KATEGORI' => 'Id Kategori',
+            'ID_GOLONGAN_OBAT' => 'Id Golongan Obat',
 			'NAMA_ITEM' => 'Nama Item',
 			'UKURAN' => 'Ukuran',
 			'SATUAN' => 'Satuan',
@@ -100,6 +104,7 @@ class Item extends CActiveRecord
 
 		$criteria->compare('ID_ITEM',$this->ID_ITEM);
 		$criteria->compare('ID_KATEGORI',$this->ID_KATEGORI);
+        $criteria->compare('ID_GOLONGAN_OBAT',$this->ID_GOLONGAN_OBAT);
 		$criteria->compare('NAMA_ITEM',$this->NAMA_ITEM,true);
 		$criteria->compare('UKURAN',$this->UKURAN);
 		$criteria->compare('SATUAN',$this->SATUAN);
