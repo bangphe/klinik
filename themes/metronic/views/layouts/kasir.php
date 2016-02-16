@@ -38,8 +38,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <link href="<?= $baseUrl; ?>/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?= $baseUrl; ?>/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="<?= $baseUrl; ?>/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?= $baseUrl; ?>/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/css/select2.min.css" rel="stylesheet" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
@@ -328,7 +329,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
         <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="<?= $baseUrl; ?>/assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+        <!--<script src="<?= $baseUrl; ?>/assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/js/select2.min.js"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/icheck/icheck.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-growl/jquery.bootstrap-growl.min.js" type="text/javascript"></script>
@@ -337,7 +339,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="<?= $baseUrl; ?>/assets/global/scripts/app.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="<?= $baseUrl; ?>/assets/pages/scripts/components-select2.js" type="text/javascript"></script>
+        <!--<script src="<?= $baseUrl; ?>/assets/pages/scripts/components-select2.js" type="text/javascript"></script>-->
         <script src="<?= $baseUrl; ?>/assets/pages/scripts/form-validation.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/pages/scripts/form-icheck.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/scripts/datatable.js" type="text/javascript"></script>

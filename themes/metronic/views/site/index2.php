@@ -122,9 +122,10 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Nama</label>
                                                 <div class="col-md-9">
-                                                    <?php //echo $form->textField($orderbaru->orderdetail,'[0]ITEM',array('maxlength'=>100,'class'=>'form-control nama','placeholder'=>'Cari disini..')); ?>
-                                                    <?php echo $form->dropDownList($orderbaru->orderdetail, '[0]ID_ITEM', array(''), array('class' => 'form-control asd', 'prompt' => '-- Pilih Item --')); ?>
-                                                    <?php //echo $form->hiddenField($orderbaru->orderdetail,'[0]ID_ITEM',array('type'=>'hidden','value'=>'')); ?>
+                                                    <!-- <input type="text" name="url" /> -->
+                                                    <?php echo $form->textField($orderbaru->orderdetail,'[0]ITEM',array('maxlength'=>100,'class'=>'form-control nama','placeholder'=>'Cari disini..')); ?>
+                                                    <?php //echo $form->dropDownList($orderbaru->orderdetail, '[0]ID_ITEM', array(''), array('class' => 'form-control barang', 'prompt' => '-- Pilih Item --')); ?>
+                                                    <?php echo $form->hiddenField($orderbaru->orderdetail,'[0]ID_ITEM',array('type'=>'hidden','value'=>'')); ?>
                                                     <!-- </br>
                                                     <dl>
                                                         <dt>Description lists</dt>
@@ -251,69 +252,129 @@
 $(document).ready(function(){
     var item = '<?= Yii::app()->baseUrl; ?>/site/getitem';
     //var item = '<?= Yii::app()->baseUrl; ?>/site/getobat';
-    // $.ajax({
-    //     url: item,
-    //     data: '',
-    //     type: 'GET',
-    //     dataType: 'json',
-    //     success: function(data) {
-    //         var result;
-    //         var source  = [ ];
-    //         var mapping = { };
 
-    //         for(var i = 0; i < data.length; ++i) {
-    //             source.push($.trim(data[i]['NAMA_ITEM']));
-    //             mapping[data[i]['NAMA_ITEM']] = data[i]['ID_ITEM'];
-    //         }
-    //         $(".nama").autocomplete({
-    //             delay: 0,
-    //             source: source,
-    //             response: function(event, ui) {
-    //                 if (!ui.content.length) {
-    //                     $("#no-results").text("No results found!");
-    //                 } else {
-    //                     $("#no-results").empty();
-    //                 }
-    //             },
-    //             minLength:0,
-    //             open: function (e, ui) {
-    //                 var acData = $(this).data('ui-autocomplete');
-    //                 acData
-    //                 .menu
-    //                 .element
-    //                 .find('li')
-    //                 .each(function () {
-    //                     var me = $(this);
-    //                     var keywords = acData.term.split(' ').join('|');
-    //                     me.html(me.text().replace(new RegExp("(" + keywords + ")", "gi"), '<b>$1</b>'));
-    //                 });
-    //             },
-    //             select: function(e, ui) {
-    //                 $("#OrderDetail_0_ID_ITEM").val(mapping[ui.item.value]);
-    //                 //$("input[name='OrderDetail[0][ID_ITEM]']").val(mapping[ui.item.value]);
+    // var arrLinks = [
+    // {
+    //     key: 1,
+    //     url: "http://google.com",
+    //     label: 'google'},
+    // {
+    //     key: 2,
+    //     url: "http://yahoo.com",
+    //     title: "Yahoo",
+    //     label: 'yahoo'},
+    // {
+    //     key: 2,
+    //     url: "http://microsoft.com",
+    //     label: 'microsoft'}
+    // ];
+    // $("input[name=url]").autocomplete({
+    //     source: arrLinks,
+    //     select: function(e, ui) {
+    //         $("#OrderDetail_0_ID_ITEM").val(ui.item.key);
+    //         console.log(arrLinks);
+    //         //$("input[name='OrderDetail[0][ID_ITEM]']").val(mapping[ui.item.harga]);
+    //     }
+    // }).data("ui-autocomplete")._renderItem = function(ul, item) {
+    //     return $("<li>").data("item.ui-autocomplete", item).append("<a>" + item.url + "</a>").appendTo(ul);
+    // };
+
+    $.ajax({
+        url: item,
+        data: '',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            var result;
+            var source  = [ ];
+            var mapping = { };
+            var rows = new Array();
+
+            for(var i = 0; i < data.length; ++i) {
+                source.push($.trim(data[i]['NAMA_ITEM']));
+                mapping[data[i]['NAMA_ITEM']] = data[i]['ID_ITEM'];
+                rows[i] = {data:data[i], value:data[i].ID_ITEM, result:data[i].NAMA_ITEM, harga:data[i].HARGA_JUAL };
+            }
+            $(".nama").autocomplete({
+                delay: 0,
+                source: source,
+                response: function(event, ui) {
+                    if (!ui.content.length) {
+                        $("#no-results").text("No results found!");
+                    } else {
+                        $("#no-results").empty();
+                    }
+                },
+                minLength:0,
+                open: function (e, ui) {
+                    var acData = $(this).data('ui-autocomplete');
+                    acData
+                    .menu
+                    .element
+                    .find('li')
+                    .each(function () {
+                        var me = $(this);
+                        var keywords = acData.term.split(' ').join('|');
+                        me.html(me.text().replace(new RegExp("(" + keywords + ")", "gi"), '<b>$1</b>'));
+                    });
+                },
+                select: function(e, ui) {
+                    $("#OrderDetail_0_ID_ITEM").val(mapping[ui.item.value]);
+                    //$("input[name='OrderDetail[0][ID_ITEM]']").val(mapping[ui.item.harga]);
+                }
+                // create: function () {
+                //     $(this).data('ui-autocomplete')._renderItem = function (ul, item) {
+                //       return $('<li>')
+                //         .append( "<a>" + item.value + ' </br> Harga: ' + item.label + "</a>" )
+                //         .appendTo(ul);
+                //     };
+                // }
+            });
+        }
+    });
+
+    // $(".barang").select2({
+    //     tags: true,
+    //     minimumInputLength: 2,
+    //     minimumResultsForSearch: 10,
+    //     ajax: {
+    //         url: item,
+    //         dataType: "json",
+    //         type: "GET",
+    //         data: function (params) {
+
+    //             var queryParameters = {
+    //                 term: params.term
     //             }
-    //             // create: function () {
-    //             //     $(this).data('ui-autocomplete')._renderItem = function (ul, item) {
-    //             //       return $('<li>')
-    //             //         .append( "<a>" + item.value + ' </br> Harga: ' + item.label + "</a>" )
-    //             //         .appendTo(ul);
-    //             //     };
-    //             // }
-    //         });
+    //             return queryParameters;
+    //         },
+    //         processResults: function (data) {
+    //             return {
+    //                 results: $.map(data, function (item) {
+    //                     return {
+    //                         text: item.NAMA_ITEM,
+    //                         id: item.ID_ITEM
+    //                     }
+    //                     //console.log(item);
+    //                 })
+    //             };
+    //         }
     //     }
     // });
-
-    
 });
 
 var idform=1;
 function newField(){
     //alert("#form_kolom_"+idform+" input[name='OrderDetail["+idform+"][ID_ITEM]']");
+    $('#form-order-template').val('');
+    $("input[name='OrderDetail["+idform+"][ID_ITEM]']").val('');
+    //$("#OrderDetail_0_ID_ITEM").val('');
     var form_template = $('#form-order-template').html();
     var items = '<?= Yii::app()->baseUrl; ?>/site/getobat';
 
     form_template = form_template.replace('[0][ITEM]','['+idform+'][ITEM]');
     form_template = form_template.replace('[0][ID_ITEM]','['+idform+'][ID_ITEM]');
+    form_template = form_template.replace('OrderDetail_0_ID_ITEM','OrderDetail_'+idform+'_ID_ITEM');
     form_template = form_template.replace('[0][JUMLAH]','['+idform+'][JUMLAH]');
 
     form_template = form_template.replace('removeForm(template)','removeForm('+idform+')');
@@ -324,44 +385,44 @@ function newField(){
     form_template = form_template.replace('remove-btn-value','remove-btn-'+idform);
     $('#newfield').append('<div id="form_kolom_'+idform+'">'+form_template+'</div>');
 
-    // $.ajax({
-    //     url: items,
-    //     data: '',
-    //     type: 'GET',
-    //     dataType: 'json',
-    //     success: function(data) {
-    //         var result;
-    //         var source  = [ ];
-    //         var mapping = { };
+    $.ajax({
+        url: items,
+        data: '',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            var result;
+            var source  = [ ];
+            var mapping = { };
 
-    //         for(var i = 0; i < data.length; ++i) {
-    //             source.push($.trim(data[i]['NAMA_ITEM']));
-    //             mapping[data[i]['NAMA_ITEM']] = data[i]['ID_ITEM'];
-    //         }
-    //         $(".nama").autocomplete({
-    //             delay: 0,
-    //             source: source,
-    //             minLength:0,
-    //             open: function (e, ui) {
-    //                 var acData = $(this).data('ui-autocomplete');
-    //                 acData
-    //                 .menu
-    //                 .element
-    //                 .find('li')
-    //                 .each(function () {
-    //                     var me = $(this);
-    //                     var keywords = acData.term.split(' ').join('|');
-    //                     me.html(me.text().replace(new RegExp("(" + keywords + ")", "gi"), '<b>$1</b>'));
-    //                 });
-    //             },
-    //             select: function(e, ui) {
-    //                 $("#OrderDetail_0_ID_ITEM").val(mapping[ui.item.value]);
-    //                 //$("input[name='OrderDetail["+idform+"][ID_ITEM]']").val(mapping[ui.item.value]);
-    //                 //$("#form_kolom_"+idform+" input[name='OrderDetail["+idform+"][ID_ITEM]']").val(mapping[ui.item.value]);
-    //             }
-    //         });
-    //     }
-    // });
+            for(var i = 0; i < data.length; ++i) {
+                source.push($.trim(data[i]['NAMA_ITEM']));
+                mapping[data[i]['NAMA_ITEM']] = data[i]['ID_ITEM'];
+            }
+            $(".nama").autocomplete({
+                delay: 0,
+                source: source,
+                minLength:0,
+                open: function (e, ui) {
+                    var acData = $(this).data('ui-autocomplete');
+                    acData
+                    .menu
+                    .element
+                    .find('li')
+                    .each(function () {
+                        var me = $(this);
+                        var keywords = acData.term.split(' ').join('|');
+                        me.html(me.text().replace(new RegExp("(" + keywords + ")", "gi"), '<b>$1</b>'));
+                    });
+                },
+                select: function(e, ui) {
+                    $("#OrderDetail_"+idform+"_ID_ITEM").val(mapping[ui.item.value]);
+                    //$("input[name='OrderDetail["+idform+"][ID_ITEM]']").val(mapping[ui.item.value]);
+                    //$("#form_kolom_"+idform+" input[name='OrderDetail["+idform+"][ID_ITEM]']").val(mapping[ui.item.value]);
+                }
+            });
+        }
+    });
     
     idform++;
 }

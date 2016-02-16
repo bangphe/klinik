@@ -15,9 +15,9 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">Nama</label>
                     <div class="col-md-9">
-                        <?php //echo $form->textField($orderbaru->orderdetail,'[0]ITEM',array('maxlength'=>100,'class'=>'form-control nama','placeholder'=>'Cari disini..')); ?>
-                        <?php //echo $form->hiddenField($orderbaru->orderdetail,'[0]ID_ITEM',array('type'=>'hidden','value'=>'')); ?>
-                        <?php echo $form->dropDownList($orderbaru->orderdetail, '[0]ID_ITEM', array(''), array('class' => 'form-control asd', 'prompt' => '-- Pilih Item --')); ?>
+                        <?php echo $form->textField($orderbaru->orderdetail,'[0]ITEM',array('maxlength'=>100,'class'=>'form-control nama','placeholder'=>'Cari disini..')); ?>
+                        <?php echo $form->hiddenField($orderbaru->orderdetail,'[0]ID_ITEM',array('type'=>'hidden','value'=>'')); ?>
+                        <?php //echo $form->dropDownList($orderbaru->orderdetail, '[0]ID_ITEM', array(''), array('class' => 'form-control barangs', 'prompt' => '-- Pilih Item --')); ?>
                         <span class="help-block"> Ketikkan nama item </span>
                     </div>
                 </div>
