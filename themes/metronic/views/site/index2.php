@@ -221,7 +221,7 @@
                                 </div>
                             </li>
                             <?php } } else { ?>
-                                <div class="alert alert-warning"><i>Belum ada data yang masuk.</i> </div>
+                                <div class="alert alert-warning"><i>Belum ada pasien yang terdaftar.</i> </div>
                             <?php } ?>
                         </ul>
                     </div>
