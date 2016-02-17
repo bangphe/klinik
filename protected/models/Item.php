@@ -187,7 +187,9 @@ class Item extends CActiveRecord
             'together' => true
         ));
         $model = self::model()->findAll($criteria);
-        $data = CHtml::listData($model,'ID_ITEM','NAMA_ITEM');
+        $data = CHtml::listData($model,'ID_ITEM',function($model){
+            return $model->NAMA_ITEM . ' [' .$model->golongan->NAMA_GOLONGAN. '] - ' . MyFormatter::formatUang($model->HARGA_JUAL);
+        });
         return $data;
     }
 
