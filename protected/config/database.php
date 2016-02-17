@@ -2,10 +2,10 @@
 
 // This is the database connection configuration.
 return array(
-	'connectionString' => 'mysql:host=localhost;dbname=klinik_db_150216',
+	'connectionString' => 'mysql:host=localhost;dbname=klinik_db',
 	'emulatePrepare' => true,
 	'username' => 'root',
-	'password' => 'sepanjang',
+	'password' => 'root',
 	'charset' => 'utf8',
 	
 );
