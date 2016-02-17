@@ -175,6 +175,7 @@ class Item extends CActiveRecord
         return self::model()->findAll($criteria);
     }
 
+    //untuk dropdown obat di kasir
     public static function listItemPerKategori($kategori) {
         $criteria = new CDbCriteria(array(
             'with' => array(
