@@ -175,6 +175,22 @@ class Item extends CActiveRecord
         return self::model()->findAll($criteria);
     }
 
+    public static function listItemPerKategori($kategori) {
+        $criteria = new CDbCriteria(array(
+            'with' => array(
+                'kategori' => array(
+                    'joinType' => 'inner join',
+                )
+            ),
+            'condition' => 't.ID_KATEGORI = :kategori AND t.STATUS = :status',
+            'params' => array(':kategori' => $kategori, ':status' => self::STATUS_AKTIF),
+            'together' => true
+        ));
+        $model = self::model()->findAll($criteria);
+        $data = CHtml::listData($model,'ID_ITEM','NAMA_ITEM');
+        return $data;
+    }
+
     public static function getHargaById($id) {
         return self::model()->findByPk($id)->HARGA_JUAL;
     }

@@ -15,7 +15,8 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->dropDownList($pelanggan_baru,'ID_LAYANAN', Layanan::listLayanan(),
                 array(
                 'class'=>'form-control',
-                'prompt'=>'- Pilih Layanan -'
+                'prompt'=>'- Pilih Layanan -',
+                'onchange'=>'getBiaya(this.value)',
             )); ?>
             <?php echo $form->error($pelanggan_baru,'ID_LAYANAN'); ?>
         </div>
@@ -68,7 +69,7 @@ $form = $this->beginWidget('CActiveForm', array(
         <div class="col-md-8">
             <div class="input-group">
                 <span class="input-group-addon">Rp</span>
-                <?php echo $form->textField($pelanggan_baru,'BIAYA_REGISTRASI',array('size'=>60,'maxlength'=>100,'class'=>'form-control','placeholder'=>'Biaya Registrasi','value'=>'5000','disabled'=>TRUE)); ?>
+                <?php echo $form->textField($pelanggan_baru,'BIAYA_REGISTRASI',array('size'=>60,'maxlength'=>100,'class'=>'form-control','placeholder'=>'Biaya Registrasi','value'=>'-','disabled'=>TRUE)); ?>
                 <?php echo $form->error($pelanggan_baru,'BIAYA_REGISTRASI'); ?>
             </div>
         </div>
@@ -84,3 +85,20 @@ $form = $this->beginWidget('CActiveForm', array(
 </div>
 
 <?php $this->endWidget(); ?>
+
+<script type="text/javascript">
+function getBiaya(v) {
+    // alert(v);
+    var path = '<?= Yii::app()->baseUrl; ?>/site/getlayanan/'+v;
+    $.ajax({
+        url: path,
+        data: '',
+        type: 'get',
+        beforeSend: function(){},
+        success: function(result){
+            $('#Pasien_BIAYA_REGISTRASI').val(result);
+            //$("#OrderDetail_0_ID_ITEM").val(ui.item.key);
+        }
+    });
+}
+</script>
