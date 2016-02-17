@@ -14,10 +14,10 @@ $this->breadcrumbs = array(
             <div class="portlet-title">
                 <div class="caption font-green-sharp">
                     <i class="icon-share font-green-sharp"></i>
-                    <span class="caption-subject font-green-sharp bold uppercase">Rekap Laporan</span>
+                    <span class="caption-subject font-green-sharp bold uppercase">Rekap Laporan Lensa</span>
                 </div>
                 <div class="actions">
-                    <?php echo CHtml::link('<i class="fa fa-print"></i> Rekap Stok Harian', array('/admin/rekap/stokharian'),array('class' => 'btn blue-hoki')) ?>
+                    <?php echo CHtml::link('<i class="fa fa-print"></i> Rekap Laporan Bulanan', array('/admin/rekap/penjualanlensa'),array('class' => 'btn red')) ?>
                 </div>
             </div>
             <div class="portlet-body">

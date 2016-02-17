@@ -384,7 +384,7 @@ function newField(){
 
     form_template = form_template.replace('remove-btn-value','remove-btn-'+idform);
     $('#newfield').append('<div id="form_kolom_'+idform+'">'+form_template+'</div>');
-
+    //alert("#OrderDetail_"+idform+"_ID_ITEM");
     $.ajax({
         url: items,
         data: '',

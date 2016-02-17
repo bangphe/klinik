@@ -52,6 +52,65 @@ class RekapController extends Controller
         ));
 	}
 
+    public function actionStokHarian()
+    {
+        //$barang = Barang::getBarang();
+        $criteria = new CDbCriteria;
+        //$criteria->addBetweenCondition('TGL_ORDER', date('Y-m-01',strtotime('this month')), date('Y-m-t',strtotime('this month')));
+        $criteria->condition = 'date(TANGGAL_ORDER) = date(NOW())';
+        $order = Order::model()->findAll($criteria);
+        $total = 0;
+        foreach ($order as $k) { $total += $k->TOTAL; }
+
+        $filename = 'REKAP STOK HARIAN - '.MyFormatter::formatTanggal(date('Y-m-d'));
+        header("Cache-Control: no-cache, no-store, must-revalidate");
+        header("Content-Type: application/vnd.ms-excel");
+        header("Content-Disposition: attachment; filename=" . $filename . ".xls");
+
+        $this->renderPartial('_rekap_harian',array(
+            'order' => $order,
+        ));
+
+        exit();
+    }
+
+    public function actionLensa()
+    {
+        $model = new FormRekap;
+
+        if(isset($_POST['FormRekap'])) {
+            $model->attributes = $_POST['FormRekap'];
+            $datestart = date('Y-m-d', strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+            $dateend = date('Y-m-t',strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+
+            $criteria = new CDbCriteria;
+            $criteria->addBetweenCondition('TANGGAL_ORDER', $datestart, $dateend);
+            $order = Order::model()->findAll($criteria);
+
+            if($order != null) {
+                $filename = 'REKAP_'.$model->BULAN.'-'.$model->TAHUN;
+                header("Cache-Control: no-cache, no-store, must-revalidate");
+                header("Content-Type: application/vnd.ms-excel");
+                header("Content-Disposition: attachment; filename=" . $filename . ".xls");
+
+                $this->renderPartial('_rekap_bulanan',array(
+                    'order' => $order,
+                    'model' => $model
+                ));
+
+                exit();
+            }
+
+            else {
+                Yii::app()->user->setFlash('info', MyFormatter::alertError('Rekap belum tersedia untuk bulan tersebut.'));
+            }
+        }
+        
+        $this->render('lensa/index', array(
+            'model' => $model,
+        ));
+    }
+
 	public function actionPenjualanLensa()
 	{
 		$item = Item::getPenjualanItem(Item::KATEGORI_LENSA);
@@ -62,12 +121,49 @@ class RekapController extends Controller
         header("Content-Type: application/vnd.ms-excel");
         header("Content-Disposition: attachment; filename=" . $filename . ".xls");
 
-        $this->renderPartial('_rekap_lensa',array(
+        $this->renderPartial('lensa/_rekap_lensa',array(
             'item' => $item,
         ));
 
         exit();
 	}
+
+    public function actionObat()
+    {
+        $model = new FormRekap;
+
+        if(isset($_POST['FormRekap'])) {
+            $model->attributes = $_POST['FormRekap'];
+            $datestart = date('Y-m-d', strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+            $dateend = date('Y-m-t',strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+
+            $criteria = new CDbCriteria;
+            $criteria->addBetweenCondition('TANGGAL_ORDER', $datestart, $dateend);
+            $order = Order::model()->findAll($criteria);
+
+            if($order != null) {
+                $filename = 'REKAP_'.$model->BULAN.'-'.$model->TAHUN;
+                header("Cache-Control: no-cache, no-store, must-revalidate");
+                header("Content-Type: application/vnd.ms-excel");
+                header("Content-Disposition: attachment; filename=" . $filename . ".xls");
+
+                $this->renderPartial('_rekap_bulanan',array(
+                    'order' => $order,
+                    'model' => $model
+                ));
+
+                exit();
+            }
+
+            else {
+                Yii::app()->user->setFlash('info', MyFormatter::alertError('Rekap belum tersedia untuk bulan tersebut.'));
+            }
+        }
+        
+        $this->render('obat/index', array(
+            'model' => $model,
+        ));
+    }
 
 	public function actionPenjualanObat()
 	{
@@ -79,12 +175,49 @@ class RekapController extends Controller
         header("Content-Type: application/vnd.ms-excel");
         header("Content-Disposition: attachment; filename=" . $filename . ".xls");
 
-        $this->renderPartial('_rekap_obat',array(
+        $this->renderPartial('obat/_rekap_obat',array(
             'item' => $item,
         ));
 
         exit();
 	}
+
+    public function actionGagang()
+    {
+        $model = new FormRekap;
+
+        if(isset($_POST['FormRekap'])) {
+            $model->attributes = $_POST['FormRekap'];
+            $datestart = date('Y-m-d', strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+            $dateend = date('Y-m-t',strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+
+            $criteria = new CDbCriteria;
+            $criteria->addBetweenCondition('TANGGAL_ORDER', $datestart, $dateend);
+            $order = Order::model()->findAll($criteria);
+
+            if($order != null) {
+                $filename = 'REKAP_'.$model->BULAN.'-'.$model->TAHUN;
+                header("Cache-Control: no-cache, no-store, must-revalidate");
+                header("Content-Type: application/vnd.ms-excel");
+                header("Content-Disposition: attachment; filename=" . $filename . ".xls");
+
+                $this->renderPartial('_rekap_bulanan',array(
+                    'order' => $order,
+                    'model' => $model
+                ));
+
+                exit();
+            }
+
+            else {
+                Yii::app()->user->setFlash('info', MyFormatter::alertError('Rekap belum tersedia untuk bulan tersebut.'));
+            }
+        }
+        
+        $this->render('gagang/index', array(
+            'model' => $model,
+        ));
+    }
 
     public function actionPenjualanGagang()
     {
@@ -96,7 +229,7 @@ class RekapController extends Controller
         header("Content-Type: application/vnd.ms-excel");
         header("Content-Disposition: attachment; filename=" . $filename . ".xls");
 
-        $this->renderPartial('_rekap_gagang',array(
+        $this->renderPartial('gagang/_rekap_gagang',array(
             'item' => $item,
         ));
 
