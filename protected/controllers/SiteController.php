@@ -19,7 +19,7 @@ class SiteController extends Controller
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index','getitem','getpasien','indexs','getobat'),
+                'actions' => array('index','getitem','getpasien','indexs','getobat','getlayanan'),
                 'users' => array('@'),
                 //'roles' => array(WebUser::ROLE_KASIR)
                 'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 2',
@@ -72,6 +72,19 @@ class SiteController extends Controller
 			$i++;
 		}
 		echo json_encode($datajson);
+	}
+
+	public function actionGetLayanan($id)
+	{
+		$model=Layanan::model()->findByPk($id);
+		//$ret = Item::listAll();
+		//$ret = $this->model->getData('wilayah');
+		// $i=0;
+		// foreach ($model as $row) {
+		// 	$datajson[$i]['BIAYA_REGISTRASI'] = $row['BIAYA_REGISTRASI'];
+		// 	$i++;
+		// }
+		echo $model->BIAYA;
 	}
 
 	public function actionGetPasien()
@@ -204,10 +217,10 @@ class SiteController extends Controller
 	            $pelanggan->attributes = $_GET['Pasien'];
 
 			$newpl = new Pasien('baru');
-			$newpl->ID_LAYANAN = 1;
+			// $newpl->ID_LAYANAN = 1;
 	        if (isset($_POST['Pasien'])) {
 	            $newpl->attributes = $_POST['Pasien'];
-	            $newpl->BIAYA_REGISTRASI = 5000;
+	            //$newpl->BIAYA_REGISTRASI = 5000;
 	            $newpl->TANGGAL_REGISTRASI = date('Y-m-d H:i:s');
 	            if ($newpl->save()) {
 	            	Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
@@ -285,7 +298,7 @@ class SiteController extends Controller
 			));
 
 			$pasien_today = Pasien::listRegisterToday();
-			$this->render('index2',array(
+			$this->render('index3',array(
 				'dataProvider'=>$dataProvider,
 				'order'=>$order,
 				'order_detail'=>$order_detail,
