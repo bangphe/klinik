@@ -1,3 +1,5 @@
+<?php $controller = Yii::app()->controller->action->id; ?>
+
 <div class="page-sidebar-wrapper">
     <!-- BEGIN SIDEBAR -->
     <div class="page-sidebar navbar-collapse collapse">
@@ -63,15 +65,15 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<?php echo ($this->ID==="rekap") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Laporan Keuangan', array('/admin/rekap'), array('class'=>'nav-link')); ?></li>
-                    <li class="nav-item  ">
-                        <?php echo CHtml::link('Laporan Penjualan Lensa', array('/admin/rekap/penjualanlensa'),array('class' => 'nav-link')) ?>
+                    <li class="<?php echo ($this->ID==="rekap" && $controller=="index") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Laporan Keuangan', array('/admin/rekap'), array('class'=>'nav-link')); ?></li>
+                    <li class="<?php echo ($controller==="obat") ? "nav-item active open": "nav-item"; ?>">
+                        <?php echo CHtml::link('Laporan Data Obat', array('/admin/rekap/obat/index'),array('class' => 'nav-link')) ?>
                     </li>
-                    <li class="nav-item  ">
-                        <?php echo CHtml::link('Laporan Penjualan Obat', array('/admin/rekap/penjualanobat'),array('class' => 'nav-link')) ?>
+                    <li class="<?php echo ($controller==="lensa") ? "nav-item active open": "nav-item"; ?>">
+                        <?php echo CHtml::link('Laporan Data Lensa', array('/admin/rekap/lensa/index'),array('class' => 'nav-link')) ?>
                     </li>
-                    <li class="nav-item  ">
-                        <?php echo CHtml::link('Laporan Penjualan Gagang', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
+                    <li class="<?php echo ($controller==="gagang") ? "nav-item active open": "nav-item"; ?>">
+                        <?php echo CHtml::link('Laporan Data Gagang', array('/admin/rekap/gagang/index'),array('class' => 'nav-link')) ?>
                     </li>
                     <!-- <li class="nav-item  ">
                         <a href="form_controls.html" class="nav-link ">
@@ -79,15 +81,15 @@
                             </span>
                         </a>
                     </li> -->
-                    <li class="nav-item  ">
-                        <?php echo CHtml::link('Laporan Pembelian Obat', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
+                    <!-- <li class="nav-item  ">
+                        <?php //echo CHtml::link('Laporan Pembelian Obat', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
                     </li>
                     <li class="nav-item  ">
-                        <?php echo CHtml::link('Laporan Pembelian Lensa', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
+                        <?php //echo CHtml::link('Laporan Pembelian Lensa', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
                     </li>
                     <li class="nav-item  ">
-                        <?php echo CHtml::link('Laporan Pembelian Gagang', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
-                    </li>
+                        <?php //echo CHtml::link('Laporan Pembelian Gagang', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
+                    </li> -->
                 </ul>
             </li>
             <li class="<?= ($this->ID=="profil") ? "nav-item start active" : "nav-item start"; ?>">
