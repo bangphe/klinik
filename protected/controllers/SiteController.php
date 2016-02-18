@@ -237,8 +237,8 @@ class SiteController extends Controller
             	if ($orderbaru->save()) {
             		$subtotal = 0;
             		foreach ($_POST['OrderDetail'] as $detail) {
-            			var_dump($_POST['OrderDetail']);
-	        			die();
+            // 			var_dump($_POST['OrderDetail']);
+	        			// die();
             			$od = new OrderDetail('baru');
                         $od->ID_ITEM = $detail['ID_ITEM'];
                         $od->KODE_ORDER = $orderbaru->KODE_ORDER;

@@ -97,26 +97,32 @@
                 <div class="portlet-body">
                     <div class="tabbable-custom ">
                         <ul class="nav nav-tabs ">
-                            <li class="active">
-                                <a href="#tab_5_1" data-toggle="tab">
-                                    DAFTAR ITEM </a>
-                            </li>
+                            <?php foreach (Kategori::listAll() as $i => $tipe): ?>
+                                <li class="<?php echo $i == 1 ? 'active' : '' ?>">
+                                    <a href="#tab_5_<?php echo $i ?>" data-toggle="tab">
+                                        <?php echo strtoupper($tipe) ?> </a>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_5_1">
                                 <div class="clearfix"></div></br>
                                 <div class="form-body">
-                                    <!-- <div class="form-group">
-                                        <label class="col-md-4 control-label">Status</label>
-                                        <div class="col-md-8">
-                                            <div class="input-group">
-                                                <div class="icheck-inline">
-                                                    <label><input data-radio="iradio_square-blue" type="radio" name="Banner[STATUS]" checked class="icheck" value="1"> Aktif </label>
-                                                    <label><input data-radio="iradio_square-blue" type="radio" name="Banner[STATUS]" class="icheck" value="0"> Non Aktif </label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <?php echo $form->labelEx($orderbaru, 'RESEP', array('class' => 'control-label col-md-3')); ?>
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <div class="icheck-inline">
+                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Umum </label>
+                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Obat </label>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -168,7 +174,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="tab-pane" id="tab_5_2">
+                            <div class="tab-pane" id="tab_5_2">
                                 <p> Howdy, I'm in Section 2. </p>
                                 <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
                                     consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation. </p>
@@ -183,7 +189,7 @@
                                 <p>
                                     <a class="btn yellow" href="ui_tabs_accordions_navs.html#tab_5_3" target="_blank"> Activate this tab via URL </a>
                                 </p>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
