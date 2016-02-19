@@ -118,8 +118,8 @@
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <div class="icheck-inline">
-                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Umum </label>
-                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Obat </label>
+                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Umum </label> <br>
+                                                            <label style="margin-left:0px !important;"><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Obat </label>
                                                         </div>
                                                     </div>
                                                 </div>

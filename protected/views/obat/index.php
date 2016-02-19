@@ -25,7 +25,7 @@ $this->breadcrumbs=array(
                                 <th> ID # </th>
                                 <th> Nama Obat </th>
                                 <th> Golongan </th>
-                                <th> Harga Jual </th>
+                                <th> Harga Beli </th>
                                 <th> Stok </th>
                                 <th> Tanggal Expired </th>
                                 <th> Status </th>
