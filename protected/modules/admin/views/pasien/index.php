@@ -3,9 +3,11 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Pasiens',
+	'Manajemen Pasien',
 );
 ?>
+
+<?php echo Yii::app()->user->getFlash('info') ?>
 
 <div class="app-ticket app-ticket-list">
     <div class="row">

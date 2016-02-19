@@ -8,6 +8,8 @@ $this->breadcrumbs=array(
 
 ?>
 
+<?php echo Yii::app()->user->getFlash('info') ?>
+
 <div class="app-ticket app-ticket-list">
     <div class="row">
         <div class="col-md-12">

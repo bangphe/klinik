@@ -73,8 +73,10 @@ class PasienController extends Controller
 			$model->attributes=$_POST['Pasien'];
 			$model->setAttribute('BIAYA_REGISTRASI','5000');
 			$model->setAttribute('TANGGAL_REGISTRASI',date('Y-m-d H:i:s'));
-			if($model->save())
+			if($model->save()) {
+				Yii::app()->user->setFlash('info', MyFormatter::alertInfo('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
 				$this->redirect(array('view','id'=>$model->ID_PASIEN));
+			}
 		}
 
 		$this->render('create',array(
@@ -97,8 +99,10 @@ class PasienController extends Controller
 		if(isset($_POST['Pasien']))
 		{
 			$model->attributes=$_POST['Pasien'];
-			if($model->save())
+			if($model->save()) {
+				Yii::app()->user->setFlash('info', MyFormatter::alertInfo('<strong>Selamat!</strong> Perubahan data telah berhasil disimpan.'));
 				$this->redirect(array('view','id'=>$model->ID_PASIEN));
+			}
 		}
 
 		$this->render('update',array(
@@ -116,8 +120,10 @@ class PasienController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		if(!isset($_GET['ajax'])) {
+			Yii::app()->user->setFlash('info', MyFormatter::alertError('<strong>Selamat!</strong> Data telah berhasil dihapus.'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+		}
 	}
 
 	/**

@@ -150,7 +150,7 @@
                                 <?php foreach (Order::ListOrder() as $dex => $item) { ?>
                                 <tr>
                                     <td><?php echo $dex+1;?></td>
-                                    <td><?php echo $item->pasien->NAMA_PASIEN;?></td>
+                                    <td><?php echo CHtml::link(CHtml::encode($item->pasien->NAMA_PASIEN), array('/admin/order/view/','id'=>$item->KODE_ORDER), array('title'=>'Detil Order')); ?></td>
                                     <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
                                     <td><?php echo OrderDetail::getJumlahItem($item->KODE_ORDER);?></td>
                                     <!-- <td><?php //echo MyFormatter::formatUang($item->getSubtotal());?></td> -->
@@ -159,12 +159,6 @@
                                     </td> -->
                                 </tr>
                                 <?php } ?>
-                                <tr>
-                                    <td>1</td>
-                                    <td><a href=""> Ini Contoh Link </a></td>
-                                    <td>08 Februari 2016 20:19 WIB</td>
-                                    <td>1</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
