@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 			<i class="fa fa-desktop"></i>Data Supplier #<?php echo $model->NAMA_GOLONGAN; ?>
 		</div>
 		<div class="actions">
-			<?php echo CHtml::link('<i class="fa fa-edit"></i> Ubah', array('/admin/golonganobat/update', 'id' => $model->ID_GOLONGAN_OBAT), array('class' => 'btn btn-default btn-sm')) ?>
+			<?php echo CHtml::link('<i class="fa fa-edit"></i> Ubah', array('/admin/golongan/update', 'id' => $model->ID_GOLONGAN_OBAT), array('class' => 'btn btn-default btn-sm')) ?>
         </div>
 	</div>
 	<div class="portlet-body">

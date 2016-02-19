@@ -25,7 +25,7 @@ $this->breadcrumbs=array(
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="btn-group">
-                                    <?= CHtml::link('<span class="fa fa-plus"></span> Tambah Data', array('/admin/golonganobat/create'), array('class' => 'btn sbold green')); ?>
+                                    <?= CHtml::link('<span class="fa fa-plus"></span> Tambah Data', array('/admin/golongan/create'), array('class' => 'btn sbold green')); ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
