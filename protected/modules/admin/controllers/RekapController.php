@@ -139,15 +139,16 @@ class RekapController extends Controller
 
             $criteria = new CDbCriteria;
             $criteria->addBetweenCondition('TANGGAL_ORDER', $datestart, $dateend);
-            $order = Order::model()->findAll($criteria);
-
+            $criteria->condition = 'ID_KATEGORI='.Item::KATEGORI_OBAT;
+            $order = Item::model()->findAll($criteria);
+            // var_dump($order); die();
             if($order != null) {
                 $filename = 'REKAP_'.$model->BULAN.'-'.$model->TAHUN;
                 header("Cache-Control: no-cache, no-store, must-revalidate");
                 header("Content-Type: application/vnd.ms-excel");
                 header("Content-Disposition: attachment; filename=" . $filename . ".xls");
 
-                $this->renderPartial('_rekap_bulanan',array(
+                $this->renderPartial('obat/_rekap_obat',array(
                     'order' => $order,
                     'model' => $model
                 ));
