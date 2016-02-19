@@ -180,6 +180,14 @@ class ItemController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
+	public function actionHapus($id)
+    {
+        ITEM::model()->updateByPk($id, array('STATUS'=>2));
+                
+        Yii::app()->user->setFlash('info',  MyFormatter::alertError('<strong>Sukses!</strong> Data telah berhasil dihapus.'));
+        $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+	}
+
 	/**
 	 * Lists all models.
 	 */

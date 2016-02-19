@@ -5,7 +5,7 @@
     <td><?php echo CHtml::encode($data->NAMA_ITEM); ?></td>
     <td><?php echo CHtml::encode($data->golongan->NAMA_GOLONGAN); ?></td>
     <td><?php echo CHtml::encode(MyFormatter::formatUang($data->HARGA_JUAL)); ?></td>
-    <td><?php echo $jumlah_stok!=NULL ? MyFormatter::stokBarang($jumlah_stok) : '<span class="label label-warning">HABIS</span>'; ?></td>
+    <td><?php echo $jumlah_stok==NULL || $jumlah_stok=='' || $jumlah_stok==0 ? '<span class="label label-warning">HABIS</span>' : MyFormatter::stokBarang($jumlah_stok); ?></td>
     <td><?php echo MyFormatter::formatTanggal($data->TANGGAL_EXPIRED); ?></td>
     <td><?php echo MyFormatter::statusAktif($data->STATUS); ?></td>
 </tr>
