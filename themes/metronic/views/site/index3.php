@@ -22,7 +22,7 @@
             <div class="company-address">
                 <span class="bold uppercase">Klinik Uce & Phe</span>
                 <br/> Jalan Celalu Beldua
-                <br/> Sepanjang-Sidoarjo
+                <br/> Sepanjang - Sidoarjo
                 <br/>
                 <span class="bold">T</span> 1800 123 456
             </div>
@@ -97,12 +97,15 @@
                 <div class="portlet-body">
                     <div class="tabbable-custom ">
                         <ul class="nav nav-tabs ">
-                            <?php foreach (Kategori::listAll() as $i => $tipe): ?>
-                                <li class="<?php echo $i == 1 ? 'active' : '' ?>">
-                                    <a href="#tab_5_<?php echo $i ?>" data-toggle="tab">
-                                        <?php echo strtoupper($tipe) ?> </a>
+                            <!-- <?php //foreach (Kategori::listAll() as $i => $tipe): ?>
+                                <li class="<?php //echo $i == 1 ? 'active' : '' ?>">
+                                    <a href="#tab_5_<?php //echo $i ?>" data-toggle="tab">
+                                        <?php //echo strtoupper($tipe) ?> </a>
                                 </li>
-                            <?php endforeach; ?>
+                            <?php //endforeach; ?> -->
+                            <li class="active">
+                                <a href="#tab_5_1" data-toggle="tab">DAFTAR ITEM</a>
+                            </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_5_1">
@@ -128,10 +131,12 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Nama</label>
                                                 <div class="col-md-9">
-                                                    <!-- <input type="text" name="url" /> -->
-                                                    <?php //echo $form->textField($orderbaru->orderdetail,'[0]ID_ITEM',array('maxlength'=>100,'class'=>'form-control form-select','placeholder'=>'Cari disini..')); ?>
-                                                    <?php echo $form->dropDownList($orderbaru->orderdetail, '[0]ID_ITEM', Item::listItemPerKategori(Item::KATEGORI_OBAT), array('class' => 'form-control form-select', 'prompt' => '-- Pilih Item --')); ?>
-                                                    <?php //echo $form->hiddenField($orderbaru->orderdetail,'[0]ID_ITEM',array('type'=>'hidden','value'=>'')); ?>
+                                                    <?php echo $form->dropDownList($orderbaru->orderdetail, '[0]ID_ITEM', /*Item::listItemPerKategori(Item::KATEGORI_OBAT)*/Item::listAllItem(), array(
+                                                        'class' => 'form-control form-select',
+                                                        'prompt' => '-- Pilih Item --',
+                                                        'required',
+                                                        'onchange' => 'getStokItem(this.value, 0)',
+                                                    )); ?>
                                                     <!-- </br>
                                                     <dl>
                                                         <dt>Description lists</dt>
@@ -141,15 +146,30 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
-                                                <?php echo $form->labelEx($orderbaru->orderdetail,'[0]JUMLAH',array('class'=>'control-label col-md-3')); ?>
-                                                <div class="col-md-9">
+                                                <?php echo $form->labelEx($orderbaru->orderdetail,'[0]JUMLAH',array('class'=>'control-label col-md-4')); ?>
+                                                <div class="col-md-6">
                                                     <?php echo $form->numberField($orderbaru->orderdetail,'[0]JUMLAH',array(
                                                         'class' => 'form-control input-xsmall',
                                                         'min' => 0,
                                                         //'max' => Item::getTotalStok($item->ID_ITEM),
                                                         'placeholder' => '0',
+                                                        'disabled' => 'true',
+                                                    ));?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <?php echo $form->labelEx($orderbaru->orderdetail,'[0]DISKON',array('class'=>'control-label col-md-4')); ?>
+                                                <div class="col-md-6">
+                                                    <?php echo $form->numberField($orderbaru->orderdetail,'[0]DISKON',array(
+                                                        'class' => 'form-control input-xsmall',
+                                                        'min' => 0,
+                                                        //'max' => Item::getTotalStok($item->ID_ITEM),
+                                                        'placeholder' => '0',
+                                                        'disabled' => 'true',
                                                     ));?>
                                                 </div>
                                             </div>
@@ -260,29 +280,63 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $(".form-select").select2();
+    $("#order-form").validate();
 });
 
 var idform=1;
+
 function newField(i){
     //alert("#form_kolom_"+idform+" input[name='OrderDetail["+idform+"][ID_ITEM]']");
     $('.form-select').select2('destroy');
     var form_template = $('#options_template_template').html();
 
+    form_template = form_template.replace('OrderDetail_0_JUMLAH','OrderDetail_'+idform+'_JUMLAH');
+    // form_template = form_template.replace('OrderDetail_0_DISKON','OrderDetail_'+idform+'_DISKON');
     form_template = form_template.replace('[0][ID_ITEM]','['+idform+'][ID_ITEM]');
     form_template = form_template.replace('[0][JUMLAH]','['+idform+'][JUMLAH]');
+    form_template = form_template.replace('[0][DISKON]','['+idform+'][DISKON]');
     form_template = form_template.replace('options_template_template','options_'+idform);
     form_template = form_template.replace('newoptions_template','newfield_'+idform);
+    form_template = form_template.replace('getStokItem(this.value, 0)','getStokItem(this.value, '+idform+')');
 
     form_template = form_template.replace('removeForm(template)','removeForm('+idform+')');
 
     form_template = form_template.replace('remove-btn-value','remove-btn-'+idform);
     $('#newfield_'+i).append('<div id="form_kolom_'+idform+'">'+form_template+'</div>');
     idform++;
-    //alert("#OrderDetail_"+idform+"_ID_ITEM");
+    //alert(form_template);
     var i = 0;
     $('.form-select').each(function () {
         $(this).attr("id",'item-' + i).select2();
         i++;
+    });
+}
+
+function getStokItem(id, i) {
+    var path = '<?= Yii::app()->baseUrl; ?>/site/getstokitem';
+    //var i = 0;
+    //alert('#OrderDetail_'+i+'_JUMLAH');
+    $.ajax({
+        url:path,
+        type:'get',
+        data:'id='+id,
+        beforeSend: function(){},
+        success: function(data){
+            //$("input[name='OrderDetail["+idform+"][ID_ITEM]']").val(mapping[ui.item.value]);
+            //$('#OrderDetail_'+i+'_JUMLAH').attr('value', data);
+            //$("input[name='OrderDetail["+i+"][JUMLAH]']").attr('value', data);
+            if(data == null || data == 0 || data == '') {
+                //$("#OrderDetail_0_JUMLAH").attr("value", "0");
+                $("input[name='OrderDetail["+i+"][JUMLAH]']").attr("disabled", "disabled");
+                $("input[name='OrderDetail["+i+"][DISKON]']").attr("disabled", "disabled");
+                alert("Item yang dipilih tidak dapat diproses dikarenakan STOK HABIS!");
+            }
+            else {
+                $("input[name='OrderDetail["+i+"][JUMLAH]']").removeAttr("disabled");
+                $("input[name='OrderDetail["+i+"][DISKON]']").removeAttr("disabled");
+            }
+            //i++;
+        }
     });
 }
 

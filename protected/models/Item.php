@@ -189,7 +189,33 @@ class Item extends CActiveRecord
         ));
         $model = self::model()->findAll($criteria);
         $data = CHtml::listData($model,'ID_ITEM',function($model){
-            return $model->NAMA_ITEM . ' [' .$model->golongan->NAMA_GOLONGAN. '] - ' . MyFormatter::formatUang($model->HARGA_JUAL);
+            if ($model->ID_GOLONGAN_OBAT != NULL) {
+                return $model->NAMA_ITEM . ' [' .$model->golongan->NAMA_GOLONGAN. '] - ' . MyFormatter::formatUang($model->HARGA_JUAL);
+            } else {
+                return $model->NAMA_ITEM . ' [' .$model->kategori->KATEGORI. '] - ' . MyFormatter::formatUang($model->HARGA_JUAL);
+            }
+        });
+        return $data;
+    }
+
+    public static function listAllItem() {
+        $criteria = new CDbCriteria(array(
+            'with' => array(
+                'kategori' => array(
+                    'joinType' => 'inner join',
+                )
+            ),
+            'condition' => 't.STATUS = :status',
+            'params' => array(':status' => self::STATUS_AKTIF),
+            'together' => true
+        ));
+        $model = self::model()->findAll($criteria);
+        $data = CHtml::listData($model,'ID_ITEM',function($model){
+            if ($model->ID_GOLONGAN_OBAT != NULL) {
+                return $model->NAMA_ITEM . ' [' .$model->golongan->NAMA_GOLONGAN. '] - ' . MyFormatter::formatUang($model->HARGA_JUAL);
+            } else {
+                return $model->NAMA_ITEM . ' [' .$model->kategori->KATEGORI. '] - ' . MyFormatter::formatUang($model->HARGA_JUAL);
+            }
         });
         return $data;
     }

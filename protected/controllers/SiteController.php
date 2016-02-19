@@ -19,7 +19,7 @@ class SiteController extends Controller
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index','getitem','getpasien','indexs','getobat','getlayanan'),
+                'actions' => array('index','getitem','getpasien','indexs','getobat','getlayanan','getstokitem'),
                 'users' => array('@'),
                 //'roles' => array(WebUser::ROLE_KASIR)
                 'expression'=> '!Yii::app()->user->isGuest && Yii::app()->user->role == 2',
@@ -93,6 +93,11 @@ class SiteController extends Controller
 		$model=Pasien::model()->findByPk($kdpasien);
 
 		echo $model->NAMA_PASIEN;
+	}
+
+	public function actionGetStokItem($id)
+	{
+		echo Item::getStokItem($id);
 	}
 
 	/**
@@ -245,7 +250,7 @@ class SiteController extends Controller
                         //proses harga by resep
                         $od->HARGA = Item::getHargaByResep($detail['ID_ITEM'], $orderbaru->RESEP);
                         $od->JUMLAH = $detail['JUMLAH'];
-                        //$od->DISKON = $detail['DISKON'];
+                        $od->DISKON = $detail['DISKON'];
 
                         Item::updateStokItem($detail['ID_ITEM'], $detail['JUMLAH']);
 		           		$subtotal += $od->JUMLAH * $od->HARGA;
