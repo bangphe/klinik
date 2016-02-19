@@ -53,7 +53,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="<?php echo ($this->ID==="item") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Item', array('/admin/item'), array('class'=>'nav-link')); ?></li>
-                    <li class="<?php echo ($this->ID==="golonganobat") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Golongan Obat', array('/admin/golonganobat'), array('class'=>'nav-link')); ?></li>
+                    <li class="<?php echo ($this->ID==="golongan") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Golongan Obat', array('/admin/golongan'), array('class'=>'nav-link')); ?></li>
                     <li class="<?php echo ($this->ID==="kategori") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Kategori', array('/admin/kategori'), array('class'=>'nav-link')); ?></li>
                     <li class="<?php echo ($this->ID==="supplier") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Supplier', array('/admin/supplier'), array('class'=>'nav-link')); ?></li>
                     <li class="<?php echo ($this->ID==="layanan") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Layanan', array('/admin/layanan'), array('class'=>'nav-link')); ?></li>
