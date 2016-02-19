@@ -73,8 +73,8 @@ class Item extends CActiveRecord
 	{
 		return array(
 			'ID_ITEM' => 'Id Item',
-			'ID_KATEGORI' => 'Id Kategori',
-            'ID_GOLONGAN_OBAT' => 'Id Golongan Obat',
+			'ID_KATEGORI' => 'Kategori',
+            'ID_GOLONGAN_OBAT' => 'Golongan Obat',
 			'NAMA_ITEM' => 'Nama Item',
 			'UKURAN' => 'Ukuran',
 			'SATUAN' => 'Satuan',

@@ -24,8 +24,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
-                            <a href="page_user_profile_1.html">
-                                <i class="icon-user"></i> My Profile </a>
+                            <?php echo CHtml::link('<i class="icon-user"></i> Profil ', array('/admin/profil')) ?>
                         </li>
                         <li>
                             <?php echo CHtml::link('<i class="icon-key"></i> Log Out ', array('/site/logout')) ?>

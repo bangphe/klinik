@@ -43,6 +43,38 @@
 	</div>
 
 	<div class="form-group">
+		<?php echo $form->labelEx($item,'ID_GOLONGAN_OBAT',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+			<?php echo $form->dropDownList($item,'ID_GOLONGAN_OBAT', GolonganObat::listAll(),
+				array(
+				'class'=>'bs-select form-control input-large',
+				'prompt'=>'- Pilih Golongan Obat -'
+			)); ?>
+			<?php echo $form->error($item,'ID_GOLONGAN_OBAT'); ?>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<?php echo $form->labelEx($item,'UKURAN',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+			<?php echo $form->textField($item,'UKURAN',array(
+                'class' => 'form-control input-large',
+            ));?>
+			<?php echo $form->error($item,'UKURAN'); ?>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<?php echo $form->labelEx($item,'SATUAN',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+			<?php echo $form->textField($item,'SATUAN',array(
+                'class' => 'form-control input-large',
+            ));?>
+			<?php echo $form->error($item,'SATUAN'); ?>
+		</div>
+	</div>
+
+	<div class="form-group">
 		<?php echo $form->labelEx($item,'HARGA_JUAL',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
             <div class="input-inline input-large">

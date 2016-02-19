@@ -62,8 +62,8 @@ class DetilItem extends CActiveRecord
 		return array(
 			'ID_DETIL_ITEM' => 'Id Detil Item',
 			'ID_ITEM' => 'Id Item',
-			'ID_SUPPLIER' => 'Id Supplier',
-			'STOK' => 'Stok',
+			'ID_SUPPLIER' => 'Supplier',
+			'STOK' => 'Jumlah',
 			'HARGA_BELI' => 'Harga Beli',
 			'TANGGAL_INPUT' => 'Tanggal Input',
 		);

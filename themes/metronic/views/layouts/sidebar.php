@@ -45,7 +45,7 @@
             <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
                 <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
             </li>
-            <li class="<?= ($this->ID=="item" || $this->ID=="kategori" || $this->ID=="supplier" || $this->ID=="layanan") ? "nav-item active open" : "nav-item"; ?>">
+            <li class="<?= ($this->ID=="item" || $this->ID=="kategori" || $this->ID=="supplier" || $this->ID=="layanan" || $this->ID=="golonganobat") ? "nav-item active open" : "nav-item"; ?>">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>
                     <span class="title">Data Master</span>
@@ -53,6 +53,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="<?php echo ($this->ID==="item") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Item', array('/admin/item'), array('class'=>'nav-link')); ?></li>
+                    <li class="<?php echo ($this->ID==="golonganobat") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Golongan Obat', array('/admin/golonganobat'), array('class'=>'nav-link')); ?></li>
                     <li class="<?php echo ($this->ID==="kategori") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Kategori', array('/admin/kategori'), array('class'=>'nav-link')); ?></li>
                     <li class="<?php echo ($this->ID==="supplier") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Supplier', array('/admin/supplier'), array('class'=>'nav-link')); ?></li>
                     <li class="<?php echo ($this->ID==="layanan") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Layanan', array('/admin/layanan'), array('class'=>'nav-link')); ?></li>

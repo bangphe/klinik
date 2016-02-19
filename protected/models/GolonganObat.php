@@ -95,4 +95,8 @@ class GolonganObat extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public static function listAll() {
+        return CHtml::listData(self::model()->findAll(), 'ID_GOLONGAN_OBAT', 'NAMA_GOLONGAN');
+    }
 }

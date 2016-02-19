@@ -1,12 +1,12 @@
 <?php
 
-class SupplierController extends Controller
+class GolonganObatController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	//public $layout='//layouts/column2';
+	public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -62,17 +62,17 @@ class SupplierController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Supplier;
+		$model=new GolonganObat;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Supplier']))
+		if(isset($_POST['GolonganObat']))
 		{
-			$model->attributes=$_POST['Supplier'];
+			$model->attributes=$_POST['GolonganObat'];
 			if($model->save()) {
 				Yii::app()->user->setFlash('info', MyFormatter::alertInfo('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
-				$this->redirect(array('view','id'=>$model->ID_SUPPLIER));
+				$this->redirect(array('view','id'=>$model->ID_GOLONGAN_OBAT));
 			}
 		}
 
@@ -93,12 +93,12 @@ class SupplierController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Supplier']))
+		if(isset($_POST['GolonganObat']))
 		{
-			$model->attributes=$_POST['Supplier'];
+			$model->attributes=$_POST['GolonganObat'];
 			if($model->save()) {
 				Yii::app()->user->setFlash('info', MyFormatter::alertInfo('<strong>Selamat!</strong> Perubahan data telah berhasil disimpan.'));
-				$this->redirect(array('view','id'=>$model->ID_SUPPLIER));
+				$this->redirect(array('view','id'=>$model->ID_GOLONGAN_OBAT));
 			}
 		}
 
@@ -126,8 +126,8 @@ class SupplierController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Supplier',array(
-			'pagination'=>false,
+		$dataProvider=new CActiveDataProvider('GolonganObat',array(
+			'pagination'=>false
 		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -139,10 +139,10 @@ class SupplierController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Supplier('search');
+		$model=new GolonganObat('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Supplier']))
-			$model->attributes=$_GET['Supplier'];
+		if(isset($_GET['GolonganObat']))
+			$model->attributes=$_GET['GolonganObat'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -153,12 +153,12 @@ class SupplierController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Supplier the loaded model
+	 * @return GolonganObat the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Supplier::model()->findByPk($id);
+		$model=GolonganObat::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -166,11 +166,11 @@ class SupplierController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Supplier $model the model to be validated
+	 * @param GolonganObat $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='supplier-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='golongan-obat-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
