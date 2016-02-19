@@ -1,6 +1,6 @@
 <table border="1">
     <tr>
-    <th colspan="6">SHOP | Rekap Transaksi Harian <?= MyFormatter::formatTanggal(date('Y-m-d')); ?></th>
+    <th colspan="6">KLINIK AR-RAHMAH | Rekap Transaksi Harian <?= MyFormatter::formatTanggal(date('Y-m-d')); ?></th>
     </tr>
     <tr>
         <th>NO NOTA</th>
@@ -23,7 +23,7 @@
     <?php $grandtotal += $data->TOTAL ?>
     <?php endforeach ?>
     <tr>
-        <th colspan="5">TOTAL PER BULAN</th>
+        <th colspan="5">TOTAL TRANSAKSI HARI INI</th>
         <th><?php echo MyFormatter::formatUang($grandtotal) ?></th>
     </tr>
 </table>

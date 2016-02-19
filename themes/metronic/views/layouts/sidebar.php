@@ -94,7 +94,7 @@
                 </ul>
             </li>
             <li class="<?= ($this->ID=="profil") ? "nav-item start active" : "nav-item start"; ?>">
-                <?= CHtml::link('<i class="icon-heart"></i><span class="title"> Profil Klinik</span><span class="selected"></span>',array('/admin/profil'), array('class'=>'nav-link nav-toggle'));?>
+                <?= CHtml::link('<i class="icon-heart"></i><span class="title"> Profil</span><span class="selected"></span>',array('/admin/profil'), array('class'=>'nav-link nav-toggle'));?>
             </li>
         </ul>
         <!-- END SIDEBAR MENU -->
