@@ -160,7 +160,36 @@ License: You must have a valid license purchased only from themeforest(the above
                 $('.date-picker').datepicker({
                     autoclose: true,
                 });
-              });
+
+                $('#tabelku').DataTable( {
+                    "language": {
+                        "aria": {
+                            "sortAscending": ": activate to sort column ascending",
+                            "sortDescending": ": activate to sort column descending"
+                        },
+                        "emptyTable": "Tidak ada data",
+                        "info": "Menampilkan _START_ ke _END_ dari _TOTAL_ data",
+                        "infoEmpty": "Tidak ada hasil yang ditemukan",
+                        "infoFiltered": "(dicari dari _MAX_ total data)",
+                        "lengthMenu": "Tampilan _MENU_",
+                        "search": "Cari:",
+                        "zeroRecords": "Tidak ada data yang cocok ditemukan",
+                        "paginate": {
+                            "previous":"Sebelumnya",
+                            "next": "Selanjutnya",
+                            "last": "Terakhir",
+                            "first": "Pertama"
+                        }
+                    },
+                    "pageLength": 5,
+                    "pagingType": "bootstrap_full_number",
+                    "order": [[ 0, "asc" ]],
+                    "lengthMenu": [
+                        [5, 15, 20, -1],
+                        [5, 15, 20, "All"] // change per page values here
+                    ],
+                } );
+            });
         </script>
 	</body>
 <!-- END BODY -->

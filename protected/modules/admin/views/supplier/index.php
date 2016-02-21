@@ -51,7 +51,7 @@ $this->breadcrumbs=array(
                             </div>
                         </div>
                     </div>
-                    <table class="table table-striped table-bordered table-hover order-column" id="sample_1">
+                    <table class="table table-striped table-bordered table-hover order-column" id="tabelku">
                         <thead>
                             <tr>
                                 <th> No </th>

@@ -60,7 +60,7 @@ $this->breadcrumbs=array(
                                         		<td><?php echo MyFormatter::statusAktif($item->STATUS); ?></td>
                                                 <td width="20%">
                                                     <?php echo CHtml::link('<i class="fa fa-pencil-square-o"></i> Ubah',array('/admin/item/update/','id'=>$item->ID_ITEM),array('class'=>'btn dark btn-sm btn-outline sbold uppercase')); ?>
-                                                    <?php echo CHtml::link('<i class="fa fa-trash-o"></i> Hapus',array('/admin/item/hapus/','id'=>$item->ID_ITEM),array('class'=>'btn blue btn-sm btn-outline sbold uppercase','submit'=>array('hapus','id'=>$item->ID_ITEM),'confirm'=>'Apakah Anda yakin akan menghapus '.$item->NAMA_ITEM.'?')); ?>
+                                                    <?php echo CHtml::link('<i class="fa fa-trash-o"></i> Hapus',array('/admin/item/hapus/','id'=>$item->ID_ITEM),array('class'=>'btn red btn-sm btn-outline sbold uppercase','submit'=>array('hapus','id'=>$item->ID_ITEM),'confirm'=>'Apakah Anda yakin akan menghapus '.$item->NAMA_ITEM.'?')); ?>
                                                 </td>
                                                 <!-- <a href="javascript:;" class="btn dark btn-sm btn-outline sbold uppercase">
                                                             <i class="fa fa-share"></i> View </a> -->

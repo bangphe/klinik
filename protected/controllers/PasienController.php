@@ -32,6 +32,7 @@ class PasienController extends Controller
 					'index',
 					'create',
 					'view',
+					'viewpasien',
 					'update',
 					'delete',
 				),
@@ -52,6 +53,13 @@ class PasienController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+
+	public function actionViewpasien($id)
+	{
+		$this->render('view_pasien',array(
 			'model'=>$this->loadModel($id),
 		));
 	}

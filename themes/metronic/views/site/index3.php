@@ -14,7 +14,7 @@
     <div class="row invoice-head">
         <div class="col-md-7 col-xs-6">
             <div class="invoice-logo">
-                <img src="<?= Yii::app()->theme->baseUrl; ?>/assets/pages/img/logos/logo5.jpg" class="img-responsive" alt="" />
+                <img src="<?= Yii::app()->theme->baseUrl; ?>/assets/pages/img/logos/logo.png" class="img-responsive" alt="" />
                 <!-- <h1 class="uppercase">Invoice</h1> -->
             </div>
         </div>
@@ -33,16 +33,16 @@
             <div class="portlet light ">
                 <div class="portlet-title tabbable-line">
                     <div class="caption caption-md">
-                        <i class="icon-globe theme-font"></i>
+                        <i class="fa fa-user-md font-blue-madison"></i>
                         <span class="caption-subject font-blue-madison bold uppercase">Daftar Pasien</span>
                     </div>
                     <div class="actions">
                         <!-- <?//= CHtml::link('<span class="fa fa-plus"></span> Tambah Baru', array('#basic'), array('class' => 'btn green btn-outline sbold uppercase', 'data-toggle'=>'modal')); ?> -->
-                        <a class="btn green btn-outline sbold uppercase" data-toggle="modal" href="#basic"> Tambah Baru </a>
+                        <a class="btn green btn-outline sbold uppercase" data-toggle="modal" href="#basic"> <span class="fa fa-plus"></span> Tambah Baru </a>
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover order-column" id="sample_1">
+                    <table class="table table-striped table-bordered table-hover order-column" id="tabelku">
                         <thead>
                             <tr>
                                 <th> # </th>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class=" icon-layers"></i>
+                        <i class="fa fa-medkit"></i>
                         <span class="caption-subject bold uppercase">Detil Order</span>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab_5_2">
+                            <!-- <div class="tab-pane" id="tab_5_2">
                                 <p> Howdy, I'm in Section 2. </p>
                                 <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
                                     consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation. </p>
@@ -209,7 +209,7 @@
                                 <p>
                                     <a class="btn yellow" href="ui_tabs_accordions_navs.html#tab_5_3" target="_blank"> Activate this tab via URL </a>
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -224,35 +224,30 @@
         <div class="col-xs-4 table-responsive">
             <div class="mt-element-ribbon bg-grey-steel">
                 <div class="ribbon ribbon-right ribbon-clip ribbon-shadow ribbon-round ribbon-color-info uppercase">
-                    <div class="ribbon-sub ribbon-clip ribbon-right"></div> Data Pasien Hari Ini : <?= MyFormatter::formatTanggal(date('Y-m-d')); ?> </div>
+                    <div class="ribbon-sub ribbon-clip ribbon-right"></div> Data Pasien Hari Ini : <i><?= MyFormatter::formatTanggal(date('Y-m-d')); ?></i> </div>
                 <p class="ribbon-content">
                     <div class="clearfix"></div></br>
                     <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
-                        <ul class="feeds">
-                        <?php 
-                        if (count($pasien_today) > 0) {
-                        foreach ($pasien_today as $value) { ?>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
+                        <div class="general-item-list">
+                            <?php 
+                                if (count($pasien_today) > 0) {
+                                foreach ($pasien_today as $value) { ?>
+                                <div class="item" style="background-color:#fafafa;">
+                                    <div class="item-head">
+                                        <div class="item-details">
                                             <div class="label label-sm label-danger">
                                                 <i class="fa fa-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"><?= $value->NAMA_PASIEN; ?></div>
+                                            </div>&nbsp;
+                                            <a href="#" class="item-name primary-link"><?= $value->NAMA_PASIEN; ?></a>
+                                            <span class="item-label"><?= MyFormatter::formatTimeAgo($value->TANGGAL_REGISTRASI); ?></span>
                                         </div>
                                     </div>
+                                    <div class="item-body"></div>
                                 </div>
-                                <div class="col2">
-                                    <div class="date"> 24 mins </div>
-                                </div>
-                            </li>
-                            <?php } } else { ?>
+                                <?php } } else { ?>
                                 <div class="alert alert-warning"><i>Belum ada data yang masuk.</i> </div>
                             <?php } ?>
-                        </ul>
+                        </div>
                     </div>
                 </p>
             </div>
@@ -271,11 +266,8 @@
                 <?php $this->renderPartial('_new_pasien', array('pelanggan_baru' => $pelanggan_baru)) ?>
             </div>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
 </div>
-
 
 <script type="text/javascript">
 $(document).ready(function(){

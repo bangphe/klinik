@@ -173,6 +173,7 @@ class Pasien extends CActiveRecord
     public static function listRegisterToday() {
     	$criteria = new CDbCriteria;
         $criteria->condition = 'date(TANGGAL_REGISTRASI) = date(NOW())';
+        $criteria->order = 'TANGGAL_REGISTRASI DESC';
 
         return self::model()->findAll($criteria);
     }
