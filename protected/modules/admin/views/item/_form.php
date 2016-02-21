@@ -42,7 +42,7 @@
 		</div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" id="golongan">
 		<?php echo $form->labelEx($item,'ID_GOLONGAN_OBAT',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
 			<?php echo $form->dropDownList($item,'ID_GOLONGAN_OBAT', GolonganObat::listAll(),
@@ -54,23 +54,23 @@
 		</div>
 	</div>
 
-	<div class="form-group">
-		<?php echo $form->labelEx($item,'UKURAN',array('class'=>'control-label col-md-3')); ?>
-		<div class="col-md-4">
-			<?php echo $form->textField($item,'UKURAN',array(
-                'class' => 'form-control input-large',
-            ));?>
-			<?php echo $form->error($item,'UKURAN'); ?>
-		</div>
-	</div>
-
-	<div class="form-group">
+	<div class="form-group" id="satuan">
 		<?php echo $form->labelEx($item,'SATUAN',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
 			<?php echo $form->textField($item,'SATUAN',array(
                 'class' => 'form-control input-large',
             ));?>
 			<?php echo $form->error($item,'SATUAN'); ?>
+		</div>
+	</div>
+
+	<div class="form-group" id="ukuran">
+		<?php echo $form->labelEx($item,'UKURAN',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+			<?php echo $form->textField($item,'UKURAN',array(
+                'class' => 'form-control input-large',
+            ));?>
+			<?php echo $form->error($item,'UKURAN'); ?>
 		</div>
 	</div>
 
@@ -152,6 +152,28 @@
 </div><!-- form -->
 
 <script type="text/javascript">
+$(function() {
+	$('#golongan').hide();
+	$('#ukuran').hide();
+	$('#satuan').hide();
+
+	$('#Item_ID_KATEGORI').change(function(){
+		if ($('#Item_ID_KATEGORI').val() == 1) {
+			$('#golongan').show();
+			$('#satuan').show();
+			$('#ukuran').hide();
+		} else if($('#Item_ID_KATEGORI').val() == 2 || $('#Item_ID_KATEGORI').val() == 3) {
+			$('#ukuran').show();
+			$('#golongan').hide();
+			$('#satuan').hide();
+		}
+		else {
+			$('#golongan').hide();
+			$('#satuan').hide();
+		}
+	});
+});
+
 function getKategori(id)
 {
 	var url = '<?php echo Yii::app()->createUrl("barang/getkategori/'+id+'")?>';
