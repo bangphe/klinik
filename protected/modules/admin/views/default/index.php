@@ -2,7 +2,7 @@
 <div class="note note-success">
     <h3>Informasi Penting !!</h3>
     <?php foreach ($expired as $value) { ?>
-        <p>Obat <b> <?= $value['NAMA_ITEM']; ?> </b> masa expired akan segera berakhir pada tanggal <b> <?= MyFormatter::formatTanggal($value['TANGGAL_EXPIRED']); ?> </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
+        <p>Obat <b> <?= $value['NAMA_ITEM']; ?> </b> masa expired akan segera berakhir pada tanggal <b> <?= MyFormatter::formatTanggal($value['TANGGAL_EXPIRED']); ?> </b>, silahkan update dengan tanggal expired terbaru. Terima Kasih</p>
     <?php } ?>
     <!-- <p>Obat <b> Oskadon </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
     <p>Obat <b> Ultraflu </b> masa expired akan segera berakhir <b> 14 hari </b> lagi, silahkan isi stock dengan obat yang terbaru. Terima Kasih</p>
@@ -81,15 +81,12 @@
 <div class="row">
     <div class="col-md-6">
     <!-- BEGIN CONDENSED TABLE PORTLET-->
-    <div class="portlet box red">
+    <div class="portlet blue-hoki box">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-picture"></i>Obat Expired </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
-                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                    <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
-                    <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
                 </div>
             </div>
             <div class="portlet-body">
@@ -100,18 +97,18 @@
                                 <th> No </th>
                                 <th> Nama Obat </th>
                                 <th> Tanggal Expired </th>
-                                <th> Jumlah Stock </th>
+                                <th> Jumlah Stok </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach (Item::getObatExpired() as $key => $value) { ?>
+                            <?php foreach (Item::getObatExpired() as $key => $value) { 
+                                $jumlah_stok = Item::getTotalStok($value->ID_ITEM);
+                            ?>
                             <tr>
                                 <td> <?= $key+1; ?> </td>
                                 <td> <?= $value->NAMA_ITEM; ?> </td>
                                 <td> <?= MyFormatter::formatTanggal($value->TANGGAL_EXPIRED); ?> </td>
-                                <td>
-                                    <span class="label label-sm label-success"> <?= Item::getTotalStok($value->ID_ITEM); ?> </span>
-                                </td>
+                                <td> <?= $jumlah_stok==NULL || $jumlah_stok=='' || $jumlah_stok==0 ? '<span class="label label-warning">HABIS</span>' : MyFormatter::stokBarang($jumlah_stok); ?></td>
                             </tr>
                             <?php } ?>
                         </tbody>
@@ -123,15 +120,12 @@
     </div>
     <div class="col-md-6">
         <!-- BEGIN CONDENSED TABLE PORTLET-->
-        <div class="portlet box green">
+        <div class="portlet red-sunglo box">
             <div class="portlet-title">
                 <div class="caption">
                     <i class="fa fa-picture"></i>Invoice Terbaru </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
-                        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                        <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
-                        <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
                     </div>
                 </div>
                 <div class="portlet-body">
@@ -166,17 +160,12 @@
             </div>
             <!-- END CONDENSED TABLE PORTLET-->
         </div>
-        <div class="col-md-6">
-        <!-- BEGIN CONDENSED TABLE PORTLET-->
-        <div class="portlet box blue">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-picture"></i>Obat Habis </div>
+        <div class="col-md-12">
+            <div class="portlet green-meadow box">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-picture"></i>Obat Habis </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
-                        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                        <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
-                        <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
                     </div>
                 </div>
                 <div class="portlet-body">
@@ -186,19 +175,17 @@
                                 <tr>
                                     <th> No </th>
                                     <th> Nama Obat </th>
-                                    <th> Generik </th>
                                     <th> Golongan </th>
-                                    <!-- <th> Total Harga </th> -->
+                                    <th> Stok </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach (Order::ListOrder() as $dex => $item) { ?>
+                                <?php foreach (Item::getObatHabis() as $key => $value) { ?>
                                 <tr>
-                                    <td><?php echo $dex+1;?></td>
-                                    <td><?php echo $item->pasien->NAMA_PASIEN;?></td>
-                                    <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
-                                    <td><?php echo OrderDetail::getJumlahItem($item->KODE_ORDER);?></td>
-                                    <!-- <td><?php //echo MyFormatter::formatUang($item->getSubtotal());?></td> -->
+                                    <td> <?= $key+1; ?> </td>
+                                    <td> <?= $value->NAMA_ITEM; ?> </td>
+                                    <td> <?= $value->golongan->NAMA_GOLONGAN; ?> </td>
+                                    <td> <span class="label label-warning">HABIS</span> </td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -206,7 +193,6 @@
                     </div>
                 </div>
             </div>
-            <!-- END CONDENSED TABLE PORTLET-->
         </div>
     </div>
 </div>

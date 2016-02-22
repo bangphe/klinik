@@ -1,6 +1,6 @@
 <table border="1">
     <tr>
-    <th colspan="6">KLINIK AR-RAHMAH | Rekap Transaksi Bulan <?php echo $model->BULAN . '-' . $model->TAHUN ?></th>
+    <th colspan="6">KLINIK AR-RAHMAH | Rekap Transaksi Bulan <?= MyFormatter::formatBulan($model->BULAN) . '-' . $model->TAHUN ?></th>
     </tr>
     <tr>
         <th>NO NOTA</th>

@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
             <div class="portlet light ">
                 <div class="portlet-title tabbable-line">
                     <div class="caption caption-md">
-                        <i class="icon-globe theme-font hide"></i>
+                        <i class="fa fa-check-square-o font-blue-madison"></i>
                         <span class="caption-subject font-blue-madison bold uppercase">Daftar Order</span>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ $this->breadcrumbs=array(
                             </div>
                         </div>
                     </div>
-                    <table class="table table-striped table-bordered table-hover order-column" id="sample_1">
+                    <table class="table table-striped table-bordered table-hover order-column" id="tabelku">
                         <thead>
                             <tr>
                                 <th> No </th>

@@ -71,7 +71,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
                     <a href="index.html">
-                        <img src="<?= $baseUrl; ?>/assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
+                        <img src="<?= $baseUrl; ?>/assets/layouts/layout/img/logodpn 2.png" alt="logo" class="logo-default" /> </a>
                 </div>
                 <!-- END LOGO -->
                 <!-- BEGIN MEGA MENU -->
@@ -354,6 +354,39 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="<?= $baseUrl; ?>/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
+
+        <script type="text/javascript">
+            $(function () {
+                $('#tabelku').DataTable( {
+                    "language": {
+                        "aria": {
+                            "sortAscending": ": activate to sort column ascending",
+                            "sortDescending": ": activate to sort column descending"
+                        },
+                        "emptyTable": "Tidak ada data",
+                        "info": "Menampilkan _START_ ke _END_ dari _TOTAL_ data",
+                        "infoEmpty": "Tidak ada hasil yang ditemukan",
+                        "infoFiltered": "(dicari dari _MAX_ total data)",
+                        "lengthMenu": "Tampilan _MENU_",
+                        "search": "Cari:",
+                        "zeroRecords": "Tidak ada data yang cocok ditemukan",
+                        "paginate": {
+                            "previous":"Sebelumnya",
+                            "next": "Selanjutnya",
+                            "last": "Terakhir",
+                            "first": "Pertama"
+                        }
+                    },
+                    "pageLength": 5,
+                    "pagingType": "bootstrap_full_number",
+                    "order": [[ 0, "asc" ]],
+                    "lengthMenu": [
+                        [5, 15, 20, -1],
+                        [5, 15, 20, "All"] // change per page values here
+                    ],
+                } );
+            });
+        </script>
     </body>
 
 </html>

@@ -298,7 +298,10 @@ class SiteController extends Controller
 	            // }
 	        }
 
+	        $criteria = new CDbCriteria;
+			$criteria->order = 'TANGGAL_REGISTRASI DESC';
 			$dataProvider=new CActiveDataProvider('Pasien',array(
+				'criteria'=>$criteria,
 				'pagination'=>false,
 			));
 

@@ -1,6 +1,32 @@
 <?php
 class MyFormatter extends CFormatter
 {   
+    public static function formatTimeAgo($date,$granularity=2) {
+        $retval='';
+        $date = strtotime($date);
+        $difference = time() - $date;
+        $periods = array('decade' => 315360000,
+            'year' => 31536000,
+            'month' => 2628000,
+            'week' => 604800, 
+            'day' => 86400,
+            'hour' => 3600,
+            'minute' => 60,
+            'second' => 1);
+
+        foreach ($periods as $key => $value) {
+            if ($difference >= $value) {
+                $time = floor($difference/$value);
+                $difference %= $value;
+                $retval .= ($retval ? ' ' : '').$time.' ';
+                $retval .= (($time > 1) ? $key.'s' : $key);
+                $granularity--;
+            }
+            if ($granularity == '0') { break; }
+        }
+        return $retval.' ago';      
+    }
+
     public static function formatAngka($value) {
         return number_format($value, 0, ',', '.');
     }
@@ -34,7 +60,7 @@ class MyFormatter extends CFormatter
             return '<span class="label label-danger">'.$value.'</span>';
         else if($value >= 50 && $value < 75)
             return '<span class="label label-warning">'.$value.'</span>';
-        else if($value >=75 && $value <= 100)
+        else if($value >=75 && $value <= 200)
             return '<span class="label label-success">'.$value.'</span>';
     }
 
@@ -165,6 +191,36 @@ class MyFormatter extends CFormatter
             return '<span class="label label-success">Disetujui</span>';
         else
             return '<span class="label label-warning">Belum disetujui</span>';
+    }
+
+    public static function formatBulan($bulan) {
+        if ($bulan=='01') {
+            return 'Januari';
+        } elseif ($bulan=='02') {
+            return 'Februari';
+        } elseif ($bulan=='03') {
+            return 'Maret';
+        } elseif ($bulan=='04') {
+            return 'April';
+        } elseif ($bulan=='05') {
+            return 'Mei';
+        } elseif ($bulan=='06') {
+            return 'Juni';
+        } elseif ($bulan=='07') {
+            return 'Juli';
+        } elseif ($bulan=='08') {
+            return 'Agustus';
+        } elseif ($bulan=='09') {
+            return 'September';
+        } elseif ($bulan=='10') {
+            return 'Oktober';
+        } elseif ($bulan=='11') {
+            return 'Nopember';
+        } elseif ($bulan=='12') {
+            return 'Desember';
+        } else {
+            return 'Bulan tidak diketahui';
+        }
     }
 
     public static function formatTanggal($value)

@@ -256,15 +256,32 @@ class Item extends CActiveRecord
     }
 
     public static function getObatExpired() {
-        // dari laundry, dry cleaning, dst
         $criteria = new CDbCriteria(array(
             'with' => array(
                 'detilitem' => array(
                     'joinType' => 'inner join',
                 )
             ),
-            'condition' => 'STATUS = :status',
-            'params' => array(':status' => self::STATUS_AKTIF),
+            'condition' => 'STATUS = :status AND ID_KATEGORI = :kategori',
+            'params' => array(':status' => self::STATUS_AKTIF, ':kategori' => self::KATEGORI_OBAT),
+            'order' => 'TANGGAL_EXPIRED ASC',
+            'limit' => '5',
+            'together' => true
+        ));
+        
+        //return CHtml::listData(self::model()->findAll($criteria), 'KODE_BARANG', 'NAMA_BARANG');
+        return self::model()->findAll($criteria);
+    }
+
+    public static function getObatHabis() {
+        $criteria = new CDbCriteria(array(
+            'with' => array(
+                'detilitem' => array(
+                    'joinType' => 'inner join',
+                )
+            ),
+            'condition' => 'STOK = :stok',
+            'params' => array(':stok' => 0),
             'order' => 'TANGGAL_EXPIRED DESC',
             'limit' => '5',
             'together' => true
