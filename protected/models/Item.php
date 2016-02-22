@@ -264,7 +264,7 @@ class Item extends CActiveRecord
             'condition' => 'STATUS = :status AND ID_KATEGORI = :kategori',
             'params' => array(':status' => self::STATUS_AKTIF, ':kategori' => self::KATEGORI_OBAT),
             'order' => 'TANGGAL_EXPIRED ASC',
-            'limit' => '5',
+            'limit' => '10',
             'together' => true
         ));
         

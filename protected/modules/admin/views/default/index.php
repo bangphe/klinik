@@ -56,7 +56,7 @@
                 </div>
                 <div class="desc"> Total Pemesanan </div>
             </div>
-            <a class="more" href="javascript:;"> View more
+            <a class="more" href="javascript:;"> Total semua order
                 <i class="m-icon-swapright m-icon-white"></i>
             </a>
         </div>
@@ -90,30 +90,28 @@
                 </div>
             </div>
             <div class="portlet-body">
-                <div class="table-scrollable">
-                    <table class="table table-condensed table-hover">
-                        <thead>
-                            <tr>
-                                <th> No </th>
-                                <th> Nama Obat </th>
-                                <th> Tanggal Expired </th>
-                                <th> Jumlah Stok </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach (Item::getObatExpired() as $key => $value) { 
-                                $jumlah_stok = Item::getTotalStok($value->ID_ITEM);
-                            ?>
-                            <tr>
-                                <td> <?= $key+1; ?> </td>
-                                <td> <?= $value->NAMA_ITEM; ?> </td>
-                                <td> <?= MyFormatter::formatTanggal($value->TANGGAL_EXPIRED); ?> </td>
-                                <td> <?= $jumlah_stok==NULL || $jumlah_stok=='' || $jumlah_stok==0 ? '<span class="label label-warning">HABIS</span>' : MyFormatter::stokBarang($jumlah_stok); ?></td>
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-condensed table-hover tabel-dashboard-admin">
+                    <thead>
+                        <tr>
+                            <th> No </th>
+                            <th> Nama Obat </th>
+                            <th> Tanggal Expired </th>
+                            <th> Jumlah Stok </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach (Item::getObatExpired() as $key => $value) { 
+                            $jumlah_stok = Item::getTotalStok($value->ID_ITEM);
+                        ?>
+                        <tr>
+                            <td> <?= $key+1; ?> </td>
+                            <td> <?= $value->NAMA_ITEM; ?> </td>
+                            <td> <?= MyFormatter::formatTanggal($value->TANGGAL_EXPIRED); ?> </td>
+                            <td> <?= $jumlah_stok==NULL || $jumlah_stok=='' || $jumlah_stok==0 ? '<span class="label label-warning">HABIS</span>' : MyFormatter::stokBarang($jumlah_stok); ?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
             </div>
         </div>
         <!-- END CONDENSED TABLE PORTLET-->
@@ -123,39 +121,35 @@
         <div class="portlet red-sunglo box">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-picture"></i>Invoice Terbaru </div>
+                    <i class="fa fa-picture"></i> Obat Habis </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-condensed table-hover">
-                            <thead>
-                                <tr>
-                                    <th> No </th>
-                                    <th> Nama Pasien </th>
-                                    <th> Tanggal Masuk </th>
-                                    <th> Total Item </th>
-                                    <!-- <th> Total Harga </th> -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach (Order::ListOrder() as $dex => $item) { ?>
-                                <tr>
-                                    <td><?php echo $dex+1;?></td>
-                                    <td><?php echo CHtml::link(CHtml::encode($item->pasien->NAMA_PASIEN), array('/admin/order/view/','id'=>$item->KODE_ORDER), array('title'=>'Detil Order')); ?></td>
-                                    <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
-                                    <td><?php echo OrderDetail::getJumlahItem($item->KODE_ORDER);?></td>
-                                    <!-- <td><?php //echo MyFormatter::formatUang($item->getSubtotal());?></td> -->
-                                    <!-- <td>
-                                        <?php echo CHtml::link('<i class="fa fa-search"></i>',array('/admin/order/view/','id'=>$item->KODE_ORDER),array('class'=>'btn default btn-xs green-stripe')); ?>
-                                    </td> -->
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table class="table table-condensed table-hover tabel-dashboard-admin">
+                        <thead>
+                            <tr>
+                                <th> No </th>
+                                <th> Nama Obat </th>
+                                <th> Golongan </th>
+                                <th> Stok </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach (Item::getObatHabis() as $key => $value) { 
+                                $jumlah_stok = Item::getTotalStok($value->ID_ITEM);
+                                    if($jumlah_stok==0 || $jumlah_stok=='' || $jumlah_stok==null) {
+                            ?>
+                            <tr>
+                                <td> <?= $key+1; ?> </td>
+                                <td> <?= $value->NAMA_ITEM; ?> </td>
+                                <td> <?= $value->golongan->NAMA_GOLONGAN; ?> </td>
+                                <td> <span class="label label-warning">HABIS</span></td>
+                            </tr>
+                            <?php } } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <!-- END CONDENSED TABLE PORTLET-->
@@ -163,34 +157,37 @@
         <div class="col-md-12">
             <div class="portlet green-meadow box">
                 <div class="portlet-title">
-                    <div class="caption"><i class="fa fa-picture"></i>Obat Habis </div>
+                    <div class="caption"><i class="fa fa-picture"></i> Invoice Terbaru</div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-condensed table-hover">
-                            <thead>
-                                <tr>
-                                    <th> No </th>
-                                    <th> Nama Obat </th>
-                                    <th> Golongan </th>
-                                    <th> Stok </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach (Item::getObatHabis() as $key => $value) { ?>
-                                <tr>
-                                    <td> <?= $key+1; ?> </td>
-                                    <td> <?= $value->NAMA_ITEM; ?> </td>
-                                    <td> <?= $value->golongan->NAMA_GOLONGAN; ?> </td>
-                                    <td> <span class="label label-warning">HABIS</span> </td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table class="table table-condensed table-hover tabel-dashboard-admin">
+                        <thead>
+                            <tr>
+                                <th> No </th>
+                                <th> Nama Pasien </th>
+                                <th> Tanggal Masuk </th>
+                                <th> Total Item </th>
+                                <th> Total Harga </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach (Order::ListOrder() as $dex => $item) { ?>
+                            <tr>
+                                <td><?php echo $dex+1;?></td>
+                                <td><?php echo CHtml::link(CHtml::encode('Invoice #'.$item->KODE_ORDER.' - '.$item->pasien->NAMA_PASIEN), array('/admin/order/view/','id'=>$item->KODE_ORDER), array('title'=>'Detil Order')); ?></td>
+                                <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
+                                <td><?php echo '<span class="label bg-yellow-gold">'.OrderDetail::getJumlahItem($item->KODE_ORDER).'</span>';?></td>
+                                <td><?php echo MyFormatter::formatUang($item->getSubtotal());?></td>
+                                <!-- <td>
+                                    <?php echo CHtml::link('<i class="fa fa-search"></i>',array('/admin/order/view/','id'=>$item->KODE_ORDER),array('class'=>'btn default btn-xs green-stripe')); ?>
+                                </td> -->
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

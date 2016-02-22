@@ -160,7 +160,7 @@ class Order extends CActiveRecord
     public static function ListOrder() {
         $criteria = new CDbCriteria;
 		$criteria->order = 'TANGGAL_ORDER DESC';
-		$criteria->limit = '5';
+		$criteria->limit = '10';
         return self::model()->findAll($criteria);
     }
 
