@@ -218,7 +218,7 @@
         <header class="clearfix">
             <div id="logo">
                 <!-- <img src="<?php //echo Yii::app()->request->baseUrl ?>/images/logo-baru.png"> -->
-                <h2 class="name">(NAMA KLINIK)</h2>
+                <h2 class="name">KLINIK AR-RAHMAH</h2>
                 <div>(ALAMAT KLINIK)</div>
                 <!-- <div>031- 5679813</div>
                 <div><a href="mailto:vielelaundry@gmail.com">vielelaundry@gmail.com</a></div> -->
