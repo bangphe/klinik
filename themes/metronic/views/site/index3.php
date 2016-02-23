@@ -122,6 +122,7 @@
                                                             <label style="margin-left:0px !important;"><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Obat </label>
                                                         </div>
                                                     </div>
+                                                    <span class="help-inline"><code>HANYA UNTUK OBAT</code></span>
                                                 </div>
                                             </div>
                                         </div>

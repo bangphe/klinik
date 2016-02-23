@@ -59,6 +59,7 @@
 		<div class="col-md-4">
 			<?php echo $form->textField($item,'SATUAN',array(
                 'class' => 'form-control input-large',
+                'placeholder' => 'Tablet/Kapsul/Alpha',
             ));?>
 			<?php echo $form->error($item,'SATUAN'); ?>
 		</div>
@@ -69,6 +70,7 @@
 		<div class="col-md-4">
 			<?php echo $form->textField($item,'UKURAN',array(
                 'class' => 'form-control input-large',
+                'placeholder' => 'Contoh: 0.01mm',
             ));?>
 			<?php echo $form->error($item,'UKURAN'); ?>
 		</div>
