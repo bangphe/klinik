@@ -13,8 +13,8 @@
 <div class="invoice-content-2 bordered">
     <div class="row invoice-head">
         <div class="col-md-7 col-xs-6">
-            <div class="invoice-logo">
-                <img src="<?= Yii::app()->theme->baseUrl; ?>/assets/pages/img/logos/logo.png" class="img-responsive" alt="" />
+            <div class="invoice-logo" style="width: 60%">
+                <img src="<?= Yii::app()->theme->baseUrl; ?>/assets/pages/img/logos/logo-grey.png" class="img-responsive" alt="" />
                 <!-- <h1 class="uppercase">Invoice</h1> -->
             </div>
         </div>
