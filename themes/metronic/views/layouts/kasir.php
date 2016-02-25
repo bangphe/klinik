@@ -1,22 +1,10 @@
 <!DOCTYPE html>
-<!-- 
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
-Version: 4.5.3
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
-
     <head>
         <meta charset="utf-8" />
         <title><?= Yii::app()->name; ?></title>
@@ -30,7 +18,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <?php $baseUrl = Yii::app()->theme->baseUrl; ?>
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="<?= $baseUrl; ?>/assets/css/jquery-ui.css">
+        <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
         <link href="<?= $baseUrl; ?>/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -40,7 +29,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <!-- <link href="<?= $baseUrl; ?>/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/css/select2.min.css" rel="stylesheet" />
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/css/select2.min.css" rel="stylesheet" /> -->
+        <link href="<?= $baseUrl; ?>/assets/css/select2.min.css" rel="stylesheet" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
         <link href="<?= $baseUrl; ?>/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
@@ -70,8 +60,8 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="page-header-inner ">
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
-                    <a href="index.html">
-                        <img src="<?= $baseUrl; ?>/assets/layouts/layout/img/logodpn 2.png" alt="logo" class="logo-default" /> </a>
+                    <a href="index.php/site">
+                        <img src="<?= $baseUrl; ?>/assets/layouts/layout/img/logodpn2.png" alt="logo klinik ar rahmah" class="logo-default" /> </a>
                 </div>
                 <!-- END LOGO -->
                 <!-- BEGIN MEGA MENU -->
@@ -318,8 +308,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?= $baseUrl; ?>/assets/global/plugins/excanvas.min.js"></script> 
 <![endif]-->
         <!-- BEGIN CORE PLUGINS -->
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="<?= $baseUrl; ?>/assets/js/jquery-1.10.2.js"></script>
+        <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="<?= $baseUrl; ?>/assets/js/jquery-ui.js"></script>
+        <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
         <script src="<?= $baseUrl; ?>/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
@@ -330,7 +322,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <!--<script src="<?= $baseUrl; ?>/assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/js/select2.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/js/select2.min.js"></script> -->
+        <script src="<?= $baseUrl; ?>/assets/js/select2.min.js"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/icheck/icheck.min.js" type="text/javascript"></script>
         <script src="<?= $baseUrl; ?>/assets/global/plugins/bootstrap-growl/jquery.bootstrap-growl.min.js" type="text/javascript"></script>

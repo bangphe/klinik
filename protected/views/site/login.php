@@ -55,7 +55,8 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="row bs-reset">
                 <div class="col-md-6 bs-reset">
                     <div class="login-bg" style="background-image:url(<?= $baseUrl; ?>/assets/pages/img/login/bg1.jpg)">
-                        <img class="login-logo" src="<?= $baseUrl; ?>/assets/pages/img/login/logo.png" /> </div>
+                        <!-- <img class="login-logo" src="<?= $baseUrl; ?>/assets/pages/img/login/logo.png" /> -->
+                    </div>
                 </div>
                 <div class="col-md-6 login-container bs-reset">
                     <div class="login-content">
@@ -100,9 +101,10 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- BEGIN FORGOT PASSWORD FORM -->
                         <form class="forget-form" action="javascript:;" method="post">
                             <h3 class="font-green">Lupa Password ?</h3>
-                            <p> Masukkan alamat e-mail yang aktif untuk me-reset password Anda. </p>
-                            <div class="form-group">
-                                <input class="form-control placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
+                            <p> Silahkan menghubungi Admin untuk mereset password Anda! Terima kasih </p>
+                            <!-- <div class="form-group">
+                                <input class="form-control placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" name="email" />
+                            </div> -->
                             <div class="form-actions">
                                 <button type="button" id="back-btn" class="btn grey btn-default">Kembali</button>
                                 <button type="submit" class="btn blue btn-success uppercase pull-right">Kirim</button>
@@ -128,7 +130,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <div class="col-xs-7 bs-reset">
                                 <div class="login-copyright text-right">
-                                    <p><?= Yii::app()->name; ?> &copy; 2015</p>
+                                    <p><?= Yii::app()->name; ?> &copy; <?php echo date('Y'); ?></p>
                                 </div>
                             </div>
                         </div>
