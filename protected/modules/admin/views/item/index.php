@@ -36,39 +36,37 @@ $this->breadcrumbs=array(
                     <div class="tab-content">
                         <?php foreach (Kategori::listAll() as $i => $tipe): ?>
                             <div class="tab-pane <?php echo $i == 1 ? 'active' : '' ?>" id="overview_<?php echo $i ?>">
-                                <div class="table-responsive">
-                                    <table class="table table-condensed table-bordered table-striped">
-                                        <thead>
-                                        	<tr>
-                                                <th>#</th>
-                                        		<th>Nama Barang</th>
-                                        		<th>Kategori</th>
-                                        		<th>Stok</th>
-                                        		<th>Harga</th>
-                                        		<th>Status</th>
-                                        		<th></th>
-                                        	</tr>
-                                        </thead>
-                                        <tbody>
-                                        	<?php foreach (Item::ListBarangByKategori($i) as $dex => $item): ?>
-                                        	<tr>
-                                                <td><?php echo $dex+1;?></td>
-                                        		<td><?php echo CHtml::link(CHtml::encode($item->NAMA_ITEM), array('view','id'=>$item->ID_ITEM), array('title'=>'Detil')); ?></td>
-                                                <td><?php echo $item->kategori->KATEGORI; ?></td>
-                                        		<td style="text-align:center;"><?php echo MyFormatter::stokBarang(Item::getTotalStok($item->ID_ITEM)); ?></td>
-                                        		<td><?php echo MyFormatter::formatUang($item->HARGA_JUAL); ?></td>
-                                        		<td><?php echo MyFormatter::statusAktif($item->STATUS); ?></td>
-                                                <td width="20%">
-                                                    <?php echo CHtml::link('<i class="fa fa-pencil-square-o"></i> Ubah',array('/admin/item/update/','id'=>$item->ID_ITEM),array('class'=>'btn dark btn-sm btn-outline sbold uppercase')); ?>
-                                                    <?php echo CHtml::link('<i class="fa fa-trash-o"></i> Hapus',array('/admin/item/hapus/','id'=>$item->ID_ITEM),array('class'=>'btn red btn-sm btn-outline sbold uppercase','submit'=>array('hapus','id'=>$item->ID_ITEM),'confirm'=>'Apakah Anda yakin akan menghapus '.$item->NAMA_ITEM.'?')); ?>
-                                                </td>
-                                                <!-- <a href="javascript:;" class="btn dark btn-sm btn-outline sbold uppercase">
-                                                            <i class="fa fa-share"></i> View </a> -->
-                                        	</tr>
-                                        	<?php endforeach;?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <table class="table table-condensed table-bordered table-striped tabel-dashboard-admin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nama Barang</th>
+                                            <th>Kategori</th>
+                                            <th>Stok</th>
+                                            <th>Harga</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach (Item::ListBarangByKategori($i) as $dex => $item): ?>
+                                        <tr>
+                                            <td><?php echo $dex+1;?></td>
+                                            <td><?php echo CHtml::link(CHtml::encode($item->NAMA_ITEM), array('view','id'=>$item->ID_ITEM), array('title'=>'Detil')); ?></td>
+                                            <td><?php echo $item->kategori->KATEGORI; ?></td>
+                                            <td style="text-align:center;"><?php echo MyFormatter::stokBarang(Item::getTotalStok($item->ID_ITEM)); ?></td>
+                                            <td><?php echo MyFormatter::formatUang($item->HARGA_JUAL); ?></td>
+                                            <td><?php echo MyFormatter::statusAktif($item->STATUS); ?></td>
+                                            <td width="20%">
+                                                <?php echo CHtml::link('<i class="fa fa-pencil-square-o"></i> Ubah',array('/admin/item/update/','id'=>$item->ID_ITEM),array('class'=>'btn dark btn-sm btn-outline sbold uppercase')); ?>
+                                                <?php echo CHtml::link('<i class="fa fa-trash-o"></i> Hapus',array('/admin/item/hapus/','id'=>$item->ID_ITEM),array('class'=>'btn red btn-sm btn-outline sbold uppercase','submit'=>array('hapus','id'=>$item->ID_ITEM),'confirm'=>'Apakah Anda yakin akan menghapus '.$item->NAMA_ITEM.'?')); ?>
+                                            </td>
+                                            <!-- <a href="javascript:;" class="btn dark btn-sm btn-outline sbold uppercase">
+                                                        <i class="fa fa-share"></i> View </a> -->
+                                        </tr>
+                                        <?php endforeach;?>
+                                    </tbody>
+                                </table>
                             </div>
                         <?php endforeach; ?>
                     </div>
