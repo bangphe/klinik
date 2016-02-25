@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'SIM-KLINIK',
+	'name'=>'KLINIK AR-RAHMAH',
 	'theme'=>'metronic',
 	'timeZone' => 'Asia/Jakarta',
 	// preloading 'log' component
