@@ -98,22 +98,19 @@ License: You must have a valid license purchased only from themeforest(the above
                             ?>
                         </ul>
                     </div>
-
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title"> SIM KLINIK AR RAHMA
+                    <h3 class="page-title"> SIM KLINIK AR RAHMAH
                         <small>selamat datang admin </small>
                     </h3>
                     <!-- END PAGE TITLE-->
                     <!-- END PAGE HEADER-->
-                    
                     <?= $content; ?>
                 </div>
                 <!-- END CONTENT BODY -->
             </div>
             <!-- END CONTENT -->
             <!-- BEGIN QUICK SIDEBAR -->
-            
             <!-- END QUICK SIDEBAR -->
         </div>
 		<!-- END CONTAINER -->

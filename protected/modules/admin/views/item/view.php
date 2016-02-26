@@ -88,7 +88,7 @@ $this->breadcrumbs=array(
 		                            <th>Supplier</th>
 		                            <th>Harga Beli</th>
 		                            <th>Stok</th>
-		                            <th>Tanggal Input</th>
+		                            <th>Tanggal Beli</th>
 		                        </tr>
 		                    </thead>
 		                    <tbody>

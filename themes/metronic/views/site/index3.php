@@ -14,17 +14,17 @@
     <div class="row invoice-head">
         <div class="col-md-7 col-xs-6">
             <div class="invoice-logo" style="width: 60%">
-                <img src="<?= Yii::app()->theme->baseUrl; ?>/assets/pages/img/logos/logo-grey.png" class="img-responsive" alt="" />
+                <img src="<?= Yii::app()->theme->baseUrl; ?>/assets/pages/img/logos/logo-grey.png" class="img-responsive" alt="klinik ar-rahmah" />
                 <!-- <h1 class="uppercase">Invoice</h1> -->
             </div>
         </div>
         <div class="col-md-5 col-xs-6">
             <div class="company-address">
-                <span class="bold uppercase">Klinik Uce & Phe</span>
-                <br/> Jalan Celalu Beldua
-                <br/> Sepanjang - Sidoarjo
+                <span class="bold uppercase"> <i class="fa fa-home"></i> Klinik AR-RAHMAH</span>
+                <br/> Jl. Melati  Kel. Tanah Tinggi Barat
+                <br/> Ternate Maluku - Utara
                 <br/>
-                <span class="bold">T</span> 1800 123 456
+                <span class="bold"><i class="fa fa-phone"></i></span> 0921 - 3110222
             </div>
         </div>
     </div>
@@ -118,8 +118,8 @@
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <div class="icheck-inline">
-                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Umum </label> <br>
-                                                            <label style="margin-left:0px !important;"><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Obat </label>
+                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Umum </label> 
+                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Obat </label>
                                                         </div>
                                                     </div>
                                                     <span class="help-inline"><code>HANYA UNTUK OBAT</code></span>
@@ -217,7 +217,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <?php echo CHtml::submitButton('Hitung & Cetak Nota', array('class' => 'btn btn-lg green-haze uppercase print-btn')); ?>
+                    <?php echo CHtml::submitButton('Hitung & Cetak Nota', array('class' => 'tesBtn btn btn-lg green-haze uppercase print-btn')); ?>
                 </div>
             </div>
             <?php $this->endWidget();?>
@@ -322,11 +322,13 @@ function getStokItem(id, i) {
                 //$("#OrderDetail_0_JUMLAH").attr("value", "0");
                 $("input[name='OrderDetail["+i+"][JUMLAH]']").attr("disabled", "disabled");
                 $("input[name='OrderDetail["+i+"][DISKON]']").attr("disabled", "disabled");
+                $(".tesBtn").attr("disabled", "disabled");
                 alert("Item yang dipilih tidak dapat diproses dikarenakan STOK HABIS!");
             }
             else {
                 $("input[name='OrderDetail["+i+"][JUMLAH]']").removeAttr("disabled");
                 $("input[name='OrderDetail["+i+"][DISKON]']").removeAttr("disabled");
+                $(".tesBtn").removeAttr("disabled", "disabled");
             }
             //i++;
         }
