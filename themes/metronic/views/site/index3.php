@@ -240,7 +240,7 @@
                                                 <i class="fa fa-user"></i>
                                             </div>&nbsp;
                                             <a href="#" class="item-name primary-link"><?= $value->NAMA_PASIEN; ?></a>
-                                            <span class="item-label"><?= MyFormatter::formatTimeAgo($value->TANGGAL_REGISTRASI); ?></span>
+                                            <span class="item-label"><?= MyFormatter::formatTanggalWaktu2($value->TANGGAL_REGISTRASI); ?></span>
                                         </div>
                                     </div>
                                     <div class="item-body"></div>

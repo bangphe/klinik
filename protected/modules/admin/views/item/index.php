@@ -39,10 +39,12 @@ $this->breadcrumbs=array(
                                 <table class="table table-condensed table-bordered table-striped tabel-dashboard-admin">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>No</th>
                                             <th>Nama Barang</th>
                                             <th>Kategori</th>
                                             <th>Stok</th>
+                                            <th>Ukuran</th>
+                                            <th>Satuan</th>
                                             <th>Harga</th>
                                             <th>Status</th>
                                             <th></th>
@@ -55,6 +57,8 @@ $this->breadcrumbs=array(
                                             <td><?php echo CHtml::link(CHtml::encode($item->NAMA_ITEM), array('view','id'=>$item->ID_ITEM), array('title'=>'Detil')); ?></td>
                                             <td><?php echo $item->kategori->KATEGORI; ?></td>
                                             <td style="text-align:center;"><?php echo MyFormatter::stokBarang(Item::getTotalStok($item->ID_ITEM)); ?></td>
+                                            <td><?php echo $item->UKURAN;?></td>
+                                            <td><?php echo $item->SATUAN;?></td>
                                             <td><?php echo MyFormatter::formatUang($item->HARGA_JUAL); ?></td>
                                             <td><?php echo MyFormatter::statusAktif($item->STATUS); ?></td>
                                             <td width="20%">

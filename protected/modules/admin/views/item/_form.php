@@ -89,7 +89,7 @@
 		</div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" id="tanggal_exp">
 		<?php echo $form->labelEx($item,'TANGGAL_EXPIRED',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
             <div class="input-inline input-large">
@@ -164,10 +164,14 @@ $(function() {
 			$('#golongan').show();
 			$('#satuan').show();
 			$('#ukuran').hide();
+			$('#tanggal_exp').show();
+
 		} else if($('#Item_ID_KATEGORI').val() == 2 || $('#Item_ID_KATEGORI').val() == 3) {
 			$('#ukuran').show();
 			$('#golongan').hide();
 			$('#satuan').hide();
+			$('#tanggal_exp').hide();
+
 		}
 		else {
 			$('#golongan').hide();
