@@ -69,7 +69,8 @@ $form = $this->beginWidget('CActiveForm', array(
         <div class="col-md-8">
             <div class="input-group">
                 <span class="input-group-addon">Rp</span>
-                <?php echo $form->textField($pelanggan_baru,'BIAYA_REGISTRASI',array('size'=>60,'maxlength'=>100,'class'=>'form-control','placeholder'=>'Biaya Registrasi','value'=>'-','disabled'=>TRUE)); ?>
+                <input size="60" maxlength="100" class="form-control" placeholder="Biaya Registrasi" value="-" disabled="disabled" name="BIAYA" id="BIAYA" type="text">
+                <?php echo $form->hiddenField($pelanggan_baru,'BIAYA_REGISTRASI',array('type'=>'hidden', 'value'=>'1')); ?>
                 <?php echo $form->error($pelanggan_baru,'BIAYA_REGISTRASI'); ?>
             </div>
         </div>
@@ -96,7 +97,9 @@ function getBiaya(v) {
         type: 'get',
         beforeSend: function(){},
         success: function(result){
-            $('#Pasien_BIAYA_REGISTRASI').val(result);
+            //$('#Pasien_BIAYA_REGISTRASI').val(result);
+            $('#Pasien_BIAYA_REGISTRASI').attr('value', result);
+            $('#BIAYA').attr('value', result);
             //$("#OrderDetail_0_ID_ITEM").val(ui.item.key);
         }
     });

@@ -8,8 +8,8 @@
  * @property integer $ID_KATEGORI
  * @property integer $ID_GOLONGAN_OBAT
  * @property string $NAMA_ITEM
- * @property integer $UKURAN
- * @property integer $SATUAN
+ * @property string $UKURAN
+ * @property string $SATUAN
  * @property integer $HARGA_JUAL
  * @property string $TANGGAL_EXPIRED
  * @property integer $STATUS
@@ -42,8 +42,10 @@ class Item extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('ID_KATEGORI, NAMA_ITEM', 'required'),
-			array('ID_KATEGORI, ID_GOLONGAN_OBAT, UKURAN, SATUAN, HARGA_JUAL, STATUS', 'numerical', 'integerOnly'=>true),
+			array('ID_KATEGORI, ID_GOLONGAN_OBAT, HARGA_JUAL, STATUS', 'numerical', 'integerOnly'=>true),
 			array('NAMA_ITEM', 'length', 'max'=>255),
+            array('UKURAN', 'length', 'max'=>10),
+            array('SATUAN', 'length', 'max'=>50),
 			array('TANGGAL_EXPIRED', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
