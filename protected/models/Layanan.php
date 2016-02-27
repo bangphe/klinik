@@ -107,4 +107,13 @@ class Layanan extends CActiveRecord
         $data = CHtml::listData($model,'ID_LAYANAN','LAYANAN');
         return $data;
     }
+
+    public static function getLayananAndBiaya() {
+    	$model = self::model()->findAll();
+
+    	$data = CHtml::listData($model,'ID_LAYANAN',function($model){
+				return $model->LAYANAN . ' - ' . MyFormatter::formatUang($model->BIAYA);
+        });
+        return $data;
+    }
 }

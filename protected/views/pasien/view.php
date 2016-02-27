@@ -30,11 +30,6 @@ $this->breadcrumbs=array(
                         ),
 						'attributes'=>array(
 							'ID_PASIEN',
-							array(
-                                'name'=>'Layanan',
-                                'type'=>'layanan',
-                                'value'=>$model->ID_LAYANAN,
-                            ),
 							'NAMA_PASIEN',
 							'ALAMAT',
 							'NO_TELP',
@@ -44,7 +39,6 @@ $this->breadcrumbs=array(
                                 'value'=>$model->JENIS_KELAMIN,
                             ),
 							'KETERANGAN',
-							'BIAYA_REGISTRASI',
                             array(
                                 'name'=>'TANGGAL_REGISTRASI',
                                 'type'=>'tanggalWaktu',

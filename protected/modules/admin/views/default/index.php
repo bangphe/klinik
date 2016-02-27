@@ -180,7 +180,7 @@
                                 <td><?php echo CHtml::link(CHtml::encode('Invoice #'.$item->KODE_ORDER.' - '.$item->pasien->NAMA_PASIEN), array('/admin/order/view/','id'=>$item->KODE_ORDER), array('title'=>'Detil Order')); ?></td>
                                 <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_ORDER);?></td>
                                 <td><?php echo '<span class="label bg-yellow-gold">'.OrderDetail::getJumlahItem($item->KODE_ORDER).'</span>';?></td>
-                                <td><?php echo MyFormatter::formatUang($item->getSubtotal());?></td>
+                                <td><?php echo MyFormatter::formatUang($item->getTotal());?></td>
                                 <!-- <td>
                                     <?php echo CHtml::link('<i class="fa fa-search"></i>',array('/admin/order/view/','id'=>$item->KODE_ORDER),array('class'=>'btn default btn-xs green-stripe')); ?>
                                 </td> -->

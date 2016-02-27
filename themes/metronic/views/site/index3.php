@@ -79,13 +79,14 @@
         <div class="col-xs-4">
             <h2 class="invoice-title uppercase">Biaya Registrasi</h2>
             <!-- <p class="invoice-desc inv-address">5000</p> -->
-             <?php echo $form->dropDownList($pelanggan_baru,'ID_LAYANAN', Layanan::listLayanan(),
+             <?php echo $form->dropDownList($orderbaru,'ID_LAYANAN', Layanan::getLayananAndBiaya(),
                 array(
                 'class'=>'form-control',
                 'prompt'=>'- Pilih Layanan -',
                 'onchange'=>'getBiaya(this.value)',
             )); ?>
-            <?php echo $form->error($pelanggan_baru,'ID_LAYANAN'); ?>
+            <?php echo $form->hiddenField($orderbaru,'BIAYA_REGISTRASI',array('type'=>'hidden', 'value'=>'')); ?>
+            <?php echo $form->error($orderbaru,'ID_LAYANAN'); ?>
         </div>        
     </div>
     <div class="row invoice-body">
@@ -282,6 +283,20 @@ $(document).ready(function(){
     $(".form-select").select2();
     $("#order-form").validate();
 });
+
+function getBiaya(v) {
+    // alert(v);
+    var path = '<?= Yii::app()->baseUrl; ?>/site/getlayanan/'+v;
+    $.ajax({
+        url: path,
+        data: '',
+        type: 'get',
+        beforeSend: function(){},
+        success: function(result){
+            $('#Order_BIAYA_REGISTRASI').attr('value', result);
+        }
+    });
+}
 
 var idform=1;
 

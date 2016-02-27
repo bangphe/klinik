@@ -5,13 +5,11 @@
  *
  * The followings are the available columns in table 'pasien':
  * @property integer $ID_PASIEN
- * @property integer $ID_LAYANAN
  * @property string $NAMA_PASIEN
  * @property string $ALAMAT
  * @property string $NO_TELP
  * @property string $JENIS_KELAMIN
  * @property string $KETERANGAN
- * @property integer $BIAYA_REGISTRASI
  * @property string $TANGGAL_REGISTRASI
  *
  * The followings are the available model relations:
@@ -38,8 +36,7 @@ class Pasien extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_LAYANAN, NAMA_PASIEN, ALAMAT, NO_TELP, JENIS_KELAMIN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
-			array('ID_LAYANAN, BIAYA_REGISTRASI', 'numerical', 'integerOnly'=>true),
+			array('NAMA_PASIEN, ALAMAT, NO_TELP, JENIS_KELAMIN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
 			array('NAMA_PASIEN', 'length', 'max'=>100),
 			array('ALAMAT', 'length', 'max'=>200),
 			array('NO_TELP', 'length', 'max'=>15),
@@ -47,7 +44,7 @@ class Pasien extends CActiveRecord
 			array('TANGGAL_REGISTRASI', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID_PASIEN, ID_LAYANAN, NAMA_PASIEN, ALAMAT, NO_TELP, JENIS_KELAMIN, KETERANGAN, BIAYA_REGISTRASI, TANGGAL_REGISTRASI', 'safe', 'on'=>'search'),
+			array('ID_PASIEN, NAMA_PASIEN, ALAMAT, NO_TELP, JENIS_KELAMIN, KETERANGAN, TANGGAL_REGISTRASI', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,7 +57,6 @@ class Pasien extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'orders' => array(self::HAS_MANY, 'Order', 'ID_PASIEN'),
-			'iDLAYANAN' => array(self::BELONGS_TO, 'Layanan', 'ID_LAYANAN'),
 		);
 	}
 
@@ -71,13 +67,11 @@ class Pasien extends CActiveRecord
 	{
 		return array(
 			'ID_PASIEN' => 'Id Pasien',
-			'ID_LAYANAN' => 'Layanan',
 			'NAMA_PASIEN' => 'Nama Pasien',
 			'ALAMAT' => 'Alamat',
 			'NO_TELP' => 'No Telp',
 			'JENIS_KELAMIN' => 'Jenis Kelamin',
 			'KETERANGAN' => 'Keterangan',
-			'BIAYA_REGISTRASI' => 'Biaya Registrasi',
 			'TANGGAL_REGISTRASI' => 'Tanggal Registrasi',
 		);
 	}
@@ -101,13 +95,11 @@ class Pasien extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('ID_PASIEN',$this->ID_PASIEN);
-		$criteria->compare('ID_LAYANAN',$this->ID_LAYANAN);
 		$criteria->compare('NAMA_PASIEN',$this->NAMA_PASIEN,true);
 		$criteria->compare('ALAMAT',$this->ALAMAT,true);
 		$criteria->compare('NO_TELP',$this->NO_TELP,true);
 		$criteria->compare('JENIS_KELAMIN',$this->JENIS_KELAMIN);
 		$criteria->compare('KETERANGAN',$this->KETERANGAN,true);
-		$criteria->compare('BIAYA_REGISTRASI',$this->BIAYA_REGISTRASI);
 		$criteria->compare('TANGGAL_REGISTRASI',$this->TANGGAL_REGISTRASI,true);
 
 		return new CActiveDataProvider($this, array(

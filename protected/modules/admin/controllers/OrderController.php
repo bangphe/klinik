@@ -181,8 +181,12 @@ class OrderController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$criteria = new CDbCriteria;
+		$criteria->order = 'TANGGAL_ORDER DESC';
+
 		$dataProvider=new CActiveDataProvider('Order',array(
-			'pagination'=>false
+			'pagination'=>false,
+			'criteria'=>$criteria,
 		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

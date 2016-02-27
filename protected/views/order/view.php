@@ -65,6 +65,10 @@ foreach ($model->orderdetail as $i => $detail) {
                                 'name' => 'PASIEN',
                                 'value' => $model->pasien->NAMA_PASIEN
                             ),
+                            array(
+                                'name' => 'LAYANAN',
+                                'value' => $model->layanan->LAYANAN
+                            ),
 							array(
                                 'name' => 'TANGGAL_ORDER',
                                 'type' => 'tanggalWaktu',
@@ -129,25 +133,26 @@ foreach ($model->orderdetail as $i => $detail) {
                 <div class="well">
                     <table class="table table-condensed">
                         <tr>
-                            <th>Biaya Registrasi</th>
-                            <th colspan="10"></th>
-                            <td></td>
-                            <td></td>
-                            <td><span class="label label-info">5000</span></td>
-                        </tr>
-                        <tr>
                             <th>Total Item</th>
                             <th colspan="10"></th>
                             <td></td>
                             <td></td>
                             <td><span class="label label-danger"><?php echo $totalItem;?></span></td>
                         </tr>
-                        
-                        <!-- <tr>
+                        <tr>
                             <th>Sub Total</th>
-                            <th colspan="10">:</th>
-                            <td><strong><?php //echo MyFormatter::formatUang($model->getSubtotal()) ?></strong></td>
-                        </tr> -->
+                            <th colspan="10"></th>
+                            <td></td>
+                            <td></td>
+                            <td><strong><?php echo MyFormatter::formatUang($model->getSubtotal()) ?></strong></td>
+                        </tr>
+                        <tr>
+                            <th>Biaya Registrasi</th>
+                            <th colspan="10"></th>
+                            <td></td>
+                            <td></td>
+                            <td><strong><?php echo MyFormatter::formatUang($model->BIAYA_REGISTRASI); ?></strong></td>
+                        </tr>
                         <tr>
                             <th>Total Biaya</th>
                             <th colspan="10"></th>

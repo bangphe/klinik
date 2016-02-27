@@ -47,8 +47,8 @@ $this->breadcrumbs=array(
                             <?php $this->widget('zii.widgets.CListView', array(
                                 'dataProvider'=>$dataProvider,
                                 'itemView'=>'_view',
-                                'summaryText' => 'Menampilkan {start} - {end} dari {count} data Pasien',
-                                'emptyText' => '<div class="alert alert-error">Tidak ada data Pasien ditampilkan</div>',
+                                'summaryText'=>'',
+                                'emptyText'=>'',
                             )); ?>
                         </tbody>
                     </table>

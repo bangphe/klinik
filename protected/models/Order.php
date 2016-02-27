@@ -6,6 +6,8 @@
  * The followings are the available columns in table 'order':
  * @property string $KODE_ORDER
  * @property integer $ID_PASIEN
+ * @property integer $ID_LAYANAN
+ * @property integer $BIAYA_REGISTRASI
  * @property integer $RESEP
  * @property string $TANGGAL_ORDER
  * @property string $USER_PEMBUAT
@@ -39,12 +41,12 @@ class Order extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_PASIEN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
-			array('ID_PASIEN, RESEP, PEMBAYARAN, KEMBALIAN', 'numerical', 'integerOnly'=>true),
+			array('ID_PASIEN, ID_LAYANAN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
+			array('ID_PASIEN, ID_LAYANAN, BIAYA_REGISTRASI, RESEP, PEMBAYARAN, KEMBALIAN', 'numerical', 'integerOnly'=>true),
 			array('TANGGAL_ORDER', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('KODE_ORDER, ID_PASIEN, RESEP, TANGGAL_ORDER, USER_PEMBUAT, PEMBAYARAN, KEMBALIAN', 'safe', 'on'=>'search'),
+			array('KODE_ORDER, ID_PASIEN, ID_LAYANAN, BIAYA_REGISTRASI, RESEP, TANGGAL_ORDER, USER_PEMBUAT, PEMBAYARAN, KEMBALIAN', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +58,7 @@ class Order extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'layanan' => array(self::BELONGS_TO, 'Layanan', 'ID_LAYANAN'),
 			'pasien' => array(self::BELONGS_TO, 'Pasien', 'ID_PASIEN'),
 			'orderdetail' => array(self::HAS_MANY, 'OrderDetail', 'KODE_ORDER'),
 		);
@@ -69,6 +72,8 @@ class Order extends CActiveRecord
 		return array(
 			'KODE_ORDER' => 'Kode Order',
 			'ID_PASIEN' => 'Id Pasien',
+			'ID_LAYANAN' => 'Layanan',
+			'BIAYA_REGISTRASI' => 'Biaya Registrasi',
 			'RESEP' => 'Resep',
 			'TANGGAL_ORDER' => 'Tanggal Order',
 			'USER_PEMBUAT' => 'User Pembuat',
@@ -97,6 +102,8 @@ class Order extends CActiveRecord
 
 		$criteria->compare('KODE_ORDER',$this->KODE_ORDER,true);
 		$criteria->compare('ID_PASIEN',$this->ID_PASIEN);
+		$criteria->compare('ID_LAYANAN',$this->ID_LAYANAN);
+		$criteria->compare('BIAYA_REGISTRASI',$this->BIAYA_REGISTRASI);
 		$criteria->compare('RESEP',$this->RESEP);
 		$criteria->compare('TANGGAL_ORDER',$this->TANGGAL_ORDER,true);
 		$criteria->compare('USER_PEMBUAT',$this->USER_PEMBUAT);
@@ -130,7 +137,7 @@ class Order extends CActiveRecord
             $subtotal = $this->getSubtotal();
 
         //return $subtotal - ($subtotal * ($this->DISKON / 100));
-    	return $subtotal;
+    	return $subtotal + $this->BIAYA_REGISTRASI;
     }
 
     public function getSubtotal() {

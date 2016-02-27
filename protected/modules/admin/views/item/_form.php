@@ -19,9 +19,8 @@
     ),
 )); ?>
 
-	<p class="note note-warning">Isian dengan tanda <span class="required">*</span> harus diisi.</p>
-
 	<h4 class="form-section"><i class="fa fa-download"></i> Detil Barang</h4>
+	<p class="note note-warning">Isian dengan tanda <span class="required">*</span> harus diisi.</p>
 	<div class="alert alert-danger">
         <strong>Note!</strong> Khusus Harga Jual Obat disesuaikan dengan Harga Beli di Supplier.
     </div>

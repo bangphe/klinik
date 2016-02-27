@@ -21,17 +21,6 @@
 	<?php //echo $form->errorSummary($model); ?>
 
 	<div class="form-body">
-		<div class="form-group">
-			<?php echo $form->labelEx($model,'ID_LAYANAN',array('class'=>'col-md-3 control-label')); ?>
-			<div class="col-md-4">
-				<?php echo $form->dropDownList($model,'ID_LAYANAN', Layanan::listLayanan(),
-					array(
-					'class'=>'form-control',
-					'prompt'=>'- Pilih Layanan -'
-				)); ?>
-				<?php echo $form->error($model,'ID_LAYANAN'); ?>
-			</div>
-		</div>
         <div class="form-group">
             <?php echo $form->labelEx($model,'NAMA_PASIEN',array('class'=>'col-md-3 control-label')); ?>
             <div class="col-md-4">
@@ -73,16 +62,6 @@
             <div class="col-md-4">
                 <?php echo $form->textArea($model,'KETERANGAN',array('size'=>60,'maxlength'=>255,'class'=>'form-control','placeholder'=>'Keterangan Tambahan')); ?>
 				<?php echo $form->error($model,'KETERANGAN'); ?>
-            </div>
-        </div>
-        <div class="form-group">
-            <?php echo $form->labelEx($model,'BIAYA_REGISTRASI',array('class'=>'col-md-3 control-label')); ?>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <span class="input-group-addon">Rp</span>
-                    <?php echo $form->textField($model,'BIAYA_REGISTRASI',array('size'=>60,'maxlength'=>100,'class'=>'form-control','placeholder'=>'Biaya Registrasi','value'=>'5000','disabled'=>TRUE)); ?>
-					<?php echo $form->error($model,'BIAYA_REGISTRASI'); ?>
-				</div>
             </div>
         </div>
     </div>

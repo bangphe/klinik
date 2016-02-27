@@ -126,7 +126,9 @@ class PasienController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Pasien');
+		$dataProvider=new CActiveDataProvider('Pasien', array(
+			'pagination' => false,
+		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

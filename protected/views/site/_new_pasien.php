@@ -10,18 +10,6 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="form-body">
     <div class="form-group">
-        <?php echo $form->labelEx($pelanggan_baru,'ID_LAYANAN',array('class'=>'control-label col-md-3')); ?>
-        <div class="col-md-8">
-            <?php echo $form->dropDownList($pelanggan_baru,'ID_LAYANAN', Layanan::listLayanan(),
-                array(
-                'class'=>'form-control',
-                'prompt'=>'- Pilih Layanan -',
-                'onchange'=>'getBiaya(this.value)',
-            )); ?>
-            <?php echo $form->error($pelanggan_baru,'ID_LAYANAN'); ?>
-        </div>
-    </div>
-    <div class="form-group">
         <?php echo $form->labelEx($pelanggan_baru,'NAMA_PASIEN',array('class'=>'control-label col-md-3')); ?>
         <div class="col-md-8">
             <?php echo $form->textField($pelanggan_baru,'NAMA_PASIEN',array('size'=>60,'maxlength'=>100,'class'=>'form-control','placeholder'=>'Nama Pasien', 'data-required'=>'1')); ?>
@@ -64,17 +52,6 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->error($pelanggan_baru,'KETERANGAN'); ?>
         </div>
     </div>
-    <div class="form-group">
-        <?php echo $form->labelEx($pelanggan_baru,'BIAYA_REGISTRASI',array('class'=>'control-label col-md-3')); ?>
-        <div class="col-md-8">
-            <div class="input-group">
-                <span class="input-group-addon">Rp</span>
-                <input size="60" maxlength="100" class="form-control" placeholder="Biaya Registrasi" value="-" disabled="disabled" name="BIAYA" id="BIAYA" type="text">
-                <?php echo $form->hiddenField($pelanggan_baru,'BIAYA_REGISTRASI',array('type'=>'hidden', 'value'=>'1')); ?>
-                <?php echo $form->error($pelanggan_baru,'BIAYA_REGISTRASI'); ?>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="form-actions fluid">
@@ -86,22 +63,3 @@ $form = $this->beginWidget('CActiveForm', array(
 </div>
 
 <?php $this->endWidget(); ?>
-
-<script type="text/javascript">
-function getBiaya(v) {
-    // alert(v);
-    var path = '<?= Yii::app()->baseUrl; ?>/site/getlayanan/'+v;
-    $.ajax({
-        url: path,
-        data: '',
-        type: 'get',
-        beforeSend: function(){},
-        success: function(result){
-            //$('#Pasien_BIAYA_REGISTRASI').val(result);
-            $('#Pasien_BIAYA_REGISTRASI').attr('value', result);
-            $('#BIAYA').attr('value', result);
-            //$("#OrderDetail_0_ID_ITEM").val(ui.item.key);
-        }
-    });
-}
-</script>
