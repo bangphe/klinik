@@ -129,12 +129,20 @@ foreach ($model->orderdetail as $i => $detail) {
                 <div class="well">
                     <table class="table table-condensed">
                         <tr>
+                            <th>Biaya Registrasi</th>
+                            <th colspan="10"></th>
+                            <td></td>
+                            <td></td>
+                            <td><span class="label label-info">5000</span></td>
+                        </tr>
+                        <tr>
                             <th>Total Item</th>
                             <th colspan="10"></th>
                             <td></td>
                             <td></td>
                             <td><span class="label label-danger"><?php echo $totalItem;?></span></td>
                         </tr>
+                        
                         <!-- <tr>
                             <th>Sub Total</th>
                             <th colspan="10">:</th>

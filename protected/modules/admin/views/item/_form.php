@@ -22,14 +22,9 @@
 	<p class="note note-warning">Isian dengan tanda <span class="required">*</span> harus diisi.</p>
 
 	<h4 class="form-section"><i class="fa fa-download"></i> Detil Barang</h4>
-	<div class="form-group">
-		<?php echo $form->labelEx($item,'NAMA_ITEM',array('class'=>'control-label col-md-3')); ?>
-		<div class="col-md-4">
-			<?php echo $form->textArea($item,'NAMA_ITEM',array('maxlength'=>100,'class'=>'form-control input-large')); ?>
-			<?php echo $form->error($item,'NAMA_ITEM'); ?>
-		</div>
-	</div>
-
+	<div class="alert alert-danger">
+        <strong>Note!</strong> Khusus Harga Jual Obat disesuaikan dengan Harga Beli di Supplier.
+    </div>
 	<div class="form-group">
 		<?php echo $form->labelEx($item,'ID_KATEGORI',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
@@ -41,7 +36,13 @@
 			<?php echo $form->error($item,'ID_KATEGORI'); ?>
 		</div>
 	</div>
-
+	<div class="form-group">
+		<?php echo $form->labelEx($item,'NAMA_ITEM',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+			<?php echo $form->textArea($item,'NAMA_ITEM',array('maxlength'=>100,'class'=>'form-control input-large')); ?>
+			<?php echo $form->error($item,'NAMA_ITEM'); ?>
+		</div>
+	</div>
 	<div class="form-group" id="golongan">
 		<?php echo $form->labelEx($item,'ID_GOLONGAN_OBAT',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
@@ -76,7 +77,7 @@
 		</div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" id="harJul">
 		<?php echo $form->labelEx($item,'HARGA_JUAL',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
             <div class="input-inline input-large">
@@ -86,8 +87,10 @@
 				</div>
 			</div>
 			<?php echo $form->error($item,'HARGA_JUAL'); ?>
+		<!-- <span class="help-inline"><code>Khusus Harga Jual Obat disesuaikan dengan Harga Beli di Supplier.</code></span> -->
 		</div>
 	</div>
+
 
 	<div class="form-group" id="tanggal_exp">
 		<?php echo $form->labelEx($item,'TANGGAL_EXPIRED',array('class'=>'control-label col-md-3')); ?>
@@ -158,6 +161,8 @@ $(function() {
 	$('#golongan').hide();
 	$('#ukuran').hide();
 	$('#satuan').hide();
+	$('#tanggal_exp').hide();
+	$('#harJul').hide();
 
 	$('#Item_ID_KATEGORI').change(function(){
 		if ($('#Item_ID_KATEGORI').val() == 1) {
@@ -165,6 +170,8 @@ $(function() {
 			$('#satuan').show();
 			$('#ukuran').hide();
 			$('#tanggal_exp').show();
+			$('#harJul').show();
+
 
 		} else if($('#Item_ID_KATEGORI').val() == 2 || $('#Item_ID_KATEGORI').val() == 3) {
 			$('#ukuran').show();
@@ -176,6 +183,9 @@ $(function() {
 		else {
 			$('#golongan').hide();
 			$('#satuan').hide();
+			$('#tanggal_exp').hide();
+			$('#harJul').hide();
+
 		}
 	});
 });
