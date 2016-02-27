@@ -78,7 +78,14 @@
         </div>
         <div class="col-xs-4">
             <h2 class="invoice-title uppercase">Biaya Registrasi</h2>
-            <p class="invoice-desc inv-address">5000</p>
+            <!-- <p class="invoice-desc inv-address">5000</p> -->
+             <?php echo $form->dropDownList($pelanggan_baru,'ID_LAYANAN', Layanan::listLayanan(),
+                array(
+                'class'=>'form-control',
+                'prompt'=>'- Pilih Layanan -',
+                'onchange'=>'getBiaya(this.value)',
+            )); ?>
+            <?php echo $form->error($pelanggan_baru,'ID_LAYANAN'); ?>
         </div>        
     </div>
     <div class="row invoice-body">
@@ -246,7 +253,7 @@
                                     <div class="item-body"></div>
                                 </div>
                                 <?php } } else { ?>
-                                <div class="alert alert-warning"><i>Belum ada data yang masuk.</i> </div>
+                                <div class="alert alert-warning"><i>Belum ada pasien yang terdaftar.</i> </div>
                             <?php } ?>
                         </div>
                     </div>
