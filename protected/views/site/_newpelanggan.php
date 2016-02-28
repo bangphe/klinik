@@ -21,20 +21,6 @@ $form = $this->beginWidget('CActiveForm', array(
             </div>
         </div>
         <!--/span-->
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="control-label col-md-3">Pelayanan</label>
-                <div class="col-md-9">
-                    <?php echo $form->dropDownList($pelanggan_baru,'ID_LAYANAN', Layanan::listLayanan(),
-                        array(
-                        'class'=>'form-control',
-                        'prompt'=>'- Pilih Layanan -'
-                    )); ?>
-                    <?php echo $form->error($pelanggan_baru,'ID_LAYANAN'); ?>
-                </div>
-            </div>
-        </div>
-        <!--/span-->
     </div>
     <!--/row-->
     <div class="row">
@@ -75,15 +61,6 @@ $form = $this->beginWidget('CActiveForm', array(
                         ?>
                         <?php echo $form->error($pelanggan_baru,'JENIS_KELAMIN'); ?>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!--/span-->
-        <div class="col-md-6">
-            <div class="form-group">
-                <?php echo $form->labelEx($pelanggan_baru, 'BIAYA_REGISTRASI', array('class' => 'control-label col-md-3')); ?>
-                <div class="col-md-9">
-                    <?php echo $form->textField($pelanggan_baru, 'BIAYA_REGISTRASI', array('class' => 'form-control', 'value'=>5000, 'readonly'=>TRUE)); ?>
                 </div>
             </div>
         </div>

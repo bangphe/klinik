@@ -348,6 +348,8 @@ function getStokItem(id, i) {
                 alert("Item yang dipilih tidak dapat diproses dikarenakan STOK HABIS!");
             }
             else {
+                $("input[name='OrderDetail["+i+"][JUMLAH]']").attr("placeholder", data);
+                $("input[name='OrderDetail["+i+"][JUMLAH]']").attr("max", data);
                 $("input[name='OrderDetail["+i+"][JUMLAH]']").removeAttr("disabled");
                 $("input[name='OrderDetail["+i+"][DISKON]']").removeAttr("disabled");
                 $(".tesBtn").removeAttr("disabled", "disabled");

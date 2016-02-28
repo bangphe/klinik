@@ -128,7 +128,6 @@ class SiteController extends Controller
 	            $pelanggan->attributes = $_GET['Pasien'];
 
 			$newpl = new Pasien('baru');
-			$newpl->ID_LAYANAN = 1;
 	        if (isset($_POST['Pasien'])) {
 	            $newpl->attributes = $_POST['Pasien'];
 	            $newpl->BIAYA_REGISTRASI = 5000;
