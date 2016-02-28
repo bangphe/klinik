@@ -285,7 +285,7 @@ class Item extends CActiveRecord
             'condition' => 'STOK = :stok',
             'params' => array(':stok' => 0),
             'order' => 'TANGGAL_EXPIRED DESC',
-            'limit' => '5',
+            'limit' => '10',
             'together' => true
         ));
         
