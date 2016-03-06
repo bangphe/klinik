@@ -54,6 +54,16 @@
 			<?php echo $form->error($item,'HARGA_JUAL'); ?>
 		</div>
 	</div>
+	<div class="form-group" id="satuan">
+		<?php echo $form->labelEx($item,'SATUAN',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+			<?php echo $form->textField($item,'SATUAN',array(
+                'class' => 'form-control input-large',
+                'placeholder' => 'Tablet/Kapsul/Alpha',
+            ));?>
+			<?php echo $form->error($item,'SATUAN'); ?>
+		</div>
+	</div>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($item,'TANGGAL_EXPIRED',array('class'=>'control-label col-md-3')); ?>

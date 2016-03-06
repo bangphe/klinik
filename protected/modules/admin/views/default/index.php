@@ -107,7 +107,7 @@
                             <td> <?= $key+1; ?> </td>
                             <td> <?= $value->NAMA_ITEM; ?> </td>
                             <td> <?= MyFormatter::formatTanggal($value->TANGGAL_EXPIRED); ?> </td>
-                            <td> <?= $jumlah_stok==NULL || $jumlah_stok=='' || $jumlah_stok==0 ? '<span class="label label-warning">HABIS</span>' : MyFormatter::stokBarang($jumlah_stok); ?></td>
+                            <td> <?= $jumlah_stok==NULL || $jumlah_stok=='' || $jumlah_stok==0 ? '<span class="label label-danger">HABIS</span>' : MyFormatter::stokBarang($jumlah_stok); ?></td>
                         </tr>
                         <?php } ?>
                     </tbody>
@@ -145,7 +145,7 @@
                                 <td> <?= $key+1; ?> </td>
                                 <td> <?= $value->NAMA_ITEM; ?> </td>
                                 <td> <?= $value->golongan->NAMA_GOLONGAN; ?> </td>
-                                <td> <span class="label label-warning">HABIS</span></td>
+                                <td> <span class="label label-danger">HABIS</span></td>
                             </tr>
                             <?php } } ?>
                         </tbody>

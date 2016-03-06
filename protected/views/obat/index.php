@@ -24,11 +24,12 @@ $this->breadcrumbs=array(
                             <tr>
                                 <th> ID # </th>
                                 <th> Nama Obat </th>
+                                <th> Satuan </th>
                                 <th> Golongan </th>
                                 <th> Harga Beli </th>
                                 <th> Stok </th>
                                 <th> Tanggal Expired </th>
-                                <th> Status </th>
+                                <!-- <th> Status </th> -->
                             </tr>
                         </thead>
                         <tbody>
