@@ -169,6 +169,14 @@ class MyFormatter extends CFormatter
             return '<span class="label label-warning">Non Aktif</span>';
     }
 
+    public static function statusPembayaran($value)
+    {
+        if($value==0)
+            return '<span class="label label-sm label-success">TUNAI</span>';
+        else
+            return '<span class="label label-sm label-warning">HUTANG</span>';
+    }
+
     public static function statusAktif($value)
     {
         if($value==Item::STATUS_AKTIF)
