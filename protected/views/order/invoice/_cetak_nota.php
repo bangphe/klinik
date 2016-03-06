@@ -266,7 +266,7 @@
                     <td class="qty"><?php echo $detail->JUMLAH.' PCS'; ?></td>
                     <td class="unit"><?php echo MyFormatter::formatUangNota($detail->HARGA) ?></td>
                     <td class="qty"><?php echo $detail->DISKON==NULL ? '0%' : $detail->DISKON.'%'; ?></td>
-                    <td class="total"><?php echo MyFormatter::subtotalNota($detail->DISKON, $detail->HARGA, $detail->JUMLAH) ?></td>
+                    <td class="total"><?php echo MyFormatter::subtotalNota($detail->DISKON, $detail->HARGA, $detail->JUMLAH, $model->RESEP); ?></td>
                 </tr>
                 <?php endforeach ?>
             </tbody>
