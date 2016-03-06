@@ -1,3 +1,12 @@
+<style type="text/css">
+div.errorMessage
+{
+    color: red;
+    /*font-size: 0.9em;*/
+}
+
+</style>
+
 <?php echo Yii::app()->user->getFlash('info') ?>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -8,7 +17,12 @@
     ),
 )); ?>
 
-<?php echo $form->errorSummary($orderbaru); ?>
+<?php if($orderbaru->hasErrors()) { ?>
+<div class="alert alert-danger display-hide" style="display: block;">
+    <button class="close" data-close="alert"></button> 
+    <?php echo $form->errorSummary($orderbaru); ?>
+</div>
+<?php } ?>
 
 <div class="invoice-content-2 bordered">
     <div class="row invoice-head">
@@ -70,7 +84,7 @@
             <h2 class="invoice-title uppercase">Pasien</h2>
             <?php echo $form->textField($orderbaru,'NAMA',array('maxlength'=>100,'class'=>'form-control','placeholder'=>'Pilih pasien terlebih dahulu','disabled'=>true)); ?>
             <?php echo $form->hiddenField($orderbaru,'ID_PASIEN',array('type'=>'hidden')); ?>
-            <?php echo $form->error($orderbaru,'ID_PASIEN'); ?>
+            <span id="name-error" class="help-block help-block-error"><?php echo $form->error($orderbaru,'ID_PASIEN'); ?></span>
         </div>
         <div class="col-xs-4">
             <h2 class="invoice-title uppercase">Tanggal</h2>
@@ -86,7 +100,7 @@
                 'onchange'=>'getBiaya(this.value)',
             )); ?>
             <?php echo $form->hiddenField($orderbaru,'BIAYA_REGISTRASI',array('type'=>'hidden', 'value'=>'')); ?>
-            <?php echo $form->error($orderbaru,'ID_LAYANAN'); ?>
+            <span id="name-error" class="help-block help-block-error"><?php echo $form->error($orderbaru,'ID_LAYANAN'); ?></span>
         </div>        
     </div>
     <div class="row invoice-body">
