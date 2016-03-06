@@ -236,7 +236,7 @@ class Item extends CActiveRecord
 	            $total = $harga + (33/100 * $harga);
 	        else
 	        	//kalo RESEP DOKTER = harga + 1200
-	        	$total = $harga + 1200;
+	        	$total = $harga;
         } else {
         	$total = $harga;
         }

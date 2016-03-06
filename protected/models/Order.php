@@ -146,11 +146,11 @@ class Order extends CActiveRecord
         $harga_diskon = 0;
         foreach ($this->orderdetail as $detail) {
         	if($detail->DISKON==0)
-            	$subtotal += ($detail->HARGA * $detail->JUMLAH);
+            	$subtotal += ($detail->HARGA * $detail->JUMLAH) + 1200;
             else {
             	$harga_diskon = $detail->HARGA * $detail->DISKON/100;
             	$harga_total = $detail->HARGA - $harga_diskon;
-            	$subtotal += ($harga_total * $detail->JUMLAH);
+            	$subtotal += ($harga_total * $detail->JUMLAH) + 1200;
             }
         }
 
