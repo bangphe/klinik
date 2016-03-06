@@ -189,13 +189,14 @@ $(function() {
 			$('#golongan').hide();
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
-
+			$('#harJul').show();
 		}
 		else {
 			$('#golongan').hide();
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').hide();
+			$('#ukuran').hide();
 
 		}
 	});

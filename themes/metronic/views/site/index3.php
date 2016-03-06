@@ -126,8 +126,8 @@
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <div class="icheck-inline">
-                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Umum </label> 
-                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Obat </label>
+                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Bebas </label> 
+                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Dokter </label>
                                                         </div>
                                                     </div>
                                                     <span class="help-inline"><code>HANYA UNTUK OBAT</code></span>

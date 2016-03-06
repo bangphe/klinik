@@ -245,7 +245,7 @@ class Item extends CActiveRecord
     	return $total;
     }
 
-    public function getStokItem($iditem){
+    public static function getStokItem($iditem){
         $connection = Yii::app()->db;
         return $connection->createCommand('SELECT SUM(STOK) FROM detil_item WHERE ID_ITEM='.$iditem)->queryScalar();
     }
