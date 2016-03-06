@@ -143,6 +143,18 @@
 		</div>
 	</div>
 
+	<div class="form-group">
+        <?php echo $form->labelEx($detil_item, 'STATUS_PEMBAYARAN', array('class' => 'control-label col-md-3')); ?>
+        <div class="col-md-9">
+            <div class="input-group">
+                <div class="icheck-inline">
+                    <label><input data-radio="iradio_square-blue" type="radio" name="DetilItem[STATUS_PEMBAYARAN]" checked class="icheck" value="0"> TUNAI </label> 
+                    <label><input data-radio="iradio_square-blue" type="radio" name="DetilItem[STATUS_PEMBAYARAN]" class="icheck" value="1"> HUTANG </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
 	<div class="form-actions">
 		<div class="col-md-offset-3 col-md-9">
 			<button type="submit" class="btn green">

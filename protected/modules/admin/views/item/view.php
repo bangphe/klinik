@@ -89,6 +89,7 @@ $this->breadcrumbs=array(
 		                            <th>Harga Beli</th>
 		                            <th>Stok</th>
 		                            <th>Tanggal Beli</th>
+		                            <th>Status Pembayaran</th>
 		                        </tr>
 		                    </thead>
 		                    <tbody>
@@ -99,6 +100,7 @@ $this->breadcrumbs=array(
 		                            <td><?php echo MyFormatter::formatUang($item->HARGA_BELI);?></td>
 		                            <td><?php echo $item->STOK;?></td>
 		                            <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_INPUT);?></td>
+		                            <td><?php echo MyFormatter::statusPembayaran($item->STATUS_PEMBAYARAN); ?></td>
 		                        </tr>
 		                        <?php } ?>
 		                    </tbody>

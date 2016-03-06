@@ -10,6 +10,7 @@
  * @property integer $STOK
  * @property integer $HARGA_BELI
  * @property string $TANGGAL_INPUT
+ * @property integer $STATUS_PEMBAYARAN
  *
  * The followings are the available model relations:
  * @property Item $iDITEM
@@ -33,11 +34,11 @@ class DetilItem extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_ITEM, ID_SUPPLIER, STOK, HARGA_BELI', 'numerical', 'integerOnly'=>true),
+			array('ID_ITEM, ID_SUPPLIER, STOK, HARGA_BELI, STATUS_PEMBAYARAN', 'numerical', 'integerOnly'=>true),
 			array('TANGGAL_INPUT', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID_DETIL_ITEM, ID_ITEM, ID_SUPPLIER, STOK, HARGA_BELI, TANGGAL_INPUT', 'safe', 'on'=>'search'),
+			array('ID_DETIL_ITEM, ID_ITEM, ID_SUPPLIER, STOK, HARGA_BELI, TANGGAL_INPUT, STATUS_PEMBAYARAN', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +67,7 @@ class DetilItem extends CActiveRecord
 			'STOK' => 'Jumlah',
 			'HARGA_BELI' => 'Harga Beli',
 			'TANGGAL_INPUT' => 'Tanggal Input',
+			'STATUS_PEMBAYARAN' => 'Status Pembayaran',
 		);
 	}
 
@@ -93,6 +95,7 @@ class DetilItem extends CActiveRecord
 		$criteria->compare('STOK',$this->STOK);
 		$criteria->compare('HARGA_BELI',$this->HARGA_BELI);
 		$criteria->compare('TANGGAL_INPUT',$this->TANGGAL_INPUT,true);
+		$criteria->compare('STATUS',$this->STATUS_PEMBAYARAN);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
