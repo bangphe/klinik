@@ -183,7 +183,6 @@ class ItemController extends Controller
 	public function actionHapus($id)
     {
         Item::model()->updateByPk($id, array('STATUS'=>2));
-                
         Yii::app()->user->setFlash('info',  MyFormatter::alertError('<strong>Sukses!</strong> Data telah berhasil dihapus.'));
         $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 	}

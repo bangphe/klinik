@@ -156,10 +156,10 @@ class MyFormatter extends CFormatter
             $harga_diskon = ($diskon*$harga)/100;
             $harga_total = $harga-$harga_diskon;
             if ($resep == Order::RESEP_DOKTER) {
-                return "Rp. " . number_format(($harga_total * $jumlah) + 1200, 0, ',', '.');
+                return "Rp. " . number_format(($harga * $jumlah) + 1200, 0, ',', '.');
             }
             elseif ($resep == Order::RESEP_UMUM) {
-                return "Rp. " . number_format($harga_total * $jumlah, 0, ',', '.');
+                return "Rp. " . number_format($harga * $jumlah, 0, ',', '.');
             }
         }       
     }
