@@ -161,11 +161,6 @@ class Order extends CActiveRecord
             	elseif ($this->RESEP == self::RESEP_UMUM) {
         			$subtotal += ($detail->HARGA * $detail->JUMLAH);
         		}
-        			$subtotal += ($harga_total * $detail->JUMLAH) + 1200;
-        		}
-            	elseif ($this->RESEP == self::RESEP_UMUM) {
-            	 	$subtotal += ($harga_total * $detail->JUMLAH);
-            	}
             }
         }
 
