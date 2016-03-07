@@ -149,10 +149,9 @@ class Order extends CActiveRecord
         		if ($this->RESEP == self::RESEP_DOKTER) {
         			$subtotal += ($detail->HARGA * $detail->JUMLAH) + 1200;
         		}
-        		elseif ($this->RESEP == self::RESEP_UMUM) {
-        			$subtotal += ($detail->HARGA * $detail->JUMLAH);
-        				
-        		}
+            	elseif ($this->RESEP == self::RESEP_UMUM) {
+            	 	$subtotal += ($detail->HARGA * $detail->JUMLAH);
+            	}
             else {
             	$harga_diskon = $detail->HARGA * $detail->DISKON/100;
             	$harga_total = $detail->HARGA - $harga_diskon;
@@ -162,6 +161,11 @@ class Order extends CActiveRecord
             	elseif ($this->RESEP == self::RESEP_UMUM) {
         			$subtotal += ($detail->HARGA * $detail->JUMLAH);
         		}
+        			$subtotal += ($harga_total * $detail->JUMLAH) + 1200;
+        		}
+            	elseif ($this->RESEP == self::RESEP_UMUM) {
+            	 	$subtotal += ($harga_total * $detail->JUMLAH);
+            	}
             }
         }
 
