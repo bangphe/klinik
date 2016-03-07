@@ -8,6 +8,7 @@
         <th>KODE PASIEN</th>
         <th>NAMA PASIEN</th>
         <th>PENDAFTARAN</th>
+        <th>NAMA ITEM</th>
         <th>SUBTOTAL</th>
         <th>TOTAL</th>
     </tr>
@@ -18,14 +19,19 @@
             <td><?php echo MyFormatter::formatTanggal($data->TANGGAL_ORDER) ?></td>
             <td><?php echo $data->ID_PASIEN ?></td>
             <td><?php echo $data->pasien->NAMA_PASIEN ?></td>
-            <td><?php echo $data->layanan->BIAYA ?></td>
+            <td><?php echo MyFormatter::formatUang($data->layanan->BIAYA) ?></td>
+            <td>
+            <?php foreach ($data->orderdetail as $value) { ?>
+                <?php echo $value->item->NAMA_ITEM.' ('.$value->JUMLAH.')'; ?></br>
+            <?php } ?>
+            </td>
             <td><?php echo MyFormatter::formatUang($data->SUBTOTAL) ?></td>
             <td><?php echo MyFormatter::formatUang($data->TOTAL) ?></td>
         </tr>
     <?php $grandtotal += $data->TOTAL ?>
     <?php endforeach ?>
     <tr>
-        <th colspan="5">TOTAL TRANSAKSI HARI INI</th>
+        <th colspan="7">TOTAL TRANSAKSI HARI INI</th>
         <th><?php echo MyFormatter::formatUang($grandtotal) ?></th>
     </tr>
 </table>
