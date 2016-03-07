@@ -7,6 +7,7 @@
         <th>TANGGAL ORDER</th>
         <th>KODE PASIEN</th>
         <th>NAMA PASIEN</th>
+        <th>ITEM</th>
         <th>SUBTOTAL</th>
         <th>TOTAL</th>
     </tr>
@@ -17,6 +18,13 @@
             <td><?php echo MyFormatter::formatTanggal($data->TANGGAL_ORDER) ?></td>
             <td><?php echo $data->ID_PASIEN ?></td>
             <td><?php echo $data->pasien->NAMA_PASIEN ?></td>
+            
+            <td>
+            <?php foreach ($data->orderdetail as $value) { ?>
+                <?php echo $value->item->NAMA_ITEM.' ('.$value->JUMLAH.')'; ?></br>
+            <?php } ?>
+            </td>
+            
             <td><?php echo MyFormatter::formatUang($data->SUBTOTAL) ?></td>
             <td><?php echo MyFormatter::formatUang($data->TOTAL) ?></td>
         </tr>
