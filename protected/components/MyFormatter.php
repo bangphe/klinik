@@ -140,17 +140,27 @@ class MyFormatter extends CFormatter
         }       
     }
 
-    public static function subtotalNota($diskon, $harga, $jumlah) {
+    public static function subtotalNota($diskon, $harga, $jumlah, $resep) {
         $harga_diskon=0;
         $harga_total=0;
         
         if($diskon==0) {
-            return "Rp. " . number_format($harga * $jumlah, 0, ',', '.');
+            if ($resep == Order::RESEP_DOKTER) {
+                return "Rp. " . number_format(($harga * $jumlah) + 1200, 0, ',', '.');
+            }
+            elseif ($resep == Order::RESEP_UMUM) {
+                return "Rp. " . number_format($harga * $jumlah, 0, ',', '.');
+            }
         }
         else {
             $harga_diskon = ($diskon*$harga)/100;
             $harga_total = $harga-$harga_diskon;
-            return "Rp. " . number_format($harga_total * $jumlah, 0, ',', '.');
+            if ($resep == Order::RESEP_DOKTER) {
+                return "Rp. " . number_format(($harga * $jumlah) + 1200, 0, ',', '.');
+            }
+            elseif ($resep == Order::RESEP_UMUM) {
+                return "Rp. " . number_format($harga * $jumlah, 0, ',', '.');
+            }
         }       
     }
 
