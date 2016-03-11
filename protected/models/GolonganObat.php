@@ -97,6 +97,10 @@ class GolonganObat extends CActiveRecord
 	}
 
 	public static function listAll() {
-        return CHtml::listData(self::model()->findAll(), 'ID_GOLONGAN_OBAT', 'NAMA_GOLONGAN');
+		$criteria=new CDbCriteria;
+        $criteria->order = 'NAMA_GOLONGAN ASC';
+        $model = self::model()->findAll($criteria);
+        $data = CHtml::listData($model,'ID_GOLONGAN_OBAT','NAMA_GOLONGAN');
+        return $data;
     }
 }
