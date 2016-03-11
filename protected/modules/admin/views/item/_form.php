@@ -47,7 +47,7 @@
 		<div class="col-md-4">
 			<?php echo $form->dropDownList($item,'ID_GOLONGAN_OBAT', GolonganObat::listAll(),
 				array(
-				'class'=>'bs-select form-control input-large',
+				'class'=>'bs-select form-control input-large form-select',
 				'prompt'=>'- Pilih Golongan Obat -'
 			)); ?>
 			<?php echo $form->error($item,'ID_GOLONGAN_OBAT'); ?>
@@ -109,7 +109,7 @@
 		<div class="col-md-4">
 			<?php echo $form->dropDownList($detil_item,'ID_SUPPLIER', Supplier::optionSupplier(),
 				array(
-				'class'=>'form-control input-large',
+				'class'=>'form-control input-large form-select',
 				'prompt'=>'- Pilih Supplier -'
 			)); ?>
 			<?php echo $form->error($detil_item,'ID_SUPPLIER'); ?>

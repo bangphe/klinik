@@ -106,7 +106,7 @@ class Supplier extends CActiveRecord
 	public static function optionSupplier()
     {
         $criteria=new CDbCriteria;
-        $criteria->order = 'ID_SUPPLIER ASC';
+        $criteria->order = 'NAMA_SUPPLIER ASC';
         $model = self::model()->findAll($criteria);
         $data = CHtml::listData($model,'ID_SUPPLIER','NAMA_SUPPLIER');
         return $data;
