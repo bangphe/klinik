@@ -124,7 +124,19 @@ foreach ($model->orderdetail as $i => $detail) {
                                 <td><?php echo $row->JUMLAH;?></td>
                                 <td><?php echo MyFormatter::formatUang($row->HARGA);?></td>
                                 <td><?php echo $row->DISKON==NULL ? '0%' : $row->DISKON.'%';?></td>
-                                <td><?php echo $model->RESEP==1 ? MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH) : MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH + 1200);?></td>
+                                <td>
+                                    <?php
+                                        if($model->RESEP==1) {
+                                            echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH);
+                                        } else {
+                                            if ($row->item->ID_KATEGORI==Item::KATEGORI_OBAT) {
+                                                echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH + 1200);
+                                            } else {
+                                                echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH);
+                                            }
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                         <?php } ?>
                         </tbody>

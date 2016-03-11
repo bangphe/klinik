@@ -145,13 +145,20 @@ class Order extends CActiveRecord
         $harga_total = 0;
         $harga_diskon = 0;
         foreach ($this->orderdetail as $detail) {
-        	if($detail->DISKON==0)
+        	if($detail->DISKON==0){
         		if ($this->RESEP == self::RESEP_DOKTER) {
-        			$subtotal += ($detail->HARGA * $detail->JUMLAH) + 1200;
+        			if ($detail->item->ID_KATEGORI==Item::KATEGORI_OBAT) {
+        				$subtotal += ($detail->HARGA * $detail->JUMLAH) + 1200;
+        			}
+        			else {
+        				$subtotal += ($detail->HARGA * $detail->JUMLAH);
+        			}
         		}
             	elseif ($this->RESEP == self::RESEP_UMUM) {
             	 	$subtotal += ($detail->HARGA * $detail->JUMLAH);
             	}
+        	}
+        		
             else {
             	$harga_diskon = $detail->HARGA * $detail->DISKON/100;
             	$harga_total = $detail->HARGA - $harga_diskon;
