@@ -23,7 +23,7 @@
 class Item extends CActiveRecord
 {
 	const STATUS_AKTIF=1, STATUS_NON_AKTIF=2;
-	const KATEGORI_OBAT=1, KATEGORI_GAGANG=2, KATEGORI_LENSA=3;
+	const KATEGORI_OBAT=1, KATEGORI_GAGANG=2, KATEGORI_LENSA=3, KATEGORI_TARIF=4;
 
 	/**
 	 * @return string the associated database table name

@@ -40,6 +40,7 @@ $this->breadcrumbs=array(
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Kode Item</th>
                                             <th>Nama Barang</th>
                                             <th>Kategori</th>
                                             <th>Stok</th>
@@ -54,6 +55,7 @@ $this->breadcrumbs=array(
                                         <?php foreach (Item::ListBarangByKategori($i) as $dex => $item): ?>
                                         <tr>
                                             <td><?php echo $dex+1;?></td>
+                                            <td>Kode item <?php echo $item->ID_ITEM;?></td>
                                             <td><?php echo CHtml::link(CHtml::encode($item->NAMA_ITEM), array('view','id'=>$item->ID_ITEM), array('title'=>'Detil')); ?></td>
                                             <td><?php echo $item->kategori->KATEGORI; ?></td>
                                             <td style="text-align:center;"><?php echo MyFormatter::stokBarang(Item::getTotalStok($item->ID_ITEM)); ?></td>

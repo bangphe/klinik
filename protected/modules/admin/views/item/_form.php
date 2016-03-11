@@ -103,10 +103,8 @@
 			<?php echo $form->error($item,'TANGGAL_EXPIRED'); ?>
 		</div>
 	</div>
-
-
-    <h4 class="form-section"><i class="fa fa-group"></i> Detil Supplier</h4>
-    <div class="form-group">
+    <h4 class="form-section" id="detilSupplier"><i class="fa fa-group"></i> Detil Supplier</h4>
+    <div class="form-group" id="supplier">
 		<?php echo $form->labelEx($detil_item,'ID_SUPPLIER',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
 			<?php echo $form->dropDownList($detil_item,'ID_SUPPLIER', Supplier::optionSupplier(),
@@ -118,7 +116,7 @@
 		</div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" id="stok">
 		<?php echo $form->labelEx($detil_item,'STOK',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
 			<?php echo $form->numberField($detil_item,'STOK',array(
@@ -130,7 +128,7 @@
 		</div>
 	</div>
 
-    <div class="form-group">
+    <div class="form-group" id="hargaBeli">
 		<?php echo $form->labelEx($detil_item,'HARGA_BELI',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
             <div class="input-inline input-large">
@@ -143,7 +141,7 @@
 		</div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" id="statusPembayaran">
         <?php echo $form->labelEx($detil_item, 'STATUS_PEMBAYARAN', array('class' => 'control-label col-md-3')); ?>
         <div class="col-md-9">
             <div class="input-group">
@@ -191,12 +189,27 @@ $(function() {
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
 		}
+		else if($('#Item_ID_KATEGORI').val() == 4) {
+			$('#ukuran').hide();
+			$('#golongan').hide();
+			$('#supplier').hide();
+			$('#hargaBeli').hide();
+			$('#detilSupplier').hide();
+			$('#statusPembayaran').hide();
+			$('#satuan').hide();
+			$('#tanggal_exp').hide();
+			$('#harJul').show();
+		}
 		else {
 			$('#golongan').hide();
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').hide();
+			$('#supplier').show();
 			$('#ukuran').hide();
+			$('#statusPembayaran').show();
+			$('#hargaBeli').show();
+			$('#detilSupplier').show();
 
 		}
 	});
