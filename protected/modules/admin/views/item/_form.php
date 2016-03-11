@@ -192,9 +192,9 @@ $(function() {
 		else if($('#Item_ID_KATEGORI').val() == 4) {
 			$('#ukuran').hide();
 			$('#golongan').hide();
-			$('#supplier').hide();
+			$('#supplier').show();
 			$('#hargaBeli').hide();
-			$('#detilSupplier').hide();
+			$('#detilSupplier').show();
 			$('#statusPembayaran').hide();
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
