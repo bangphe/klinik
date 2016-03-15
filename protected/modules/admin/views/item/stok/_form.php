@@ -77,16 +77,67 @@ $('.edit-barang').click(function(){
 	</div>
 
 	<div class="form-group">
+		<?php echo $form->labelEx($detil_item,'TANGGAL_JATUH_TEMPO',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+            <div class="input-inline input-large">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+					<?php echo $form->textField($detil_item, 'TANGGAL_JATUH_TEMPO', array('class'=>'form-control date-picker', 'data-date-format'=>'yyyy-mm-dd', 'placeholder'=>'Tanggal Jatuh Tempo')); ?>
+				</div>
+			</div>
+			<?php echo $form->error($detil_item,'TANGGAL_JATUH_TEMPO'); ?>
+		</div>
+	</div>
+
+    <div class="form-group">
         <?php echo $form->labelEx($detil_item, 'STATUS_PEMBAYARAN', array('class' => 'control-label col-md-3')); ?>
         <div class="col-md-9">
             <div class="input-group">
-                <div class="icheck-inline">
-                    <label><input data-radio="iradio_square-blue" type="radio" name="DetilItem[STATUS_PEMBAYARAN]" checked class="icheck" value="0"> TUNAI </label> 
-                    <label><input data-radio="iradio_square-blue" type="radio" name="DetilItem[STATUS_PEMBAYARAN]" class="icheck" value="1"> HUTANG </label>
+                <div class="radio-list">
+                    <?php
+                    echo $form->radioButtonList($detil_item, 'STATUS_PEMBAYARAN', DetilItem::listStatusPembayaran(), array(
+                        'class'=>'form-control input-large',
+                        'labelOptions'=>array('style'=>'display:inline'),
+                        'template'=>'{input} {label}',
+                        'onchange' => '
+                        		var today = new Date();
+								var dateFormatted = today.toISOString().substr(0,10);
+                                if(this.value == ' . DetilItem::STATUS_HUTANG . ') {
+                                    $("#DetilItem_TANGGAL_PEMBAYARAN").attr("value", "");
+                                }
+                                else {
+                                    $("#DetilItem_TANGGAL_PEMBAYARAN").attr("value", dateFormatted);
+                                }
+                            '
+                        // 'onchange' => '
+                        //         if(this.value == ' . DetilItem::STATUS_LUNAS . ') {
+                        //             $("#tgl_bayar").show();
+                        //         }
+                        //         else {
+                        //             $("#tgl_bayar").hide();
+                        //         }
+                        //     '
+                    ));
+                    ?>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- <div class="form-group" id="tgl_bayar">
+		<?php //echo $form->labelEx($detil_item,'TANGGAL_PEMBAYARAN',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+            <div class="input-inline input-large">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+					<?php //echo $form->textField($detil_item, 'TANGGAL_PEMBAYARAN', array('class'=>'form-control date-picker', 'data-date-format'=>'yyyy-mm-dd', 'placeholder'=>'Tanggal Jatuh Tempo')); ?>
+				</div>
+			</div>
+			<?php //echo $form->error($detil_item,'TANGGAL_PEMBAYARAN'); ?>
+		</div>
+	</div> -->
+
+    <?php echo $form->hiddenField($detil_item,'TANGGAL_PEMBAYARAN',array('type'=>'hidden','value'=>'')); ?>
 
 	<div class="form-actions fluid">
 		<div class="col-md-offset-3 col-md-9">

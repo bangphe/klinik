@@ -10,6 +10,8 @@
  * @property integer $STOK
  * @property integer $HARGA_BELI
  * @property string $TANGGAL_INPUT
+ * @property string $TANGGAL_JATUH_TEMPO
+ * @property string $TANGGAL_PEMBAYARAN
  * @property integer $STATUS_PEMBAYARAN
  *
  * The followings are the available model relations:
@@ -18,6 +20,8 @@
  */
 class DetilItem extends CActiveRecord
 {
+	const STATUS_LUNAS=0, STATUS_HUTANG=1;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,10 +39,10 @@ class DetilItem extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('ID_ITEM, ID_SUPPLIER, STOK, HARGA_BELI, STATUS_PEMBAYARAN', 'numerical', 'integerOnly'=>true),
-			array('TANGGAL_INPUT', 'safe'),
+			array('TANGGAL_INPUT, TANGGAL_JATUH_TEMPO, TANGGAL_PEMBAYARAN', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID_DETIL_ITEM, ID_ITEM, ID_SUPPLIER, STOK, HARGA_BELI, TANGGAL_INPUT, STATUS_PEMBAYARAN', 'safe', 'on'=>'search'),
+			array('ID_DETIL_ITEM, ID_ITEM, ID_SUPPLIER, STOK, HARGA_BELI, TANGGAL_INPUT, TANGGAL_JATUH_TEMPO, TANGGAL_PEMBAYARAN, STATUS_PEMBAYARAN', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +71,8 @@ class DetilItem extends CActiveRecord
 			'STOK' => 'Jumlah',
 			'HARGA_BELI' => 'Harga Beli',
 			'TANGGAL_INPUT' => 'Tanggal Input',
+			'TANGGAL_JATUH_TEMPO' => 'Tanggal Jatuh Tempo',
+			'TANGGAL_PEMBAYARAN' => 'Tanggal Pembayaran',
 			'STATUS_PEMBAYARAN' => 'Status Pembayaran',
 		);
 	}
@@ -95,6 +101,8 @@ class DetilItem extends CActiveRecord
 		$criteria->compare('STOK',$this->STOK);
 		$criteria->compare('HARGA_BELI',$this->HARGA_BELI);
 		$criteria->compare('TANGGAL_INPUT',$this->TANGGAL_INPUT,true);
+		$criteria->compare('TANGGAL_JATUH_TEMPO',$this->TANGGAL_JATUH_TEMPO,true);
+		$criteria->compare('TANGGAL_PEMBAYARAN',$this->TANGGAL_PEMBAYARAN,true);
 		$criteria->compare('STATUS',$this->STATUS_PEMBAYARAN);
 
 		return new CActiveDataProvider($this, array(
@@ -117,7 +125,14 @@ class DetilItem extends CActiveRecord
         $criteria = new CDbCriteria;
         $criteria->condition = 'ID_ITEM=:kd';
 		$criteria->params = array(':kd'=>$kd);
-		$criteria->order = 'ID_SUPPLIER ASC';
+		$criteria->order = 'ID_DETIL_ITEM ASC';
         return self::model()->findAll($criteria);
+    }
+
+    public static function listStatusPembayaran() {
+        return array(
+            self::STATUS_LUNAS => 'Lunas',
+            self::STATUS_HUTANG => 'Hutang',
+        );
     }
 }

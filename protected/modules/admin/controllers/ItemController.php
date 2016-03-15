@@ -37,6 +37,7 @@ class ItemController extends Controller
 					'hapus',
 					'delete',
 					'getitem',
+					'step',
 				),
 				'users'=>array('@'),
 				//'roles'=>array(WebUser::ROLE_ADMIN),
@@ -146,10 +147,11 @@ class ItemController extends Controller
 		$item=$this->loadModel($id);
 
 		$detil_item=new DetilItem;
-
+		$detil_item->STATUS_PEMBAYARAN = 1;
 		if(isset($_POST['DetilItem']))
 		{
 			$detil_item->attributes=$_POST['DetilItem'];
+			// var_dump($detil_item); die();
 			$detil_item->setAttribute('ID_ITEM',$item->ID_ITEM);
 			$detil_item->setAttribute('TANGGAL_INPUT',date('Y-m-d H:i:s'));
 			if ($detil_item->validate()) {
@@ -185,6 +187,15 @@ class ItemController extends Controller
         Item::model()->updateByPk($id, array('STATUS'=>2));
         Yii::app()->user->setFlash('info',  MyFormatter::alertError('<strong>Sukses!</strong> Data telah berhasil dihapus.'));
         $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+	}
+
+	public function actionStep($id)
+    {
+        DetilItem::model()->updateByPk($id, array('STATUS_PEMBAYARAN'=>DetilItem::STATUS_LUNAS, 'TANGGAL_PEMBAYARAN'=>date('Y-m-d')));
+        $item=DetilItem::model()->findByPk($id);
+        Yii::app()->user->setFlash('info',  MyFormatter::alertSuccess('<strong>Sukses!</strong> Data telah berhasil disimpan.'));
+        //$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+		$this->redirect(array('view','id'=>$item->ID_ITEM));
 	}
 
 	/**

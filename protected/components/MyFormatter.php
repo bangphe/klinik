@@ -199,7 +199,7 @@ class MyFormatter extends CFormatter
     public static function statusPembayaran($value)
     {
         if($value==0)
-            return '<span class="label label-sm label-success">TUNAI</span>';
+            return '<span class="label label-sm label-success">LUNAS</span>';
         else
             return '<span class="label label-sm label-warning">HUTANG</span>';
     }

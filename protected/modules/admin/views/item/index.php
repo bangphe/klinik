@@ -58,7 +58,7 @@ $this->breadcrumbs=array(
                                             <td>Kode item <?php echo $item->ID_ITEM;?></td>
                                             <td><?php echo CHtml::link(CHtml::encode($item->NAMA_ITEM), array('view','id'=>$item->ID_ITEM), array('title'=>'Detil')); ?></td>
                                             <td><?php echo $item->kategori->KATEGORI; ?></td>
-                                            <td style="text-align:center;"><?php echo MyFormatter::stokBarang(Item::getTotalStok($item->ID_ITEM)); ?></td>
+                                            <td style="text-align:center;"><?php echo '<span class="label label-danger">'.Item::getTotalStok($item->ID_ITEM).'</span>'; ?></td>
                                             <td><?php echo $item->UKURAN;?></td>
                                             <td><?php echo $item->SATUAN;?></td>
                                             <td><?php echo MyFormatter::formatUang($item->HARGA_JUAL); ?></td>

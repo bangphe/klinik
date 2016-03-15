@@ -90,7 +90,6 @@
 		</div>
 	</div>
 
-
 	<div class="form-group" id="tanggal_exp">
 		<?php echo $form->labelEx($item,'TANGGAL_EXPIRED',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
@@ -141,12 +140,25 @@
 		</div>
 	</div>
 
+	<div class="form-group">
+		<?php echo $form->labelEx($detil_item,'TANGGAL_JATUH_TEMPO',array('class'=>'control-label col-md-3')); ?>
+		<div class="col-md-4">
+            <div class="input-inline input-large">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+					<?php echo $form->textField($detil_item, 'TANGGAL_JATUH_TEMPO', array('class'=>'form-control date-picker', 'data-date-format'=>'yyyy-mm-dd', 'placeholder'=>'Tanggal Jatuh Tempo')); ?>
+				</div>
+			</div>
+			<?php echo $form->error($detil_item,'TANGGAL_JATUH_TEMPO'); ?>
+		</div>
+	</div>
+
 	<div class="form-group" id="statusPembayaran">
         <?php echo $form->labelEx($detil_item, 'STATUS_PEMBAYARAN', array('class' => 'control-label col-md-3')); ?>
         <div class="col-md-9">
             <div class="input-group">
                 <div class="icheck-inline">
-                    <label><input data-radio="iradio_square-blue" type="radio" name="DetilItem[STATUS_PEMBAYARAN]" checked class="icheck" value="0"> TUNAI </label> 
+                    <label><input data-radio="iradio_square-blue" type="radio" name="DetilItem[STATUS_PEMBAYARAN]" checked class="icheck" value="0"> LUNAS </label> 
                     <label><input data-radio="iradio_square-blue" type="radio" name="DetilItem[STATUS_PEMBAYARAN]" class="icheck" value="1"> HUTANG </label>
                 </div>
             </div>
