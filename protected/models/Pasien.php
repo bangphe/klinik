@@ -36,7 +36,7 @@ class Pasien extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('NAMA_PASIEN, ALAMAT, NO_TELP, JENIS_KELAMIN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
+			array('NAMA_PASIEN', 'required', 'on' => 'baru', 'message' => '{attribute} wajib diisi'),
 			array('NAMA_PASIEN', 'length', 'max'=>100),
 			array('ALAMAT', 'length', 'max'=>200),
 			array('NO_TELP', 'length', 'max'=>15),

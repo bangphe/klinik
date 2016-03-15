@@ -5,9 +5,12 @@
     <tr>
         <th>NO NOTA</th>
         <th>TANGGAL ORDER</th>
-        <th>KODE PASIEN</th>
         <th>NAMA PASIEN</th>
         <th>PENDAFTARAN</th>
+        <th>JASA DOKTER</th>
+        <th>LAB</th>
+        <th>KERATO</th>
+        <th>FOTO FUNDUS</th>
         <th>NAMA ITEM</th>
         <th>SUBTOTAL</th>
         <th>TOTAL</th>
@@ -17,9 +20,15 @@
         <tr>
             <td><?php echo '#'.$data->KODE_ORDER ?></td>
             <td><?php echo MyFormatter::formatTanggal($data->TANGGAL_ORDER) ?></td>
-            <td><?php echo $data->ID_PASIEN ?></td>
+            <!-- <td><?php echo $data->ID_PASIEN ?></td> -->
             <td><?php echo $data->pasien->NAMA_PASIEN ?></td>
             <td><?php echo MyFormatter::formatUang($data->layanan->BIAYA) ?></td>
+            <td>
+            
+            </td>
+            <td>Lab</td>
+            <td>Kerato</td>
+            <td>Fundus</td>
             <td>
             <?php foreach ($data->orderdetail as $value) { ?>
                 <?php echo $value->item->NAMA_ITEM.' ('.$value->JUMLAH.')'; ?></br>

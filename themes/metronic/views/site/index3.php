@@ -140,11 +140,18 @@ div.errorMessage
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <div class="icheck-inline">
-                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Bebas </label> 
-                                                            <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Dokter </label>
+                                                            <div class="class_1">
+                                                                <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" checked class="icheck" value="1"> Resep Bebas </label> 
+                                                            </div>
+                                                            <div class="class_1">
+                                                                <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Dokter </label>
+                                                            </div>
+                                                            <div class="class_1">
+                                                                <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="3"> Resep Pulvus </label>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <span class="help-inline"><code>HANYA UNTUK OBAT</code></span>
+                                                    <!-- <span class="help-inline"><code>HANYA UNTUK OBAT</code></span> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -165,7 +172,7 @@ div.errorMessage
                                                         <dt>Description lists</dt>
                                                         <dd>A description list is perfect for defining terms.</dd>
                                                     </dl> -->
-                                                    <span class="help-block"> Ketikkan nama item </span>
+                                                    <!-- <span class="help-block"> Ketikkan nama item </span> -->
                                                 </div>
                                             </div>
                                         </div>

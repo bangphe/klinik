@@ -10,6 +10,4 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h1>Update Layanan <?php echo $model->ID_LAYANAN; ?></h1>
-
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
