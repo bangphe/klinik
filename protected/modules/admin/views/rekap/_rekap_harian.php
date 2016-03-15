@@ -1,6 +1,6 @@
 <table border="1">
     <tr>
-    <th colspan="6">KLINIK AR-RAHMAH | Rekap Transaksi Harian <?= MyFormatter::formatTanggal(date('Y-m-d')); ?></th>
+    <th colspan="8">KLINIK AR-RAHMAH | Rekap Transaksi Harian <?= MyFormatter::formatTanggal(date('Y-m-d')); ?></th>
     </tr>
     <tr>
         <th>NO NOTA</th>

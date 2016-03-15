@@ -21,7 +21,7 @@
 class Order extends CActiveRecord
 {
 	//STATUS RESEP
-	const RESEP_UMUM = 1, RESEP_DOKTER = 2;
+	const RESEP_UMUM = 1, RESEP_DOKTER = 2, RESEP_PULVUS = 3;
 
 	public $NAMA, $SUBTOTAL, $TOTAL, $TGL_ORDER_X;
 	
