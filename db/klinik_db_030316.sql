@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50539
 Source Host           : localhost:3306
-Source Database       : klinikbaru
+Source Database       : klinik_db
 
 Target Server Type    : MYSQL
 Target Server Version : 50539
 File Encoding         : 65001
 
-Date: 2016-03-06 13:44:16
+Date: 2016-02-27 11:06:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,30 +26,28 @@ CREATE TABLE `detil_item` (
   `STOK` int(11) DEFAULT NULL,
   `HARGA_BELI` int(11) DEFAULT NULL,
   `TANGGAL_INPUT` datetime DEFAULT NULL,
-  `STATUS_PEMBAYARAN` int(2) DEFAULT '0',
   PRIMARY KEY (`ID_DETIL_ITEM`),
   KEY `ID_ITEM` (`ID_ITEM`),
   KEY `ID_SUPPLIER` (`ID_SUPPLIER`),
   CONSTRAINT `detil_item_ibfk_1` FOREIGN KEY (`ID_ITEM`) REFERENCES `item` (`ID_ITEM`) ON UPDATE CASCADE,
   CONSTRAINT `detil_item_ibfk_2` FOREIGN KEY (`ID_SUPPLIER`) REFERENCES `supplier` (`ID_SUPPLIER`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of detil_item
 -- ----------------------------
-INSERT INTO `detil_item` VALUES ('1', '1', '1', '16', '20000', '2016-01-28 17:17:35', '0');
-INSERT INTO `detil_item` VALUES ('2', '2', '2', '23', '25000', '2016-01-13 17:17:48', '0');
-INSERT INTO `detil_item` VALUES ('3', '3', '2', '8', '1250', '2016-01-28 17:18:09', '0');
-INSERT INTO `detil_item` VALUES ('4', '4', '1', '15', '1500', '2016-01-06 17:18:23', '0');
-INSERT INTO `detil_item` VALUES ('5', '5', '2', '14', '1750', '2016-01-20 17:18:41', '0');
-INSERT INTO `detil_item` VALUES ('6', '7', '1', '18', '1246', '2016-02-04 09:13:56', '0');
-INSERT INTO `detil_item` VALUES ('7', '7', '2', '16', '2000', '2016-02-04 11:02:35', '0');
-INSERT INTO `detil_item` VALUES ('8', '8', '1', '0', '20000', '2016-02-19 17:12:28', '0');
-INSERT INTO `detil_item` VALUES ('9', '9', '1', '0', '20000', '2016-02-19 23:42:01', '0');
-INSERT INTO `detil_item` VALUES ('10', '6', '1', '100', '1000', '2016-02-19 23:46:42', '0');
-INSERT INTO `detil_item` VALUES ('11', '6', '2', '5', '1500', '2016-02-19 23:46:58', '0');
-INSERT INTO `detil_item` VALUES ('12', '8', '1', '1', '2150', '2016-02-22 15:45:07', '0');
-INSERT INTO `detil_item` VALUES ('13', '4', '2', '42', '20000', '2016-03-06 13:43:42', '1');
+INSERT INTO `detil_item` VALUES ('1', '1', '1', '10', '20000', '2016-01-28 17:17:35');
+INSERT INTO `detil_item` VALUES ('2', '2', '2', '23', '25000', '2016-01-13 17:17:48');
+INSERT INTO `detil_item` VALUES ('3', '3', '2', '8', '1250', '2016-01-28 17:18:09');
+INSERT INTO `detil_item` VALUES ('4', '4', '1', '15', '1500', '2016-01-06 17:18:23');
+INSERT INTO `detil_item` VALUES ('5', '5', '2', '17', '1750', '2016-01-20 17:18:41');
+INSERT INTO `detil_item` VALUES ('6', '7', '1', '22', '1246', '2016-02-04 09:13:56');
+INSERT INTO `detil_item` VALUES ('7', '7', '2', '16', '2000', '2016-02-04 11:02:35');
+INSERT INTO `detil_item` VALUES ('8', '8', '1', '0', '20000', '2016-02-19 17:12:28');
+INSERT INTO `detil_item` VALUES ('9', '9', '1', '0', '20000', '2016-02-19 23:42:01');
+INSERT INTO `detil_item` VALUES ('10', '6', '1', '100', '1000', '2016-02-19 23:46:42');
+INSERT INTO `detil_item` VALUES ('11', '6', '2', '5', '1500', '2016-02-19 23:46:58');
+INSERT INTO `detil_item` VALUES ('12', '8', '1', '1', '2150', '2016-02-22 15:45:07');
 
 -- ----------------------------
 -- Table structure for `golongan_obat`
@@ -201,9 +199,9 @@ CREATE TABLE `order` (
   PRIMARY KEY (`KODE_ORDER`),
   KEY `ID_PASIEN` (`ID_PASIEN`),
   KEY `ID_LAYANAN` (`ID_LAYANAN`),
-  CONSTRAINT `order_ibfk_1` FOREIGN KEY (`ID_PASIEN`) REFERENCES `pasien` (`ID_PASIEN`) ON UPDATE CASCADE,
-  CONSTRAINT `order_ibfk_2` FOREIGN KEY (`ID_LAYANAN`) REFERENCES `layanan` (`ID_LAYANAN`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
+  CONSTRAINT `order_ibfk_2` FOREIGN KEY (`ID_LAYANAN`) REFERENCES `layanan` (`ID_LAYANAN`) ON UPDATE CASCADE,
+  CONSTRAINT `order_ibfk_1` FOREIGN KEY (`ID_PASIEN`) REFERENCES `pasien` (`ID_PASIEN`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of order
@@ -254,9 +252,9 @@ INSERT INTO `order` VALUES ('000052', '11', '1', null, '1', '2016-02-16 10:59:16
 INSERT INTO `order` VALUES ('000053', '11', '1', null, '1', '2016-02-16 10:59:48', 'Kasir', null, null);
 INSERT INTO `order` VALUES ('000054', '12', '1', null, '1', '2016-02-16 11:06:13', 'Kasir', null, null);
 INSERT INTO `order` VALUES ('000055', '12', '1', null, '1', '2016-02-16 11:07:42', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000056', '3', '1', '5000', '1', '2016-02-16 11:08:01', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000057', '3', '1', '5000', '1', '2016-02-16 11:08:55', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000058', '5', '1', '5000', '1', '2016-02-16 11:12:16', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000056', '3', '1', null, '1', '2016-02-16 11:08:01', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000057', '3', '1', null, '1', '2016-02-16 11:08:55', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000058', '5', '1', null, '1', '2016-02-16 11:12:16', 'Kasir', null, null);
 INSERT INTO `order` VALUES ('000059', '3', '1', null, '1', '2016-02-16 11:47:52', 'Kasir', null, null);
 INSERT INTO `order` VALUES ('000060', '3', '1', null, '1', '2016-02-16 11:50:41', 'Kasir', null, null);
 INSERT INTO `order` VALUES ('000061', '11', '1', null, '1', '2016-02-16 11:51:00', 'Kasir', null, null);
@@ -276,19 +274,13 @@ INSERT INTO `order` VALUES ('000074', '12', '1', null, '2', '2016-02-19 14:59:33
 INSERT INTO `order` VALUES ('000075', '5', '1', null, '1', '2016-02-19 15:09:52', 'Kasir', null, null);
 INSERT INTO `order` VALUES ('000076', '12', '1', null, '1', '2016-02-19 15:21:10', 'Kasir', null, null);
 INSERT INTO `order` VALUES ('000077', '2', '1', null, '2', '2016-02-19 16:20:44', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000078', '3', '1', '5000', '2', '2016-02-19 16:39:50', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000079', '12', '1', '5000', '1', '2016-02-19 16:41:15', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000080', '5', '1', '5000', '2', '2016-02-19 16:46:04', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000081', '5', '1', '5000', '1', '2016-02-19 16:53:06', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000082', '5', '1', '5000', '1', '2016-02-19 16:53:15', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000083', '4', '1', '5000', '2', '2016-02-19 16:55:02', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000078', '3', '1', null, '2', '2016-02-19 16:39:50', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000079', '12', '1', null, '1', '2016-02-19 16:41:15', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000080', '5', '1', null, '2', '2016-02-19 16:46:04', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000081', '5', '1', null, '1', '2016-02-19 16:53:06', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000082', '5', '1', null, '1', '2016-02-19 16:53:15', 'Kasir', null, null);
+INSERT INTO `order` VALUES ('000083', '4', '1', null, '2', '2016-02-19 16:55:02', 'Kasir', null, null);
 INSERT INTO `order` VALUES ('000084', '14', '1', '5000', '2', '2016-02-27 10:51:27', 'Kasir', '16000', '900');
-INSERT INTO `order` VALUES ('000085', '13', '1', '5000', '1', '2016-02-28 10:38:36', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000086', '14', '2', '250000', '1', '2016-02-28 10:39:18', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000087', '16', '3', '50000', '1', '2016-02-28 10:40:17', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000088', '15', '3', null, '1', '2016-02-28 10:41:13', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000089', '14', '1', '5000', '2', '2016-02-28 10:43:53', 'Kasir', null, null);
-INSERT INTO `order` VALUES ('000090', '13', '1', '5000', '1', '2016-03-04 10:05:07', 'Kasir', null, null);
 
 -- ----------------------------
 -- Table structure for `order_detail`
@@ -307,7 +299,7 @@ CREATE TABLE `order_detail` (
   KEY `KODE_ORDER` (`KODE_ORDER`),
   CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`ID_ITEM`) REFERENCES `item` (`ID_ITEM`) ON UPDATE CASCADE,
   CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`KODE_ORDER`) REFERENCES `order` (`KODE_ORDER`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of order_detail
@@ -371,10 +363,6 @@ INSERT INTO `order_detail` VALUES ('56', '00000000083', '5', '2700', '2', null, 
 INSERT INTO `order_detail` VALUES ('57', '00000000083', '3', '2000000', '2', null, null);
 INSERT INTO `order_detail` VALUES ('58', '00000000084', '5', '2700', '1', null, null);
 INSERT INTO `order_detail` VALUES ('59', '00000000084', '1', '3700', '2', null, null);
-INSERT INTO `order_detail` VALUES ('60', '00000000087', '1', '3325', '4', null, null);
-INSERT INTO `order_detail` VALUES ('61', '00000000088', '1', '3325', '2', null, null);
-INSERT INTO `order_detail` VALUES ('62', '00000000089', '1', '3700', '2', null, null);
-INSERT INTO `order_detail` VALUES ('63', '00000000089', '5', '2700', '3', null, null);
 
 -- ----------------------------
 -- Table structure for `pasien`
@@ -503,6 +491,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '1', 'Administrator', null, null, 'admin', 'asdasd', '2016-03-06 13:19:22', '1');
-INSERT INTO `user` VALUES ('2', '2', 'Kasir', null, null, 'kasir', 'asdasd', '2016-03-04 10:03:56', '1');
+INSERT INTO `user` VALUES ('1', '1', 'Administrator', null, null, 'admin', 'asdasd', '2016-02-27 09:03:17', '1');
+INSERT INTO `user` VALUES ('2', '2', 'Kasir', null, null, 'kasir', 'asdasd', '2016-02-27 09:36:20', '1');
 INSERT INTO `user` VALUES ('4', '1', 'Admins', null, null, 'mimin', 'asdasd', '2016-02-03 17:31:07', '1');
