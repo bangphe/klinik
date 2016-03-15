@@ -3107,3 +3107,214 @@ Stack trace:
 REQUEST_URI=/klinik/order/favicon.ico
 HTTP_REFERER=http://localhost/klinik/order/1
 ---
+2016/03/15 09:07:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site/favicon.ic...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/site/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site/login
+---
+2016/03/15 09:07:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\klinik\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\klinik\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\klinik\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(459): CModule->getComponent('db')
+#4 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(1433): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\klinik\framework\db\ar\CActiveRecord.php(1522): CActiveRecord->getTableAlias(true)
+#7 C:\xampp\htdocs\klinik\protected\components\UserIdentity.php(20): CActiveRecord->findByAttributes(Array)
+#8 C:\xampp\htdocs\klinik\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#9 C:\xampp\htdocs\klinik\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#10 C:\xampp\htdocs\klinik\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#11 C:\xampp\htdocs\klinik\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#12 C:\xampp\htdocs\klinik\protected\controllers\SiteController.php(359): CModel->validate()
+#13 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#14 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('login')
+#23 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#24 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/klinik/site/login
+HTTP_REFERER=http://localhost/klinik/site/login
+---
+2016/03/15 09:08:20 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CListView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\klinik\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CLi...', true)
+#1 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\klinik\themes\metronic\views\site\index3.php(76): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index3', Array, true)
+#8 C:\xampp\htdocs\klinik\protected\controllers\SiteController.php(316): CController->render('index3', Array)
+#9 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#20 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/klinik/site
+HTTP_REFERER=http://localhost/klinik/site/login
+---
+2016/03/15 09:08:49 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CListView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\klinik\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CLi...', true)
+#1 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\klinik\themes\metronic\views\site\index3.php(76): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index3', Array, true)
+#8 C:\xampp\htdocs\klinik\protected\controllers\SiteController.php(316): CController->render('index3', Array)
+#9 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#20 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/klinik/site
+---
+2016/03/15 09:17:48 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CListView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\klinik\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CLi...', true)
+#1 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\klinik\themes\metronic\views\site\index3.php(76): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index3', Array, true)
+#8 C:\xampp\htdocs\klinik\protected\controllers\SiteController.php(316): CController->render('index3', Array)
+#9 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#20 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/klinik/site
+---
+2016/03/15 09:19:15 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CListView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\klinik\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CLi...', true)
+#1 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ObatController), 'zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\klinik\protected\views\obat\index.php(41): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\klinik\protected\controllers\ObatController.php(19): CController->render('index', Array)
+#9 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): ObatController->actionIndex()
+#10 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\klinik\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#14 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('obat')
+#15 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/klinik/obat
+---
+2016/03/15 09:20:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/03/15 09:20:07 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CListView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\klinik\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CLi...', true)
+#1 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(UserController), 'zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\klinik\protected\modules\admin\views\user\index.php(54): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\klinik\protected\modules\admin\controllers\UserController.php(137): CController->render('index', Array)
+#9 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#10 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user')
+#20 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/klinik/admin/user
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/03/15 09:27:05 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.CListView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\klinik\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWidgetFactory.php(146): YiiBase::import('zii.widgets.CLi...', true)
+#1 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(UserController), 'zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\klinik\protected\modules\admin\views\user\index.php(54): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\klinik\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\klinik\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\klinik\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\klinik\protected\modules\admin\controllers\UserController.php(137): CController->render('index', Array)
+#9 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#10 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\klinik\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\klinik\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\klinik\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\klinik\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\klinik\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\klinik\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user')
+#20 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/klinik/admin/user
+---
