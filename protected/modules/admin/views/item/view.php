@@ -82,28 +82,38 @@ $this->breadcrumbs=array(
 		            <div class="portlet-body">
 		                <div class="table-responsive">
 		                    <table class="table table-striped table-hover table-bordered">
-		                    <thead>
-		                        <tr>
-		                            <th>#</th>
-		                            <th>Supplier</th>
-		                            <th>Harga Beli</th>
-		                            <th>Stok</th>
-		                            <th>Tanggal Beli</th>
-		                            <th>Status Pembayaran</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody>
-		                        <?php foreach ($detil_item as $dex => $item) { ?>
-		                        <tr>
-		                            <td><?php echo $dex+1;?></td>
-		                            <td><?php echo Supplier::getSupplierById($item->ID_SUPPLIER);?></td>
-		                            <td><?php echo MyFormatter::formatUang($item->HARGA_BELI);?></td>
-		                            <td><?php echo $item->STOK;?></td>
-		                            <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_INPUT);?></td>
-		                            <td><?php echo MyFormatter::statusPembayaran($item->STATUS_PEMBAYARAN); ?></td>
-		                        </tr>
-		                        <?php } ?>
-		                    </tbody>
+			                    <thead>
+			                        <tr>
+			                            <th>#</th>
+			                            <th>Supplier</th>
+			                            <th>Harga Beli</th>
+			                            <th>Stok</th>
+			                            <th>Tanggal Beli</th>
+			                            <th>Tanggal Jatuh Tempo</th>
+			                            <th>Tanggal Pembayaran</th>
+			                            <th>Status Pembayaran</th>
+			                            <th>Aksi</th>
+			                        </tr>
+			                    </thead>
+			                    <tbody>
+			                        <?php foreach ($detil_item as $dex => $item) { ?>
+			                        <tr>
+			                            <td><?php echo $dex+1;?></td>
+			                            <td><?php echo Supplier::getSupplierById($item->ID_SUPPLIER);?></td>
+			                            <td><?php echo MyFormatter::formatUang($item->HARGA_BELI);?></td>
+			                            <td><?php echo $item->STOK;?></td>
+			                            <td><?php echo MyFormatter::formatTanggalWaktu($item->TANGGAL_INPUT);?></td>
+			                            <td><?php echo MyFormatter::formatTanggal($item->TANGGAL_JATUH_TEMPO);?></td>
+			                            <td><?php echo $item->TANGGAL_PEMBAYARAN=='0000-00-00' || $item->TANGGAL_PEMBAYARAN==null ? '-' : MyFormatter::formatTanggal($item->TANGGAL_PEMBAYARAN);?></td>
+			                            <td><?php echo MyFormatter::statusPembayaran($item->STATUS_PEMBAYARAN); ?></td>
+			                            <td>
+			                            	<?php if ($item->STATUS_PEMBAYARAN == DetilItem::STATUS_HUTANG) {?>
+			                            	<?php echo CHtml::link('<i class="fa fa-check"></i>',array('/admin/item/step/','id'=>$item->ID_DETIL_ITEM),array('class'=>'btn green btn-sm btn-outline sbold uppercase','submit'=>array('step','id'=>$item->ID_DETIL_ITEM),'confirm'=>'Apakah Anda yakin?')); ?>
+			                            	<?php } ?>
+			                            </td>
+			                        </tr>
+			                        <?php } ?>
+			                    </tbody>
 		                    </table>
 		                </div>
 		            </div>
