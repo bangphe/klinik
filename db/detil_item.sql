@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `klinik_db_110316_empty`
+-- Database: `klinik_db_kosong`
 --
 
 -- --------------------------------------------------------
