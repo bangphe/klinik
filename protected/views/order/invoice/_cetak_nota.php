@@ -4,7 +4,7 @@
         <title>NOTA #<?php echo $model->KODE_ORDER ?></title>
         <style type="text/css">
             @page {
-                size: A5;
+                size: A6;
             }
             @font-face {
                 font-family:"Open Sans",Arial,Helvetica,sans-serif;
@@ -24,23 +24,22 @@
 
                 body {
                     position: relative;
-                    width: 14cm !important;  
                     height: 10cm !important;
-                    margin: 0 0 20px 0 !important;
+                    margin: 0 0 10px 0 !important;
                     padding-bottom: 20px !important;
                     color: #555555;
                     background: #FFFFFF; 
                     font-family: "Open Sans",Arial,Helvetica,sans-serif; 
-                    font-size: 10px; 
+                    font-size: 13px; 
                 }
-
+				
                 header {
                     margin-bottom: 15px;
                     /*border-bottom: 1px solid #AAAAAA;*/
                 }
 
                 #logo {
-                    float: left;
+                    text-align:center;
                 }
 
                 #logo img {
@@ -51,8 +50,14 @@
                     float: right;
                     margin-top: 5px;
                     text-align: right;
+					font-size: 1.4em;
                 }
-
+				
+				#companys {
+                    float: right;
+                    margin-top: 5px;
+                    text-align: right;
+                }
 
                 #details {
                     margin-bottom: 20px;
@@ -69,10 +74,20 @@
                 }
 
                 h2.name {
-                    font-size: 1.2em;
+                    font-size: 1.4em;
                     font-weight: normal;
-                    margin: 0;
+					margin:0 auto;
+                    
                 }
+				h2.nameNota {
+                    font-size: 1.4em;
+                    font-weight: normal;
+					margin:0 auto;
+                    
+                }
+				.alamat {
+					font-size: 1.1em;
+				}
 
                 #invoice {
                     float: right;
@@ -86,8 +101,11 @@
                     font-weight: normal;
                     margin: 0  0 10px 0;
                 }
-
-                #invoice .date {
+				
+				.date {
+					font-size: 1.2em;
+				}
+                #invoice {
                     font-size: 1.1em;
                     color: #777777;
                 }
@@ -195,7 +213,7 @@
                 }
 
                 #notices .notice {
-                    font-size: 1.2em;
+                    font-size: 1.1em;
                 }
                 .notice ul li {font-size: 10px;}
                 .notice {margin-top: -8px;}
@@ -214,26 +232,24 @@
         </style>
     </head>
     <body>
-        <h2 style="text-align:center">INVOICE PEMBELIAN</h2>
+        
         <header class="clearfix">
             <div id="logo">
                 <!-- <img src="<?php //echo Yii::app()->request->baseUrl ?>/images/logo-baru.png"> -->
                 <h2 class="name">KLINIK AR-RAHMAH</h2>
-                <div>(ALAMAT KLINIK)</div>
-                <!-- <div>031- 5679813</div>
-                <div><a href="mailto:vielelaundry@gmail.com">vielelaundry@gmail.com</a></div> -->
+                <div class="alamat">Jl. Melati (Samping Jembatan Jerbus) <br>Telp : (0921)-3110222</div>
             </div>
-            <div id="company">
+            <!--div id="companys">
                 <h2 class="name">Kepada Yth. :</h2>
                 <div><?php echo strtoupper($model->pasien->NAMA_PASIEN); ?></div>
                 <div><?php echo $model->pasien->ALAMAT; ?></div>
-            </div>
+            </div-->
         </header>
     <main>
         <div id="details" class="clearfix">
             <div id="client">
-                <h2 class="name">NOTA : #<?php echo $model->KODE_ORDER; ?></h2>
-                <div class="date">TANGGAL : <?php echo MyFormatter::formatTanggal($model->TANGGAL_ORDER); ?></div>
+                <h2 class="nameNota">NOTA : #<?php echo $model->KODE_ORDER; ?></h2>
+                <div class="date">TANGGAL : <?php echo MyFormatter::formatTanggalWaktu($model->TANGGAL_ORDER); ?></div>
             </div>
             <div id="invoice">
                 
@@ -242,10 +258,10 @@
         <table border="0" cellspacing="0" cellpadding="0">
             <thead>
                 <tr style="border-top: 1px dotted #000000;">
-                    <th>#</th>
+                    <!--th>#</th-->
                     <th class="unit">KODE</th>
-                    <th class="desc">NAMA ITEM</th>
-                    <th class="qty">JUMLAH YANG DIBELI</th>
+                    
+                    <th class="qty">QTY</th>
                     <th class="unit">HARGA</th>
                     <th class="desc">DISC%</th>
                     <th class="total">SUBTOTAL</th>
@@ -258,29 +274,17 @@
                     $totalItem += $detail->JUMLAH;
                 ?>
                 <tr>
-                    <td class="unit"><?php echo $i+1; ?></td>
+                    <!--td class="unit"><?php echo $i+1; ?></td-->
                     <td class="unit"><?php echo $detail->item->ID_ITEM; ?></td>
-                    <td class="desc">
-                        <?php echo strtoupper($detail->item->NAMA_ITEM); ?>
-                    </td>
-                    <td class="qty"><?php echo $detail->JUMLAH.' PCS'; ?></td>
-                    <td class="unit"><?php echo MyFormatter::formatUangNota($detail->HARGA) ?></td>
+                    <td class="qty"><?php echo $detail->JUMLAH.''; ?></td>
+                    <td class="unit"><?php echo MyFormatter::formatUangNotaTanpaRupiah($detail->HARGA) ?></td>
                     <td class="qty"><?php echo $detail->DISKON==NULL ? '0%' : $detail->DISKON.'%'; ?></td>
-                    <td class="total"><?php echo MyFormatter::subtotalNota($detail->DISKON, $detail->HARGA, $detail->JUMLAH, $model->RESEP); ?></td>
+                    <td class="total"><?php echo MyFormatter::subtotalNotaTanpaRp($detail->DISKON, $detail->HARGA, $detail->JUMLAH) ?></td>
                 </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
         <div id="notices">
-            <div style="float:left; padding:5px;">
-                <h2 class="name">PERHATIAN :</h2>
-                <div>1. Barang yang sudah dibeli tidak dapat dikembalikan/ditukar</div>
-                <div>2. Pembayaran dengan Cek dianggap lunas setelah dicairkan</div>
-                </br>
-                <h2 class="name">Petugas</h2>
-                </br></br></br>
-                <div><?php echo $model->USER_PEMBUAT;?></div>
-            </div>
             <div id="company">
                 <table border="0">
                     <tr style="background:none !important">
@@ -293,11 +297,11 @@
                         <td colspan="2">Disc:</td>
                         <td><?php //echo MyFormatter::formatUang($model->getTotal()) ?></td>
                     </tr> -->
-                    <tr style="background:none !important">
+                    <!--tr style="background:none !important">
                         <td colspan="2"></td>
                         <td colspan="2">Ppn:</td>
                         <td>Rp. 0</td>
-                    </tr>
+                    </tr-->
                     <tr style="background:none !important">
                         <td colspan="2"></td>
                         <td colspan="2">Total:</td>
