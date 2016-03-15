@@ -157,6 +157,14 @@ class Order extends CActiveRecord
             	elseif ($this->RESEP == self::RESEP_UMUM) {
             	 	$subtotal += ($detail->HARGA * $detail->JUMLAH);
             	}
+            	else {
+            		if ($detail->item->ID_KATEGORI==Item::KATEGORI_OBAT) {
+        				$subtotal += ($detail->HARGA * $detail->JUMLAH) + 4800;
+        			}
+        			else {
+        				$subtotal += ($detail->HARGA * $detail->JUMLAH);
+        			}
+            	}
         	}
         		
             else {
@@ -167,6 +175,9 @@ class Order extends CActiveRecord
             	}
             	elseif ($this->RESEP == self::RESEP_UMUM) {
         			$subtotal += ($detail->HARGA * $detail->JUMLAH);
+        		}
+        		else {
+        			$subtotal += ($detail->HARGA * $detail->JUMLAH) + 4800;
         		}
             }
         }

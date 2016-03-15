@@ -84,9 +84,11 @@ class MyFormatter extends CFormatter
 
     public static function formatResep($value){
         if($value==Order::RESEP_UMUM)
-            return '<span class="label label-info">Resep umum</span>';
+            return '<span class="label label-info">Resep Bebas</span>';
         else if($value==Order::RESEP_DOKTER)
-            return '<span class="label label-danger">Resep dokter</span>';
+            return '<span class="label label-danger">Resep Dokter</span>';
+        else if($value==Order::RESEP_PULVUS)
+            return '<span class="label label-success">Resep Pulvus</span>';
         else
             return '<span class="label">Unknown</span>';
     }

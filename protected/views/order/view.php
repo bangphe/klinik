@@ -128,9 +128,17 @@ foreach ($model->orderdetail as $i => $detail) {
                                     <?php
                                         if($model->RESEP==1) {
                                             echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH);
-                                        } else {
+                                        }
+                                        elseif ($model->RESEP==2) {
                                             if ($row->item->ID_KATEGORI==Item::KATEGORI_OBAT) {
                                                 echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH + 1200);
+                                            } else {
+                                                echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH);
+                                            }
+                                        }
+                                        else {
+                                            if ($row->item->ID_KATEGORI==Item::KATEGORI_OBAT) {
+                                                echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH + 4800);
                                             } else {
                                                 echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH);
                                             }
