@@ -29,10 +29,10 @@ class RekapController extends Controller
             $order = Order::model()->findAll($criteria);
 
             if($order != null) {
-                // $filename = 'REKAP TRANSAKSI_'.strtoupper(MyFormatter::formatBulan($model->BULAN)).'_'.$model->TAHUN;
-                // header("Cache-Control: no-cache, no-store, must-revalidate");
-                // header("Content-Type: application/vnd.ms-excel");
-                // header("Content-Disposition: attachment; filename=" . $filename . ".xls");
+                $filename = 'REKAP TRANSAKSI_'.strtoupper(MyFormatter::formatBulan($model->BULAN)).'_'.$model->TAHUN;
+                header("Cache-Control: no-cache, no-store, must-revalidate");
+                header("Content-Type: application/vnd.ms-excel");
+                header("Content-Disposition: attachment; filename=" . $filename . ".xls");
 
                 $this->renderPartial('_rekap_bulanan',array(
                     'order' => $order,
