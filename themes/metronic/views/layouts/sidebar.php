@@ -70,6 +70,9 @@
                     <li class="<?php echo ($controller==="obat") ? "nav-item active open": "nav-item"; ?>">
                         <?php echo CHtml::link('Laporan Data Obat', array('/admin/rekap/obat/index'),array('class' => 'nav-link')) ?>
                     </li>
+                    <li class="<?php echo ($controller==="obat") ? "nav-item active open": "nav-item"; ?>">
+                        <?php echo CHtml::link('Laporan BPJS', array('/admin/rekap/obat/index'),array('class' => 'nav-link')) ?>
+                    </li>
                     <li class="<?php echo ($controller==="lensa") ? "nav-item active open": "nav-item"; ?>">
                         <?php echo CHtml::link('Laporan Data Lensa', array('/admin/rekap/lensa/index'),array('class' => 'nav-link')) ?>
                     </li>

@@ -256,6 +256,17 @@ $(function() {
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
 		}
+		else if($('#Item_ID_KATEGORI').val() == 9) {
+			$('#ukuran').hide();
+			$('#golongan').hide();
+			$('#supplier').show();
+			$('#hargaBeli').hide();
+			$('#detilSupplier').show();
+			$('#statusPembayaran').hide();
+			$('#satuan').hide();
+			$('#tanggal_exp').hide();
+			$('#harJul').show();
+		}
 		else {
 			$('#golongan').hide();
 			$('#satuan').hide();

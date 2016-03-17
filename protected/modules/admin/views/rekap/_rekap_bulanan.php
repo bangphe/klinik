@@ -11,8 +11,10 @@
         <th>KERATO</th>
         <th>LAB</th>
         <th>FOTO FUNDUS</th>
-        <th>NAMA ITEM</th>
-        <th>SUBTOTAL</th>
+        <th>RACIK</th>
+        <!-- <th>NAMA ITEM</th> -->
+        <th>APOTEK</th>
+        <th>UANG RESEP</th>
         <th>TOTAL</th>
     </tr>
     <?php $grandtotal = 0 ?>
@@ -48,17 +50,29 @@
                 <?php } } ?>
             </td>
             <td>
+                <?php foreach ($data->orderdetail as $value) { ?>
+                    <?php if ($value->item->ID_KATEGORI=='9') { ?>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
+                <?php } } ?>
+            </td>
+            <td>
+                222
+            </td>
+            <td>
+                Rp. 1200
+            </td>
+            <!-- <td>
             <?php foreach ($data->orderdetail as $value) { ?>
                 <?php echo $value->item->NAMA_ITEM.' ('.$value->JUMLAH.')'; ?></br>
             <?php } ?>
-            </td>
-            <td><?php echo MyFormatter::formatUang($data->SUBTOTAL) ?></td>
+            </td> -->
+            <!-- <td><?php echo MyFormatter::formatUang($data->SUBTOTAL) ?></td> -->
             <td><?php echo MyFormatter::formatUang($data->TOTAL) ?></td>
         </tr>
     <?php $grandtotal += $data->TOTAL ?>
     <?php endforeach ?>
     <tr>
-        <th colspan="10">TOTAL PER BULAN</th>
+        <th colspan="11">TOTAL PER BULAN</th>
         <th><?php echo MyFormatter::formatUang($grandtotal) ?></th>
     </tr>
 </table>
