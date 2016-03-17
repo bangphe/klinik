@@ -2,3 +2,5 @@ Rekap Bulanan =
 tambahan untuk kolom apotek dan kolom resep
 - Uang apotek = Harga obat dari supplier di tambahkan 33% yang dimasukan kolom apotek tanpa 1200 karena 1200 itu uang apoteker
 - Uang Resep di ambil dari jumlah resep obat yang di order di kasir misalkan ada 3 item brrti resep obat 3 x 1200 itu yang di tampilkan
+
+- harga supplier ditambah 33% di tambah 10% = resep dokter

@@ -146,9 +146,9 @@ div.errorMessage
                                                             <div class="class_1">
                                                                 <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="2"> Resep Dokter </label>
                                                             </div>
-                                                            <div class="class_1">
+                                                            <!-- <div class="class_1">
                                                                 <label><input data-radio="iradio_square-blue" type="radio" name="Order[RESEP]" class="icheck" value="3"> Resep Pulvus </label>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                     </div>
                                                     <!-- <span class="help-inline"><code>HANYA UNTUK OBAT</code></span> -->
