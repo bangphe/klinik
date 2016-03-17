@@ -56,10 +56,19 @@
                 <?php } } ?>
             </td>
             <td>
-                222
+                <?php
+                $total=0;
+                foreach ($data->orderdetail as $value)
+                    {
+                        $total += $value->HARGA * $value->JUMLAH;
+                    }
+                ?>
+                <?php echo MyFormatter::formatUang($total + 33/100); ?></br>
             </td>
             <td>
-                Rp. 1200
+                <?php if ($data->RESEP==Order::RESEP_DOKTER) { ?>
+                    <?php echo MyFormatter::formatUang(count($data->orderdetail) * 1200); ?></br>
+                <?php } ?>
             </td>
             <!-- <td>
             <?php foreach ($data->orderdetail as $value) { ?>
