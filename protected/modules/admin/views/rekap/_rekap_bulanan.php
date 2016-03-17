@@ -26,25 +26,25 @@
             <td>
                 <?php foreach ($data->orderdetail as $value) { ?>
                     <?php if ($value->item->ID_KATEGORI=='5') { ?>
-                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL).' ('.$value->JUMLAH.')'; ?></br>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
                 <?php } } ?>
             </td>
             <td>
                 <?php foreach ($data->orderdetail as $value) { ?>
                     <?php if ($value->item->ID_KATEGORI=='6') { ?>
-                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL).' ('.$value->JUMLAH.')'; ?></br>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
                 <?php } } ?>
             </td>
             <td>
                 <?php foreach ($data->orderdetail as $value) { ?>
                     <?php if ($value->item->ID_KATEGORI=='7') { ?>
-                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL).' ('.$value->JUMLAH.')'; ?></br>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
                 <?php } } ?>
             </td>
             <td>
                 <?php foreach ($data->orderdetail as $value) { ?>
                     <?php if ($value->item->ID_KATEGORI=='8') { ?>
-                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL).' ('.$value->JUMLAH.')'; ?></br>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
                 <?php } } ?>
             </td>
             <td>
