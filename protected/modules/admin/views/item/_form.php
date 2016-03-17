@@ -140,7 +140,7 @@
 		</div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" id="jatuhTempo">
 		<?php echo $form->labelEx($detil_item,'TANGGAL_JATUH_TEMPO',array('class'=>'control-label col-md-3')); ?>
 		<div class="col-md-4">
             <div class="input-inline input-large">
@@ -192,7 +192,7 @@ $(function() {
 			$('#ukuran').hide();
 			$('#tanggal_exp').show();
 			$('#harJul').show();
-
+			$('#jatuhTempo').show();
 
 		} else if($('#Item_ID_KATEGORI').val() == 2 || $('#Item_ID_KATEGORI').val() == 3) {
 			$('#ukuran').show();
@@ -200,6 +200,7 @@ $(function() {
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
+			$('#jatuhTempo').hide();
 		}
 		else if($('#Item_ID_KATEGORI').val() == 4) {
 			$('#ukuran').hide();
@@ -211,6 +212,7 @@ $(function() {
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
+			$('#jatuhTempo').hide();
 		}
 		else if($('#Item_ID_KATEGORI').val() == 5) {
 			$('#ukuran').hide();
@@ -222,6 +224,7 @@ $(function() {
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
+			$('#jatuhTempo').hide();
 		}
 		else if($('#Item_ID_KATEGORI').val() == 6) {
 			$('#ukuran').hide();
@@ -233,6 +236,7 @@ $(function() {
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
+			$('#jatuhTempo').hide();
 		}
 		else if($('#Item_ID_KATEGORI').val() == 7) {
 			$('#ukuran').hide();
@@ -244,6 +248,7 @@ $(function() {
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
+			$('#jatuhTempo').hide();
 		}
 		else if($('#Item_ID_KATEGORI').val() == 8) {
 			$('#ukuran').hide();
@@ -255,6 +260,7 @@ $(function() {
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
+			$('#jatuhTempo').hide();
 		}
 		else if($('#Item_ID_KATEGORI').val() == 9) {
 			$('#ukuran').hide();
@@ -266,6 +272,7 @@ $(function() {
 			$('#satuan').hide();
 			$('#tanggal_exp').hide();
 			$('#harJul').show();
+			$('#jatuhTempo').hide();
 		}
 		else {
 			$('#golongan').hide();

@@ -14,6 +14,7 @@
         <th>RACIK</th>
         <!-- <th>NAMA ITEM</th> -->
         <th>APOTEK</th>
+        <!-- <th>UANG RESEP</th> -->
         <th>UANG RESEP</th>
         <th>TOTAL</th>
     </tr>
