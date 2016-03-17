@@ -52,6 +52,44 @@ class RekapController extends Controller
         ));
 	}
 
+    public function actionBpjs()
+    {
+        $model = new FormRekap;
+
+        if(isset($_POST['FormRekap'])) {
+            $model->attributes = $_POST['FormRekap'];
+            $datestart = date('Y-m-d', strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+            $dateend = date('Y-m-t',strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+
+            $criteria = new CDbCriteria;
+            $criteria->addBetweenCondition('TANGGAL_ORDER', $datestart, $dateend);
+            $criteria->condition = 'ID_LAYANAN=5';
+            $order = Order::model()->findAll($criteria);
+            // var_dump($order); die();
+            if($order != null) {
+                $filename = 'REKAP BPJS_'.strtoupper(MyFormatter::formatBulan($model->BULAN)).'_'.$model->TAHUN;
+                header("Cache-Control: no-cache, no-store, must-revalidate");
+                header("Content-Type: application/vnd.ms-excel");
+                header("Content-Disposition: attachment; filename=" . $filename . ".xls");
+
+                $this->renderPartial('bpjs/_rekap_bpjs',array(
+                    'order' => $order,
+                    'model' => $model
+                ));
+
+                exit();
+            }
+
+            else {
+                Yii::app()->user->setFlash('info', MyFormatter::alertError('Rekap belum tersedia untuk bulan tersebut.'));
+            }
+        }
+        
+        $this->render('bpjs/index', array(
+            'model' => $model,
+        ));
+    }
+
     public function actionStokHarian()
     {
         //$barang = Barang::getBarang();
