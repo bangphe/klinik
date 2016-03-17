@@ -61,7 +61,9 @@
                 $total=0;
                 foreach ($data->orderdetail as $value)
                     {
-                        $total += $value->HARGA * $value->JUMLAH;
+                        if ($value->item->ID_KATEGORI==Item::KATEGORI_OBAT) {
+                            $total += $value->HARGA * $value->JUMLAH;
+                        }
                     }
                 ?>
                 <?php echo MyFormatter::formatUang($total + 33/100); ?></br>
