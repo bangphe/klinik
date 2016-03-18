@@ -26,6 +26,7 @@ class RekapController extends Controller
 
             $criteria = new CDbCriteria;
             $criteria->addBetweenCondition('TANGGAL_ORDER', $datestart, $dateend);
+            $criteria->condition = 'RESEP='.Order::RESEP_DOKTER;
             $order = Order::model()->findAll($criteria);
 
             if($order != null) {

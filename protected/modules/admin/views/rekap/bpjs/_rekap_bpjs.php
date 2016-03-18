@@ -23,9 +23,7 @@
         <?php } ?>
         </td>
         <td>
-        <?php foreach ($data->orderdetail as $value) { ?>
-            <?php echo $value->JUMLAH; ?></br>
-        <?php } ?>
+        <?= count($data->orderdetail); ?>
         </td>
         <td>
             <?php if ($data->RESEP==Order::RESEP_DOKTER) { ?>
