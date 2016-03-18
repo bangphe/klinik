@@ -16,9 +16,9 @@ $this->breadcrumbs = array(
                     <i class="icon-share font-green-sharp"></i>
                     <span class="caption-subject font-green-sharp bold uppercase">Rekap Laporan BPJS</span>
                 </div>
-                <div class="actions">
+                <!-- <div class="actions">
                     <?php echo CHtml::link('<i class="fa fa-print"></i> Rekap Laporan Bulanan', array('/admin/rekap/penjualanobat'),array('class' => 'btn red')) ?>
-                </div>
+                </div> -->
             </div>
             <div class="portlet-body">
                 <!-- BEGIN FORM-->

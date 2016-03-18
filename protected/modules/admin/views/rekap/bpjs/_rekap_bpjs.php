@@ -4,9 +4,9 @@
     </tr>
     <tr>
         <th>NO NOTA</th>
+        <th>PASIEN</th>
         <th>TANGGAL ORDER</th>
-        <th>NAMA PASIEN</th>
-        <th>NAMA ITEM</th>
+        <th>NAMA OBAT</th>
         <th>QTY</th>
         <th>UANG RESEP</th>
         <th>TOTAL</th>

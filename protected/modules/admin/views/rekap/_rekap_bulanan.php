@@ -6,53 +6,29 @@
         <th>NO NOTA</th>
         <th>TANGGAL ORDER</th>
         <th>NAMA PASIEN</th>
-        <th>PENDAFTARAN</th>
         <th>JASA DOKTER</th>
-        <th>KERATO</th>
-        <th>LAB</th>
-        <th>FOTO FUNDUS</th>
-        <th>RACIK</th>
-        <!-- <th>NAMA ITEM</th> -->
         <th>APOTEK</th>
-        <!-- <th>UANG RESEP</th> -->
-        <th>UANG RESEP</th>
+        <th>KERATO</th>
+        <th>RR</th>
+        <th>RACIK</th>
+        <th>DAFTAR</th>
+        <th>LAB</th>
+        <th>OPTIK</th>
+        <th>FOTO FUNDUS</th>
         <th>TOTAL</th>
+        <!-- <th>NAMA ITEM</th> -->
+        
+        <!-- <th>UANG RESEP</th> -->
     </tr>
     <?php $grandtotal = 0 ?>
     <?php foreach ($order as $data): ?>
         <tr>
             <td><?php echo '#'.$data->KODE_ORDER ?></td>
             <td><?php echo MyFormatter::formatTanggal($data->TANGGAL_ORDER) ?></td>
-            <!-- <td><?php echo $data->ID_PASIEN ?></td> -->
             <td><?php echo $data->pasien->NAMA_PASIEN ?></td>
-            <td><?php echo MyFormatter::formatUang($data->layanan->BIAYA) ?></td>
             <td>
                 <?php foreach ($data->orderdetail as $value) { ?>
                     <?php if ($value->item->ID_KATEGORI=='5') { ?>
-                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
-                <?php } } ?>
-            </td>
-            <td>
-                <?php foreach ($data->orderdetail as $value) { ?>
-                    <?php if ($value->item->ID_KATEGORI=='6') { ?>
-                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
-                <?php } } ?>
-            </td>
-            <td>
-                <?php foreach ($data->orderdetail as $value) { ?>
-                    <?php if ($value->item->ID_KATEGORI=='7') { ?>
-                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
-                <?php } } ?>
-            </td>
-            <td>
-                <?php foreach ($data->orderdetail as $value) { ?>
-                    <?php if ($value->item->ID_KATEGORI=='8') { ?>
-                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
-                <?php } } ?>
-            </td>
-            <td>
-                <?php foreach ($data->orderdetail as $value) { ?>
-                    <?php if ($value->item->ID_KATEGORI=='9') { ?>
                     <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
                 <?php } } ?>
             </td>
@@ -66,12 +42,43 @@
                         }
                     }
                 ?>
-                <?php echo MyFormatter::formatUang($total + 33/100); ?></br>
+                <?php echo MyFormatter::formatUang($total + 33/100 + 10/100); ?></br>
+            </td>
+            <td>
+                <?php foreach ($data->orderdetail as $value) { ?>
+                    <?php if ($value->item->ID_KATEGORI=='6') { ?>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
+                <?php } } ?>
             </td>
             <td>
                 <?php if ($data->RESEP==Order::RESEP_DOKTER) { ?>
                     <?php echo MyFormatter::formatUang(count($data->orderdetail) * 1200); ?></br>
                 <?php } ?>
+            </td>
+            <td>
+                <?php foreach ($data->orderdetail as $value) { ?>
+                    <?php if ($value->item->ID_KATEGORI=='9') { ?>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
+                <?php } } ?>
+            </td>
+            <td><?php echo MyFormatter::formatUang($data->layanan->BIAYA) ?></td>
+            <td>
+                <?php foreach ($data->orderdetail as $value) { ?>
+                    <?php if ($value->item->ID_KATEGORI=='7') { ?>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
+                <?php } } ?>
+            </td>
+            <td>
+                <?php foreach ($data->orderdetail as $value) { ?>
+                    <?php if ($value->item->ID_KATEGORI=='2') { ?>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
+                <?php } } ?>
+            </td>
+            <td>
+                <?php foreach ($data->orderdetail as $value) { ?>
+                    <?php if ($value->item->ID_KATEGORI=='8') { ?>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
+                <?php } } ?>
             </td>
             <!-- <td>
             <?php foreach ($data->orderdetail as $value) { ?>
@@ -84,7 +91,7 @@
     <?php $grandtotal += $data->TOTAL ?>
     <?php endforeach ?>
     <tr>
-        <th colspan="11">TOTAL PER BULAN</th>
+        <th colspan="12">TOTAL PER BULAN</th>
         <th><?php echo MyFormatter::formatUang($grandtotal) ?></th>
     </tr>
 </table>

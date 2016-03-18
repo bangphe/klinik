@@ -245,7 +245,12 @@ div.errorMessage
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-5 pull-left">
+                    <div class="alert alert-danger" style="padding :10px !important;">
+                       Yang harus dibayarkan !! <strong>Rp. 12.500 </strong>
+                    </div>
+                </div>
+                <div class="col-xs-7">
                     <?php echo CHtml::submitButton('Hitung & Cetak Nota', array('class' => 'tesBtn btn btn-lg green-haze uppercase print-btn')); ?>
                 </div>
             </div>
