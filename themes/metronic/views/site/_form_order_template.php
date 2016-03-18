@@ -8,7 +8,6 @@
 
     <div id="newoptions_template">
         <div id="options_template_template">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
             <!-- <a href="javascript:;" class="btn btn-sm btn-icon-only default">
                 <i class="fa fa-times"></i>
             </a> -->
@@ -23,7 +22,6 @@
                                 'prompt' => '-- Pilih Item --',
                                 'onchange' => 'getStokItem(this.value, 0)',
                             )); ?>
-                            <span class="help-block"> Ketikkan nama item </span>
                         </div>
                     </div>
                 </div>
