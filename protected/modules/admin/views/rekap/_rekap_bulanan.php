@@ -1,5 +1,5 @@
 <table border="1">
-    <tr>
+    <tr><?= count($order); ?>
     <th colspan="13">KLINIK AR-RAHMAH | Rekap Transaksi Bulan <?= MyFormatter::formatBulan($model->BULAN) . '-' . $model->TAHUN ?></th>
     </tr>
     <tr>
