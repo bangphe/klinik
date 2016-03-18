@@ -250,11 +250,10 @@ class SiteController extends Controller
                         $od->HARGA = Item::getHargaByResep($detail['ID_ITEM'], $orderbaru->RESEP);
                         $od->JUMLAH = $detail['JUMLAH'];
                         $od->DISKON = $detail['DISKON'];
+                        $od->save();
 
                         Item::updateStokItem($detail['ID_ITEM'], $detail['JUMLAH']);
 		           		$subtotal += $od->JUMLAH * $od->HARGA;
-
-		           		$od->save();
             		}
             		Yii::app()->user->setFlash('info', MyFormatter::alertSuccess('<strong>Selamat!</strong> Data telah berhasil disimpan.'));
 	            	$this->redirect(array('/order/view', 'id' => $orderbaru->KODE_ORDER));
