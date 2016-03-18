@@ -233,16 +233,16 @@ class SiteController extends Controller
 	        }
 
 	        if (isset($_POST['Order'])) {
-	        	// var_dump($_POST['Order']);
-	        	// die();
+	        	//var_dump($_POST['Order']);
+	        	//die();
 	            $orderbaru->attributes = $_POST['Order'];
 	            $orderbaru->TANGGAL_ORDER = date('Y-m-d H:i:s');
             	$orderbaru->USER_PEMBUAT = Yii::app()->user->nama;
             	if ($orderbaru->save()) {
             		$subtotal = 0;
             		foreach ($_POST['OrderDetail'] as $detail) {
-            // 			var_dump($_POST['OrderDetail']);
-	        			// die();
+            			//var_dump($_POST['OrderDetail']);
+	        			//die();
             			$od = new OrderDetail('baru');
                         $od->ID_ITEM = $detail['ID_ITEM'];
                         $od->KODE_ORDER = $orderbaru->KODE_ORDER;

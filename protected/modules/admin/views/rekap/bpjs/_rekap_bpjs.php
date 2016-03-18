@@ -4,8 +4,8 @@
     </tr>
     <tr>
         <th>NO NOTA</th>
-        <th>PASIEN</th>
         <th>TANGGAL ORDER</th>
+        <th>PASIEN</th>
         <th>NAMA OBAT</th>
         <th>QTY</th>
         <th>UANG RESEP</th>
