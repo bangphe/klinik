@@ -194,7 +194,20 @@ $(function() {
 			$('#harJul').show();
 			$('#jatuhTempo').show();
 
-		} else if($('#Item_ID_KATEGORI').val() == 2 || $('#Item_ID_KATEGORI').val() == 3) {
+		} 
+		else if($('#Item_ID_KATEGORI').val() == 2) {
+			$('#ukuran').hide();
+			$('#golongan').hide();
+			$('#supplier').show();
+			$('#hargaBeli').hide();
+			$('#detilSupplier').show();
+			$('#statusPembayaran').hide();
+			$('#satuan').hide();
+			$('#tanggal_exp').hide();
+			$('#harJul').show();
+			$('#jatuhTempo').hide();
+		} 
+		else if($('#Item_ID_KATEGORI').val() == 3) {
 			$('#ukuran').show();
 			$('#golongan').hide();
 			$('#satuan').hide();
@@ -263,6 +276,18 @@ $(function() {
 			$('#jatuhTempo').hide();
 		}
 		else if($('#Item_ID_KATEGORI').val() == 9) {
+			$('#ukuran').hide();
+			$('#golongan').hide();
+			$('#supplier').show();
+			$('#hargaBeli').hide();
+			$('#detilSupplier').show();
+			$('#statusPembayaran').hide();
+			$('#satuan').hide();
+			$('#tanggal_exp').hide();
+			$('#harJul').show();
+			$('#jatuhTempo').hide();
+		}
+		else if($('#Item_ID_KATEGORI').val() == 10) {
 			$('#ukuran').hide();
 			$('#golongan').hide();
 			$('#supplier').show();

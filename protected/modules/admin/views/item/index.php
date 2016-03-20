@@ -19,7 +19,6 @@ $this->breadcrumbs=array(
                 </div>
                 <div class="actions">
                     <?php echo CHtml::link('<i class="fa fa-plus"></i> Tambah', array('/admin/item/create'),array('class' => 'btn green')) ?>
-                    <?php echo CHtml::link('<i class="fa fa-print"></i> Rekap Stok', array('/admin/item/cetak'),array('class' => 'btn default')) ?>
                 </div>
             </div>
             <div class="portlet-body">
@@ -40,7 +39,6 @@ $this->breadcrumbs=array(
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Kode Item</th>
                                             <th>Nama Barang</th>
                                             <th>Kategori</th>
                                             <th>Stok</th>
@@ -55,7 +53,6 @@ $this->breadcrumbs=array(
                                         <?php foreach (Item::ListBarangByKategori($i) as $dex => $item): ?>
                                         <tr>
                                             <td><?php echo $dex+1;?></td>
-                                            <td>Kode item <?php echo $item->ID_ITEM;?></td>
                                             <td><?php echo CHtml::link(CHtml::encode($item->NAMA_ITEM), array('view','id'=>$item->ID_ITEM), array('title'=>'Detil')); ?></td>
                                             <td><?php echo $item->kategori->KATEGORI; ?></td>
                                             <td style="text-align:center;"><?php echo '<span class="label label-danger">'.Item::getTotalStok($item->ID_ITEM).'</span>'; ?></td>
@@ -78,7 +75,6 @@ $this->breadcrumbs=array(
                     </div>
                 </div>
             <?php } else { ?>
-            <div class="alert alert-success">
                 <strong>Maaf,</strong> tidak ada data yang ditampilkan.
             </div>
             <?php } ?>

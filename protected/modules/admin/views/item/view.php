@@ -40,40 +40,40 @@ $this->breadcrumbs=array(
 		            <div class="row">
 		            	<div class="col-md-12">
 		            		<div class="table-scrollable">
-		                    		<?php $this->widget('zii.widgets.CDetailView', array(
-								 		'data' => $model,
-								        'htmlOptions' => array(
-								            'class' => 'table table-bordered',
-								        ),
-								 		'attributes'=>array(
-											'ID_ITEM',
-											array(
-                                                'name'=>'KATEGORI',
-                                                'type'=>'kategori',
-                                                'value'=>$model->ID_KATEGORI
-                                            ),
-											'NAMA_ITEM',
-											'UKURAN',
-											'SATUAN',
-											array(
-												'name'=>'HARGA_JUAL',
-												'type'=>'uang',
-												'value'=>$model->HARGA_JUAL,
-											),
-											array(
-												'name'=>'TANGGAL_EXPIRED',
-												'type'=>'tanggal',
-												'value'=>$model->TANGGAL_EXPIRED,
-											),
-											array(
-                                                'name'=>'STATUS',
-                                                'type'=>'statusAktif',
-                                                'value'=>$model->STATUS
-                                            ),
+	                    		<?php $this->widget('zii.widgets.CDetailView', array(
+							 		'data' => $model,
+							        'htmlOptions' => array(
+							            'class' => 'table table-bordered',
+							        ),
+							 		'attributes'=>array(
+										'ID_ITEM',
+										array(
+                                            'name'=>'KATEGORI',
+                                            'type'=>'kategori',
+                                            'value'=>$model->ID_KATEGORI
+                                        ),
+										'NAMA_ITEM',
+										'UKURAN',
+										'SATUAN',
+										array(
+											'name'=>'HARGA_JUAL',
+											'type'=>'uang',
+											'value'=>$model->HARGA_JUAL,
 										),
-								 		)); 
-								 	?>
-		                    	</div>
+										array(
+											'name'=>'TANGGAL_EXPIRED',
+											'type'=>'tanggal',
+											'value'=>$model->TANGGAL_EXPIRED,
+										),
+										array(
+                                            'name'=>'STATUS',
+                                            'type'=>'statusAktif',
+                                            'value'=>$model->STATUS
+                                        ),
+									),
+							 		)); 
+							 	?>
+		                    </div>
 		            	</div>
 		            </div>
 		        </div>
@@ -88,10 +88,10 @@ $this->breadcrumbs=array(
 			                            <th>Supplier</th>
 			                            <th>Harga Beli</th>
 			                            <th>Stok</th>
-			                            <th>Tanggal Beli</th>
-			                            <th>Tanggal Jatuh Tempo</th>
-			                            <th>Tanggal Pembayaran</th>
-			                            <th>Status Pembayaran</th>
+			                            <th>Tgl Beli</th>
+			                            <th>Jatuh Tempo</th>
+			                            <th>Tgl Pembayaran</th>
+			                            <th>Status</th>
 			                            <th>Aksi</th>
 			                        </tr>
 			                    </thead>

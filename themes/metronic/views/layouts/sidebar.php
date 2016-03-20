@@ -42,9 +42,6 @@
             <li class="<?= ($this->ID=="order") ? "nav-item active" : "nav-item"; ?>">
                 <?= CHtml::link('<i class="fa fa-tags"></i><span class="title"> Manajemen Order</span><span class="selected"></span>',array('/admin/order'), array('class'=>'nav-link nav-toggle'));?>
             </li>
-            <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
-                <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
-            </li>
             <li class="<?= ($this->ID=="item" || $this->ID=="kategori" || $this->ID=="supplier" || $this->ID=="layanan" || $this->ID=="golongan") ? "nav-item active open" : "nav-item"; ?>">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>
@@ -95,6 +92,9 @@
                         <?php //echo CHtml::link('Laporan Pembelian Gagang', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
                     </li> -->
                 </ul>
+            </li>
+            <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
+                <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
             </li>
             <li class="<?= ($this->ID=="profil") ? "nav-item start active" : "nav-item start"; ?>">
                 <?= CHtml::link('<i class="icon-heart"></i><span class="title"> Profil</span><span class="selected"></span>',array('/admin/profil'), array('class'=>'nav-link nav-toggle'));?>

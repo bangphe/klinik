@@ -15,6 +15,7 @@
         <th>LAB</th>
         <th>OPTIK</th>
         <th>FOTO FUNDUS</th>
+        <th>OPERASI</th>
         <th>TOTAL</th>
         <!-- <th>NAMA ITEM</th> -->
         
@@ -77,6 +78,12 @@
             <td>
                 <?php foreach ($data->orderdetail as $value) { ?>
                     <?php if ($value->item->ID_KATEGORI=='8') { ?>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
+                <?php } } ?>
+            </td>
+            <td>
+                <?php foreach ($data->orderdetail as $value) { ?>
+                    <?php if ($value->item->ID_KATEGORI=='10') { ?>
                     <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
                 <?php } } ?>
             </td>

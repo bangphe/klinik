@@ -233,15 +233,15 @@ class Item extends CActiveRecord
         if ($kategori_obat==self::KATEGORI_OBAT) {
         	if($resep==1){
                 //kalo RESEP UMUM = harga ditambahkan 33%
-                $total = $harga + (33/100 * $harga);
+                $total = $harga + (35/100 * $harga);
             }
             elseif($resep==2) {
                 //kalo RESEP DOKTER = harga + 1200
-                $total = $harga + (33/100 * $harga) + (10/100 * $harga);
+                $total = $harga + (35/100 * $harga) + (10/100 * $harga);
             }
 	        else {
                 //kalo RESEP DOKTER = harga + 1200
-                $total = $harga + (33/100 * $harga);
+                $total = $harga + (35/100 * $harga);
             }
         } else {
         	$total = $harga;
@@ -273,7 +273,7 @@ class Item extends CActiveRecord
             'condition' => 'STATUS = :status AND ID_KATEGORI = :kategori',
             'params' => array(':status' => self::STATUS_AKTIF, ':kategori' => self::KATEGORI_OBAT),
             'order' => 'TANGGAL_EXPIRED ASC',
-            'limit' => '10',
+            'limit' => '30',
             'together' => true
         ));
         
@@ -291,7 +291,7 @@ class Item extends CActiveRecord
             'condition' => 'STOK = :stok',
             'params' => array(':stok' => 0),
             'order' => 'TANGGAL_EXPIRED DESC',
-            'limit' => '10',
+            'limit' => '20',
             'together' => true
         ));
         
@@ -302,7 +302,7 @@ class Item extends CActiveRecord
     public static function getExpired()
     {
         $connection = Yii::app()->db;
-        return $connection->createCommand('SELECT * FROM item WHERE date(TANGGAL_EXPIRED) >= date(NOW()) AND date(TANGGAL_EXPIRED) <= DATE_ADD(date(now()), INTERVAL 10 DAY)')->queryAll();
+        return $connection->createCommand('SELECT * FROM item WHERE date(TANGGAL_EXPIRED) >= date(NOW()) AND date(TANGGAL_EXPIRED) <= DATE_ADD(date(now()), INTERVAL 90 DAY)')->queryAll();
     }
 
     public static function getPenjualanItem($kategori) {

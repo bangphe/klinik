@@ -232,7 +232,6 @@
         </style>
     </head>
     <body>
-        
         <header class="clearfix">
             <div id="logo">
                 <!-- <img src="<?php //echo Yii::app()->request->baseUrl ?>/images/logo-baru.png"> -->
