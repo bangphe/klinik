@@ -5,7 +5,7 @@ return array(
 	'connectionString' => 'mysql:host=localhost;dbname=klinik_db_060316',
 	'emulatePrepare' => true,
 	'username' => 'root',
-	'password' => 'sepanjang',
+	'password' => 'root',
 	'charset' => 'utf8',
 	
 );
