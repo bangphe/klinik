@@ -228,27 +228,30 @@ class Item extends CActiveRecord
 
     public static function getHargaByResep($id, $resep) {
     	$total=0;
+        $harga_total=0;
     	$kategori_obat = self::model()->findByPk($id)->ID_KATEGORI;
     	$harga = self::model()->findByPk($id)->HARGA_JUAL;
         if ($kategori_obat==self::KATEGORI_OBAT) {
         	if($resep==1){
                 //kalo RESEP UMUM = harga ditambahkan 33%
-                $total = $harga + (33/100 * $harga);
+                $harga_total = $harga + (33/100 * $harga);
             }
             elseif($resep==2) {
                 //kalo RESEP DOKTER = harga + 1200
-                $total = $harga + (33/100 * $harga) + (10/100 * $harga);
+                //$total = $harga + (33/100 * $harga) + (10/100 * $harga);
+                $total = $harga + (10/100 * $harga);
+                $harga_total = $total + ((35/100) * $harga);
             }
 	        else {
                 //kalo RESEP DOKTER = harga + 1200
-                $total = $harga + (33/100 * $harga);
+                $harga_total = $harga + (33/100 * $harga);
             }
         } else {
-        	$total = $harga;
+        	$harga_total = $harga;
         }
 
         //return $subtotal - ($subtotal * ($this->DISKON / 100));
-    	return round($total);
+    	return round($harga_total);
     }
 
     public static function getStokItem($iditem){
