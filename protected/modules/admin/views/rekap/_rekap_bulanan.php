@@ -43,7 +43,7 @@
                         }
                     }
                 ?>
-                <?php echo MyFormatter::formatUang($total + 33/100 + 10/100); ?></br>
+                <?php echo MyFormatter::formatUang($total); ?></br>
             </td>
             <td>
                 <?php foreach ($data->orderdetail as $value) { ?>
