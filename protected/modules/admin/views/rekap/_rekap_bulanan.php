@@ -97,8 +97,24 @@
         </tr>
     <?php $grandtotal += $data->TOTAL ?>
     <?php endforeach ?>
+    <tr style="background-color:grey;">
+        <th colspan="3"> RINCIAN : </th>
+        <th>JASA DOKTER</th>
+        <th>Apotek</th>
+        <th>Kerato</th>
+        <th>RR</th>
+        <th>Racik</th>
+        <th>Daftar</th>
+        <th>Lab</th>
+        <th>Optik</th>
+        <th>Foto Fundus</th>
+        <th>Operasi</th>
+        <th></th>
+    </tr>
+    
     <tr>
-        <th colspan="12">TOTAL PER BULAN</th>
+        <th colspan="3">TOTAL PER BULAN</th>
+        <th colspan="10"></th>
         <th><?php echo MyFormatter::formatUang($grandtotal) ?></th>
     </tr>
 </table>

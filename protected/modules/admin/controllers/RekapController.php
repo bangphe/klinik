@@ -54,6 +54,45 @@ class RekapController extends Controller
         ));
 	}
 
+    public function actionRebas()
+    {
+        $model = new FormRekap;
+
+        if(isset($_POST['FormRekap'])) {
+            $model->attributes = $_POST['FormRekap'];
+            $datestart = date('Y-m-d', strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+            $dateend = date('Y-m-t',strtotime($model->TAHUN.'-'.$model->BULAN.'-01'));
+
+            $criteria = new CDbCriteria;
+            $criteria->addBetweenCondition('TANGGAL_ORDER', $datestart, $dateend);
+            $criteria->condition = "RESEP = :resep AND ID_LAYANAN != '5'";
+            $criteria->params = array(':resep' => Order::RESEP_UMUM);
+            $order = Order::model()->findAll($criteria);
+
+            if($order != null) {
+                $filename = 'REKAP TRANSAKSI OBAT BEBAS_'.strtoupper(MyFormatter::formatBulan($model->BULAN)).'_'.$model->TAHUN;
+                header("Cache-Control: no-cache, no-store, must-revalidate");
+                header("Content-Type: application/vnd.ms-excel");
+                header("Content-Disposition: attachment; filename=" . $filename . ".xls");
+
+                $this->renderPartial('rebas/_rekap_resepbebas',array(
+                    'order' => $order,
+                    'model' => $model
+                ));
+
+                exit();
+            }
+
+            else {
+                Yii::app()->user->setFlash('info', MyFormatter::alertError('Rekap belum tersedia untuk bulan tersebut.'));
+            }
+        }
+        
+        $this->render('rebas/index', array(
+            'model' => $model,
+        ));
+    }
+
     public function actionBpjs()
     {
         $model = new FormRekap;
