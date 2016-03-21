@@ -15,6 +15,7 @@
         <th>LAB</th>
         <th>OPTIK</th>
         <th>FOTO FUNDUS</th>
+        <th>OPERASI</th>
         <th>TOTAL</th>
         <!-- <th>NAMA ITEM</th> -->
         
@@ -80,6 +81,12 @@
                     <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
                 <?php } } ?>
             </td>
+            <td>
+                <?php foreach ($data->orderdetail as $value) { ?>
+                    <?php if ($value->item->ID_KATEGORI=='10') { ?>
+                    <?php echo MyFormatter::formatUang($value->item->HARGA_JUAL); ?></br>
+                <?php } } ?>
+            </td>
             <!-- <td>
             <?php foreach ($data->orderdetail as $value) { ?>
                 <?php echo $value->item->NAMA_ITEM.' ('.$value->JUMLAH.')'; ?></br>
@@ -90,8 +97,24 @@
         </tr>
     <?php $grandtotal += $data->TOTAL ?>
     <?php endforeach ?>
+    <tr style="background-color:grey;">
+        <th colspan="3"> RINCIAN : </th>
+        <th>JASA DOKTER</th>
+        <th>Apotek</th>
+        <th>Kerato</th>
+        <th>RR</th>
+        <th>Racik</th>
+        <th>Daftar</th>
+        <th>Lab</th>
+        <th>Optik</th>
+        <th>Foto Fundus</th>
+        <th>Operasi</th>
+        <th></th>
+    </tr>
+    
     <tr>
-        <th colspan="12">TOTAL PER BULAN</th>
+        <th colspan="3">TOTAL PER BULAN</th>
+        <th colspan="10"></th>
         <th><?php echo MyFormatter::formatUang($grandtotal) ?></th>
     </tr>
 </table>

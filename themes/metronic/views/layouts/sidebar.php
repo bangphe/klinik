@@ -42,9 +42,6 @@
             <li class="<?= ($this->ID=="order") ? "nav-item active" : "nav-item"; ?>">
                 <?= CHtml::link('<i class="fa fa-tags"></i><span class="title"> Manajemen Order</span><span class="selected"></span>',array('/admin/order'), array('class'=>'nav-link nav-toggle'));?>
             </li>
-            <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
-                <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
-            </li>
             <li class="<?= ($this->ID=="item" || $this->ID=="kategori" || $this->ID=="supplier" || $this->ID=="layanan" || $this->ID=="golongan") ? "nav-item active open" : "nav-item"; ?>">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>
@@ -66,12 +63,15 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<?php echo ($this->ID==="rekap" && $controller=="index") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Laporan Keuangan', array('/admin/rekap'), array('class'=>'nav-link')); ?></li>
-                    <li class="<?php echo ($controller==="obat") ? "nav-item active open": "nav-item"; ?>">
-                        <?php echo CHtml::link('Laporan Data Obat', array('/admin/rekap/obat/index'),array('class' => 'nav-link')) ?>
+                    <li class="<?php echo ($this->ID==="rekap" && $controller=="index") ? "nav-item active open": "nav-item"; ?>"><?php echo CHtml::link('Laporan Resep Dokter', array('/admin/rekap'), array('class'=>'nav-link')); ?></li>
+                    <li class="<?php echo ($controller==="rebas") ? "nav-item active open": "nav-item"; ?>">
+                        <?php echo CHtml::link('Laporan Resep Bebas', array('/admin/rekap/rebas'),array('class' => 'nav-link')) ?>
                     </li>
                     <li class="<?php echo ($controller==="bpjs") ? "nav-item active open": "nav-item"; ?>">
                         <?php echo CHtml::link('Laporan BPJS', array('/admin/rekap/bpjs'),array('class' => 'nav-link')) ?>
+                    </li>
+                    <li class="<?php echo ($controller==="obat") ? "nav-item active open": "nav-item"; ?>">
+                        <?php echo CHtml::link('Laporan Data Obat', array('/admin/rekap/obat/index'),array('class' => 'nav-link')) ?>
                     </li>
                     <li class="<?php echo ($controller==="lensa") ? "nav-item active open": "nav-item"; ?>">
                         <?php echo CHtml::link('Laporan Data Lensa', array('/admin/rekap/lensa/index'),array('class' => 'nav-link')) ?>
@@ -95,6 +95,9 @@
                         <?php //echo CHtml::link('Laporan Pembelian Gagang', array('/admin/rekap/penjualangagang'),array('class' => 'nav-link')) ?>
                     </li> -->
                 </ul>
+            </li>
+            <li class="<?= ($this->ID=="user") ? "nav-item active" : "nav-item"; ?>">
+                <?= CHtml::link('<i class="icon-users"></i><span class="title"> Manajemen User</span><span class="selected"></span>',array('/admin/user'), array('class'=>'nav-link nav-toggle'));?>
             </li>
             <li class="<?= ($this->ID=="profil") ? "nav-item start active" : "nav-item start"; ?>">
                 <?= CHtml::link('<i class="icon-heart"></i><span class="title"> Profil</span><span class="selected"></span>',array('/admin/profil'), array('class'=>'nav-link nav-toggle'));?>
