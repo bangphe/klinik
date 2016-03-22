@@ -136,7 +136,8 @@ class RekapController extends Controller
         //$barang = Barang::getBarang();
         $criteria = new CDbCriteria;
         //$criteria->addBetweenCondition('TGL_ORDER', date('Y-m-01',strtotime('this month')), date('Y-m-t',strtotime('this month')));
-        $criteria->condition = 'date(TANGGAL_ORDER) = date(NOW())';
+        $criteria->condition = "RESEP = :resep AND ID_LAYANAN != '5' AND date(TANGGAL_ORDER) = date(NOW())";
+        $criteria->params = array(':resep' => Order::RESEP_DOKTER);
         $order = Order::model()->findAll($criteria);
         $total = 0;
         foreach ($order as $k) { $total += $k->TOTAL; }
