@@ -56,13 +56,17 @@ class MyFormatter extends CFormatter
     }
 
     public static function stokBarang($value){
-        if($value < 50)
+        if($value > 0)
             return '<span class="label label-danger">'.$value.'</span>';
-        else if($value >= 50 && $value < 75)
-            return '<span class="label label-warning">'.$value.'</span>';
-        else if($value >=75 && $value <= 200)
-            return '<span class="label label-success">'.$value.'</span>';
     }
+    // public static function stokBarang($value){
+    //     if($value > 50)
+    //         return '<span class="label label-danger">'.$value.'</span>';
+    //     else if($value >= 50 && $value < 75)
+    //         return '<span class="label label-warning">'.$value.'</span>';
+    //     else if($value >=75 && $value <= 200)
+    //         return '<span class="label label-success">'.$value.'</span>';
+    // }
 
     public static function formatRoleUser($value){
         if($value==User::ADMIN)

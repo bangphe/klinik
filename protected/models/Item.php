@@ -228,30 +228,28 @@ class Item extends CActiveRecord
 
     public static function getHargaByResep($id, $resep) {
     	$total=0;
-        $harga_total=0;
     	$kategori_obat = self::model()->findByPk($id)->ID_KATEGORI;
     	$harga = self::model()->findByPk($id)->HARGA_JUAL;
         if ($kategori_obat==self::KATEGORI_OBAT) {
         	if($resep==1){
                 //kalo RESEP UMUM = harga ditambahkan 33%
-                $harga_total = $harga + (33/100 * $harga);
+                $total = $harga * 1.1 * 1.35;
             }
             elseif($resep==2) {
                 //kalo RESEP DOKTER = harga + 1200
-                //$total = $harga + (33/100 * $harga) + (10/100 * $harga);
-                $total = $harga + (10/100 * $harga);
-                $harga_total = $total + ((35/100) * $harga);
+                $total = $harga * 1.1 * 1.35;
+                // $total = $harga + (33/100 * $harga) + (10/100 * $harga);
             }
 	        else {
                 //kalo RESEP DOKTER = harga + 1200
-                $harga_total = $harga + (33/100 * $harga);
+                $total = $harga * 1.1 * 1.35;
             }
         } else {
-        	$harga_total = $harga;
+        	$total = $harga;
         }
 
         //return $subtotal - ($subtotal * ($this->DISKON / 100));
-    	return round($harga_total);
+    	return round($total);
     }
 
     public static function getStokItem($iditem){
@@ -276,7 +274,7 @@ class Item extends CActiveRecord
             'condition' => 'STATUS = :status AND ID_KATEGORI = :kategori',
             'params' => array(':status' => self::STATUS_AKTIF, ':kategori' => self::KATEGORI_OBAT),
             'order' => 'TANGGAL_EXPIRED ASC',
-            'limit' => '30',
+            'limit' => '15',
             'together' => true
         ));
         
@@ -294,7 +292,7 @@ class Item extends CActiveRecord
             'condition' => 'STOK = :stok',
             'params' => array(':stok' => 0),
             'order' => 'TANGGAL_EXPIRED DESC',
-            'limit' => '20',
+            'limit' => '25',
             'together' => true
         ));
         
