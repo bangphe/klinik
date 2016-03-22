@@ -7568,3 +7568,110 @@ HTTP_REFERER=http://localhost/klinik/order/186
 2016/03/21 08:03:18 [warning] [application] Failed to set unsafe attribute "TANGGAL" of "FormRekap".
 in /var/www/klinik/protected/modules/admin/controllers/RekapController.php (23)
 in /var/www/klinik/index.php (13)
+2016/03/21 16:50:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site/favicon.ic...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/site/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site/login
+---
+2016/03/21 16:51:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/03/21 16:51:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/rekap/fav...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/admin/rekap/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/rekap/rebas
+---
+2016/03/21 16:52:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/favicon.i...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/admin/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/rekap
+---
+2016/03/21 17:25:34 [error] [php] Undefined variable: totals (C:\xampp\htdocs\klinik\protected\modules\admin\views\rekap\_rekap_bulanan.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(869): RekapController->renderFile()
+#1 C:\xampp\htdocs\klinik\protected\modules\admin\controllers\RekapController.php(42): RekapController->renderPartial()
+#2 C:\xampp\htdocs\klinik\framework\web\actions\CInlineAction.php(49): RekapController->actionIndex()
+#3 C:\xampp\htdocs\klinik\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\klinik\framework\web\CController.php(286): RekapController->runAction()
+#5 C:\xampp\htdocs\klinik\framework\web\CController.php(265): RekapController->runActionWithFilters()
+#6 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): RekapController->run()
+#7 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\klinik\index.php(13): CWebApplication->run()
+REQUEST_URI=/klinik/admin/rekap
+in C:\xampp\htdocs\klinik\protected\modules\admin\views\rekap\_rekap_bulanan.php (46)
+in C:\xampp\htdocs\klinik\protected\modules\admin\controllers\RekapController.php (42)
+in C:\xampp\htdocs\klinik\index.php (13)
+2016/03/21 19:51:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('order/favicon.i...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/order/favicon.ico
+HTTP_REFERER=http://localhost/klinik/order/173
+---
+2016/03/22 15:30:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('site/favicon.ic...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/site/favicon.ico
+HTTP_REFERER=http://localhost/klinik/site/login
+---
+2016/03/22 15:30:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin
+---
+2016/03/22 15:31:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/rekap/fav...')
+#3 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/klinik/admin/rekap/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/rekap/rebas
+---
+2016/03/22 15:31:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/favicon.ico".' in C:\xampp\htdocs\klinik\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\klinik\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/favicon.i...')
+#1 C:\xampp\htdocs\klinik\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\klinik\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/klinik/admin/favicon.ico
+HTTP_REFERER=http://localhost/klinik/admin/rekap
+---
