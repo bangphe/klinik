@@ -138,7 +138,7 @@ foreach ($model->orderdetail as $i => $detail) {
                                         }
                                         else {
                                             if ($row->item->ID_KATEGORI==Item::KATEGORI_OBAT) {
-                                                echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH + 4800);
+                                                echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH);
                                             } else {
                                                 echo MyFormatter::formatUang(($row->HARGA - ($row->HARGA*$row->DISKON/100)) * $row->JUMLAH);
                                             }

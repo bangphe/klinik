@@ -141,6 +141,7 @@ class Order extends CActiveRecord
     }
 
     public function getSubtotal() {
+    	$pulvus = 0;
         $subtotal = 0;
         $harga_total = 0;
         $harga_diskon = 0;
@@ -159,7 +160,8 @@ class Order extends CActiveRecord
             	}
             	else {
             		if ($detail->item->ID_KATEGORI==Item::KATEGORI_OBAT) {
-        				$subtotal += ($detail->HARGA * $detail->JUMLAH) + 4800;
+        				$pulvus += ($detail->HARGA * $detail->JUMLAH);
+        				$subtotal = $pulvus + 4800;
         			}
         			else {
         				$subtotal += ($detail->HARGA * $detail->JUMLAH);
